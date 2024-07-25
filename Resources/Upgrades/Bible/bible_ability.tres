@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=3 format=3 uid="uid://wywhea18i5yl"]
+
+[ext_resource type="PackedScene" uid="uid://depbil6x5yymj" path="res://Scenes/Abilitys/BibleAbility/bible_ability_controller.tscn" id="1_8xukp"]
+[ext_resource type="Script" path="res://Scripts/Upgrades/ability.gd" id="1_xlq0s"]
+
+[resource]
+script = ExtResource("1_xlq0s")
+ability_controller_scene = ExtResource("1_8xukp")
+id = "bible_unlock"
+name = "Bible"
+max_quantity = 1
+description = "Spins 2 Bibles around you."

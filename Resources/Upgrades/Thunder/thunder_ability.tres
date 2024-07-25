@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=3 format=3 uid="uid://d1wunv3q8gg"]
+
+[ext_resource type="PackedScene" uid="uid://d050pbaodubjg" path="res://Scenes/Abilitys/ThunderAbility/thunder_ability_controller.tscn" id="1_sou15"]
+[ext_resource type="Script" path="res://Scripts/Upgrades/ability.gd" id="2_dwrd1"]
+
+[resource]
+script = ExtResource("2_dwrd1")
+ability_controller_scene = ExtResource("1_sou15")
+id = "thunder_unlock"
+name = "Thunder"
+max_quantity = 1
+description = "Hits randomly an Enemy with Thunder"

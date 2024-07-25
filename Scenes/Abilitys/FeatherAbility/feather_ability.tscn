@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1lwj1o21i0xj"]
+
+[ext_resource type="Script" path="res://Scripts/Abilitys/FeatherAbility/feather_ability.gd" id="1_quvpn"]
+[ext_resource type="Texture2D" uid="uid://c1dn5i1f3tpyj" path="res://Assets/feather.png" id="2_b0viw"]
+[ext_resource type="PackedScene" uid="uid://fgf6t05ngde" path="res://Scenes/Components/hitbox_component.tscn" id="3_jwrnt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsnmf"]
+size = Vector2(12, 18)
+
+[node name="FeatherAbility" type="Node2D"]
+script = ExtResource("1_quvpn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_b0viw")
+
+[node name="HitboxComponent" parent="." instance=ExtResource("3_jwrnt")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("RectangleShape2D_qsnmf")

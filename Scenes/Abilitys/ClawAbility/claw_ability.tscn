@@ -1,0 +1,78 @@
+[gd_scene load_steps=12 format=3 uid="uid://yse2ob2epj76"]
+
+[ext_resource type="Script" path="res://Scripts/Abilitys/ClawAbility/claw_ability.gd" id="1_21jdl"]
+[ext_resource type="Texture2D" uid="uid://djakby2cj3nnb" path="res://Assets/Skills/FireClaw/Claw.png" id="2_p87fe"]
+[ext_resource type="PackedScene" uid="uid://fgf6t05ngde" path="res://Scenes/Components/hitbox_component.tscn" id="8_osyv3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_at3l1"]
+atlas = ExtResource("2_p87fe")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vr8hv"]
+atlas = ExtResource("2_p87fe")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0loi"]
+atlas = ExtResource("2_p87fe")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lneuh"]
+atlas = ExtResource("2_p87fe")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bny86"]
+atlas = ExtResource("2_p87fe")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_maaq8"]
+atlas = ExtResource("2_p87fe")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aaqcn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_at3l1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vr8hv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0loi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lneuh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bny86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_maaq8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lws7v"]
+size = Vector2(41.6446, 224.954)
+
+[node name="ClawAbility" type="Node2D" groups=["bible_ability"]]
+script = ExtResource("1_21jdl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(85, 0)
+sprite_frames = SubResource("SpriteFrames_aaqcn")
+autoplay = "default"
+frame = 2
+frame_progress = 0.580828
+speed_scale = 2.0
+flip_h = true
+
+[node name="HitboxComponent" parent="." instance=ExtResource("8_osyv3")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(91, 8)
+rotation = -0.757824
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_lws7v")

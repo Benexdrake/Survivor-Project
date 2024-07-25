@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://d050pbaodubjg"]
+
+[ext_resource type="Script" path="res://Scripts/Abilitys/Thunder/thunder_ability_controller.gd" id="1_mknjl"]
+[ext_resource type="PackedScene" uid="uid://2ius8mnj7db8" path="res://Scenes/Abilitys/ThunderAbility/thunder_ability.tscn" id="2_0mj0p"]
+
+[node name="ThunderAbilityController" type="Node"]
+script = ExtResource("1_mknjl")
+max_range = 100.0
+ability_scene = ExtResource("2_0mj0p")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true

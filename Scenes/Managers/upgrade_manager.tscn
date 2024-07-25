@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dlr0jj3c54smu"]
+[gd_scene load_steps=6 format=3 uid="uid://dlr0jj3c54smu"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/upgrade_manager.gd" id="1_mdbol"]
-[ext_resource type="Resource" uid="uid://ccerntpadrmx4" path="res://Resources/Upgrades/sword_rate.tres" id="2_0xkhy"]
+[ext_resource type="Resource" uid="uid://ccerntpadrmx4" path="res://Resources/Upgrades/Sword/sword_rate.tres" id="2_ago7u"]
+[ext_resource type="Resource" uid="uid://dw8xgrsm3v5w6" path="res://Resources/Upgrades/Feather/feather_ability.tres" id="3_5rokj"]
 [ext_resource type="PackedScene" uid="uid://bfgy8kni4qofl" path="res://Scenes/UI/upgrade_screen.tscn" id="3_6diqs"]
+[ext_resource type="Resource" uid="uid://wywhea18i5yl" path="res://Resources/Upgrades/Bible/bible_ability.tres" id="4_0apig"]
 
 [node name="UpgradeManager" type="Node"]
 script = ExtResource("1_mdbol")
-upgrade_pool = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([ExtResource("2_0xkhy")])
+upgrade_pool = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([ExtResource("2_ago7u"), ExtResource("3_5rokj"), ExtResource("4_0apig")])
 upgrade_screen_scene = ExtResource("3_6diqs")

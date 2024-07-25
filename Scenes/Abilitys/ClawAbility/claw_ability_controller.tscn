@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgklwm4bruprs"]
+
+[ext_resource type="Script" path="res://Scripts/Abilitys/ClawAbility/claw_ability_controller.gd" id="1_iqrkm"]
+[ext_resource type="PackedScene" uid="uid://yse2ob2epj76" path="res://Scenes/Abilitys/ClawAbility/claw_ability.tscn" id="2_byp2g"]
+
+[node name="ClawAbilityController" type="Node"]
+script = ExtResource("1_iqrkm")
+ability_scene = ExtResource("2_byp2g")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true

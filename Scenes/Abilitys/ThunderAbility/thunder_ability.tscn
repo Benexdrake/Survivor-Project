@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://2ius8mnj7db8"]
+
+[ext_resource type="Script" path="res://Scripts/Abilitys/Thunder/thunder_ability.gd" id="1_fbule"]
+[ext_resource type="Texture2D" uid="uid://bjd31ekcin2qe" path="res://Assets/Skills/Thunder/Thunder.png" id="2_w0qg0"]
+[ext_resource type="PackedScene" uid="uid://fgf6t05ngde" path="res://Scenes/Components/hitbox_component.tscn" id="6_4pgrx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5q51"]
+atlas = ExtResource("2_w0qg0")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_siu8y"]
+atlas = ExtResource("2_w0qg0")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6yw4"]
+atlas = ExtResource("2_w0qg0")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2y077"]
+atlas = ExtResource("2_w0qg0")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxtoc"]
+atlas = ExtResource("2_w0qg0")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6bkqk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5q51")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_siu8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6yw4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2y077")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxtoc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rcejr"]
+radius = 36.8782
+
+[node name="ThunderAbility" type="Node2D"]
+script = ExtResource("1_fbule")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -62)
+sprite_frames = SubResource("SpriteFrames_6bkqk")
+autoplay = "default"
+frame = 2
+frame_progress = 0.0952655
+speed_scale = 2.0
+
+[node name="HitboxComponent" parent="." instance=ExtResource("6_4pgrx")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_rcejr")
