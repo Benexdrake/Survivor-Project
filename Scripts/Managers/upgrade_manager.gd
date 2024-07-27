@@ -15,12 +15,15 @@ var thunder_ability = preload("res://Resources/Upgrades/Thunder/thunder_ability.
 var feather_ability = preload("res://Resources/Upgrades/Feather/feather_ability.tres")
 var judism_aura_ability = preload("res://Resources/Upgrades/JudismAura/judism_aura_ability.tres")
 
+var max_health_upgrade = preload("res://Resources/Upgrades/MaxHealth/max_health_upgrade.tres")
+
 func _ready():
 	upgrade_pool.add_item(bible_ability, 10)
 	upgrade_pool.add_item(claw_ability, 3)
 	upgrade_pool.add_item(thunder_ability, 8)
 	upgrade_pool.add_item(feather_ability, 5)
 	upgrade_pool.add_item(judism_aura_ability, 5)
+	upgrade_pool.add_item(max_health_upgrade,12)
 	
 	
 	experience_manager.level_up.connect(on_level_up)

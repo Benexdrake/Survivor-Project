@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 @export var health:int
+var max_health:int
 @export var max_speed: int
 @export var acceleration_smoothing:int
 @export var movement_vector:Vector2
@@ -18,6 +19,7 @@ var number_colliding_bodies = 0
 func _ready():
 	health_component.current_health = health
 	health_component.max_health = health
+	max_health = health
 	
 	$CollisionArea2D.body_entered.connect(on_body_entered)
 	$CollisionArea2D.body_exited.connect(on_body_exited)
@@ -82,9 +84,12 @@ func on_health_changed():
 
 
 func on_ability_upgrade_added(ability_upgrade:AbilityUpgrade, current_upgrades: Dictionary):
-	if not ability_upgrade is Ability:
-		return
-	var ability = ability_upgrade as Ability
-	var scene = ability.ability_controller_scene	
-	abilities.add_child(scene.instantiate())
+	if ability_upgrade is Ability:
+		var ability = ability_upgrade as Ability
+		var scene = ability.ability_controller_scene	
+		abilities.add_child(scene.instantiate())
+	
+	if ability_upgrade.id == "max_health_upgrade":
+		health_component.max_health *= 1.20
+		update_health_display()
 

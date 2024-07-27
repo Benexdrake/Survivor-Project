@@ -3,7 +3,15 @@ extends Node2D
 func _ready():
 	pass
 
-func start(text:String):
+func start(dmg:float, damage:float):
+	
+	if damage - 1 <= dmg && damage <= dmg:
+		$Label.add_theme_color_override("font_color", Color.WHITE)
+	else:
+		$Label.add_theme_color_override("font_color", Color.RED)
+		
+	var text:String = str(damage)
+	
 	$Label.text = text
 	
 	var tween = create_tween()
