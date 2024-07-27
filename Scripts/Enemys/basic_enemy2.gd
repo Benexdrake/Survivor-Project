@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name BasicEnemy
+class_name BasicEnemy2
 
 @export var max_health: float = 10
 @export var max_speed:int
@@ -15,12 +15,25 @@ class_name BasicEnemy
 @onready var death_component = $DeathComponent
 @onready var hit_flash_component = $HitFlashComponent
 
+var timer = Timer.new()
+
+var is_moving = true
 
 func _ready():
 	config()
 
 func _process(delta):
-	velocity_component.accelerate_to_player()
+	var rand = randf_range(0,20)
+	if rand < 15:
+		set_is_moving(false)
+	else:
+		set_is_moving(true)
+		
+	if is_moving:
+		velocity_component.accelerate_to_player()
+	else:
+		velocity_component.decelerate()
+		
 	velocity_component.move(self)
 	
 	var move_sign = sign(velocity.x)
@@ -35,3 +48,7 @@ func config():
 	death_component.config(sprite2D)
 	hit_flash_component.config(health_component,sprite2D)
 	
+func set_is_moving(moving:bool):
+	is_moving = moving
+	
+

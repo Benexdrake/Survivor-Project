@@ -1,12 +1,28 @@
 extends Node
 
-@export var upgrade_pool: Array[AbilityUpgrade]
+@export var filler: AbilityUpgrade
 @export var experience_manager: Node
 @export var upgrade_screen_scene: PackedScene
 
 var current_upgrades = {}
+var upgrade_pool: WeightedTable = WeightedTable.new()
+
+var bible_ability = preload("res://Resources/Upgrades/Bible/bible_ability.tres")
+var bible_upgrade = preload("res://Resources/Upgrades/Bible/bible_upgrade.tres")
+
+var claw_ability = preload("res://Resources/Upgrades/Claw/claw_ability.tres")
+var thunder_ability = preload("res://Resources/Upgrades/Thunder/thunder_ability.tres")
+var feather_ability = preload("res://Resources/Upgrades/Feather/feather_ability.tres")
+var judism_aura_ability = preload("res://Resources/Upgrades/JudismAura/judism_aura_ability.tres")
 
 func _ready():
+	upgrade_pool.add_item(bible_ability, 10)
+	upgrade_pool.add_item(claw_ability, 3)
+	upgrade_pool.add_item(thunder_ability, 8)
+	upgrade_pool.add_item(feather_ability, 5)
+	upgrade_pool.add_item(judism_aura_ability, 5)
+	
+	
 	experience_manager.level_up.connect(on_level_up)
 	
 	
@@ -23,20 +39,31 @@ func apply_upgrade(upgrade: AbilityUpgrade):
 	if upgrade.max_quantity > 0:
 		var current_quantity = current_upgrades[upgrade.id]["quantity"]
 		if current_quantity == upgrade.max_quantity:
-			upgrade_pool = upgrade_pool.filter(func(pool_upgrade): return pool_upgrade.id != upgrade.id)
+			upgrade_pool.remove_item(upgrade)
 		
+	update_upgrade_pool(upgrade)
 	GameEvents.emit_ability_upgrade_added(upgrade,current_upgrades)
 	
+# Erweiterbar für Upgrades von Fähigkeiten
+func update_upgrade_pool(chosen_upgrade: AbilityUpgrade):
+	if chosen_upgrade.id == bible_ability.id:
+		upgrade_pool.add_item(bible_upgrade,10)
+
 
 func pick_upgrades():
 	var chosen_upgrades:Array[AbilityUpgrade] = []
-	var filtered_upgrades = upgrade_pool.duplicate()
+	
 	for i in 4:
-		if filtered_upgrades.size() == 0:
+		if upgrade_pool.items.size() == chosen_upgrades.size():
 			break
-		var chosen_upgrade = filtered_upgrades.pick_random()
-		chosen_upgrades.append(chosen_upgrade)
-		filtered_upgrades = filtered_upgrades.filter(func(upgrade): return upgrade.id != chosen_upgrade.id)
+		var chosen_upgrade = upgrade_pool.pick_item(chosen_upgrades)
+		if chosen_upgrade != null:
+			chosen_upgrades.append(chosen_upgrade)
+		
+	if chosen_upgrades.size() == 0:
+		for i in 4:
+			chosen_upgrades.append(filler)
+	
 	return chosen_upgrades
 
 	

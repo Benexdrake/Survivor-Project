@@ -1,12 +1,11 @@
-[gd_resource type="Resource" script_class="Ability" load_steps=3 format=3 uid="uid://du2c5e6i8fln"]
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://du2c5e6i8fln"]
 
-[ext_resource type="Script" path="res://Scripts/Upgrades/ability.gd" id="1_c6ndx"]
-[ext_resource type="PackedScene" uid="uid://depbil6x5yymj" path="res://Scenes/Abilitys/BibleAbility/bible_ability_controller.tscn" id="1_rmj40"]
+[ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade.gd" id="1_cww0l"]
 
 [resource]
-script = ExtResource("1_c6ndx")
-ability_controller_scene = ExtResource("1_rmj40")
+resource_local_to_scene = true
+script = ExtResource("1_cww0l")
 id = "bible_upgrade"
 name = "More Bibles"
 max_quantity = 3
-description = "Spins +1 Bibles around you."
+description = "Spins +1 Bibles around you and increase Damage by 25%"

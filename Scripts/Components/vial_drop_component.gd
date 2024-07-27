@@ -1,13 +1,19 @@
 extends Node
+class_name VialDropComponent
 
-@export_range(0,1) var drop_percent:float = .5
-@export var health_component: Node
+var drop_percent:float = .5
+var health_component: HealthComponent
 @export var vial_scene: PackedScene
 
 func _ready():
+	pass
+	
+func config(set_drop_percent:float):
+	drop_percent = set_drop_percent
+	health_component = owner.health_component
 	(health_component as HealthComponent).died.connect(on_died)
 	
-	
+
 func on_died():
 	if randf() > drop_percent:
 		return

@@ -5,6 +5,8 @@ class_name BibleAbilityController
 @export var max_spawn = 2
 var spawns = 0
 
+var upgrade_level = 1
+
 @export var ability_scene: PackedScene
 @export var damage = 5
 
@@ -12,12 +14,14 @@ var spawns = 0
 @onready var spawn_timer = $SpawnTimer
 
 var d := 0.0
-var radius = 100.0
+var radius = 120.0
 var speed = 10.0
+
 
 func _ready():
 	timer.timeout.connect(on_timer_timeout)
 	spawn_timer.timeout.connect(on_spawn_timer_timeout)
+	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
 	
 func _process(delta):
 	var player = get_tree().get_first_node_in_group("player") as Node2D
@@ -55,3 +59,30 @@ func spawn():
 		spawns = 0
 		spawn_timer.stop()
 	
+func on_ability_upgrade_added(upgrade:AbilityUpgrade, current_upgrades: Dictionary):
+	if upgrade.id == "bible_upgrade":
+		upgrade_level += 1
+		if upgrade_level == 2:
+			damage *= 1.25
+			spawn_timer.wait_time = 0.4
+			max_spawn = 3
+			restart()
+		elif upgrade_level == 3:
+			damage *= 1.25
+			spawn_timer.wait_time = 0.3
+			max_spawn = 4
+			restart()
+		elif upgrade_level == 4:
+			damage *= 1.25
+			spawn_timer.wait_time = 0.5
+			max_spawn = 5
+			restart()
+		
+func restart():
+	var abilitys = get_tree().get_nodes_in_group("bible_ability")
+	for a in abilitys:
+		a.queue_free()
+	spawn_timer.start()
+	timer.stop()
+	timer.start()
+	spawn()

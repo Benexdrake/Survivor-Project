@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=3 format=3 uid="uid://uy2e34m7qnau"]
+
+[ext_resource type="PackedScene" uid="uid://ccx1hdqtafsk5" path="res://Scenes/Abilitys/JudismAuraAbility/judism_aura_ability_controller.tscn" id="1_k4mlb"]
+[ext_resource type="Script" path="res://Scripts/Upgrades/ability.gd" id="2_kcvy7"]
+
+[resource]
+script = ExtResource("2_kcvy7")
+ability_controller_scene = ExtResource("1_k4mlb")
+id = "david_star_unlock"
+name = "David Star Aura"
+max_quantity = 1
+description = "David Star protects you by attacking every .5sec any enemy in Range"

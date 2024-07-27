@@ -18,7 +18,10 @@ func _process(delta):
 	position = Vector2(sin(d * speed) * radius, cos(d * speed) * radius ) + player.global_position
 	
 func on_timer_timeout():
+	stop()
+	
+
+func stop():
 	var abilitys = get_tree().get_nodes_in_group("bible_ability")
 	for a in abilitys:
 		a.queue_free()
-	

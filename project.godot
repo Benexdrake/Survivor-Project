@@ -31,6 +31,10 @@ window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="viewport"
 
+[gui]
+
+theme/custom="res://Assets/Theme/theme.tres"
+
 [input]
 
 move_left={
@@ -74,3 +78,5 @@ left_click={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
