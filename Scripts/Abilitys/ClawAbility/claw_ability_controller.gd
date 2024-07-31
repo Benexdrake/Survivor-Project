@@ -22,7 +22,7 @@ func on_timer_timeout():
 		
 	foreground.add_child(ability_instance)
 	ability_instance.global_position = player.global_position
-	ability_instance.hitbox_component.damage = damage
+	ability_instance.hitbox_component.damage = damage + player.base_damage
 	
 	var scale = player.visuals.scale
 	ability_instance.scale = scale

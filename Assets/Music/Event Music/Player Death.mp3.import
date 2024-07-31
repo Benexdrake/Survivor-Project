@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bowmx2a2t84nd"
+path="res://.godot/imported/Player Death.mp3-fd61ac11d2dd10637b5a658d07aff5a7.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Event Music/Player Death.mp3"
+dest_files=["res://.godot/imported/Player Death.mp3-fd61ac11d2dd10637b5a658d07aff5a7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

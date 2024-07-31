@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cscnbrlurkce3"
+path="res://.godot/imported/Wilderness Daytime 1 (loop).mp3-1c3d69de737f0fb174f8b3f231900005.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Music Loops/Wilderness Daytime 1 (loop).mp3"
+dest_files=["res://.godot/imported/Wilderness Daytime 1 (loop).mp3-1c3d69de737f0fb174f8b3f231900005.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

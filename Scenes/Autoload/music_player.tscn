@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxiruyhda1hku"]
+
+[ext_resource type="Script" path="res://Scripts/Autoload/music_player.gd" id="2_fmhn1"]
+[ext_resource type="AudioStream" uid="uid://cscnbrlurkce3" path="res://Assets/Music/Music Loops/Wilderness Daytime 1 (loop).mp3" id="2_qcku1"]
+[ext_resource type="AudioStream" uid="uid://2ybcw6vpfdit" path="res://Assets/Music/Music Loops/Wilderness Daytime 2 (loop).mp3" id="3_gajr6"]
+[ext_resource type="AudioStream" uid="uid://clvepkjp3tspl" path="res://Assets/Music/Music Loops/Wilderness Nightfall 1 (loop).mp3" id="4_ygnft"]
+[ext_resource type="AudioStream" uid="uid://w7p8hf0rkh6y" path="res://Assets/Music/Music Loops/Wilderness Nightfall 2 (loop).mp3" id="5_r4hvo"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer"]
+process_mode = 3
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
+script = ExtResource("2_fmhn1")
+bgms = Array[AudioStream]([ExtResource("2_qcku1"), ExtResource("3_gajr6"), ExtResource("4_ygnft"), ExtResource("5_r4hvo")])
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

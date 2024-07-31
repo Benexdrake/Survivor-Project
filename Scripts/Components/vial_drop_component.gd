@@ -14,7 +14,7 @@ func config(set_drop_percent:float):
 	(health_component as HealthComponent).died.connect(on_died)
 	
 
-func on_died():
+func on_died(notinuse):
 	if randf() > drop_percent:
 		return
 	

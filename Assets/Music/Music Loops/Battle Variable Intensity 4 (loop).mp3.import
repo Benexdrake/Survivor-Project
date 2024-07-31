@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dy5s1c616851y"
+path="res://.godot/imported/Battle Variable Intensity 4 (loop).mp3-a1b11dd6e9395d63155f322af352f49b.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Music Loops/Battle Variable Intensity 4 (loop).mp3"
+dest_files=["res://.godot/imported/Battle Variable Intensity 4 (loop).mp3-a1b11dd6e9395d63155f322af352f49b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dpp7nais4oatp"
+path="res://.godot/imported/Town Daytime 1 (loop).mp3-cedaf24fe6ece2fba0878019ddf070af.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Music Loops/Town Daytime 1 (loop).mp3"
+dest_files=["res://.godot/imported/Town Daytime 1 (loop).mp3-cedaf24fe6ece2fba0878019ddf070af.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

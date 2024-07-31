@@ -1,12 +1,15 @@
-[gd_resource type="Resource" script_class="Ability" load_steps=3 format=3 uid="uid://dw8xgrsm3v5w6"]
+[gd_resource type="Resource" script_class="Ability" load_steps=4 format=3 uid="uid://dw8xgrsm3v5w6"]
 
 [ext_resource type="Script" path="res://Scripts/Upgrades/ability.gd" id="1_b1u0k"]
 [ext_resource type="PackedScene" uid="uid://cao5h580p6rjb" path="res://Scenes/Abilitys/FeatherAbility/feather_ability_controller.tscn" id="1_vt7l4"]
+[ext_resource type="Texture2D" uid="uid://c1dn5i1f3tpyj" path="res://Assets/feather.png" id="3_htn51"]
 
 [resource]
 script = ExtResource("1_b1u0k")
 ability_controller_scene = ExtResource("1_vt7l4")
 id = "feather_unlock"
+group_id = "feather"
 name = "Feather"
 max_quantity = 1
 description = "Periodically sends out a Feather"
+sprite = ExtResource("3_htn51")

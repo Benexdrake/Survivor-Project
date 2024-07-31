@@ -14,6 +14,7 @@ class_name BasicEnemy2
 @onready var vialdrop_component = $VialDropComponent
 @onready var death_component = $DeathComponent
 @onready var hit_flash_component = $HitFlashComponent
+@onready var ability_audio_stream_player_2d_component = $HitAudioPlayerComponent
 
 var timer = Timer.new()
 
@@ -21,6 +22,7 @@ var is_moving = true
 
 func _ready():
 	config()
+	$HurtboxComponent.hit.connect(on_hit)
 
 func _process(delta):
 	var rand = randf_range(0,20)
@@ -52,3 +54,6 @@ func set_is_moving(moving:bool):
 	is_moving = moving
 	
 
+func on_hit(hit):
+	health_component.hit_sound = hit
+	ability_audio_stream_player_2d_component.play_ability(hit)

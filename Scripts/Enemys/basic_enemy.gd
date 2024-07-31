@@ -14,10 +14,13 @@ class_name BasicEnemy
 @onready var vialdrop_component = $VialDropComponent
 @onready var death_component = $DeathComponent
 @onready var hit_flash_component = $HitFlashComponent
+@onready var audio_stream_player_component = $AudioStreamPlayerComponent
+
 
 
 func _ready():
 	config()
+	$HurtboxComponent.hit.connect(on_hit)
 
 func _process(delta):
 	velocity_component.accelerate_to_player()
@@ -35,3 +38,7 @@ func config():
 	death_component.config(sprite2D)
 	hit_flash_component.config(health_component,sprite2D)
 	
+
+func on_hit(hit):
+	health_component.hit_sound = hit
+	audio_stream_player_component.play_ability(hit)

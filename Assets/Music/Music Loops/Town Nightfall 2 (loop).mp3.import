@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b1g3mogpug10j"
+path="res://.godot/imported/Town Nightfall 2 (loop).mp3-6d2e57551c87b0542aa72a5815a2b6bb.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Music Loops/Town Nightfall 2 (loop).mp3"
+dest_files=["res://.godot/imported/Town Nightfall 2 (loop).mp3-6d2e57551c87b0542aa72a5815a2b6bb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

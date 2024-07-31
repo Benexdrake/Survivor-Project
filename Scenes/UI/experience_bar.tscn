@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://ucpeyg8oo82s"]
+[gd_scene load_steps=3 format=3 uid="uid://ucpeyg8oo82s"]
 
 [ext_resource type="Script" path="res://Scenes/UI/experience_bar.gd" id="1_top4s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pskvm"]
+bg_color = Color(0.0979587, 0.62939, 0.639179, 1)
 
 [node name="ExperienceBar" type="CanvasLayer"]
 script = ExtResource("1_top4s")
@@ -23,6 +26,23 @@ custom_minimum_size = Vector2(0, 8)
 layout_mode = 2
 size_flags_vertical = 8
 mouse_filter = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_pskvm")
 max_value = 1.0
 value = 0.5
 show_percentage = false
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 24
+text = "Level 1"
+horizontal_alignment = 2
+vertical_alignment = 2

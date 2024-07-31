@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://b5ngdm3cyq7ox"]
+
+[ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade.gd" id="1_ahq23"]
+[ext_resource type="Texture2D" uid="uid://r1q7ya2kpg8" path="res://Assets/HPRegen.jpeg" id="2_0gft3"]
+
+[resource]
+script = ExtResource("1_ahq23")
+id = "max_health_upgrade"
+group_id = "max_health"
+name = "Max Health"
+max_quantity = 5
+description = "20% more Health"
+sprite = ExtResource("2_0gft3")

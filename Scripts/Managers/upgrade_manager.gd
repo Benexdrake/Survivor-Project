@@ -15,7 +15,8 @@ var thunder_ability = preload("res://Resources/Upgrades/Thunder/thunder_ability.
 var feather_ability = preload("res://Resources/Upgrades/Feather/feather_ability.tres")
 var judism_aura_ability = preload("res://Resources/Upgrades/JudismAura/judism_aura_ability.tres")
 
-var max_health_upgrade = preload("res://Resources/Upgrades/MaxHealth/max_health_upgrade.tres")
+var max_health_upgrade = preload("res://Resources/Upgrades/Health/max_health_upgrade.tres")
+var health_regeneration_upgrade = preload("res://Resources/Upgrades/Health/health_regeneration_upgrade.tres")
 
 func _ready():
 	upgrade_pool.add_item(bible_ability, 10)
@@ -24,7 +25,7 @@ func _ready():
 	upgrade_pool.add_item(feather_ability, 5)
 	upgrade_pool.add_item(judism_aura_ability, 5)
 	upgrade_pool.add_item(max_health_upgrade,12)
-	
+	upgrade_pool.add_item(health_regeneration_upgrade,14)
 	
 	experience_manager.level_up.connect(on_level_up)
 	
@@ -39,6 +40,7 @@ func apply_upgrade(upgrade: AbilityUpgrade):
 	else:
 		current_upgrades[upgrade.id]["quantity"] += 1
 		
+	BgUpgrades.current_upgrades = current_upgrades
 	if upgrade.max_quantity > 0:
 		var current_quantity = current_upgrades[upgrade.id]["quantity"]
 		if current_quantity == upgrade.max_quantity:

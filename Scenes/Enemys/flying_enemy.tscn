@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://jw7uxdeaieow"]
+[gd_scene load_steps=14 format=3 uid="uid://jw7uxdeaieow"]
 
 [ext_resource type="Script" path="res://Scripts/Enemys/basic_enemy.gd" id="1_0gv1r"]
 [ext_resource type="Texture2D" uid="uid://85jeob7yrg3k" path="res://Assets/Enemys/Enemy.png" id="1_gny2n"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d3gbnxq2mchbv" path="res://Scenes/Components/hurtbox_component.tscn" id="4_xtmwp"]
 [ext_resource type="Shader" path="res://Resources/Shader/hit_flash_component.gdshader" id="7_71aqs"]
 [ext_resource type="PackedScene" uid="uid://cfn1tpssanmni" path="res://Scenes/Components/hit_flash_component.tscn" id="8_4lg3x"]
+[ext_resource type="PackedScene" uid="uid://dcqrpevy2s3ho" path="res://Scenes/Components/audio_stream_player_component.tscn" id="10_axw55"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fkpjj"]
 resource_local_to_scene = true
@@ -26,11 +27,13 @@ collision_layer = 8
 collision_mask = 9
 motion_mode = 1
 script = ExtResource("1_0gv1r")
-max_health = 5.0
+max_health = 50.0
 max_speed = 100
 acceleration = 0.5
 drop_percent = 1.0
 sprite = ExtResource("1_gny2n")
+
+[node name="AudioStreamPlayerComponent" parent="." instance=ExtResource("10_axw55")]
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_hh21o")]
 

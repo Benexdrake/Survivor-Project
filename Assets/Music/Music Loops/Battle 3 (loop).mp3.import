@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c8p66tv1tkvak"
+path="res://.godot/imported/Battle 3 (loop).mp3-baf5a0a6956cfd8474596cf150423d53.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Music Loops/Battle 3 (loop).mp3"
+dest_files=["res://.godot/imported/Battle 3 (loop).mp3-baf5a0a6956cfd8474596cf150423d53.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 @export var health:int
+@export var base_damage:int
 var max_health:int
 @export var max_speed: int
 @export var acceleration_smoothing:int
@@ -13,6 +14,8 @@ var max_health:int
 @onready var abilities = $Abilities
 @onready var visuals = $Visuals
 
+var health_regeneration_timer:Timer
+var health_regeneration_level:int = 1
 
 var number_colliding_bodies = 0
 
@@ -33,7 +36,7 @@ func _process(delta):
 	#health_component.current_health = health_component.max_health
 	movement_vector = get_movement_vector()
 	if movement_vector != Vector2.ZERO:
-		$%AnimatedSprite2D.play("run")
+		$%AnimatedSprite2D.play("1")
 	else:
 		$%AnimatedSprite2D.pause()
 	var direction = movement_vector.normalized()
@@ -60,7 +63,6 @@ func check_deal_damage():
 		return
 	health_component.damage(1)
 	damage_interval_timer.start()
-	print(health_component.current_health)
 	
 
 func update_health_display():
@@ -80,7 +82,9 @@ func on_damage_interval_timer_timeout():
 	
 	
 func on_health_changed():
+	GameEvents.emit_player_damaged()
 	update_health_display()
+	$HitStreamPlayer.play()
 
 
 func on_ability_upgrade_added(ability_upgrade:AbilityUpgrade, current_upgrades: Dictionary):
@@ -92,4 +96,15 @@ func on_ability_upgrade_added(ability_upgrade:AbilityUpgrade, current_upgrades: 
 	if ability_upgrade.id == "max_health_upgrade":
 		health_component.max_health *= 1.20
 		update_health_display()
-
+		
+	if ability_upgrade.id == "health_regeneration_upgrade":
+		health_regeneration_timer = Timer.new()
+		health_regeneration_timer.timeout.connect(on_health_regeneration_timer_timeout)
+		health_regeneration_timer.wait_time = 0.5
+		add_child(health_regeneration_timer)
+		health_regeneration_timer.start()
+		health_regeneration_level += 1
+		
+func on_health_regeneration_timer_timeout():
+	health_component.current_health += ((max_health / 100) * health_regeneration_level)
+	update_health_display()

@@ -4,9 +4,15 @@ extends Node
 
 @export var damage:float = 3
 
+@onready var timer = $Timer
 
 func _ready():
-	var player = get_tree().get_first_node_in_group("player") as Node2D
+	timer.timeout.connect(on_timer_timeout)
+	
+
+
+func on_timer_timeout():
+	var player = get_tree().get_first_node_in_group("player") as Player
 	if player == null:
 		return
 	
@@ -14,4 +20,5 @@ func _ready():
 		
 	var ability_instance = ability_scene.instantiate() as Node2D
 	foreground.add_child(ability_instance)
-	ability_instance.hitbox_component.damage = damage
+	ability_instance.hitbox_component.damage = damage + player.base_damage
+	ability_instance.global_position = player.global_position

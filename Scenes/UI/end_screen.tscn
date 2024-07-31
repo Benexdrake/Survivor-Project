@@ -1,10 +1,85 @@
-[gd_scene load_steps=2 format=3 uid="uid://b10df6vkld01i"]
+[gd_scene load_steps=9 format=3 uid="uid://b10df6vkld01i"]
 
 [ext_resource type="Script" path="res://Scripts/UI/end_screen.gd" id="1_rke6t"]
+[ext_resource type="PackedScene" uid="uid://ddj8blxbhm20n" path="res://Scenes/UI/sound_button.tscn" id="2_ltob4"]
+[ext_resource type="AudioStream" uid="uid://ol0qr7b467r4" path="res://Assets/Music/Event Music/Victory.mp3" id="3_jqboa"]
+[ext_resource type="AudioStream" uid="uid://bowmx2a2t84nd" path="res://Assets/Music/Event Music/Player Death.mp3" id="4_02c0d"]
+
+[sub_resource type="Animation" id="Animation_x3gmo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vrsy6"]
+resource_name = "in"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bt0jj"]
+resource_name = "out"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4fe8q"]
+_data = {
+"RESET": SubResource("Animation_x3gmo"),
+"in": SubResource("Animation_vrsy6"),
+"out": SubResource("Animation_bt0jj")
+}
 
 [node name="EndScreen" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_rke6t")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4fe8q")
+}
+autoplay = "in"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0214347, 0.0214346, 0.0214346, 0.517647)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -14,6 +89,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -32,7 +108,9 @@ layout_mode = 2
 [node name="TitleLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
 text = "Victory"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -40,16 +118,24 @@ vertical_alignment = 1
 [node name="DescriptionLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 text = "Du hast per Schwarzarbeit X DM erarbeitet!"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="RestartButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="RestartButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_ltob4")]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Restart"
 
-[node name="QuitButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="QuitButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_ltob4")]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Quit"
+
+[node name="VictoryStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jqboa")
+
+[node name="DefeatStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_02c0d")

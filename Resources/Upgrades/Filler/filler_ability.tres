@@ -1,10 +1,13 @@
-[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://ke4gak6atlfd"]
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://ke4gak6atlfd"]
 
 [ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade.gd" id="1_qfq71"]
+[ext_resource type="Texture2D" uid="uid://bx617xva8145i" path="res://Assets/coin_01a.png" id="2_rdqk0"]
 
 [resource]
 script = ExtResource("1_qfq71")
 id = "filler"
+group_id = "filler"
 name = "Money"
 max_quantity = 1
 description = "You get 10DM"
+sprite = ExtResource("2_rdqk0")

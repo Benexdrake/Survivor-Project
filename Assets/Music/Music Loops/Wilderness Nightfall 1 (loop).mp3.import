@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://clvepkjp3tspl"
+path="res://.godot/imported/Wilderness Nightfall 1 (loop).mp3-f2694a6c70a0c58c22e49eb1f227e744.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Music Loops/Wilderness Nightfall 1 (loop).mp3"
+dest_files=["res://.godot/imported/Wilderness Nightfall 1 (loop).mp3-f2694a6c70a0c58c22e49eb1f227e744.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

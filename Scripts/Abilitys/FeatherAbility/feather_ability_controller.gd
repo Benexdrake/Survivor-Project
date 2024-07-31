@@ -9,7 +9,7 @@ func _ready():
 	
 	
 func on_timer_timeout():
-	var player = get_tree().get_first_node_in_group("player") as Node2D
+	var player = get_tree().get_first_node_in_group("player") as Player
 	
 	if player == null:
 		return
@@ -22,5 +22,5 @@ func on_timer_timeout():
 	var ability_instance = ability_scene.instantiate() as Node2D
 	foreground.add_child(ability_instance)
 	ability_instance.global_position = player.global_position
-	ability_instance.hitbox_component.damage = damage
+	ability_instance.hitbox_component.damage = damage + player.base_damage
 	
