@@ -15,16 +15,18 @@ class_name BasicEnemy
 @onready var death_component = $DeathComponent
 @onready var hit_flash_component = $HitFlashComponent
 @onready var audio_stream_player_component = $AudioStreamPlayerComponent
+@onready var timer = $Timer
 
-
+@export var knockback_power: int = 50
 
 func _ready():
 	config()
 	$HurtboxComponent.hit.connect(on_hit)
 
 func _process(delta):
-	velocity_component.accelerate_to_player()
-	velocity_component.move(self)
+	if timer.is_stopped():
+		velocity_component.accelerate_to_player()
+		velocity_component.move(self)
 	
 	var move_sign = sign(velocity.x)
 	if move_sign != 0:
@@ -40,5 +42,15 @@ func config():
 	
 
 func on_hit(hit):
+	timer.start()
+	
 	health_component.hit_sound = hit
 	audio_stream_player_component.play_ability(hit)
+	knockback()
+	
+func knockback():
+	var player = get_tree().get_first_node_in_group("player") as Player
+	
+	var knockback_direction = -velocity * knockback_power
+	velocity = knockback_direction
+	move_and_slide()

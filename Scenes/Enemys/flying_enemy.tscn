@@ -27,7 +27,7 @@ collision_layer = 8
 collision_mask = 9
 motion_mode = 1
 script = ExtResource("1_0gv1r")
-max_health = 50.0
+max_health = 1000.0
 max_speed = 100
 acceleration = 0.5
 drop_percent = 1.0
@@ -77,3 +77,7 @@ color = Color(0, 0, 0, 0.556863)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -14)
 shape = SubResource("CircleShape2D_u7ld6")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
