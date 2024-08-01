@@ -26,7 +26,7 @@ func _ready():
 	%AnimatedSprite2D.sprite_frames
 	
 	player_resource = GameEvents.player_resource
-	
+	GameEvents.upgrades.append(player_resource.ability)
 	start()
 	
 	health_component.current_health = hp
@@ -51,7 +51,6 @@ func start():
 	
 	var ability_instance = player_resource.ability.ability_controller_scene.instantiate()
 	%Abilities.add_child(ability_instance)
-	print(ability_instance.name)
 	
 	$%AnimatedSprite2D.play("default")
 	$%AnimatedSprite2D.pause()
@@ -90,6 +89,7 @@ func check_deal_damage():
 
 func update_health_display():
 	health_bar.value = health_component.get_health_percent()
+
 
 func on_body_entered(body:Node2D):
 	number_colliding_bodies += 1

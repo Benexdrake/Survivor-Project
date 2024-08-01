@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dlr0jj3c54smu"]
+[gd_scene load_steps=14 format=3 uid="uid://dlr0jj3c54smu"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/upgrade_manager.gd" id="1_mdbol"]
 [ext_resource type="PackedScene" uid="uid://bfgy8kni4qofl" path="res://Scenes/UI/upgrade_screen.tscn" id="3_6diqs"]
@@ -12,10 +12,11 @@
 [ext_resource type="Resource" uid="uid://du2c5e6i8fln" path="res://Resources/Upgrades/Bible/bible_upgrade.tres" id="10_seio5"]
 [ext_resource type="Resource" uid="uid://b5ngdm3cyq7ox" path="res://Resources/Upgrades/Health/health_regeneration_upgrade.tres" id="11_612t7"]
 [ext_resource type="Resource" uid="uid://cfbdgt6egwjbi" path="res://Resources/Upgrades/Health/max_health_upgrade.tres" id="12_og427"]
+[ext_resource type="Resource" uid="uid://dxr6p4tgf7u0o" path="res://Resources/Upgrades/Thunder/thunder_upgrade.tres" id="13_0jfta"]
 
 [node name="UpgradeManager" type="Node"]
 script = ExtResource("1_mdbol")
 filler = ExtResource("5_fhwkd")
 upgrade_screen_scene = ExtResource("3_6diqs")
 abilities = Array[Resource("res://Scripts/Upgrades/ability.gd")]([ExtResource("4_5hvho"), ExtResource("5_aep4k"), ExtResource("6_syfpt"), ExtResource("7_tcbu7"), ExtResource("8_3f4qt"), ExtResource("9_8jd7r")])
-ability_upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([ExtResource("10_seio5"), ExtResource("11_612t7"), ExtResource("12_og427")])
+ability_upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([ExtResource("10_seio5"), ExtResource("11_612t7"), ExtResource("12_og427"), ExtResource("13_0jfta")])

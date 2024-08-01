@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://dxr6p4tgf7u0o"]
+
+[ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade.gd" id="1_bfexl"]
+[ext_resource type="Texture2D" uid="uid://cn0ni3wn8votq" path="res://Assets/Donner.jpeg" id="2_kcvr8"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_bfexl")
+id = "thunder_upgrade"
+group_id = "thunder"
+name = "Thunder+"
+max_quantity = 3
+description = "Extremly Thunderclouds"
+sprite = ExtResource("2_kcvr8")
+need_unlock = true
+weight = 10

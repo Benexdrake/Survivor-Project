@@ -6,6 +6,7 @@ signal player_damaged
 
 var money:int = 0
 var player_resource:PlayerResource
+var upgrades: Array[AbilityUpgrade]
 
 func emit_experience_vial_collected(number:float):
 	experience_vial_collected.emit(number)

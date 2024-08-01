@@ -10,25 +10,8 @@ extends Node
 var current_upgrades = {}
 var upgrade_pool: WeightedTable = WeightedTable.new()
 
-#var bible_ability = preload("res://Resources/Upgrades/Bible/bible_ability.tres")
-#var bible_upgrade = preload("res://Resources/Upgrades/Bible/bible_upgrade.tres")
-#
-#var claw_ability = preload("res://Resources/Upgrades/Claw/claw_ability.tres")
-#var thunder_ability = preload("res://Resources/Upgrades/Thunder/thunder_ability.tres")
-#var feather_ability = preload("res://Resources/Upgrades/Feather/feather_ability.tres")
-#var judism_aura_ability = preload("res://Resources/Upgrades/JudismAura/david_star_aura_ability.tres")
-#
-#var max_health_upgrade = preload("res://Resources/Upgrades/Health/max_health_upgrade.tres")
-#var health_regeneration_upgrade = preload("res://Resources/Upgrades/Health/health_regeneration_upgrade.tres")
-
 func _ready():
-	#upgrade_pool.add_item(bible_ability, 10)
-	#upgrade_pool.add_item(claw_ability, 3)
-	#upgrade_pool.add_item(thunder_ability, 8)
-	#upgrade_pool.add_item(feather_ability, 5)
-	#upgrade_pool.add_item(judism_aura_ability, 5)
-	#upgrade_pool.add_item(max_health_upgrade,12)
-	#upgrade_pool.add_item(health_regeneration_upgrade,14)
+
 	
 	for ability in abilities:
 		if GameEvents.player_resource.ability.id == ability.id:
@@ -62,6 +45,7 @@ func apply_upgrade(upgrade: AbilityUpgrade):
 			upgrade_pool.remove_item(upgrade)
 		
 	update_upgrade_pool(upgrade)
+	GameEvents.upgrades.append(upgrade)
 	GameEvents.emit_ability_upgrade_added(upgrade,current_upgrades)
 	
 # Erweiterbar für Upgrades von Fähigkeiten
