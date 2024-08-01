@@ -11,3 +11,5 @@ name = "Max Health"
 max_quantity = 5
 description = "20% more Health"
 sprite = ExtResource("2_0gft3")
+need_unlock = false
+weight = 5

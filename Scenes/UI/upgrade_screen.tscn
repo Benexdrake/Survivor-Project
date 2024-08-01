@@ -116,6 +116,12 @@ self_modulate = Color(0.381974, 0.557401, 0.791696, 1)
 layout_mode = 2
 mouse_filter = 1
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/PanelContainer"]
 layout_mode = 2
-text = "Bla Bla about some Figur of the past."
+theme_override_constants/margin_left = 8
+
+[node name="StoryLabel" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Bla Bla about some Figur of the past asdasdadsad asdasdadasd asdasdasd asdasdasd asdasdasdad das da da dadadad adasdasd ada da dasda da dad ad ad asd ad asd ad a da dad a sda sda d ad ad a dad"
+autowrap_mode = 2

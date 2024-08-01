@@ -2,7 +2,8 @@ extends Node
 
 @export var ability_scene: PackedScene
 
-@export var damage:float = 3
+@export var damage:float
+@export_range(.1,1) var damage_percent:float
 
 @onready var timer = $Timer
 
@@ -20,5 +21,5 @@ func on_timer_timeout():
 		
 	var ability_instance = ability_scene.instantiate() as Node2D
 	foreground.add_child(ability_instance)
-	ability_instance.hitbox_component.damage = damage + player.base_damage
+	ability_instance.hitbox_component.damage = damage + player.base_dmg * damage_percent
 	ability_instance.global_position = player.global_position

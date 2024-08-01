@@ -12,3 +12,5 @@ name = "More Bibles"
 max_quantity = 3
 description = "Spins +1 Bibles around you and increase Damage by 25%"
 sprite = ExtResource("2_mrvia")
+need_unlock = true
+weight = 10

@@ -1,12 +1,15 @@
 extends CharacterBody2D
 class_name Player
 
-@export var health:int
-@export var base_damage:int
+var player_resource:PlayerResource
+
+@export var player_name:String
+@export var hp:float
+@export var base_dmg:float
 var max_health:int
 @export var max_speed: int
 @export var acceleration_smoothing:int
-@export var movement_vector:Vector2
+var movement_vector:Vector2
 
 @onready var damage_interval_timer = $DamageIntervalTimer
 @onready var health_component = $HealthComponent
@@ -20,9 +23,15 @@ var health_regeneration_level:int = 1
 var number_colliding_bodies = 0
 
 func _ready():
-	health_component.current_health = health
-	health_component.max_health = health
-	max_health = health
+	%AnimatedSprite2D.sprite_frames
+	
+	player_resource = GameEvents.player_resource
+	
+	start()
+	
+	health_component.current_health = hp
+	health_component.max_health = hp
+	max_health = hp
 	
 	$CollisionArea2D.body_entered.connect(on_body_entered)
 	$CollisionArea2D.body_exited.connect(on_body_exited)
@@ -31,12 +40,26 @@ func _ready():
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
 	update_health_display()
 	
+
+func start():
+	player_name = player_resource.player_name
+	hp = player_resource.hp
+	base_dmg = player_resource.dmg
+	max_speed = player_resource.speed
+	acceleration_smoothing = player_resource.acceleration
+	%AnimatedSprite2D.sprite_frames = player_resource.sprite_frames
+	
+	var ability_instance = player_resource.ability.ability_controller_scene.instantiate()
+	%Abilities.add_child(ability_instance)
+	print(ability_instance.name)
+	
+	$%AnimatedSprite2D.play("default")
+	$%AnimatedSprite2D.pause()
 	
 func _process(delta):
-	#health_component.current_health = health_component.max_health
 	movement_vector = get_movement_vector()
 	if movement_vector != Vector2.ZERO:
-		$%AnimatedSprite2D.play("1")
+		$%AnimatedSprite2D.play("default")
 	else:
 		$%AnimatedSprite2D.pause()
 	var direction = movement_vector.normalized()

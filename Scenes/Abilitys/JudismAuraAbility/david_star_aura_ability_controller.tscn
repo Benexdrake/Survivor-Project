@@ -3,9 +3,10 @@
 [ext_resource type="Script" path="res://Scripts/Abilitys/JudismAuraAbility/judism_aura_ability_controller.gd" id="1_eh1cs"]
 [ext_resource type="PackedScene" uid="uid://4o2dar78pusj" path="res://Scenes/Abilitys/JudismAuraAbility/david_star_aura_ability.tscn" id="2_wsjrb"]
 
-[node name="JudismAuraAbilityController" type="Node"]
+[node name="DavidStarAuraAbilityController" type="Node"]
 script = ExtResource("1_eh1cs")
 ability_scene = ExtResource("2_wsjrb")
+damage_percent = 0.4
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

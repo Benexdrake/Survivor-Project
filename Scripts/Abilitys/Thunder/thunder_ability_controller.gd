@@ -37,7 +37,7 @@ func on_timer_timeout():
 	
 	get_tree().get_first_node_in_group("foreground_layer").add_child(sword_instance)
 	
-	sword_instance.hitbox_component.damage = damage + player.base_damage
+	sword_instance.hitbox_component.damage = damage + player.base_dmg
 	
 	sword_instance.global_position = random_enemy.global_position
 	sword_instance.global_position += Vector2.RIGHT.rotated(randf_range(0,TAU)) * 4

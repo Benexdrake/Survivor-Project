@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="PlayerResource" load_steps=10 format=3 uid="uid://di531ubruio82"]
+
+[ext_resource type="Resource" uid="uid://wywhea18i5yl" path="res://Resources/Upgrades/Bible/bible_ability.tres" id="1_lyso7"]
+[ext_resource type="Texture2D" uid="uid://b87y21j62ucn7" path="res://Assets/Player/player2anim1.png" id="2_p0tx3"]
+[ext_resource type="Script" path="res://Scripts/Player/player_resource.gd" id="2_wiwui"]
+[ext_resource type="Texture2D" uid="uid://lqe7nij2y8vp" path="res://Assets/Player/2/player2anim1.png" id="4_mujeo"]
+[ext_resource type="Texture2D" uid="uid://b3jg8mx1brq1f" path="res://Assets/Player/2/player2anim2.png" id="5_0c3rr"]
+[ext_resource type="Texture2D" uid="uid://cs26iqj5txd8q" path="res://Assets/Player/2/player2anim3.png" id="6_20atw"]
+[ext_resource type="Texture2D" uid="uid://dtun03csyn27i" path="res://Assets/Player/2/player2anim5.png" id="7_10uet"]
+[ext_resource type="Texture2D" uid="uid://dlmnys685wj71" path="res://Assets/Player/2/player2anim6.png" id="8_skaua"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wc2d2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_mujeo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0c3rr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_20atw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_10uet")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_skaua")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("2_wiwui")
+id = "2"
+player_name = "Asuka"
+preview = ExtResource("2_p0tx3")
+ability = ExtResource("1_lyso7")
+sprite_frames = SubResource("SpriteFrames_wc2d2")
+hp = 150
+dmg = 40.0
+speed = 300
+acceleration = 25
+stories = Array[String](["adasdasdasdasdasdasda111111111"])
+hp_show = 5
+dmg_show = 2.0
+speed_show = 4

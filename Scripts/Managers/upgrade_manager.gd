@@ -4,28 +4,43 @@ extends Node
 @export var experience_manager: Node
 @export var upgrade_screen_scene: PackedScene
 
+@export var abilities:Array[Ability]
+@export var ability_upgrades:Array[AbilityUpgrade]
+
 var current_upgrades = {}
 var upgrade_pool: WeightedTable = WeightedTable.new()
 
-var bible_ability = preload("res://Resources/Upgrades/Bible/bible_ability.tres")
-var bible_upgrade = preload("res://Resources/Upgrades/Bible/bible_upgrade.tres")
-
-var claw_ability = preload("res://Resources/Upgrades/Claw/claw_ability.tres")
-var thunder_ability = preload("res://Resources/Upgrades/Thunder/thunder_ability.tres")
-var feather_ability = preload("res://Resources/Upgrades/Feather/feather_ability.tres")
-var judism_aura_ability = preload("res://Resources/Upgrades/JudismAura/judism_aura_ability.tres")
-
-var max_health_upgrade = preload("res://Resources/Upgrades/Health/max_health_upgrade.tres")
-var health_regeneration_upgrade = preload("res://Resources/Upgrades/Health/health_regeneration_upgrade.tres")
+#var bible_ability = preload("res://Resources/Upgrades/Bible/bible_ability.tres")
+#var bible_upgrade = preload("res://Resources/Upgrades/Bible/bible_upgrade.tres")
+#
+#var claw_ability = preload("res://Resources/Upgrades/Claw/claw_ability.tres")
+#var thunder_ability = preload("res://Resources/Upgrades/Thunder/thunder_ability.tres")
+#var feather_ability = preload("res://Resources/Upgrades/Feather/feather_ability.tres")
+#var judism_aura_ability = preload("res://Resources/Upgrades/JudismAura/david_star_aura_ability.tres")
+#
+#var max_health_upgrade = preload("res://Resources/Upgrades/Health/max_health_upgrade.tres")
+#var health_regeneration_upgrade = preload("res://Resources/Upgrades/Health/health_regeneration_upgrade.tres")
 
 func _ready():
-	upgrade_pool.add_item(bible_ability, 10)
-	upgrade_pool.add_item(claw_ability, 3)
-	upgrade_pool.add_item(thunder_ability, 8)
-	upgrade_pool.add_item(feather_ability, 5)
-	upgrade_pool.add_item(judism_aura_ability, 5)
-	upgrade_pool.add_item(max_health_upgrade,12)
-	upgrade_pool.add_item(health_regeneration_upgrade,14)
+	#upgrade_pool.add_item(bible_ability, 10)
+	#upgrade_pool.add_item(claw_ability, 3)
+	#upgrade_pool.add_item(thunder_ability, 8)
+	#upgrade_pool.add_item(feather_ability, 5)
+	#upgrade_pool.add_item(judism_aura_ability, 5)
+	#upgrade_pool.add_item(max_health_upgrade,12)
+	#upgrade_pool.add_item(health_regeneration_upgrade,14)
+	
+	for ability in abilities:
+		if GameEvents.player_resource.ability.id == ability.id:
+			continue
+		upgrade_pool.add_item(ability, ability.weight)
+	
+	for ability in ability_upgrades:
+		if ability.need_unlock == true:
+			continue
+		upgrade_pool.add_item(ability, ability.weight)
+		
+	update_upgrade_pool(GameEvents.player_resource.ability)
 	
 	experience_manager.level_up.connect(on_level_up)
 	
@@ -51,8 +66,11 @@ func apply_upgrade(upgrade: AbilityUpgrade):
 	
 # Erweiterbar für Upgrades von Fähigkeiten
 func update_upgrade_pool(chosen_upgrade: AbilityUpgrade):
-	if chosen_upgrade.id == bible_ability.id:
-		upgrade_pool.add_item(bible_upgrade,10)
+	for i in ability_upgrades.size():
+		if ability_upgrades[i].group_id == chosen_upgrade.group_id:
+			upgrade_pool.add_item(ability_upgrades[i], ability_upgrades[i].weight)
+			ability_upgrades.remove_at(i)
+			break;
 
 
 func pick_upgrades():

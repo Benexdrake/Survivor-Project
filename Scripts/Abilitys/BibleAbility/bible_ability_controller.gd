@@ -51,7 +51,7 @@ func spawn():
 	var ability_instance = ability_scene.instantiate() as Node2D
 	foreground.add_child(ability_instance)
 	ability_instance.global_position = player.global_position
-	ability_instance.hitbox_component.damage = damage + player.base_damage
+	ability_instance.hitbox_component.damage = damage + player.base_dmg
 	
 	spawns += 1
 	

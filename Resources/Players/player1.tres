@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="PlayerResource" load_steps=8 format=3 uid="uid://bm1seocfdncg7"]
+
+[ext_resource type="Resource" uid="uid://chokn035e5pbm" path="res://Resources/Upgrades/Slash/slash_ability.tres" id="1_0g3ei"]
+[ext_resource type="Script" path="res://Scripts/Player/player_resource.gd" id="1_k3epa"]
+[ext_resource type="Texture2D" uid="uid://dkh14c88us4wt" path="res://Assets/Player/1/player1.png" id="2_efkdp"]
+[ext_resource type="Texture2D" uid="uid://d3bng2c07j0gl" path="res://Assets/Player/1/player2.png" id="4_2mhm6"]
+[ext_resource type="Texture2D" uid="uid://c1e27g8j3lt1" path="res://Assets/Player/1/player3.png" id="5_u6vq2"]
+[ext_resource type="Texture2D" uid="uid://bskx4jkr4gn6w" path="res://Assets/Player/1/player4.png" id="6_nwfh0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_22ksg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_efkdp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2mhm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_u6vq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nwfh0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("1_k3epa")
+id = "1"
+player_name = "Ray"
+preview = ExtResource("2_efkdp")
+ability = ExtResource("1_0g3ei")
+sprite_frames = SubResource("SpriteFrames_22ksg")
+hp = 100
+dmg = 50.0
+speed = 200
+acceleration = 25
+stories = Array[String](["2222222222", "3333333333"])
+hp_show = 4
+dmg_show = 3.0
+speed_show = 3

@@ -13,7 +13,7 @@ var target_experience = 5
 func _ready():
 	GameEvents.experience_vial_collected.connect(on_experience_vial_collected)
 
-func increment_experience(number:float):
+func increment_experience(number:int):
 	$AudioStreamPlayer2D.stop()
 	current_experience = min(current_experience + number, target_experience)
 	experience_updated.emit(current_experience,target_experience, current_level)
@@ -24,6 +24,7 @@ func increment_experience(number:float):
 		experience_updated.emit(current_experience,target_experience, current_level)
 		level_up.emit(current_level)
 	$AudioStreamPlayer2D.play()
+	GameEvents.money += number
 
-func on_experience_vial_collected(number:float):
+func on_experience_vial_collected(number:int):
 	increment_experience(number)

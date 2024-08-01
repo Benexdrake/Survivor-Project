@@ -11,3 +11,5 @@ name = "Health Regeneration"
 max_quantity = 5
 description = "1% Health Regeneration"
 sprite = ExtResource("2_wh83q")
+need_unlock = false
+weight = 14

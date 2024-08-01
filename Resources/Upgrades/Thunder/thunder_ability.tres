@@ -13,3 +13,5 @@ name = "Thunder"
 max_quantity = 1
 description = "Hits randomly an Enemy with Thunder"
 sprite = ExtResource("3_fnr2t")
+need_unlock = false
+weight = 6

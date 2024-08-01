@@ -7,3 +7,5 @@ class_name AbilityUpgrade
 @export var max_quantity:int
 @export_multiline var description: String
 @export var sprite:Texture
+@export var need_unlock:bool = false
+@export var weight:int

@@ -13,3 +13,5 @@ name = "Feather"
 max_quantity = 1
 description = "Periodically sends out a Feather"
 sprite = ExtResource("3_htn51")
+need_unlock = false
+weight = 3

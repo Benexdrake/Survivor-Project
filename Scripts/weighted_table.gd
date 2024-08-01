@@ -34,3 +34,7 @@ func pick_item(exclude: Array = []):
 		iteration_sum += item["weight"]
 		if chosen_weight <= iteration_sum:
 			return item["item"]
+			
+func check_items():
+	for item in items:
+		var ability = GameEvents.player_resource.ability as Ability

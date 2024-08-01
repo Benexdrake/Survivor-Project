@@ -4,7 +4,7 @@ class_name HealthComponent
 signal died
 signal health_changed
 
-var max_health: float = 10
+var max_health: float
 var current_health:float
 
 var hit_sound:String
@@ -27,6 +27,6 @@ func get_health_percent():
 	return min(current_health / max_health,1)
 
 func check_death():
-	if current_health == 0:
+	if current_health <= 0:
 		died.emit(hit_sound)
 		owner.queue_free()

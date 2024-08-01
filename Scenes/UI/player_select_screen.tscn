@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://cj62qmxdo7juy"]
+
+[ext_resource type="Script" path="res://Scripts/UI/player_select_screen.gd" id="1_00gve"]
+[ext_resource type="Resource" uid="uid://bm1seocfdncg7" path="res://Resources/Players/player1.tres" id="2_5myv6"]
+[ext_resource type="PackedScene" uid="uid://dn2ilajba0yy7" path="res://Scenes/UI/player_select_card.tscn" id="2_jlh51"]
+[ext_resource type="Resource" uid="uid://di531ubruio82" path="res://Resources/Players/player2.tres" id="3_fhknw"]
+[ext_resource type="Resource" uid="uid://coaavtb6srjky" path="res://Resources/Players/ganesha.tres" id="4_qjhkn"]
+
+[node name="PlayerSelectScreen" type="CanvasLayer"]
+script = ExtResource("1_00gve")
+player_cards = Array[Resource("res://Scripts/Player/player_resource.gd")]([ExtResource("2_5myv6"), ExtResource("3_fhknw"), ExtResource("4_qjhkn")])
+player_card = ExtResource("2_jlh51")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 5

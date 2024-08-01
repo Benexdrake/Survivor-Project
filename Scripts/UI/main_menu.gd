@@ -13,7 +13,7 @@ func _ready():
 
 
 func on_play_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Level/main.tscn")
+	get_tree().change_scene_to_file("res://Scenes/UI/player_select_screen.tscn")
 	
 	
 func on_options_pressed():

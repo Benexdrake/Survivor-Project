@@ -18,7 +18,7 @@ class_name BasicEnemy2
 
 @onready var knockback_component = $KnockbackComponent
 
-
+@export var knockback_power: int = 5
 var is_moving = true
 
 func _ready():

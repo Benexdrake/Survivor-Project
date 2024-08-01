@@ -1,10 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://u8x0f7nqkupw"]
+[gd_scene load_steps=10 format=3 uid="uid://u8x0f7nqkupw"]
 
-[ext_resource type="Texture2D" uid="uid://bjiw2y8nu5u5r" path="res://Assets/Player/player.png" id="1_mcpjh"]
 [ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_x6251"]
 [ext_resource type="PackedScene" uid="uid://jnkl30satsbb" path="res://Scenes/Components/health_component.tscn" id="2_pkqqw"]
 [ext_resource type="AudioStream" uid="uid://ckcxxti7f30w1" path="res://Assets/SFX/12_Player_Movement_SFX/61_Hit_03.wav" id="2_uncls"]
-[ext_resource type="PackedScene" uid="uid://c0hq8atuexrb4" path="res://Scenes/Abilitys/SlashAbility/slash_ability_controller.tscn" id="3_lcf3o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0f5j"]
 bg_color = Color(0, 0.118862, 0.0955543, 1)
@@ -29,49 +27,15 @@ radius = 42.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_koq4k"]
 size = Vector2(32, 3)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ngax3"]
-atlas = ExtResource("1_mcpjh")
-region = Rect2(0, 0, 36, 34)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v8s3q"]
-atlas = ExtResource("1_mcpjh")
-region = Rect2(36, 0, 36, 34)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_al6db"]
-atlas = ExtResource("1_mcpjh")
-region = Rect2(72, 0, 36, 34)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eg04e"]
-atlas = ExtResource("1_mcpjh")
-region = Rect2(108, 0, 36, 34)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_lerqk"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ngax3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v8s3q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_al6db")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eg04e")
-}],
-"loop": true,
-"name": &"1",
-"speed": 5.0
-}]
+[sub_resource type="SpriteFrames" id="SpriteFrames_clt12"]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 0
 motion_mode = 1
 script = ExtResource("1_x6251")
-health = 100
-base_damage = 50
-max_speed = 125
+hp = 100.0
+base_dmg = 100.0
+max_speed = 300
 acceleration_smoothing = 25
 
 [node name="HitStreamPlayer" type="AudioStreamPlayer2D" parent="."]
@@ -81,8 +45,7 @@ max_distance = 300.0
 [node name="HealthComponent" parent="." instance=ExtResource("2_pkqqw")]
 
 [node name="Abilities" type="Node" parent="."]
-
-[node name="SlashAbilityController" parent="Abilities" instance=ExtResource("3_lcf3o")]
+unique_name_in_owner = true
 
 [node name="DamageIntervalTimer" type="Timer" parent="."]
 wait_time = 0.5
@@ -126,8 +89,7 @@ shape = SubResource("RectangleShape2D_koq4k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals"]
 unique_name_in_owner = true
-sprite_frames = SubResource("SpriteFrames_lerqk")
-animation = &"1"
+sprite_frames = SubResource("SpriteFrames_clt12")
 
 [node name="Shadow" type="ColorRect" parent="Visuals"]
 anchors_preset = 8

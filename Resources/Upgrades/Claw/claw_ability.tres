@@ -13,3 +13,5 @@ name = "Fire Claw"
 max_quantity = 1
 description = "Tiger claw that burns all with a slash"
 sprite = ExtResource("3_ruhbd")
+need_unlock = false
+weight = 15
