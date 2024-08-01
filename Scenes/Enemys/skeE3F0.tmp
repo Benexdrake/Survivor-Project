@@ -35,7 +35,7 @@ collision_layer = 8
 collision_mask = 9
 motion_mode = 1
 script = ExtResource("1_obslr")
-max_health = 100.0
+max_health = 1.0
 max_speed = 60
 acceleration = 10.0
 drop_percent = 1.0
@@ -54,7 +54,6 @@ streams = Array[AudioStream]([ExtResource("4_fq7w0"), ExtResource("5_ehg4m"), Ex
 hit_flash_material = SubResource("ShaderMaterial_txwdu")
 
 [node name="KnockbackComponent" parent="." instance=ExtResource("14_d15rq")]
-knockback_power = 500
 
 [node name="DeathComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_e16vh")]
 health_component = NodePath("../HealthComponent")

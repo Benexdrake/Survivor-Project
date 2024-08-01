@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://smp3kudg03ba"]
+[gd_resource type="Theme" load_steps=17 format=3 uid="uid://smp3kudg03ba"]
 
 [ext_resource type="FontFile" uid="uid://ff27gedg4uqa" path="res://Assets/Theme/AtariGames.ttf" id="1_4cmi0"]
 [ext_resource type="Texture2D" uid="uid://dfhxviw1bqxgl" path="res://Assets/Theme/ui.png" id="1_76wdy"]
@@ -49,6 +49,42 @@ texture_margin_right = 3.0
 texture_margin_bottom = 3.0
 region_rect = Rect2(4, 20, 8, 8)
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jij7m"]
+size = Vector2(0, 0)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3ujtq"]
+size = Vector2(0, 0)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_r6wx7"]
+size = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ad51b"]
+bg_color = Color(0.0633614, 0.554246, 0.660292, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bsqde"]
+bg_color = Color(0.0633614, 0.554246, 0.660292, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i358s"]
+content_margin_left = 2.0
+content_margin_top = 6.0
+content_margin_right = 2.0
+content_margin_bottom = 6.0
+bg_color = Color(0, 0.118862, 0.0955543, 1)
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.118862, 0.0955543, 1)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ypxir"]
 texture = ExtResource("1_76wdy")
 texture_margin_left = 4.0
@@ -84,6 +120,12 @@ Button/styles/focus = SubResource("StyleBoxEmpty_vmcq4")
 Button/styles/hover = SubResource("StyleBoxTexture_r108l")
 Button/styles/normal = SubResource("StyleBoxTexture_0rd8d")
 Button/styles/pressed = SubResource("StyleBoxTexture_gah31")
+HSlider/icons/grabber = SubResource("PlaceholderTexture2D_jij7m")
+HSlider/icons/grabber_disabled = SubResource("PlaceholderTexture2D_3ujtq")
+HSlider/icons/grabber_highlight = SubResource("PlaceholderTexture2D_r6wx7")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_ad51b")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_bsqde")
+HSlider/styles/slider = SubResource("StyleBoxFlat_i358s")
 Label/constants/line_spacing = 0
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_ypxir")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_k0f5j")

@@ -17,6 +17,9 @@ class_name BasicEnemy
 @onready var audio_stream_player_component = $AudioStreamPlayerComponent
 @onready var timer = $Timer
 
+@onready var knockback_component = $KnockbackComponent
+
+
 @export var knockback_power: int = 50
 
 func _ready():
@@ -24,13 +27,7 @@ func _ready():
 	$HurtboxComponent.hit.connect(on_hit)
 
 func _process(delta):
-	if timer.is_stopped():
-		velocity_component.accelerate_to_player()
-		velocity_component.move(self)
-	
-	var move_sign = sign(velocity.x)
-	if move_sign != 0:
-		visuals.scale = Vector2(-move_sign,1)
+	move()
 	
 func config():
 	sprite2D.texture = sprite
@@ -40,17 +37,16 @@ func config():
 	death_component.config(sprite2D)
 	hit_flash_component.config(health_component,sprite2D)
 	
+func move():
+	if knockback_component.timer.is_stopped():
+		velocity_component.accelerate_to_player()
+		velocity_component.move(self)
+	
+		var move_sign = sign(velocity.x)
+		if move_sign != 0:
+			visuals.scale = Vector2(-move_sign,1)
 
 func on_hit(hit):
-	timer.start()
-	
+	knockback_component.knockback()
 	health_component.hit_sound = hit
 	audio_stream_player_component.play_ability(hit)
-	knockback()
-	
-func knockback():
-	var player = get_tree().get_first_node_in_group("player") as Player
-	
-	var knockback_direction = -velocity * knockback_power
-	velocity = knockback_direction
-	move_and_slide()

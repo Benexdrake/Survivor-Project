@@ -13,3 +13,4 @@ hover = ExtResource("2_7ko02")
 press = ExtResource("3_fr7fu")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"

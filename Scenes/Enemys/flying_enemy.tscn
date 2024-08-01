@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://jw7uxdeaieow"]
+[gd_scene load_steps=15 format=3 uid="uid://jw7uxdeaieow"]
 
 [ext_resource type="Script" path="res://Scripts/Enemys/basic_enemy.gd" id="1_0gv1r"]
 [ext_resource type="Texture2D" uid="uid://85jeob7yrg3k" path="res://Assets/Enemys/Enemy.png" id="1_gny2n"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d3gbnxq2mchbv" path="res://Scenes/Components/hurtbox_component.tscn" id="4_xtmwp"]
 [ext_resource type="Shader" path="res://Resources/Shader/hit_flash_component.gdshader" id="7_71aqs"]
 [ext_resource type="PackedScene" uid="uid://cfn1tpssanmni" path="res://Scenes/Components/hit_flash_component.tscn" id="8_4lg3x"]
+[ext_resource type="PackedScene" uid="uid://dyrwjscb6nc4p" path="res://Scenes/Components/knockback_component.tscn" id="9_1ad20"]
 [ext_resource type="PackedScene" uid="uid://dcqrpevy2s3ho" path="res://Scenes/Components/audio_stream_player_component.tscn" id="10_axw55"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fkpjj"]
@@ -17,7 +18,7 @@ shader = ExtResource("7_71aqs")
 shader_parameter/lerp_percent = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hl4u0"]
-radius = 11.0
+radius = 9.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u7ld6"]
 radius = 5.0
@@ -27,7 +28,7 @@ collision_layer = 8
 collision_mask = 9
 motion_mode = 1
 script = ExtResource("1_0gv1r")
-max_health = 1000.0
+max_health = 50.0
 max_speed = 100
 acceleration = 0.5
 drop_percent = 1.0
@@ -43,6 +44,8 @@ sprite = ExtResource("1_gny2n")
 
 [node name="HitFlashComponent" parent="." instance=ExtResource("8_4lg3x")]
 hit_flash_material = SubResource("ShaderMaterial_fkpjj")
+
+[node name="KnockbackComponent" parent="." instance=ExtResource("9_1ad20")]
 
 [node name="DeathComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_i7qbf")]
 health_component = NodePath("../HealthComponent")

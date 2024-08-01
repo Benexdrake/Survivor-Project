@@ -1,8 +1,11 @@
 extends Node
 
 @export var end_screen_scene:PackedScene
+@export var music:AudioStream
 
 func _ready():
+	MusicPlayer.stream = music
+	MusicPlayer.play()
 	%Player.health_component.died.connect(on_player_died)
 
 func on_player_died():

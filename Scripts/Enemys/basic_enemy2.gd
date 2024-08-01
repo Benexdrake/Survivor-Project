@@ -16,7 +16,8 @@ class_name BasicEnemy2
 @onready var hit_flash_component = $HitFlashComponent
 @onready var ability_audio_stream_player_2d_component = $HitAudioPlayerComponent
 
-var timer = Timer.new()
+@onready var knockback_component = $KnockbackComponent
+
 
 var is_moving = true
 
@@ -25,22 +26,7 @@ func _ready():
 	$HurtboxComponent.hit.connect(on_hit)
 
 func _process(delta):
-	var rand = randf_range(0,20)
-	if rand < 15:
-		set_is_moving(false)
-	else:
-		set_is_moving(true)
-		
-	if is_moving:
-		velocity_component.accelerate_to_player()
-	else:
-		velocity_component.decelerate()
-		
-	velocity_component.move(self)
-	
-	var move_sign = sign(velocity.x)
-	if move_sign != 0:
-		visuals.scale = Vector2(-move_sign,1)
+	move()
 	
 func config():
 	sprite2D.texture = sprite
@@ -50,10 +36,32 @@ func config():
 	death_component.config(sprite2D)
 	hit_flash_component.config(health_component,sprite2D)
 	
+
+func move():
+	if knockback_component.timer.is_stopped():
+		var rand = randf_range(0,20)
+		if rand < 15:
+			set_is_moving(false)
+		else:
+			set_is_moving(true)
+		
+		if is_moving:
+			velocity_component.accelerate_to_player()
+		else:
+			velocity_component.decelerate()
+		
+		velocity_component.move(self)
+	
+		var move_sign = sign(velocity.x)
+		if move_sign != 0:
+			visuals.scale = Vector2(-move_sign,1)
+
+	
 func set_is_moving(moving:bool):
 	is_moving = moving
 	
 
 func on_hit(hit):
+	knockback_component.knockback()
 	health_component.hit_sound = hit
 	ability_audio_stream_player_2d_component.play_ability(hit)

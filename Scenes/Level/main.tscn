@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b6bf5wruutdee"]
+[gd_scene load_steps=14 format=3 uid="uid://b6bf5wruutdee"]
 
 [ext_resource type="PackedScene" uid="uid://u8x0f7nqkupw" path="res://Scenes/Player/player.tscn" id="1_a70ul"]
 [ext_resource type="PackedScene" uid="uid://c1m7beb2vo6hq" path="res://Scenes/Managers/enemy_manager.tscn" id="1_lu7yx"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b7siy8nhaor26" path="res://Scenes/GameCamera/game_camera.tscn" id="1_vshca"]
 [ext_resource type="PackedScene" uid="uid://b10df6vkld01i" path="res://Scenes/UI/end_screen.tscn" id="2_del3l"]
 [ext_resource type="PackedScene" uid="uid://dx4xt66rgiiv8" path="res://Scenes/Managers/arena_time_manager.tscn" id="2_n8c88"]
+[ext_resource type="AudioStream" uid="uid://coavg8lvmndiy" path="res://Assets/Music/Music Loops/Battle 2 (loop).mp3" id="3_fytnn"]
 [ext_resource type="PackedScene" uid="uid://cg08j6y8tvvuo" path="res://Scenes/Managers/experience_manager.tscn" id="5_fjrto"]
 [ext_resource type="PackedScene" uid="uid://ojcv63rkefwv" path="res://Scenes/UI/arena_time_ui.tscn" id="6_ctyrs"]
 [ext_resource type="PackedScene" uid="uid://dlr0jj3c54smu" path="res://Scenes/Managers/upgrade_manager.tscn" id="7_8xqu0"]
@@ -16,6 +17,7 @@
 [node name="Main" type="Node"]
 script = ExtResource("1_s5k32")
 end_screen_scene = ExtResource("2_del3l")
+music = ExtResource("3_fytnn")
 
 [node name="Vignette" parent="." instance=ExtResource("12_ulky5")]
 
