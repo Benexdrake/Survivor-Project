@@ -15,8 +15,10 @@ var enemy_table = WeightedTable.new()
 var base_spawn_time = 0
 var arena_difficulty:int = 1
 
+var current_enemies : Array[EnemyResource] = []
+
 func _ready():
-	enemy_table.add_item(basic_enemy_scene,10)
+	on_arena_difficulty_increased(1)
 	
 	base_spawn_time = timer.wait_time
 	timer.timeout.connect(on_timer_timeout)
@@ -48,30 +50,33 @@ func on_timer_timeout():
 	if player == null:
 		return
 		
-	var enemies : Array[EnemyResource] = []
-	
-	for enemy_spawn_phase in enemy_spawn_phases:
-		if enemy_spawn_phase.arena_difficulty == arena_difficulty:
-			for enemy_resource in enemy_spawn_phase.enemy_resources:
-				enemies.append(enemy_resource)
-			timer.wait_time = enemy_spawn_phase.spawn_time
-			timer.start()
-			break
+	var size = current_enemies.size() - 1
 		
-	var size = enemies.size() - 1
-	
-	if enemies.size() == 0:
-		return
-	
-	var enemy_resource = enemies[randi_range(0, size)]
+	var enemy_resource = current_enemies[randi_range(0, size)]
 		
 	var pos = get_spawn_position()
 	var node = get_tree().get_first_node_in_group("entities_layer")
 	
 	enemy_resource.create_enemy(pos,node)
+	timer.start()
 
 func on_arena_difficulty_increased(arena_difficult:int):
+	current_enemies = []
+	
 	self.arena_difficulty = arena_difficult
-	var time_off = (.1 / 12) * arena_difficult
-	time_off = min(time_off,.7)
-	timer.wait_time = base_spawn_time - time_off
+	
+	for enemy_spawn_phase in enemy_spawn_phases:
+		if enemy_spawn_phase.arena_difficulty == arena_difficulty:
+			for enemy_resource in enemy_spawn_phase.enemy_resources:
+				current_enemies.append(enemy_resource)
+			timer.wait_time = enemy_spawn_phase.spawn_time
+			break
+	
+	if current_enemies.size() == 0:
+		for enemy_spawn_phase in enemy_spawn_phases:
+			for enemy_resource in enemy_spawn_phase.enemy_resources:
+				current_enemies.append(enemy_resource)
+			timer.wait_time = enemy_spawn_phase.spawn_time
+			
+	timer.start()
+		
