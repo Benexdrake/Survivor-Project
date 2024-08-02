@@ -1,40 +1,42 @@
 extends CharacterBody2D
 class_name BasicEnemy2
 
-@export var max_health: float = 10
-@export var max_speed:int
-@export var acceleration:float = 5
-@export_range(0,1) var drop_percent:float = .5
-@export var sprite:Texture
+#@export var max_health: float = 10
+#@export var max_speed:int
+#@export var acceleration:float = 5
+#@export_range(0,1) var drop_percent:float = .5
+#@export var sprite:Texture
 
 @onready var visuals = $Visuals
-@onready var sprite2D:Sprite2D = $Visuals/Sprite2D
 @onready var health_component:HealthComponent = $HealthComponent
 @onready var velocity_component:VelocityComponent = $VelocityComponent
 @onready var vialdrop_component = $VialDropComponent
 @onready var death_component = $DeathComponent
 @onready var hit_flash_component = $HitFlashComponent
 @onready var ability_audio_stream_player_2d_component = $AudioStreamPlayerComponent
-
+@onready var animated_sprite_2d = $Visuals/AnimatedSprite2D
 @onready var knockback_component = $KnockbackComponent
 
 @export var knockback_power: int = 5
 var is_moving = true
 
 func _ready():
-	config()
+	
 	$HurtboxComponent.hit.connect(on_hit)
 
 func _process(delta):
 	move()
 	
-func config():
-	sprite2D.texture = sprite
+func config(sprite_frames:SpriteFrames, max_health, max_speed, acceleration, drop_percent):
+	var texture = sprite_frames.get_frame_texture("default",0)
+	
+	animated_sprite_2d.sprite_frames = sprite_frames
 	health_component.config(max_health)
 	velocity_component.config(max_speed, acceleration)
 	vialdrop_component.config(drop_percent)
-	death_component.config(sprite2D)
-	hit_flash_component.config(health_component,sprite2D)
+	death_component.config(texture)
+	hit_flash_component.config(health_component,texture)
+	$Visuals/AnimatedSprite2D.play("default")
 	
 
 func move():

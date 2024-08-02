@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=10 format=3 uid="uid://c4h11uiey3x0s"]
+
+[ext_resource type="PackedScene" uid="uid://jw7uxdeaieow" path="res://Scenes/Enemys/flying_enemy.tscn" id="1_m0iqr"]
+[ext_resource type="Script" path="res://Scripts/Enemys/enemy_resource.gd" id="2_lsckv"]
+[ext_resource type="Texture2D" uid="uid://b1l3u0ke5hhfn" path="res://Assets/Enemys/Pebble_Run.png" id="3_ow0yp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kr3ov"]
+atlas = ExtResource("3_ow0yp")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_je4ul"]
+atlas = ExtResource("3_ow0yp")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqjbr"]
+atlas = ExtResource("3_ow0yp")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ona5"]
+atlas = ExtResource("3_ow0yp")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcgqb"]
+atlas = ExtResource("3_ow0yp")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d3vmx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kr3ov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_je4ul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqjbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ona5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcgqb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("2_lsckv")
+enemy_scene = ExtResource("1_m0iqr")
+sprite_frames = SubResource("SpriteFrames_d3vmx")
+id = "Pebble"
+max_health = 50.0
+max_speed = 100
+acceleration = 30.0
+drop_percent = 0.5
+weight = 18

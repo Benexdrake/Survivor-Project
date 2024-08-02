@@ -51,7 +51,7 @@ func on_timer_timeout():
 		thunder_ball_instance.global_position = thunder_instance.global_position
 		
 	
-func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary):
+func on_ability_upgrade_added(upgrade: AbilityUpgrade):
 	if upgrade.id == "thunder_upgrade":
 		thunder_ball = true
 		damage *= .25

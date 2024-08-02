@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://85jeob7yrg3k"
-path="res://.godot/imported/Enemy.png-0a1c007b3651233b5d25a6212ee17a99.ctex"
+uid="uid://cbl7e5t251erc"
+path="res://.godot/imported/Golem_Armor_Run.png-06a084943d446d914238e2b9ec5c2c31.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemys/Enemy.png"
-dest_files=["res://.godot/imported/Enemy.png-0a1c007b3651233b5d25a6212ee17a99.ctex"]
+source_file="res://Assets/Enemys/Golem_Armor_Run.png"
+dest_files=["res://.godot/imported/Golem_Armor_Run.png-06a084943d446d914238e2b9ec5c2c31.ctex"]
 
 [params]
 

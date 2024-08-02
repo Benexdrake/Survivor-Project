@@ -6,7 +6,7 @@ class_name PlayerResource
 @export var player_name:String
 
 @export var preview: Texture
-@export var ability:Ability
+@export var ability:AbilityUpgradeCard
 @export var sprite_frames:SpriteFrames
 
 @export var hp:int

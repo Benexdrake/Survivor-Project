@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PlayerResource" load_steps=5 format=3 uid="uid://euclng4x2xui"]
 
-[ext_resource type="Resource" uid="uid://d1wunv3q8gg" path="res://Resources/Upgrades/Thunder/thunder_ability.tres" id="1_mki1i"]
+[ext_resource type="Resource" uid="uid://bu4jso5tt11p7" path="res://Resources/Upgrades/Thunder/thunder_ability_card.tres" id="1_knd86"]
 [ext_resource type="Texture2D" uid="uid://c3l3ejhjoqdnp" path="res://Assets/godbrithil.png" id="2_2nbxb"]
 [ext_resource type="Script" path="res://Scripts/Player/player_resource.gd" id="3_gswyp"]
 
@@ -20,7 +20,7 @@ script = ExtResource("3_gswyp")
 id = "4"
 player_name = "Godbrithil"
 preview = ExtResource("2_2nbxb")
-ability = ExtResource("1_mki1i")
+ability = ExtResource("1_knd86")
 sprite_frames = SubResource("SpriteFrames_wc2d2")
 hp = 80
 dmg = 150.0

@@ -24,7 +24,6 @@ func _ready():
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
 	
 func _process(delta):
-	var player = get_tree().get_first_node_in_group("player") as Node2D
 	
 	d += delta
 	
@@ -59,7 +58,7 @@ func spawn():
 		spawns = 0
 		spawn_timer.stop()
 	
-func on_ability_upgrade_added(upgrade:AbilityUpgrade, current_upgrades: Dictionary):
+func on_ability_upgrade_added(upgrade:AbilityUpgrade):
 	if upgrade.id == "bible_upgrade":
 		upgrade_level += 1
 		if upgrade_level == 2:

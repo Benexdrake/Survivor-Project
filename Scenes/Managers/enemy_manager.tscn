@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1m7beb2vo6hq"]
+[gd_scene load_steps=5 format=3 uid="uid://c1m7beb2vo6hq"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/enemy_manager.gd" id="1_7errj"]
 [ext_resource type="PackedScene" uid="uid://jw7uxdeaieow" path="res://Scenes/Enemys/flying_enemy.tscn" id="2_w5ugr"]
-[ext_resource type="PackedScene" uid="uid://m4c105rclpk5" path="res://Scenes/Enemys/skelet_enemy.tscn" id="3_4oem2"]
+[ext_resource type="PackedScene" uid="uid://m4c105rclpk5" path="res://Scenes/Enemys/big_enemy.tscn" id="3_4oem2"]
+[ext_resource type="Resource" uid="uid://ddlci0yua74yc" path="res://Resources/EnemySpawnPhase/phase2.tres" id="6_awtrd"]
 
 [node name="EnemyManager" type="Node"]
 script = ExtResource("1_7errj")
 basic_enemy_scene = ExtResource("2_w5ugr")
 skelet_enemy_scene = ExtResource("3_4oem2")
+enemy_spawn_phases = Array[Resource("res://Scripts/EnemySpawnPhase/enemy_spawn_phase.gd")]([ExtResource("6_awtrd")])
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5

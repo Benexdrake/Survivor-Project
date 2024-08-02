@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AbilityUpgradeCard" load_steps=4 format=3 uid="uid://ctvjb0fsad0si"]
+
+[ext_resource type="PackedScene" uid="uid://c0hq8atuexrb4" path="res://Scenes/Abilitys/SlashAbility/slash_ability_controller.tscn" id="1_6ldik"]
+[ext_resource type="Texture2D" uid="uid://b0ewqc5gmamev" path="res://Assets/sword_02c.png" id="2_gyhkf"]
+[ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade_card.gd" id="3_rk2q0"]
+
+[resource]
+script = ExtResource("3_rk2q0")
+ability_controller_scene = ExtResource("1_6ldik")
+upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([])
+id = "slash"
+level = 0
+max_level = 1
+ability_name = "Slash"
+description = "Slashs enemies in Range"
+preview = ExtResource("2_gyhkf")
+weight = 12

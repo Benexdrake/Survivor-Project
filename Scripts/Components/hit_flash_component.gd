@@ -1,7 +1,7 @@
 extends Node
 
 var health_component: HealthComponent
-var sprite: Sprite2D
+var sprite: Sprite2D = Sprite2D.new()
 @export var hit_flash_material:ShaderMaterial
 
 var hit_flash_tween: Tween
@@ -10,9 +10,9 @@ func _ready():
 	pass
 	
 
-func config(set_health_component: HealthComponent, set_sprite: Sprite2D):
+func config(set_health_component: HealthComponent, set_sprite):
 	health_component = set_health_component
-	sprite = set_sprite
+	sprite.texture = set_sprite
 	health_component.health_changed.connect(on_health_changed)
 	sprite.material = hit_flash_material
 	

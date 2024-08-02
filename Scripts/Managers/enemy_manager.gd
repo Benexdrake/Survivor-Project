@@ -8,9 +8,12 @@ const SPAWN_RADIUS = 500
 
 @onready var timer = $Timer
 
+@export var enemy_spawn_phases: Array[EnemySpawnPhase]
+
 var enemy_table = WeightedTable.new()
 
 var base_spawn_time = 0
+var arena_difficulty:int = 1
 
 func _ready():
 	enemy_table.add_item(basic_enemy_scene,10)
@@ -41,21 +44,34 @@ func get_spawn_position():
 	return spawn_position
 	
 func on_timer_timeout():
-	timer.start()
 	var player = get_tree().get_first_node_in_group("player") as Node2D
 	if player == null:
 		return
+		
+	var enemies : Array[EnemyResource] = []
 	
-	var enemy_scene = enemy_table.pick_item()
+	for enemy_spawn_phase in enemy_spawn_phases:
+		if enemy_spawn_phase.arena_difficulty == arena_difficulty:
+			for enemy_resource in enemy_spawn_phase.enemy_resources:
+				enemies.append(enemy_resource)
+			timer.wait_time = enemy_spawn_phase.spawn_time
+			timer.start()
+			break
+		
+	var size = enemies.size() - 1
 	
-	var enemy = enemy_scene.instantiate() as Node2D
-	get_tree().get_first_node_in_group("entities_layer").add_child(enemy)
-	enemy.global_position = get_spawn_position()
+	if enemies.size() == 0:
+		return
+	
+	var enemy_resource = enemies[randi_range(0, size)]
+		
+	var pos = get_spawn_position()
+	var node = get_tree().get_first_node_in_group("entities_layer")
+	
+	enemy_resource.create_enemy(pos,node)
 
-func on_arena_difficulty_increased(arena_difficulty:int):
-	var time_off = (.1 / 12) * arena_difficulty
+func on_arena_difficulty_increased(arena_difficult:int):
+	self.arena_difficulty = arena_difficult
+	var time_off = (.1 / 12) * arena_difficult
 	time_off = min(time_off,.7)
 	timer.wait_time = base_spawn_time - time_off
-	
-	if arena_difficulty == 1:
-		enemy_table.add_item(skelet_enemy_scene,20)

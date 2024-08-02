@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PlayerResource" load_steps=10 format=3 uid="uid://di531ubruio82"]
 
-[ext_resource type="Resource" uid="uid://wywhea18i5yl" path="res://Resources/Upgrades/Bible/bible_ability.tres" id="1_lyso7"]
+[ext_resource type="Resource" uid="uid://ba52adg337cfr" path="res://Resources/Upgrades/Bible/bible_ability_card.tres" id="1_bvhdd"]
 [ext_resource type="Texture2D" uid="uid://b87y21j62ucn7" path="res://Assets/Player/player2anim1.png" id="2_p0tx3"]
 [ext_resource type="Script" path="res://Scripts/Player/player_resource.gd" id="2_wiwui"]
 [ext_resource type="Texture2D" uid="uid://lqe7nij2y8vp" path="res://Assets/Player/2/player2anim1.png" id="4_mujeo"]
@@ -37,7 +37,7 @@ script = ExtResource("2_wiwui")
 id = "2"
 player_name = "Asuka"
 preview = ExtResource("2_p0tx3")
-ability = ExtResource("1_lyso7")
+ability = ExtResource("1_bvhdd")
 sprite_frames = SubResource("SpriteFrames_wc2d2")
 hp = 150
 dmg = 40.0

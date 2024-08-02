@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5mf3871it3ar"
-path="res://.godot/imported/Enemy2.png-80590c947a7f20c1b5d34ae19c87e8c8.ctex"
+uid="uid://db820rtckwm3r"
+path="res://.godot/imported/Bat_Fly.png-adf116a32b01e18542248aa891bc8964.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Enemys/Enemy2.png"
-dest_files=["res://.godot/imported/Enemy2.png-80590c947a7f20c1b5d34ae19c87e8c8.ctex"]
+source_file="res://Assets/Enemys/Bat_Fly.png"
+dest_files=["res://.godot/imported/Bat_Fly.png-adf116a32b01e18542248aa891bc8964.ctex"]
 
 [params]
 

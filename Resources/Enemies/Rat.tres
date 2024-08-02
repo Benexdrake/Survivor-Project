@@ -1,0 +1,66 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=11 format=3 uid="uid://3ek0m6f24nbq"]
+
+[ext_resource type="PackedScene" uid="uid://d1qrq7lw10py" path="res://Scenes/Enemys/small_enemy.tscn" id="1_xkpup"]
+[ext_resource type="Script" path="res://Scripts/Enemys/enemy_resource.gd" id="2_2345i"]
+[ext_resource type="Texture2D" uid="uid://yqw4ugx6wd7j" path="res://Assets/Enemys/Rat_Run.png" id="3_svdmg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbwc7"]
+atlas = ExtResource("3_svdmg")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vw4s"]
+atlas = ExtResource("3_svdmg")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3u7hb"]
+atlas = ExtResource("3_svdmg")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr373"]
+atlas = ExtResource("3_svdmg")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qjhv"]
+atlas = ExtResource("3_svdmg")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hulp8"]
+atlas = ExtResource("3_svdmg")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u4a5s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbwc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vw4s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3u7hb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yr373")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qjhv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hulp8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("2_2345i")
+enemy_scene = ExtResource("1_xkpup")
+sprite_frames = SubResource("SpriteFrames_u4a5s")
+id = "Rat"
+max_health = 30.0
+max_speed = 100
+acceleration = 30.0
+drop_percent = 0.5
+weight = 12

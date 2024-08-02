@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AbilityUpgradeCard" load_steps=4 format=3 uid="uid://6kt1jubldnw0"]
+
+[ext_resource type="PackedScene" uid="uid://cgklwm4bruprs" path="res://Scenes/Abilitys/ClawAbility/claw_ability_controller.tscn" id="1_hygo7"]
+[ext_resource type="Texture2D" uid="uid://bil4qf6poknnk" path="res://Assets/Tiger Klauen.jpeg" id="2_0q5iv"]
+[ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade_card.gd" id="3_jyfo6"]
+
+[resource]
+script = ExtResource("3_jyfo6")
+ability_controller_scene = ExtResource("1_hygo7")
+upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([])
+id = "claw"
+level = 0
+max_level = 1
+ability_name = "Claw"
+description = "Claw Attack"
+preview = ExtResource("2_0q5iv")
+weight = 12

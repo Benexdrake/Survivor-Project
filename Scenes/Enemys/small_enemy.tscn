@@ -1,0 +1,81 @@
+[gd_scene load_steps=14 format=3 uid="uid://d1qrq7lw10py"]
+
+[ext_resource type="Script" path="res://Scripts/Enemys/basic_enemy.gd" id="1_h5pji"]
+[ext_resource type="PackedScene" uid="uid://dcqrpevy2s3ho" path="res://Scenes/Components/audio_stream_player_component.tscn" id="2_713ma"]
+[ext_resource type="PackedScene" uid="uid://jnkl30satsbb" path="res://Scenes/Components/health_component.tscn" id="3_j46cb"]
+[ext_resource type="PackedScene" uid="uid://5t48vqnhunai" path="res://Scenes/Components/vial_drop_component.tscn" id="4_d0krk"]
+[ext_resource type="PackedScene" uid="uid://bjfpqxunjkyw2" path="res://Scenes/Components/velocity_component.tscn" id="5_pdiqi"]
+[ext_resource type="PackedScene" uid="uid://cfn1tpssanmni" path="res://Scenes/Components/hit_flash_component.tscn" id="6_kneh4"]
+[ext_resource type="Shader" path="res://Resources/Shader/hit_flash_component.gdshader" id="7_684fu"]
+[ext_resource type="PackedScene" uid="uid://dyrwjscb6nc4p" path="res://Scenes/Components/knockback_component.tscn" id="8_r1tex"]
+[ext_resource type="PackedScene" uid="uid://c2ao038ji85tt" path="res://Scenes/Components/death_component.tscn" id="9_7r3ja"]
+[ext_resource type="PackedScene" uid="uid://d3gbnxq2mchbv" path="res://Scenes/Components/hurtbox_component.tscn" id="10_3i1qf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fkpjj"]
+resource_local_to_scene = true
+shader = ExtResource("7_684fu")
+shader_parameter/lerp_percent = 0.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hl4u0"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u7ld6"]
+radius = 5.0
+
+[node name="SmallEnemy" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 8
+collision_mask = 9
+motion_mode = 1
+script = ExtResource("1_h5pji")
+
+[node name="AudioStreamPlayerComponent" parent="." instance=ExtResource("2_713ma")]
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_j46cb")]
+
+[node name="VialDropComponent" parent="." instance=ExtResource("4_d0krk")]
+
+[node name="VelocityComponent" parent="." instance=ExtResource("5_pdiqi")]
+
+[node name="HitFlashComponent" parent="." instance=ExtResource("6_kneh4")]
+hit_flash_material = SubResource("ShaderMaterial_fkpjj")
+
+[node name="KnockbackComponent" parent="." instance=ExtResource("8_r1tex")]
+knockback_power = 30.0
+
+[node name="DeathComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("9_7r3ja")]
+health_component = NodePath("../HealthComponent")
+
+[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("10_3i1qf")]
+audio_bus_name = &"SFX"
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_hl4u0")
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals"]
+position = Vector2(0, -17)
+
+[node name="Shadow" type="ColorRect" parent="Visuals"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -1.0
+offset_right = 10.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.556863)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_u7ld6")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true

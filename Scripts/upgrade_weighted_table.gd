@@ -21,7 +21,6 @@ func remove_item(ability: AbilityUpgrade):
 
 
 func pick_item(exclude: Array = []):
-	
 	var adjusted_abilities: Array[AbilityUpgrade] = ability_upgrades
 	var adjusted_weight_sum = weight_sum
 	
@@ -34,10 +33,18 @@ func pick_item(exclude: Array = []):
 			adjusted_abilities.append(ability)
 			adjusted_weight_sum += ability.weight
 	
+	var item
+	
+	while(item == null):
+		item = find_item(adjusted_weight_sum,adjusted_abilities)
+	
+	return item
+			
+func find_item(adjusted_weight_sum, adjusted_abilities):
 	var chosen_weight = randi_range(1, adjusted_weight_sum)
 	var iteration_sum = 0
 	for ability in adjusted_abilities:
 		iteration_sum += ability.weight
 		if chosen_weight <= iteration_sum:
-			return ability
-			
+			if ability.level < ability.max_level:
+				return ability

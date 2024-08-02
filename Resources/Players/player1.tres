@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PlayerResource" load_steps=8 format=3 uid="uid://bm1seocfdncg7"]
 
-[ext_resource type="Resource" uid="uid://chokn035e5pbm" path="res://Resources/Upgrades/Slash/slash_ability.tres" id="1_0g3ei"]
+[ext_resource type="Resource" uid="uid://ctvjb0fsad0si" path="res://Resources/Upgrades/Slash/slash_ability_card.tres" id="1_1ot0l"]
 [ext_resource type="Script" path="res://Scripts/Player/player_resource.gd" id="1_k3epa"]
 [ext_resource type="Texture2D" uid="uid://dkh14c88us4wt" path="res://Assets/Player/1/player1.png" id="2_efkdp"]
 [ext_resource type="Texture2D" uid="uid://d3bng2c07j0gl" path="res://Assets/Player/1/player2.png" id="4_2mhm6"]
@@ -32,7 +32,7 @@ script = ExtResource("1_k3epa")
 id = "1"
 player_name = "Ray"
 preview = ExtResource("2_efkdp")
-ability = ExtResource("1_0g3ei")
+ability = ExtResource("1_1ot0l")
 sprite_frames = SubResource("SpriteFrames_22ksg")
 hp = 100
 dmg = 50.0

@@ -2,14 +2,15 @@ extends Node2D
 class_name DeathComponent
 
 @export var health_component: HealthComponent
-var sprite: Sprite2D
+var sprite: Sprite2D = Sprite2D.new()
 
 func _ready():
 	pass
 
 
-func config(set_sprite:Sprite2D):
-	sprite = set_sprite
+func config(set_sprite):
+	print(set_sprite)
+	sprite.texture = set_sprite
 	health_component = owner.health_component
 	$GPUParticles2D.texture = sprite.texture
 	health_component.died.connect(on_died)

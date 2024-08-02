@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://4o2dar78pusj"]
 
-[ext_resource type="Script" path="res://Scripts/Abilitys/JudismAuraAbility/judism_aura_ability.gd" id="1_115lg"]
+[ext_resource type="Script" path="res://Scripts/Abilitys/DavidStarAuraAbility/david_star_aura_ability.gd" id="1_115lg"]
 [ext_resource type="Texture2D" uid="uid://123dus4ekoo" path="res://Assets/Skills/DavidStar/DavidStar.png" id="2_jciv3"]
 [ext_resource type="PackedScene" uid="uid://fgf6t05ngde" path="res://Scenes/Components/hitbox_component.tscn" id="3_f6e3f"]
 

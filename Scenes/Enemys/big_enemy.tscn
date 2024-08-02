@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://m4c105rclpk5"]
+[gd_scene load_steps=14 format=3 uid="uid://m4c105rclpk5"]
 
 [ext_resource type="Script" path="res://Scripts/Enemys/basic_enemy2.gd" id="1_obslr"]
 [ext_resource type="PackedScene" uid="uid://jnkl30satsbb" path="res://Scenes/Components/health_component.tscn" id="2_p2i3h"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://c2ao038ji85tt" path="res://Scenes/Components/death_component.tscn" id="4_e16vh"]
 [ext_resource type="PackedScene" uid="uid://bjfpqxunjkyw2" path="res://Scenes/Components/velocity_component.tscn" id="4_vkytm"]
 [ext_resource type="PackedScene" uid="uid://d3gbnxq2mchbv" path="res://Scenes/Components/hurtbox_component.tscn" id="5_urpjr"]
-[ext_resource type="Texture2D" uid="uid://b5mf3871it3ar" path="res://Assets/Enemys/Enemy2.png" id="6_vaxxv"]
 [ext_resource type="PackedScene" uid="uid://cfn1tpssanmni" path="res://Scenes/Components/hit_flash_component.tscn" id="8_ore88"]
 [ext_resource type="Shader" path="res://Resources/Shader/hit_flash_component.gdshader" id="9_p5din"]
 [ext_resource type="PackedScene" uid="uid://dyrwjscb6nc4p" path="res://Scenes/Components/knockback_component.tscn" id="14_d15rq"]
@@ -25,16 +24,11 @@ height = 34.0
 radius = 6.0
 height = 26.0
 
-[node name="SkeletEnemy" type="CharacterBody2D" groups=["enemy"]]
+[node name="BigEnemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 8
 collision_mask = 9
 motion_mode = 1
 script = ExtResource("1_obslr")
-max_health = 100.0
-max_speed = 60
-acceleration = 10.0
-drop_percent = 1.0
-sprite = ExtResource("6_vaxxv")
 
 [node name="AudioStreamPlayerComponent" parent="." instance=ExtResource("3_44lsw")]
 
@@ -48,7 +42,7 @@ sprite = ExtResource("6_vaxxv")
 hit_flash_material = SubResource("ShaderMaterial_txwdu")
 
 [node name="KnockbackComponent" parent="." instance=ExtResource("14_d15rq")]
-knockback_power = 500
+knockback_power = 10.0
 
 [node name="DeathComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_e16vh")]
 health_component = NodePath("../HealthComponent")
@@ -62,9 +56,8 @@ shape = SubResource("CapsuleShape2D_0xqg7")
 
 [node name="Visuals" type="Node2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Visuals"]
-position = Vector2(0, -16)
-texture = ExtResource("6_vaxxv")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals"]
+position = Vector2(0, -14)
 
 [node name="Shadow" type="ColorRect" parent="Visuals"]
 anchors_preset = 8

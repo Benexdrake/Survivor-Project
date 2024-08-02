@@ -6,7 +6,7 @@ var player_resource:PlayerResource
 @export var player_name:String
 @export var hp:float
 @export var base_dmg:float
-var max_health:int
+var max_health:float
 @export var max_speed: int
 @export var acceleration_smoothing:int
 var movement_vector:Vector2
@@ -19,14 +19,10 @@ var movement_vector:Vector2
 
 var health_regeneration_timer:Timer
 var health_regeneration_level:int = 1
-
 var number_colliding_bodies = 0
 
 func _ready():
-	%AnimatedSprite2D.sprite_frames
-	
 	player_resource = GameEvents.player_resource
-	#GameEvents.upgrades.append(player_resource.ability)
 	start()
 	
 	health_component.current_health = hp
@@ -79,7 +75,6 @@ func _process(delta):
 func get_movement_vector():
 	var x_movement = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	var y_movement = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
-	
 	return Vector2(x_movement,y_movement)
 	
 
@@ -113,7 +108,7 @@ func on_health_changed():
 	$HitStreamPlayer.play()
 
 
-func on_ability_upgrade_added(ability_upgrade:AbilityUpgrade, current_upgrades: Dictionary):
+func on_ability_upgrade_added(ability_upgrade:AbilityUpgrade):
 	if ability_upgrade is AbilityUpgradeCard:
 		var ability = ability_upgrade as AbilityUpgradeCard
 		var scene = ability.ability_controller_scene

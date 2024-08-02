@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://c2ao038ji85tt"]
+[gd_scene load_steps=9 format=3 uid="uid://c2ao038ji85tt"]
 
 [ext_resource type="Script" path="res://Scripts/Components/death_component.gd" id="1_k7g5c"]
-[ext_resource type="Texture2D" uid="uid://85jeob7yrg3k" path="res://Assets/Enemys/Enemy.png" id="1_prayq"]
 [ext_resource type="Script" path="res://Scripts/Components/ability_audio_stream_player_2d_component.gd" id="3_i0p8s"]
 [ext_resource type="AudioStream" uid="uid://8x1cs4a8la7l" path="res://Assets/SFX/OLD/click1.ogg" id="3_xhj6w"]
 
@@ -69,7 +68,6 @@ libraries = {
 emitting = false
 amount = 1
 process_material = SubResource("ParticleProcessMaterial_5ee4q")
-texture = ExtResource("1_prayq")
 lifetime = 0.5
 one_shot = true
 fixed_fps = 0

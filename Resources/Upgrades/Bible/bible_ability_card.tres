@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("2_epstt")
 ability_controller_scene = ExtResource("1_4bxts")
-upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([ExtResource("4_jt3q3"), ExtResource("4_jt3q3"), ExtResource("4_jt3q3"), ExtResource("4_jt3q3")])
+upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([ExtResource("4_jt3q3"), ExtResource("4_jt3q3"), ExtResource("4_jt3q3")])
 id = "bible"
 level = 0
 max_level = 0

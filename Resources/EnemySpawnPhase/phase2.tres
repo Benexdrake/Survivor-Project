@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemySpawnPhase" load_steps=3 format=3 uid="uid://ddlci0yua74yc"]
+
+[ext_resource type="Resource" uid="uid://cq0f785h4rpkq" path="res://Resources/Enemies/Bat.tres" id="1_080ry"]
+[ext_resource type="Script" path="res://Scripts/EnemySpawnPhase/enemy_spawn_phase.gd" id="3_5vd14"]
+
+[resource]
+script = ExtResource("3_5vd14")
+arena_difficulty = 1
+enemy_resources = Array[Resource("res://Scripts/Enemys/enemy_resource.gd")]([ExtResource("1_080ry")])
+spawn_time = 0.1
