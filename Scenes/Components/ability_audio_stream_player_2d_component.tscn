@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://jvqfrwn258v4"]
+[gd_scene load_steps=2 format=3 uid="uid://b0wsijt6ng3s1"]
 
 [ext_resource type="Script" path="res://Scripts/Components/audio_stream_player_component.gd" id="1_3xhf4"]
 

@@ -14,7 +14,7 @@ class_name BasicEnemy2
 @onready var vialdrop_component = $VialDropComponent
 @onready var death_component = $DeathComponent
 @onready var hit_flash_component = $HitFlashComponent
-@onready var ability_audio_stream_player_2d_component = $HitAudioPlayerComponent
+@onready var ability_audio_stream_player_2d_component = $AudioStreamPlayerComponent
 
 @onready var knockback_component = $KnockbackComponent
 

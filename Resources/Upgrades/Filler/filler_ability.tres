@@ -6,8 +6,8 @@
 [resource]
 script = ExtResource("1_qfq71")
 id = "filler"
-group_id = "filler"
-name = "Money"
-max_quantity = 1
+level = 0
+ability_name = "Filler"
 description = "You get 10DM"
-sprite = ExtResource("2_rdqk0")
+preview = ExtResource("2_rdqk0")
+weight = 0

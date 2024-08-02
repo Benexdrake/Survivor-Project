@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AbilityUpgradeCard" load_steps=5 format=3 uid="uid://ba52adg337cfr"]
+
+[ext_resource type="PackedScene" uid="uid://depbil6x5yymj" path="res://Scenes/Abilitys/BibleAbility/bible_ability_controller.tscn" id="1_4bxts"]
+[ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade_card.gd" id="2_epstt"]
+[ext_resource type="Texture2D" uid="uid://7qtqntmu3v2f" path="res://Assets/Bibel.jpeg" id="3_tpnb5"]
+[ext_resource type="Resource" uid="uid://du2c5e6i8fln" path="res://Resources/Upgrades/Bible/bible_upgrade.tres" id="4_jt3q3"]
+
+[resource]
+script = ExtResource("2_epstt")
+ability_controller_scene = ExtResource("1_4bxts")
+upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([ExtResource("4_jt3q3"), ExtResource("4_jt3q3"), ExtResource("4_jt3q3"), ExtResource("4_jt3q3")])
+id = "bible"
+level = 0
+max_level = 0
+ability_name = "Bible"
+description = "Spins 2 Bibles around the Character"
+preview = ExtResource("3_tpnb5")
+weight = 10

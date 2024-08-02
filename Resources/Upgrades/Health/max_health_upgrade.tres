@@ -1,15 +1,14 @@
-[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://cfbdgt6egwjbi"]
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://b5ngdm3cyq7ox"]
 
 [ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade.gd" id="1_o7mut"]
 [ext_resource type="Texture2D" uid="uid://cum1j0nbl5v2l" path="res://Assets/Health.jpeg" id="2_wh83q"]
 
 [resource]
 script = ExtResource("1_o7mut")
-id = "health_regeneration_upgrade"
-group_id = "health_regeneration"
-name = "Health Regeneration"
-max_quantity = 5
-description = "1% Health Regeneration"
-sprite = ExtResource("2_wh83q")
-need_unlock = false
-weight = 14
+id = "max_health_upgrade"
+level = 0
+max_level = 5
+ability_name = "Max Health"
+description = "20% more Health"
+preview = ExtResource("2_wh83q")
+weight = 10

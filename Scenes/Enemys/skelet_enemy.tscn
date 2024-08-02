@@ -1,18 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://m4c105rclpk5"]
+[gd_scene load_steps=15 format=3 uid="uid://m4c105rclpk5"]
 
 [ext_resource type="Script" path="res://Scripts/Enemys/basic_enemy2.gd" id="1_obslr"]
 [ext_resource type="PackedScene" uid="uid://jnkl30satsbb" path="res://Scenes/Components/health_component.tscn" id="2_p2i3h"]
-[ext_resource type="PackedScene" uid="uid://jvqfrwn258v4" path="res://Scenes/Components/ability_audio_stream_player_2d_component.tscn" id="3_s7pl6"]
+[ext_resource type="PackedScene" uid="uid://dcqrpevy2s3ho" path="res://Scenes/Components/audio_stream_player_component.tscn" id="3_44lsw"]
 [ext_resource type="PackedScene" uid="uid://5t48vqnhunai" path="res://Scenes/Components/vial_drop_component.tscn" id="3_t36rj"]
 [ext_resource type="PackedScene" uid="uid://c2ao038ji85tt" path="res://Scenes/Components/death_component.tscn" id="4_e16vh"]
-[ext_resource type="AudioStream" uid="uid://cuutb3mtj2o36" path="res://Assets/SFX/10_Battle_SFX/22_Slash_04.wav" id="4_fq7w0"]
 [ext_resource type="PackedScene" uid="uid://bjfpqxunjkyw2" path="res://Scenes/Components/velocity_component.tscn" id="4_vkytm"]
-[ext_resource type="AudioStream" uid="uid://ckbvf4k057w55" path="res://Assets/SFX/10_Battle_SFX/03_Claw_03.wav" id="5_ehg4m"]
 [ext_resource type="PackedScene" uid="uid://d3gbnxq2mchbv" path="res://Scenes/Components/hurtbox_component.tscn" id="5_urpjr"]
-[ext_resource type="AudioStream" uid="uid://eiesyib35uyw" path="res://Assets/SFX/8_Atk_Magic_SFX/18_Thunder_02.wav" id="6_3qa4e"]
 [ext_resource type="Texture2D" uid="uid://b5mf3871it3ar" path="res://Assets/Enemys/Enemy2.png" id="6_vaxxv"]
-[ext_resource type="AudioStream" uid="uid://d0f2wssfay1rs" path="res://Assets/SFX/10_Battle_SFX/15_Impact_flesh_02.wav" id="7_yp0pp"]
-[ext_resource type="AudioStream" uid="uid://cyjb5qp33hw08" path="res://Assets/SFX/10_Battle_SFX/39_Block_03.wav" id="8_gm2vq"]
 [ext_resource type="PackedScene" uid="uid://cfn1tpssanmni" path="res://Scenes/Components/hit_flash_component.tscn" id="8_ore88"]
 [ext_resource type="Shader" path="res://Resources/Shader/hit_flash_component.gdshader" id="9_p5din"]
 [ext_resource type="PackedScene" uid="uid://dyrwjscb6nc4p" path="res://Scenes/Components/knockback_component.tscn" id="14_d15rq"]
@@ -41,8 +36,7 @@ acceleration = 10.0
 drop_percent = 1.0
 sprite = ExtResource("6_vaxxv")
 
-[node name="HitAudioPlayerComponent" parent="." instance=ExtResource("3_s7pl6")]
-streams = Array[AudioStream]([ExtResource("4_fq7w0"), ExtResource("5_ehg4m"), ExtResource("6_3qa4e"), ExtResource("7_yp0pp"), ExtResource("8_gm2vq")])
+[node name="AudioStreamPlayerComponent" parent="." instance=ExtResource("3_44lsw")]
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_p2i3h")]
 

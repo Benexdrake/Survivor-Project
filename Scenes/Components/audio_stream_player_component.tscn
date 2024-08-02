@@ -1,12 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://dcqrpevy2s3ho"]
+[gd_scene load_steps=8 format=3 uid="uid://dcqrpevy2s3ho"]
 
+[ext_resource type="AudioStream" uid="uid://8x1cs4a8la7l" path="res://Assets/SFX/OLD/click1.ogg" id="1_4rost"]
 [ext_resource type="Script" path="res://Scripts/Components/audio_stream_player_component.gd" id="1_8224h"]
-[ext_resource type="AudioStream" uid="uid://cuutb3mtj2o36" path="res://Assets/SFX/10_Battle_SFX/22_Slash_04.wav" id="2_1l3wi"]
 [ext_resource type="AudioStream" uid="uid://ckbvf4k057w55" path="res://Assets/SFX/10_Battle_SFX/03_Claw_03.wav" id="3_4i3uk"]
 [ext_resource type="AudioStream" uid="uid://eiesyib35uyw" path="res://Assets/SFX/8_Atk_Magic_SFX/18_Thunder_02.wav" id="4_3mrsa"]
 [ext_resource type="AudioStream" uid="uid://d0f2wssfay1rs" path="res://Assets/SFX/10_Battle_SFX/15_Impact_flesh_02.wav" id="5_x7pnf"]
 [ext_resource type="AudioStream" uid="uid://cyjb5qp33hw08" path="res://Assets/SFX/10_Battle_SFX/39_Block_03.wav" id="6_s1ath"]
+[ext_resource type="AudioStream" uid="uid://dgxe4hislug5q" path="res://Assets/SFX/10_Battle_SFX/08_Bite_04.wav" id="7_hx51i"]
 
-[node name="AudioStreamPlayerComponent" type="AudioStreamPlayer"]
+[node name="AudioStreamPlayerComponent" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_4rost")
+max_distance = 400.0
 script = ExtResource("1_8224h")
-streams = Array[AudioStream]([ExtResource("2_1l3wi"), ExtResource("3_4i3uk"), ExtResource("4_3mrsa"), ExtResource("5_x7pnf"), ExtResource("6_s1ath")])
+streams = Array[AudioStream]([ExtResource("5_x7pnf"), ExtResource("3_4i3uk"), ExtResource("4_3mrsa"), ExtResource("6_s1ath"), ExtResource("7_hx51i")])

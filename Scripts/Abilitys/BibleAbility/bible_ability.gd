@@ -5,7 +5,10 @@ extends Node2D
 
 func _ready():
 	timer.timeout.connect(on_timer_timeout)
-
+	hitbox_component.area_entered.connect(on_area_entered)
+	hitbox_component.body_entered.connect(on_body_entered)
+	
+	
 var d := 0.0
 var radius = 50.0
 var speed = 5.0
@@ -25,3 +28,10 @@ func stop():
 	var abilitys = get_tree().get_nodes_in_group("bible_ability")
 	for a in abilitys:
 		a.queue_free()
+
+
+func on_area_entered(other):
+	print("HI")
+	
+func on_body_entered(other):
+	print(other)

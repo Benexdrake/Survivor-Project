@@ -39,19 +39,23 @@ func select_card():
 	
 
 func set_ability_upgrade(upgrade: AbilityUpgrade):
+	
 	if upgrade != null:
-		var level:int = 1
-		for u in GameEvents.upgrades:
-			if upgrade.group_id == u.group_id:
-				level += 1
-			#var group_id = BgUpgrades.current_upgrades[test]["resource"].group_id
-			#if group_id == upgrade.group_id:
-				#level += BgUpgrades.current_upgrades[test]["quantity"]
-			
-		texture_rect.texture = upgrade.sprite
-		level_label.text = "Level " + str(level)
-		name_label.text = upgrade.name
-		description_label.text = upgrade.description
+		texture_rect.texture = upgrade.preview
+		level_label.text = "Level " + str(upgrade.level + 1)
+		name_label.text = upgrade.ability_name
+		
+		#if upgrade is AbilityUpgradeCard:
+			#pass
+		
+		if upgrade.level == 0:
+			description_label.text = upgrade.description
+		else:
+			if upgrade is AbilityUpgradeCard:
+				var u = upgrade.upgrades[upgrade.level -1]
+				description_label.text = u.description
+			else:
+				description_label.text = upgrade.description
 		
 
 func on_gui_input(event: InputEvent):

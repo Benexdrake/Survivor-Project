@@ -26,7 +26,7 @@ func _ready():
 	%AnimatedSprite2D.sprite_frames
 	
 	player_resource = GameEvents.player_resource
-	GameEvents.upgrades.append(player_resource.ability)
+	#GameEvents.upgrades.append(player_resource.ability)
 	start()
 	
 	health_component.current_health = hp
@@ -51,6 +51,9 @@ func start():
 	
 	var ability_instance = player_resource.ability.ability_controller_scene.instantiate()
 	%Abilities.add_child(ability_instance)
+	
+	var upgrade_manager = get_tree().get_first_node_in_group("upgrade_manager") as UpgradeManager
+	upgrade_manager.adding_upgrades(player_resource.ability.id)
 	
 	$%AnimatedSprite2D.play("default")
 	$%AnimatedSprite2D.pause()
@@ -111,9 +114,9 @@ func on_health_changed():
 
 
 func on_ability_upgrade_added(ability_upgrade:AbilityUpgrade, current_upgrades: Dictionary):
-	if ability_upgrade is Ability:
-		var ability = ability_upgrade as Ability
-		var scene = ability.ability_controller_scene	
+	if ability_upgrade is AbilityUpgradeCard:
+		var ability = ability_upgrade as AbilityUpgradeCard
+		var scene = ability.ability_controller_scene
 		abilities.add_child(scene.instantiate())
 	
 	if ability_upgrade.id == "max_health_upgrade":
