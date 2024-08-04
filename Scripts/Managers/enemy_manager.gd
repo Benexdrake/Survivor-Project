@@ -65,18 +65,12 @@ func on_arena_difficulty_increased(arena_difficult:int):
 	
 	self.arena_difficulty = arena_difficult
 	
-	for enemy_spawn_phase in enemy_spawn_phases:
-		if enemy_spawn_phase.arena_difficulty == arena_difficulty:
-			for enemy_resource in enemy_spawn_phase.enemy_resources:
-				current_enemies.append(enemy_resource)
-			timer.wait_time = enemy_spawn_phase.spawn_time
-			break
+	var size = enemy_spawn_phases.size() - 1
 	
-	if current_enemies.size() == 0:
-		for enemy_spawn_phase in enemy_spawn_phases:
-			for enemy_resource in enemy_spawn_phase.enemy_resources:
-				current_enemies.append(enemy_resource)
-			timer.wait_time = enemy_spawn_phase.spawn_time
-			
+	var enemy_spawn_phase = enemy_spawn_phases[randi_range(0,size)]
+	
+	for enemy_resource in enemy_spawn_phase.enemy_resources:
+		current_enemies.append(enemy_resource)
+	
+	timer.wait_time = enemy_spawn_phase.spawn_time
 	timer.start()
-		

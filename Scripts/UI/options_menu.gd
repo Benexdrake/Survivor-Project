@@ -6,7 +6,7 @@ signal back_pressed
 @onready var music_slider = %MusicSlider
 @onready var window_button:Button = %WindowButton
 @onready var back_button = %BackButton
-
+var is_main_menu = true
 
 func _ready():
 	window_button.pressed.connect(on_window_button_pressed)
@@ -55,4 +55,7 @@ func on_audio_slider_changed(value:float, bus_name:String):
 	
 
 func on_back_button_pressed():
+	if !is_main_menu:
+		ScreenTransition.transition()
+		await ScreenTransition.transition_halfway
 	back_pressed.emit()

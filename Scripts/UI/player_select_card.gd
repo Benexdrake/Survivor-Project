@@ -15,7 +15,7 @@ func _ready():
 
 func start():
 	character_name_label.text = player_resource.player_name
-	preview.texture = player_resource.preview
+	preview.texture = player_resource.sprite_frames.get_frame_texture("default", 0)
 	stats_label.text = get_stats()
 	
 
@@ -42,8 +42,9 @@ func play_in(delay:float = 0):
 	
 	
 func play_discard():
+	pass
 	$AnimationPlayer.play("discard")
-	
+	await $AnimationPlayer.animation_finished
 	
 func select_card():
 	disabled = true
@@ -55,11 +56,10 @@ func select_card():
 		other_card.play_discard()
 	
 	await $AnimationPlayer.animation_finished
-	$AnimationPlayer.play("discard")
-	await $AnimationPlayer.animation_finished
+	await play_discard()
 	
 	GameEvents.player_resource = player_resource
-	get_tree().change_scene_to_file("res://Scenes/Level/main.tscn")
+	ScreenTransition.transition_to_scene("res://Scenes/Level/main.tscn")
 	
 
 func on_gui_input(event: InputEvent):

@@ -9,13 +9,12 @@ func _ready():
 
 
 func config(set_sprite):
-	print(set_sprite)
 	sprite.texture = set_sprite
 	health_component = owner.health_component
 	$GPUParticles2D.texture = sprite.texture
 	health_component.died.connect(on_died)
 
-func on_died(ability_name):
+func on_died():
 	if owner == null || not owner is Node2D:
 		return
 	var spawn_position = owner.global_position
@@ -23,5 +22,6 @@ func on_died(ability_name):
 	get_parent().remove_child(self)
 	entities.add_child(self)
 	global_position = spawn_position
+	$AudioStreamPlayer.play()
 	$AnimationPlayer.play("default")
-	$HitAudioPlayerComponent.play_ability(ability_name)
+	await $AnimationPlayer.animation_finished

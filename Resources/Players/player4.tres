@@ -1,0 +1,84 @@
+[gd_resource type="Resource" script_class="PlayerResource" load_steps=13 format=3 uid="uid://c8vy8h0ggkdrq"]
+
+[ext_resource type="Resource" uid="uid://bu4jso5tt11p7" path="res://Resources/Upgrades/Thunder/thunder_ability_card.tres" id="1_y3fo8"]
+[ext_resource type="Script" path="res://Scripts/Player/player_resource.gd" id="2_giwax"]
+[ext_resource type="Texture2D" uid="uid://bf5udmb27y2ba" path="res://Assets/Player/4/player-Sheet.png" id="3_yx6dg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvg4s"]
+atlas = ExtResource("3_yx6dg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svbck"]
+atlas = ExtResource("3_yx6dg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysk6f"]
+atlas = ExtResource("3_yx6dg")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50fkk"]
+atlas = ExtResource("3_yx6dg")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwe5i"]
+atlas = ExtResource("3_yx6dg")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xxdb"]
+atlas = ExtResource("3_yx6dg")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4crpn"]
+atlas = ExtResource("3_yx6dg")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkbbu"]
+atlas = ExtResource("3_yx6dg")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_22ksg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvg4s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svbck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysk6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50fkk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwe5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xxdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4crpn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkbbu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("2_giwax")
+id = "4"
+player_name = "Godbrithil"
+ability = ExtResource("1_y3fo8")
+sprite_frames = SubResource("SpriteFrames_22ksg")
+hp = 50
+dmg = 60.0
+speed = 200
+acceleration = 25
+stories = Array[String](["Death"])
+hp_show = 2
+dmg_show = 3.0
+speed_show = 3

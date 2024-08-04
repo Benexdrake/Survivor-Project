@@ -3,13 +3,14 @@ class_name Player
 
 var player_resource:PlayerResource
 
-@export var player_name:String
-@export var hp:float
-@export var base_dmg:float
+var player_name:String
+var hp:float
+var base_dmg:float
 var max_health:float
-@export var max_speed: int
-@export var acceleration_smoothing:int
+var max_speed: int
+var acceleration_smoothing:int
 var movement_vector:Vector2
+var _delta
 
 @onready var damage_interval_timer = $DamageIntervalTimer
 @onready var health_component = $HealthComponent
@@ -49,13 +50,45 @@ func start():
 	%Abilities.add_child(ability_instance)
 	
 	var upgrade_manager = get_tree().get_first_node_in_group("upgrade_manager") as UpgradeManager
+	player_resource.ability.level = 1
 	upgrade_manager.adding_upgrades(player_resource.ability.id)
 	
 	$%AnimatedSprite2D.play("default")
 	$%AnimatedSprite2D.pause()
 	
+	(MobileControlLayer.touch_screen_button as TouchScreenButton).released.connect(on_touchscreen_released)
+	MobileControlLayer.hide_button()
+	
+var is_touch = false
+	
 func _process(delta):
-	movement_vector = get_movement_vector()
+	_delta = delta
+	if !is_touch:
+		movement_vector = get_movement_vector()
+	move()
+
+func _input(event):
+	if event is InputEventScreenTouch or event is InputEventScreenDrag:
+		if MobileControlLayer.touch_screen_button.is_pressed():
+			if !is_touch:
+				MobileControlLayer.show_button()
+			is_touch = true
+			var m_vector = calculate_move_vector(event.position)
+			movement_vector = m_vector
+			move()
+
+
+func calculate_move_vector(event_position):
+	var texture_center = MobileControlLayer.touch_screen_button.position + Vector2(128,128)
+	return (event_position - texture_center).normalized()
+
+func get_movement_vector():
+	var x_movement = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+	var y_movement = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
+	return Vector2(x_movement,y_movement)
+	
+func move():
+	
 	if movement_vector != Vector2.ZERO:
 		$%AnimatedSprite2D.play("default")
 	else:
@@ -66,17 +99,14 @@ func _process(delta):
 	
 	if move_sign != 0:
 		visuals.scale = Vector2(move_sign,1)
-		
-	var target_velocity = direction * max_speed
-	velocity = velocity.lerp(target_velocity, 1 - exp(-delta * acceleration_smoothing))
-	move_and_slide()
-
-
-func get_movement_vector():
-	var x_movement = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-	var y_movement = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
-	return Vector2(x_movement,y_movement)
 	
+	var speed = max_speed
+	if is_touch:
+			speed = max_speed / 2
+	
+	var target_velocity = direction * speed
+	velocity = velocity.lerp(target_velocity, 1 - exp(-_delta * acceleration_smoothing))
+	move_and_slide()
 
 func check_deal_damage():
 	if number_colliding_bodies == 0 || !damage_interval_timer.is_stopped():
@@ -103,9 +133,9 @@ func on_damage_interval_timer_timeout():
 	
 	
 func on_health_changed():
+	$HitStreamPlayer.play()
 	GameEvents.emit_player_damaged()
 	update_health_display()
-	$HitStreamPlayer.play()
 
 
 func on_ability_upgrade_added(ability_upgrade:AbilityUpgrade):
@@ -129,3 +159,8 @@ func on_ability_upgrade_added(ability_upgrade:AbilityUpgrade):
 func on_health_regeneration_timer_timeout():
 	health_component.current_health += ((max_health / 100) * health_regeneration_level)
 	update_health_display()
+
+func on_touchscreen_released():
+	is_touch = false
+	movement_vector = Vector2.ZERO
+	MobileControlLayer.hide_button()

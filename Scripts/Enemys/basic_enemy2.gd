@@ -1,23 +1,17 @@
 extends CharacterBody2D
 class_name BasicEnemy2
 
-#@export var max_health: float = 10
-#@export var max_speed:int
-#@export var acceleration:float = 5
-#@export_range(0,1) var drop_percent:float = .5
-#@export var sprite:Texture
-
 @onready var visuals = $Visuals
 @onready var health_component:HealthComponent = $HealthComponent
 @onready var velocity_component:VelocityComponent = $VelocityComponent
 @onready var vialdrop_component = $VialDropComponent
 @onready var death_component = $DeathComponent
 @onready var hit_flash_component = $HitFlashComponent
-@onready var ability_audio_stream_player_2d_component = $AudioStreamPlayerComponent
 @onready var animated_sprite_2d = $Visuals/AnimatedSprite2D
 @onready var knockback_component = $KnockbackComponent
 
-@export var knockback_power: int = 5
+var knockback_power: int = 5
+
 var is_moving = true
 
 func _ready():
@@ -63,7 +57,5 @@ func set_is_moving(moving:bool):
 	is_moving = moving
 	
 
-func on_hit(hit):
+func on_hit():
 	knockback_component.knockback()
-	health_component.hit_sound = hit
-	ability_audio_stream_player_2d_component.play_ability(hit)

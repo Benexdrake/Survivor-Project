@@ -42,6 +42,7 @@ func on_timer_timeout():
 	
 	thunder_instance.global_position = random_enemy.global_position
 	thunder_instance.global_position += Vector2.RIGHT.rotated(randf_range(0,TAU)) * 4
+	$AudioStreamPlayer.play()
 	
 	# Einschlag
 	if thunder_ball:

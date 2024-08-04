@@ -1,7 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://d1qrq7lw10py"]
+[gd_scene load_steps=13 format=3 uid="uid://d1qrq7lw10py"]
 
 [ext_resource type="Script" path="res://Scripts/Enemys/basic_enemy.gd" id="1_h5pji"]
-[ext_resource type="PackedScene" uid="uid://dcqrpevy2s3ho" path="res://Scenes/Components/audio_stream_player_component.tscn" id="2_713ma"]
 [ext_resource type="PackedScene" uid="uid://jnkl30satsbb" path="res://Scenes/Components/health_component.tscn" id="3_j46cb"]
 [ext_resource type="PackedScene" uid="uid://5t48vqnhunai" path="res://Scenes/Components/vial_drop_component.tscn" id="4_d0krk"]
 [ext_resource type="PackedScene" uid="uid://bjfpqxunjkyw2" path="res://Scenes/Components/velocity_component.tscn" id="5_pdiqi"]
@@ -27,8 +26,6 @@ collision_layer = 8
 collision_mask = 9
 motion_mode = 1
 script = ExtResource("1_h5pji")
-
-[node name="AudioStreamPlayerComponent" parent="." instance=ExtResource("2_713ma")]
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_j46cb")]
 

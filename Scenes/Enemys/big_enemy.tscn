@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://m4c105rclpk5"]
+[gd_scene load_steps=13 format=3 uid="uid://m4c105rclpk5"]
 
-[ext_resource type="Script" path="res://Scripts/Enemys/basic_enemy2.gd" id="1_obslr"]
+[ext_resource type="Script" path="res://Scripts/Enemys/basic_enemy.gd" id="1_402nv"]
 [ext_resource type="PackedScene" uid="uid://jnkl30satsbb" path="res://Scenes/Components/health_component.tscn" id="2_p2i3h"]
-[ext_resource type="PackedScene" uid="uid://dcqrpevy2s3ho" path="res://Scenes/Components/audio_stream_player_component.tscn" id="3_44lsw"]
 [ext_resource type="PackedScene" uid="uid://5t48vqnhunai" path="res://Scenes/Components/vial_drop_component.tscn" id="3_t36rj"]
 [ext_resource type="PackedScene" uid="uid://c2ao038ji85tt" path="res://Scenes/Components/death_component.tscn" id="4_e16vh"]
 [ext_resource type="PackedScene" uid="uid://bjfpqxunjkyw2" path="res://Scenes/Components/velocity_component.tscn" id="4_vkytm"]
@@ -28,9 +27,7 @@ height = 26.0
 collision_layer = 8
 collision_mask = 9
 motion_mode = 1
-script = ExtResource("1_obslr")
-
-[node name="AudioStreamPlayerComponent" parent="." instance=ExtResource("3_44lsw")]
+script = ExtResource("1_402nv")
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_p2i3h")]
 
@@ -42,7 +39,6 @@ script = ExtResource("1_obslr")
 hit_flash_material = SubResource("ShaderMaterial_txwdu")
 
 [node name="KnockbackComponent" parent="." instance=ExtResource("14_d15rq")]
-knockback_power = 10.0
 
 [node name="DeathComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_e16vh")]
 health_component = NodePath("../HealthComponent")

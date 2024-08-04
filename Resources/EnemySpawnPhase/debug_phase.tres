@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemySpawnPhase" load_steps=9 format=3 uid="uid://x0qpcpjh18hf"]
+
+[ext_resource type="Script" path="res://Scripts/EnemySpawnPhase/enemy_spawn_phase.gd" id="1_fpyxq"]
+[ext_resource type="Resource" uid="uid://cxhsaouqqspre" path="res://Resources/Enemies/Crab.tres" id="2_gunns"]
+[ext_resource type="Resource" uid="uid://cmk0dubpge68c" path="res://Resources/Enemies/Flying_Skull.tres" id="3_lcoco"]
+[ext_resource type="Resource" uid="uid://d3hn8iivv22ct" path="res://Resources/Enemies/Golem.tres" id="4_uiakx"]
+[ext_resource type="Resource" uid="uid://cnlepjs60isu" path="res://Resources/Enemies/Golem_Armored.tres" id="5_8xuia"]
+[ext_resource type="Resource" uid="uid://c4h11uiey3x0s" path="res://Resources/Enemies/Pebble.tres" id="6_l2ne5"]
+[ext_resource type="Resource" uid="uid://3ek0m6f24nbq" path="res://Resources/Enemies/Rat.tres" id="7_mn0cn"]
+[ext_resource type="Resource" uid="uid://cto1jx70tmyvi" path="res://Resources/Enemies/Slime.tres" id="8_nqiej"]
+
+[resource]
+script = ExtResource("1_fpyxq")
+arena_difficulty = 10
+enemy_resources = Array[Resource("res://Scripts/Enemys/enemy_resource.gd")]([ExtResource("2_gunns"), ExtResource("3_lcoco"), ExtResource("4_uiakx"), ExtResource("5_8xuia"), ExtResource("6_l2ne5"), ExtResource("7_mn0cn"), ExtResource("8_nqiej")])
+spawn_time = 0.1

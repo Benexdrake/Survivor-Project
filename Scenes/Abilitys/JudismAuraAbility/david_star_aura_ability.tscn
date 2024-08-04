@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://4o2dar78pusj"]
+[gd_scene load_steps=9 format=3 uid="uid://4o2dar78pusj"]
 
 [ext_resource type="Script" path="res://Scripts/Abilitys/DavidStarAuraAbility/david_star_aura_ability.gd" id="1_115lg"]
 [ext_resource type="Texture2D" uid="uid://123dus4ekoo" path="res://Assets/Skills/DavidStar/DavidStar.png" id="2_jciv3"]
+[ext_resource type="AudioStream" uid="uid://cyjb5qp33hw08" path="res://Assets/SFX/10_Battle_SFX/39_Block_03.wav" id="2_kapfs"]
 [ext_resource type="PackedScene" uid="uid://fgf6t05ngde" path="res://Scenes/Components/hitbox_component.tscn" id="3_f6e3f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pq3xr"]
@@ -97,13 +98,17 @@ _data = {
 [node name="DavidStarAuraAbility" type="Node2D"]
 script = ExtResource("1_115lg")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_kapfs")
+bus = &"SFX"
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.501961)
 scale = Vector2(3, 3)
 texture = ExtResource("2_jciv3")
 
 [node name="HitboxComponent" parent="." instance=ExtResource("3_f6e3f")]
-monitoring = false
+collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 unique_name_in_owner = true

@@ -6,6 +6,7 @@ class_name ClawAbility
 
 func _ready():
 	sprite.animation_looped.connect(on_animation_looped)
+	$AudioStreamPlayer.play()
 	
 func on_animation_looped():
 	queue_free()

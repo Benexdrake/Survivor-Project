@@ -13,18 +13,21 @@ func _ready():
 
 
 func on_play_pressed():
-	get_tree().change_scene_to_file("res://Scenes/UI/player_select_screen.tscn")
+	await ScreenTransition.transition_to_scene("res://Scenes/UI/player_select_screen.tscn")
 	
 	
 func on_options_pressed():
+	ScreenTransition.transition()
+	await ScreenTransition.transition_halfway
 	var options_instance = options_scene.instantiate()
 	add_child(options_instance)
 	options_instance.back_pressed.connect(on_options_closed.bind(options_instance))
-	
+	self.visible = false
 	
 func on_quit_pressed():
 	get_tree().quit()
 
 
 func on_options_closed(options_instance:Node):
+	self.visible = true
 	options_instance.queue_free()

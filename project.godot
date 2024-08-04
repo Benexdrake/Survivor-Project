@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 GameEvents="*res://Scenes/Autoload/game_events.tscn"
 BgUpgrades="*res://Scripts/bg_upgrades.gd"
 MusicPlayer="*res://Scenes/Autoload/music_player.tscn"
+ScreenTransition="*res://Scenes/Autoload/screen_transition.tscn"
+MobileControlLayer="*res://Scenes/Autoload/mobile_control_layer.tscn"
 
 [debug]
 
@@ -74,6 +76,10 @@ pause={
 ]
 }
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
 [layer_names]
 
 2d_physics/layer_1="Terrain"
@@ -85,3 +91,5 @@ pause={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d050pbaodubjg"]
+[gd_scene load_steps=5 format=3 uid="uid://d050pbaodubjg"]
 
 [ext_resource type="Script" path="res://Scripts/Abilitys/Thunder/thunder_ability_controller.gd" id="1_mknjl"]
 [ext_resource type="PackedScene" uid="uid://2ius8mnj7db8" path="res://Scenes/Abilitys/ThunderAbility/thunder_ability.tscn" id="2_0mj0p"]
 [ext_resource type="PackedScene" uid="uid://it65aj1bl8i4" path="res://Scenes/Abilitys/ThunderAbility/thunder_ball_ability.tscn" id="3_objk3"]
+[ext_resource type="AudioStream" uid="uid://eiesyib35uyw" path="res://Assets/SFX/8_Atk_Magic_SFX/18_Thunder_02.wav" id="4_kxcyb"]
 
 [node name="ThunderAbilityController" type="Node"]
 script = ExtResource("1_mknjl")
@@ -13,3 +14,6 @@ thunder_ball_scene = ExtResource("3_objk3")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_kxcyb")

@@ -18,7 +18,6 @@ func _process(delta):
 	var next_time_target = timer.wait_time - ((arena_difficulty + 1) * difficulty_interval)
 	if timer.time_left <= next_time_target:
 		arena_difficulty +=1
-		print(arena_difficulty)
 		arena_difficulty_increased.emit(arena_difficulty)
 
 func get_time_elapsed():

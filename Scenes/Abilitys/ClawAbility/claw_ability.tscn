@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://yse2ob2epj76"]
+[gd_scene load_steps=13 format=3 uid="uid://yse2ob2epj76"]
 
 [ext_resource type="Script" path="res://Scripts/Abilitys/ClawAbility/claw_ability.gd" id="1_21jdl"]
+[ext_resource type="AudioStream" uid="uid://ckbvf4k057w55" path="res://Assets/SFX/10_Battle_SFX/03_Claw_03.wav" id="2_777xm"]
 [ext_resource type="Texture2D" uid="uid://djakby2cj3nnb" path="res://Assets/Skills/FireClaw/Claw.png" id="2_p87fe"]
 [ext_resource type="PackedScene" uid="uid://fgf6t05ngde" path="res://Scenes/Components/hitbox_component.tscn" id="8_osyv3"]
 
@@ -59,6 +60,9 @@ size = Vector2(41.6446, 224.954)
 
 [node name="ClawAbility" type="Node2D" groups=["bible_ability"]]
 script = ExtResource("1_21jdl")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_777xm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(85, 0)

@@ -5,6 +5,8 @@ extends Node2D
 
 func _ready():
 	$Timer.timeout.connect(on_timer_timeout)
+	hitbox_component.area_entered.connect(test)
+	
 
 func _process(delta):
 	var player = get_tree().get_first_node_in_group("player") as Node2D
@@ -16,3 +18,6 @@ func _process(delta):
 
 func on_timer_timeout():
 	collision_shape_2d.disabled = !collision_shape_2d.disabled
+
+func test(other):
+	$AudioStreamPlayer.play()

@@ -6,5 +6,6 @@ extends Node2D
 func _ready():
 	sprite.animation_looped.connect(on_animation_looped)
 	
+	
 func on_animation_looped():
 	queue_free()

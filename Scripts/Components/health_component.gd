@@ -7,8 +7,6 @@ signal health_changed
 var max_health: float
 var current_health:float
 
-var hit_sound:String
-
 func _ready():
 	current_health = max_health
 
@@ -28,5 +26,5 @@ func get_health_percent():
 
 func check_death():
 	if current_health <= 0:
-		died.emit(hit_sound)
+		died.emit()
 		owner.queue_free()

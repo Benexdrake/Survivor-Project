@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EnemySpawnPhase" load_steps=5 format=3 uid="uid://84w00oa5k4b7"]
+
+[ext_resource type="Resource" uid="uid://c4h11uiey3x0s" path="res://Resources/Enemies/Pebble.tres" id="1_0ir0y"]
+[ext_resource type="Resource" uid="uid://cmk0dubpge68c" path="res://Resources/Enemies/Flying_Skull.tres" id="2_4kmgy"]
+[ext_resource type="Resource" uid="uid://cnlepjs60isu" path="res://Resources/Enemies/Golem_Armored.tres" id="2_v8byv"]
+[ext_resource type="Script" path="res://Scripts/EnemySpawnPhase/enemy_spawn_phase.gd" id="3_uipoo"]
+
+[resource]
+script = ExtResource("3_uipoo")
+arena_difficulty = 4
+enemy_resources = Array[Resource("res://Scripts/Enemys/enemy_resource.gd")]([ExtResource("1_0ir0y"), ExtResource("2_v8byv"), ExtResource("2_4kmgy")])
+spawn_time = 0.5

@@ -30,7 +30,7 @@ func on_area_entered(other_area: Area2D):
 	floating_text.global_position = global_position + (Vector2.UP * 16)
 	floating_text.start(dmg, damage)
 	
-	hit.emit(other_area.owner.name)
+	hit.emit()
 
 
 func round_to_dec(num, digit):

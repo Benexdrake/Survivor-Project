@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="PlayerResource" load_steps=8 format=3 uid="uid://cvbvk0u0mnef2"]
+
+[ext_resource type="Resource" uid="uid://c4w8qqnp7pw1c" path="res://Resources/Upgrades/DavidStarAura/david_star_aura_ability_card.tres" id="1_qf72h"]
+[ext_resource type="Script" path="res://Scripts/Player/player_resource.gd" id="3_54a6j"]
+[ext_resource type="Texture2D" uid="uid://n4th41mqjl6v" path="res://Assets/Player/3/190768.png" id="3_ol0ph"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlvtk"]
+atlas = ExtResource("3_ol0ph")
+region = Rect2(0, 0, 51, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v1uu"]
+atlas = ExtResource("3_ol0ph")
+region = Rect2(51, 0, 51, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uy2sl"]
+atlas = ExtResource("3_ol0ph")
+region = Rect2(102, 0, 51, 54)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_22ksg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlvtk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5v1uu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uy2sl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("3_54a6j")
+id = "3"
+player_name = "Death"
+ability = ExtResource("1_qf72h")
+sprite_frames = SubResource("SpriteFrames_22ksg")
+hp = 10
+dmg = 100.0
+speed = 200
+acceleration = 25
+stories = Array[String](["Death"])
+hp_show = 4
+dmg_show = 3.0
+speed_show = 3

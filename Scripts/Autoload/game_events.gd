@@ -15,4 +15,6 @@ func emit_ability_upgrade_added(upgrade:AbilityUpgrade):
 	ability_upgrade_added.emit(upgrade)
 
 func emit_player_damaged():
-	player_damaged.emit()
+	var player = get_tree().get_first_node_in_group("player") as Player
+	if player.health_component.current_health > 0:
+		player_damaged.emit()

@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://by14ltndbaa2s"]
+[gd_scene load_steps=8 format=3 uid="uid://by14ltndbaa2s"]
 
 [ext_resource type="Script" path="res://Scripts/Abilitys/BibleAbility/bible_ability.gd" id="1_1xo16"]
+[ext_resource type="AudioStream" uid="uid://itvumm54m7h5" path="res://Assets/SFX/10_Battle_SFX/35_Miss_Evade_02.wav" id="2_qj51c"]
 [ext_resource type="Texture2D" uid="uid://dexm2keoyx6ap" path="res://Assets/book_06a.png" id="2_tm8l0"]
 [ext_resource type="PackedScene" uid="uid://fgf6t05ngde" path="res://Scenes/Components/hitbox_component.tscn" id="6_yoixg"]
 
@@ -18,6 +19,9 @@ size = Vector2(16, 20)
 [node name="BibleAbility" type="Node2D" node_paths=PackedStringArray("timer") groups=["bible_ability"]]
 script = ExtResource("1_1xo16")
 timer = NodePath("Timer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_qj51c")
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true
@@ -38,6 +42,7 @@ libraries = {
 }
 
 [node name="HitboxComponent" parent="." instance=ExtResource("6_yoixg")]
+collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 shape = SubResource("RectangleShape2D_qsnmf")

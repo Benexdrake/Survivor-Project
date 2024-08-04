@@ -33,10 +33,6 @@ size = Vector2(32, 3)
 collision_layer = 0
 motion_mode = 1
 script = ExtResource("1_x6251")
-hp = 100.0
-base_dmg = 100.0
-max_speed = 300
-acceleration_smoothing = 25
 
 [node name="HitStreamPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_uncls")

@@ -1,12 +1,6 @@
 extends CharacterBody2D
 class_name BasicEnemy
 
-#@export var max_health: float = 10
-#@export var max_speed:int
-#@export var acceleration:float = 5
-#@export_range(0,1) var drop_percent:float = .5
-#@export var sprite:Texture
-
 @onready var visuals = $Visuals
 @onready var animated_sprite_2d = $Visuals/AnimatedSprite2D
 @onready var health_component:HealthComponent = $HealthComponent
@@ -14,13 +8,9 @@ class_name BasicEnemy
 @onready var vialdrop_component = $VialDropComponent
 @onready var death_component = $DeathComponent
 @onready var hit_flash_component = $HitFlashComponent
-@onready var audio_stream_player_component = $AudioStreamPlayerComponent
-@onready var timer = $Timer
-
 @onready var knockback_component = $KnockbackComponent
 
-
-@export var knockback_power: int = 50
+var knockback_power: int = 50
 
 func _ready():
 	$HurtboxComponent.hit.connect(on_hit)
@@ -49,7 +39,5 @@ func move():
 		if move_sign != 0:
 			visuals.scale = Vector2(-move_sign,1)
 
-func on_hit(hit):
+func on_hit():
 	knockback_component.knockback()
-	health_component.hit_sound = hit
-	audio_stream_player_component.play_ability(hit)

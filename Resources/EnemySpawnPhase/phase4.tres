@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemySpawnPhase" load_steps=4 format=3 uid="uid://b8treeyj6ax8w"]
+
+[ext_resource type="Resource" uid="uid://cq0f785h4rpkq" path="res://Resources/Enemies/Bat.tres" id="1_37twh"]
+[ext_resource type="Resource" uid="uid://3ek0m6f24nbq" path="res://Resources/Enemies/Rat.tres" id="2_8sthc"]
+[ext_resource type="Script" path="res://Scripts/EnemySpawnPhase/enemy_spawn_phase.gd" id="3_n36kc"]
+
+[resource]
+script = ExtResource("3_n36kc")
+arena_difficulty = 1
+enemy_resources = Array[Resource("res://Scripts/Enemys/enemy_resource.gd")]([ExtResource("1_37twh"), ExtResource("2_8sthc")])
+spawn_time = 0.5

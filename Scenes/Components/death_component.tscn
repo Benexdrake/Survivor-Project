@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://c2ao038ji85tt"]
+[gd_scene load_steps=8 format=3 uid="uid://c2ao038ji85tt"]
 
 [ext_resource type="Script" path="res://Scripts/Components/death_component.gd" id="1_k7g5c"]
-[ext_resource type="Script" path="res://Scripts/Components/ability_audio_stream_player_2d_component.gd" id="3_i0p8s"]
-[ext_resource type="AudioStream" uid="uid://8x1cs4a8la7l" path="res://Assets/SFX/OLD/click1.ogg" id="3_xhj6w"]
+[ext_resource type="AudioStream" uid="uid://dv1vs1wras50r" path="res://Assets/SFX/10_Battle_SFX/69_Enemy_death_01.wav" id="2_vphsk"]
 
 [sub_resource type="Animation" id="Animation_bovoq"]
 resource_name = "default"
@@ -73,8 +72,6 @@ one_shot = true
 fixed_fps = 0
 interpolate = false
 
-[node name="HitAudioPlayerComponent" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_xhj6w")
-max_distance = 500.0
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vphsk")
 bus = &"SFX"
-script = ExtResource("3_i0p8s")

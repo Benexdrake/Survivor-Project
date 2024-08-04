@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://jw7uxdeaieow"]
+[gd_scene load_steps=13 format=3 uid="uid://jw7uxdeaieow"]
 
 [ext_resource type="Script" path="res://Scripts/Enemys/basic_enemy.gd" id="1_0gv1r"]
 [ext_resource type="PackedScene" uid="uid://jnkl30satsbb" path="res://Scenes/Components/health_component.tscn" id="2_hh21o"]
@@ -9,7 +9,6 @@
 [ext_resource type="Shader" path="res://Resources/Shader/hit_flash_component.gdshader" id="7_71aqs"]
 [ext_resource type="PackedScene" uid="uid://cfn1tpssanmni" path="res://Scenes/Components/hit_flash_component.tscn" id="8_4lg3x"]
 [ext_resource type="PackedScene" uid="uid://dyrwjscb6nc4p" path="res://Scenes/Components/knockback_component.tscn" id="9_1ad20"]
-[ext_resource type="PackedScene" uid="uid://dcqrpevy2s3ho" path="res://Scenes/Components/audio_stream_player_component.tscn" id="10_axw55"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fkpjj"]
 resource_local_to_scene = true
@@ -28,8 +27,6 @@ collision_mask = 9
 motion_mode = 1
 script = ExtResource("1_0gv1r")
 
-[node name="AudioStreamPlayerComponent" parent="." instance=ExtResource("10_axw55")]
-
 [node name="HealthComponent" parent="." instance=ExtResource("2_hh21o")]
 
 [node name="VialDropComponent" parent="." instance=ExtResource("3_w8b8d")]
@@ -46,6 +43,7 @@ knockback_power = 20.0
 health_component = NodePath("../HealthComponent")
 
 [node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_xtmwp")]
+collision_layer = 64
 audio_bus_name = &"SFX"
 health_component = NodePath("../HealthComponent")
 
@@ -75,7 +73,3 @@ color = Color(0, 0, 0, 0.556863)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -14)
 shape = SubResource("CircleShape2D_u7ld6")
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
-one_shot = true

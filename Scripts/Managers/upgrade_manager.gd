@@ -15,8 +15,7 @@ func _ready():
 
 func adding_upgrades(upgrade_id:String):
 	for ability in abilities:
-		if ability.id == upgrade_id:
-			continue
+		
 		if ability is AbilityUpgradeCard:
 			if ability.upgrades.size() == 0:
 				ability.max_level = 1
