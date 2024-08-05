@@ -1,0 +1,108 @@
+[gd_scene load_steps=11 format=3 uid="uid://bcr4cslwa48fk"]
+
+[ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_igdmu"]
+[ext_resource type="AudioStream" uid="uid://ckcxxti7f30w1" path="res://Assets/SFX/12_Player_Movement_SFX/61_Hit_03.wav" id="2_ddmnk"]
+[ext_resource type="PackedScene" uid="uid://jnkl30satsbb" path="res://Scenes/Components/health_component.tscn" id="3_uybrp"]
+[ext_resource type="Texture2D" uid="uid://d03kcqea6g6pj" path="res://Assets/Albert.png" id="4_ux487"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0f5j"]
+bg_color = Color(0, 0.118862, 0.0955543, 1)
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.118862, 0.0955543, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dk4gc"]
+bg_color = Color(0.772059, 0, 0.281285, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.118862, 0.0955543, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_emtx0"]
+radius = 42.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5wxf0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_koq4k"]
+size = Vector2(32, 3)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_clt12"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ux487")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 0
+motion_mode = 1
+script = ExtResource("1_igdmu")
+
+[node name="HitStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_ddmnk")
+max_distance = 300.0
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_uybrp")]
+
+[node name="Abilities" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="DamageIntervalTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(32, 4)
+offset_left = -16.0
+offset_top = 17.0
+offset_right = 16.0
+offset_bottom = 21.0
+pivot_offset = Vector2(16, 3)
+theme_override_styles/background = SubResource("StyleBoxFlat_k0f5j")
+theme_override_styles/fill = SubResource("StyleBoxFlat_dk4gc")
+max_value = 1.0
+value = 0.5
+show_percentage = false
+
+[node name="PickupArea2D" type="Area2D" parent="."]
+position = Vector2(0, 13)
+collision_layer = 16
+collision_mask = 0
+audio_bus_name = &"SFX"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea2D"]
+position = Vector2(0, -13)
+shape = SubResource("CircleShape2D_emtx0")
+
+[node name="CollisionArea2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+audio_bus_name = &"SFX"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea2D"]
+position = Vector2(0, 7)
+shape = SubResource("CircleShape2D_5wxf0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_koq4k")
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals"]
+unique_name_in_owner = true
+position = Vector2(0, -11)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_clt12")
+
+[node name="Shadow" type="ColorRect" parent="Visuals"]
+offset_right = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.556863)

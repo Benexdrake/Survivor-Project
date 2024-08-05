@@ -2,13 +2,11 @@ extends Node
 
 const SPAWN_RADIUS = 500
 
-@export var basic_enemy_scene: PackedScene
-@export var skelet_enemy_scene: PackedScene
 @export var arena_time_manager: Node
 
 @onready var timer = $Timer
 
-@export var enemy_spawn_phases: Array[EnemySpawnPhase]
+var enemy_spawn_phases: Array[EnemySpawnPhase]
 
 var enemy_table = WeightedTable.new()
 
@@ -18,8 +16,6 @@ var arena_difficulty:int = 1
 var current_enemies : Array[EnemyResource] = []
 
 func _ready():
-	on_arena_difficulty_increased(1)
-	
 	base_spawn_time = timer.wait_time
 	timer.timeout.connect(on_timer_timeout)
 	arena_time_manager.arena_difficulty_increased.connect(on_arena_difficulty_increased)
@@ -61,16 +57,18 @@ func on_timer_timeout():
 	timer.start()
 
 func on_arena_difficulty_increased(arena_difficult:int):
+	enemy_table = WeightedTable.new()
+	for spawn_phase in GlobalVariables.level_resource.spawn_phasen:
+		enemy_table.add_item(spawn_phase,spawn_phase.weight)
+	
 	current_enemies = []
+	
+	var enemy_phase = enemy_table.pick_item()
 	
 	self.arena_difficulty = arena_difficult
 	
-	var size = enemy_spawn_phases.size() - 1
-	
-	var enemy_spawn_phase = enemy_spawn_phases[randi_range(0,size)]
-	
-	for enemy_resource in enemy_spawn_phase.enemy_resources:
+	for enemy_resource in enemy_phase.enemy_resources:
 		current_enemies.append(enemy_resource)
 	
-	timer.wait_time = enemy_spawn_phase.spawn_time
+	timer.wait_time = enemy_phase.spawn_time
 	timer.start()

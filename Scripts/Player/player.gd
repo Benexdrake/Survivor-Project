@@ -23,7 +23,6 @@ var health_regeneration_level:int = 1
 var number_colliding_bodies = 0
 
 func _ready():
-	player_resource = GameEvents.player_resource
 	start()
 	
 	health_component.current_health = hp
@@ -39,6 +38,7 @@ func _ready():
 	
 
 func start():
+	player_resource = GlobalVariables.player_resource
 	player_name = player_resource.player_name
 	hp = player_resource.hp
 	base_dmg = player_resource.dmg
@@ -120,6 +120,7 @@ func update_health_display():
 
 
 func on_body_entered(body:Node2D):
+	print(body.name)
 	number_colliding_bodies += 1
 	check_deal_damage()
 

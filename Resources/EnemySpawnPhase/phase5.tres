@@ -10,3 +10,4 @@ script = ExtResource("3_hxn6i")
 arena_difficulty = 4
 enemy_resources = Array[Resource("res://Scripts/Enemys/enemy_resource.gd")]([ExtResource("1_upspo"), ExtResource("2_w46ye"), ExtResource("1_c05tk")])
 spawn_time = 0.5
+weight = 15

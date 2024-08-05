@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=9 format=3 uid="uid://vslpqt6sx2yf"]
+
+[ext_resource type="PackedScene" uid="uid://c41mstfl8ohy7" path="res://Resources/Map/map.tscn" id="1_nu46j"]
+[ext_resource type="AudioStream" uid="uid://cscnbrlurkce3" path="res://Assets/Music/Music Loops/Wilderness Daytime 1 (loop).mp3" id="2_d4vqu"]
+[ext_resource type="Script" path="res://Scripts/Resources/level.gd" id="3_j3q5f"]
+[ext_resource type="Texture2D" uid="uid://5kj2mh05udo4" path="res://Assets/Level1.jpeg" id="3_pgvl6"]
+[ext_resource type="Resource" uid="uid://ddlci0yua74yc" path="res://Resources/EnemySpawnPhase/phase1.tres" id="4_v7dvs"]
+[ext_resource type="Resource" uid="uid://c7wbj2gl4wt45" path="res://Resources/EnemySpawnPhase/phase2.tres" id="5_6lpov"]
+[ext_resource type="Resource" uid="uid://dowmusxkhpyrn" path="res://Resources/EnemySpawnPhase/phase3.tres" id="6_tgddw"]
+[ext_resource type="Resource" uid="uid://b8treeyj6ax8w" path="res://Resources/EnemySpawnPhase/phase4.tres" id="7_wnj7o"]
+
+[resource]
+script = ExtResource("3_j3q5f")
+level_name = "Level 1"
+spawn_phasen = Array[Resource("res://Scripts/EnemySpawnPhase/enemy_spawn_phase.gd")]([ExtResource("4_v7dvs"), ExtResource("5_6lpov"), ExtResource("6_tgddw"), ExtResource("7_wnj7o")])
+preview = ExtResource("3_pgvl6")
+map_time = 600
+music = ExtResource("2_d4vqu")
+map = ExtResource("1_nu46j")
+drop_chance = 0.0
+difficulty = 1

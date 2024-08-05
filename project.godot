@@ -18,10 +18,10 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameEvents="*res://Scenes/Autoload/game_events.tscn"
-BgUpgrades="*res://Scripts/bg_upgrades.gd"
 MusicPlayer="*res://Scenes/Autoload/music_player.tscn"
 ScreenTransition="*res://Scenes/Autoload/screen_transition.tscn"
 MobileControlLayer="*res://Scenes/Autoload/mobile_control_layer.tscn"
+GlobalVariables="*res://Scripts/Autoload/global.gd"
 
 [debug]
 

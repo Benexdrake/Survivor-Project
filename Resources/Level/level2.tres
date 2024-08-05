@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=15 format=3 uid="uid://cgm5bh576yrm7"]
+
+[ext_resource type="PackedScene" uid="uid://c5ctew6kgh31i" path="res://Resources/Map/map2.tscn" id="1_yicyd"]
+[ext_resource type="AudioStream" uid="uid://clvepkjp3tspl" path="res://Assets/Music/Music Loops/Wilderness Nightfall 1 (loop).mp3" id="2_sdqlq"]
+[ext_resource type="Script" path="res://Scripts/Resources/level.gd" id="3_2b50t"]
+[ext_resource type="Texture2D" uid="uid://ccga7ueigxwif" path="res://Assets/Level2.jpeg" id="3_5qxvk"]
+[ext_resource type="Resource" uid="uid://ddlci0yua74yc" path="res://Resources/EnemySpawnPhase/phase1.tres" id="4_tkbh4"]
+[ext_resource type="Resource" uid="uid://c7wbj2gl4wt45" path="res://Resources/EnemySpawnPhase/phase2.tres" id="5_8dbfq"]
+[ext_resource type="Resource" uid="uid://dowmusxkhpyrn" path="res://Resources/EnemySpawnPhase/phase3.tres" id="6_rqlxu"]
+[ext_resource type="Resource" uid="uid://b8treeyj6ax8w" path="res://Resources/EnemySpawnPhase/phase4.tres" id="7_jruo3"]
+[ext_resource type="Resource" uid="uid://dvepads7erq22" path="res://Resources/EnemySpawnPhase/phase5.tres" id="8_lcqwg"]
+[ext_resource type="Resource" uid="uid://84w00oa5k4b7" path="res://Resources/EnemySpawnPhase/phase6.tres" id="9_uej4p"]
+[ext_resource type="Resource" uid="uid://b4mtisem0f6oj" path="res://Resources/EnemySpawnPhase/phase7.tres" id="10_fykpg"]
+[ext_resource type="Resource" uid="uid://bn7y80xnsht8p" path="res://Resources/EnemySpawnPhase/phase8.tres" id="11_lbtmu"]
+[ext_resource type="Resource" uid="uid://cr660w6ch8j8d" path="res://Resources/EnemySpawnPhase/phase9.tres" id="12_web81"]
+[ext_resource type="Resource" uid="uid://c0yit4xaio2fc" path="res://Resources/EnemySpawnPhase/phase10.tres" id="13_wlhv7"]
+
+[resource]
+script = ExtResource("3_2b50t")
+level_name = "Level 2"
+spawn_phasen = Array[Resource("res://Scripts/EnemySpawnPhase/enemy_spawn_phase.gd")]([ExtResource("4_tkbh4"), ExtResource("5_8dbfq"), ExtResource("6_rqlxu"), ExtResource("7_jruo3"), ExtResource("8_lcqwg"), ExtResource("9_uej4p"), ExtResource("10_fykpg"), ExtResource("11_lbtmu"), ExtResource("12_web81"), ExtResource("13_wlhv7")])
+preview = ExtResource("3_5qxvk")
+map_time = 600
+music = ExtResource("2_sdqlq")
+map = ExtResource("1_yicyd")
+drop_chance = 0.2
+difficulty = 5

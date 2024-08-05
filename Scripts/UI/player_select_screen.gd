@@ -6,8 +6,11 @@ extends CanvasLayer
 @onready var grid_container = %GridContainer
 
 func _ready():
+	var delay = .2
 	for card in player_cards.player_resources:
 		var pc = player_card.instantiate() as PlayerCard
 		pc.player_resource = card
 		grid_container.add_child(pc)
 		pc.start()
+		pc.play_in(delay)
+		delay += .2

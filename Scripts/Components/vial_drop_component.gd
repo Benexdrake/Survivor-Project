@@ -15,7 +15,7 @@ func config(set_drop_percent:float):
 	
 
 func on_died():
-	if randf() > drop_percent:
+	if randf() > drop_percent + GlobalVariables.level_resource.drop_chance:
 		return
 	
 	if vial_scene == null:

@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("3_5vd14")
-arena_difficulty = 1
+arena_difficulty = 2
 enemy_resources = Array[Resource("res://Scripts/Enemys/enemy_resource.gd")]([ExtResource("1_080ry")])
 spawn_time = 0.5
+weight = 10

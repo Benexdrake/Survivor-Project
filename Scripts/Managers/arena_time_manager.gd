@@ -2,7 +2,7 @@ extends Node
 
 signal arena_difficulty_increased(arena_difficulty:int)
 
-@export var difficulty_interval:int = 30
+var difficulty_interval:int = 30
 
 @export var end_screen_scene: PackedScene
 
@@ -14,11 +14,19 @@ var previous_time = 0
 func _ready():
 	timer.timeout.connect(on_timer_timeout)
 	
+
+func start(time:int):
+	timer.wait_time = time / GlobalVariables.level_resource.difficulty
+	difficulty_interval = difficulty_interval / GlobalVariables.level_resource.difficulty
+	timer.start()
+
+	
 func _process(delta):
 	var next_time_target = timer.wait_time - ((arena_difficulty + 1) * difficulty_interval)
 	if timer.time_left <= next_time_target:
 		arena_difficulty +=1
 		arena_difficulty_increased.emit(arena_difficulty)
+
 
 func get_time_elapsed():
 	return timer.wait_time - timer.time_left

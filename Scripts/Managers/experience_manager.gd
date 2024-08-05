@@ -24,7 +24,7 @@ func increment_experience(number:int):
 		experience_updated.emit(current_experience,target_experience, current_level)
 		level_up.emit(current_level)
 	$AudioStreamPlayer2D.play()
-	GameEvents.money += number
+	GlobalVariables.money += number
 
 func on_experience_vial_collected(number:int):
 	increment_experience(number)

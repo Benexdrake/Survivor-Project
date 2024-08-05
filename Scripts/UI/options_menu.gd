@@ -12,7 +12,7 @@ func _ready():
 	window_button.pressed.connect(on_window_button_pressed)
 	sfx_slider.value_changed.connect(on_audio_slider_changed.bind("SFX"))
 	music_slider.value_changed.connect(on_audio_slider_changed.bind("Music"))
-	
+
 	back_button.pressed.connect(on_back_button_pressed)
 	
 	update_display()
@@ -48,6 +48,8 @@ func on_window_button_pressed():
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		
 	update_display()
+
+
 
 
 func on_audio_slider_changed(value:float, bus_name:String):

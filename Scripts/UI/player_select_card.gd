@@ -58,8 +58,8 @@ func select_card():
 	await $AnimationPlayer.animation_finished
 	await play_discard()
 	
-	GameEvents.player_resource = player_resource
-	ScreenTransition.transition_to_scene("res://Scenes/Level/main.tscn")
+	GlobalVariables.player_resource = player_resource
+	ScreenTransition.transition_to_scene("res://Scenes/UI/level_select_screen.tscn")
 	
 
 func on_gui_input(event: InputEvent):

@@ -18,7 +18,7 @@ func set_ability_upgrades(upgrades: Array[AbilityUpgrade]):
 		card_instance.selected.connect(on_upgrade_selected.bind(upgrade))
 		delay += .2
 		
-	var stories = GameEvents.player_resource.stories
+	var stories = GlobalVariables.player_resource.stories
 	
 	%StoryLabel.text = stories[randi_range(0,stories.size()-1)]
 		

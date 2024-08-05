@@ -1,24 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://c1m7beb2vo6hq"]
+[gd_scene load_steps=2 format=3 uid="uid://c1m7beb2vo6hq"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/enemy_manager.gd" id="1_7errj"]
-[ext_resource type="PackedScene" uid="uid://jw7uxdeaieow" path="res://Scenes/Enemys/flying_enemy.tscn" id="2_w5ugr"]
-[ext_resource type="PackedScene" uid="uid://m4c105rclpk5" path="res://Scenes/Enemys/big_enemy.tscn" id="3_4oem2"]
-[ext_resource type="Resource" uid="uid://c7wbj2gl4wt45" path="res://Resources/EnemySpawnPhase/phase2.tres" id="5_fhxp6"]
-[ext_resource type="Resource" uid="uid://ddlci0yua74yc" path="res://Resources/EnemySpawnPhase/phase1.tres" id="6_awtrd"]
-[ext_resource type="Resource" uid="uid://dowmusxkhpyrn" path="res://Resources/EnemySpawnPhase/phase3.tres" id="6_rofg1"]
-[ext_resource type="Resource" uid="uid://b8treeyj6ax8w" path="res://Resources/EnemySpawnPhase/phase4.tres" id="7_wrim0"]
-[ext_resource type="Resource" uid="uid://dvepads7erq22" path="res://Resources/EnemySpawnPhase/phase5.tres" id="8_5k75f"]
-[ext_resource type="Resource" uid="uid://84w00oa5k4b7" path="res://Resources/EnemySpawnPhase/phase6.tres" id="9_kkpsy"]
-[ext_resource type="Resource" uid="uid://b4mtisem0f6oj" path="res://Resources/EnemySpawnPhase/phase7.tres" id="10_josg1"]
-[ext_resource type="Resource" uid="uid://bn7y80xnsht8p" path="res://Resources/EnemySpawnPhase/phase8.tres" id="11_vehp3"]
-[ext_resource type="Resource" uid="uid://cr660w6ch8j8d" path="res://Resources/EnemySpawnPhase/phase9.tres" id="12_om11n"]
-[ext_resource type="Resource" uid="uid://c0yit4xaio2fc" path="res://Resources/EnemySpawnPhase/phase10.tres" id="13_ypah1"]
 
 [node name="EnemyManager" type="Node"]
 script = ExtResource("1_7errj")
-basic_enemy_scene = ExtResource("2_w5ugr")
-skelet_enemy_scene = ExtResource("3_4oem2")
-enemy_spawn_phases = Array[Resource("res://Scripts/EnemySpawnPhase/enemy_spawn_phase.gd")]([ExtResource("6_awtrd"), ExtResource("5_fhxp6"), ExtResource("6_rofg1"), ExtResource("7_wrim0"), ExtResource("8_5k75f"), ExtResource("9_kkpsy"), ExtResource("10_josg1"), ExtResource("11_vehp3"), ExtResource("12_om11n"), ExtResource("13_ypah1")])
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
