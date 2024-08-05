@@ -9,16 +9,12 @@ var max_shots = 3
 var current_shots = 0
 
 @export var damage = 5
+var velocity = Vector2(1,0)
 
 func _ready():
 	timer.timeout.connect(on_timer_timeout)
 	spawn_timer.timeout.connect(on_spawn_timer_timeout)
 	
-func _input(event):
-	if Input.is_action_just_pressed("move_up"):
-		rotate(-90)
-	elif Input.is_action_just_pressed("move_down"):
-		rotate(90)
 	
 func _process(delta):
 	var player = get_tree().get_first_node_in_group("player") as Player
@@ -27,6 +23,22 @@ func _process(delta):
 		return
 		
 	global_position = player.global_position
+	
+	
+func _input(event):
+	if Input.is_action_just_pressed("move_left"):
+		rotation_degrees = 180
+		velocity = Vector2(-1,0)
+	elif Input.is_action_just_pressed("move_right"):
+		rotation = 0
+		velocity = Vector2(1,0)
+	elif Input.is_action_just_pressed("move_up"):
+		rotation_degrees = -90
+		velocity = Vector2(0,-1)
+	elif Input.is_action_just_pressed("move_down"):
+		rotation_degrees = 90
+		velocity = Vector2(0,1)
+	
 
 func shoot():
 	var player = get_tree().get_first_node_in_group("player") as Player
@@ -41,6 +53,7 @@ func shoot():
 	
 	var bullet = shot_ability_scene.instantiate()
 	foreground.add_child(bullet)
+	bullet._velocity = velocity
 	bullet.hitbox_component.damage = damage + player.base_dmg
 	bullet.position = %Marker2D.global_position
 	

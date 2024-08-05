@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AbilityUpgradeCard" load_steps=4 format=3 uid="uid://b0oe5u47q01jw"]
+
+[ext_resource type="PackedScene" uid="uid://day5flx0dej5p" path="res://Scenes/Abilitys/ShotAbility/shot_ability_controller.tscn" id="1_qkq28"]
+[ext_resource type="Texture2D" uid="uid://7qtqntmu3v2f" path="res://Assets/Bibel.jpeg" id="2_45b0f"]
+[ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade_card.gd" id="3_wk6e0"]
+
+[resource]
+script = ExtResource("3_wk6e0")
+ability_controller_scene = ExtResource("1_qkq28")
+upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([])
+id = "shot"
+level = 0
+max_level = 1
+ability_name = "Shot"
+description = "Shots 3 Bullets
+"
+preview = ExtResource("2_45b0f")
+weight = 10
