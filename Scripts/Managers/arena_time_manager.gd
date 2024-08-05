@@ -16,8 +16,13 @@ func _ready():
 	
 
 func start(time:int):
-	timer.wait_time = time / GlobalVariables.level_resource.difficulty
-	difficulty_interval = difficulty_interval / GlobalVariables.level_resource.difficulty
+	var difficulty = 1
+	
+	if GlobalVariables.level_resource != null:
+		difficulty = GlobalVariables.level_resource.difficulty
+	
+	timer.wait_time = time / difficulty
+	difficulty_interval = difficulty_interval / difficulty
 	timer.start()
 
 	

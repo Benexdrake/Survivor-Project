@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
-var player_resource:PlayerResource
+@export var player_resource:PlayerResource
 
 var player_name:String
 var hp:float
@@ -38,7 +38,10 @@ func _ready():
 	
 
 func start():
-	player_resource = GlobalVariables.player_resource
+	if GlobalVariables.player_resource != null:
+		player_resource = GlobalVariables.player_resource
+	else:
+		GlobalVariables.player_resource = player_resource
 	player_name = player_resource.player_name
 	hp = player_resource.hp
 	base_dmg = player_resource.dmg
