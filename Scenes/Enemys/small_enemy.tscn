@@ -43,6 +43,7 @@ knockback_power = 30.0
 health_component = NodePath("../HealthComponent")
 
 [node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("10_3i1qf")]
+collision_layer = 64
 audio_bus_name = &"SFX"
 health_component = NodePath("../HealthComponent")
 

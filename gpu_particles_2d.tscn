@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ilgqsxpi461"]
+
+[ext_resource type="Texture2D" uid="uid://dkh14c88us4wt" path="res://Assets/Player/1/player1.png" id="2_y3gn2"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2rtwa"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 0, 0)
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_2rtwa")
+texture = ExtResource("2_y3gn2")
+explosiveness = 1.0

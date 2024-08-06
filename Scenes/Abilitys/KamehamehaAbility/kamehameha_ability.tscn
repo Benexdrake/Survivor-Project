@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://cixw88h4tjhf8"]
+
+[ext_resource type="Script" path="res://Scripts/Abilitys/ShotAbility/shot_ability.gd" id="1_qw3r4"]
+[ext_resource type="AudioStream" uid="uid://itvumm54m7h5" path="res://Assets/SFX/10_Battle_SFX/35_Miss_Evade_02.wav" id="2_jgw03"]
+[ext_resource type="Texture2D" uid="uid://ckgwrh8vicxk6" path="res://Assets/gem_01c.png" id="3_n3beg"]
+[ext_resource type="PackedScene" uid="uid://fgf6t05ngde" path="res://Scenes/Components/hitbox_component.tscn" id="4_nhj5m"]
+
+[sub_resource type="Animation" id="Animation_wf5b0"]
+resource_name = "default"
+length = 2.0
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fjhv7"]
+_data = {
+"default": SubResource("Animation_wf5b0")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i55hr"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dn5vu"]
+radius = 7.0
+
+[node name="KamehamehaAbility" type="CharacterBody2D" groups=["bible_ability"]]
+script = ExtResource("1_qw3r4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_jgw03")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fjhv7")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_n3beg")
+
+[node name="HitboxComponent" parent="." instance=ExtResource("4_nhj5m")]
+collision_mask = 65
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_i55hr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 0
+visibility_layer = 0
+shape = SubResource("CircleShape2D_dn5vu")
+disabled = true

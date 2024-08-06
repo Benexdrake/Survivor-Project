@@ -21,6 +21,7 @@ stream = ExtResource("2_p24g1")
 texture = ExtResource("2_ef8fn")
 
 [node name="HitboxComponent" parent="." instance=ExtResource("4_llogf")]
+collision_mask = 65
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 shape = SubResource("CircleShape2D_i55hr")

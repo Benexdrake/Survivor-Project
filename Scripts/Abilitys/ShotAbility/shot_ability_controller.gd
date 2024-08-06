@@ -23,22 +23,24 @@ func _process(delta):
 		return
 		
 	global_position = player.global_position
+	check_input()
+	
+
 	
 	
-func _input(event):
-	if Input.is_action_just_pressed("move_left"):
-		rotation_degrees = 180
-		velocity = Vector2(-1,0)
-	elif Input.is_action_just_pressed("move_right"):
-		rotation = 0
-		velocity = Vector2(1,0)
-	elif Input.is_action_just_pressed("move_up"):
+func check_input():
+	if Input.is_action_pressed("move_up"):
 		rotation_degrees = -90
 		velocity = Vector2(0,-1)
-	elif Input.is_action_just_pressed("move_down"):
+	elif Input.is_action_pressed("move_down"):
 		rotation_degrees = 90
 		velocity = Vector2(0,1)
-	
+	elif Input.is_action_pressed("move_left"):
+		rotation_degrees = 180
+		velocity = Vector2(-1,0)
+	elif Input.is_action_pressed("move_right"):
+		rotation = 0
+		velocity = Vector2(1,0)
 
 func shoot():
 	var player = get_tree().get_first_node_in_group("player") as Player

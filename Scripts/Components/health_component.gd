@@ -26,5 +26,5 @@ func get_health_percent():
 
 func check_death():
 	if current_health <= 0:
-		died.emit()
+		died.emit(owner.global_position)
 		owner.queue_free()

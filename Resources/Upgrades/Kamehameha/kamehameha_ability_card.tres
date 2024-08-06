@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="AbilityUpgradeCard" load_steps=4 format=3 uid="uid://di3yuthqnubgo"]
+
+[ext_resource type="PackedScene" uid="uid://day5flx0dej5p" path="res://Scenes/Abilitys/ShotAbility/shot_ability_controller.tscn" id="1_66tbv"]
+[ext_resource type="Texture2D" uid="uid://7qtqntmu3v2f" path="res://Assets/Bibel.jpeg" id="2_l8d7p"]
+[ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade_card.gd" id="3_6xqma"]
+
+[resource]
+script = ExtResource("3_6xqma")
+ability_controller_scene = ExtResource("1_66tbv")
+upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([])
+id = "kamehameha"
+level = 0
+max_level = 1
+ability_name = "Kamehameha"
+description = "Dragonball is awsome <3"
+preview = ExtResource("2_l8d7p")
+weight = 10

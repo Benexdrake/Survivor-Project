@@ -14,7 +14,7 @@ func config(set_drop_percent:float):
 	(health_component as HealthComponent).died.connect(on_died)
 	
 
-func on_died():
+func on_died(pos):
 	if randf() > drop_percent + GlobalVariables.level_resource.drop_chance:
 		return
 	
@@ -24,7 +24,7 @@ func on_died():
 	if not owner is Node2D:
 		return
 
-	var spawn_position = (owner as Node2D).global_position
+	var spawn_position = pos
 	var vial_instance = vial_scene.instantiate() as Node2D
 	get_tree().get_first_node_in_group("entities_layer").add_child(vial_instance)
 	vial_instance.global_position = spawn_position
