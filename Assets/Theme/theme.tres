@@ -1,7 +1,10 @@
-[gd_resource type="Theme" load_steps=17 format=3 uid="uid://smp3kudg03ba"]
+[gd_resource type="Theme" load_steps=20 format=3 uid="uid://smp3kudg03ba"]
 
 [ext_resource type="FontFile" uid="uid://ff27gedg4uqa" path="res://Assets/Theme/AtariGames.ttf" id="1_4cmi0"]
 [ext_resource type="Texture2D" uid="uid://dfhxviw1bqxgl" path="res://Assets/Theme/ui.png" id="1_76wdy"]
+[ext_resource type="Texture2D" uid="uid://dp7cj7wxdv6dr" path="res://Assets/Theme/UI/Panel.png" id="2_dj7cm"]
+[ext_resource type="Texture2D" uid="uid://b1pbdeh5w0uat" path="res://Assets/Theme/UI/Round_Panel.png" id="3_tdxos"]
+[ext_resource type="Texture2D" uid="uid://71n1g6jyhyf8" path="res://Assets/Theme/UI/Value.png" id="4_o618f"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2em77"]
 texture = ExtResource("1_76wdy")
@@ -86,27 +89,29 @@ border_width_bottom = 1
 border_color = Color(0, 0.118862, 0.0955543, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ypxir"]
-texture = ExtResource("1_76wdy")
+texture = ExtResource("2_dj7cm")
+texture_margin_left = 9.0
+texture_margin_top = 6.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(0, 0, 20, 20)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_idagc"]
+texture = ExtResource("3_tdxos")
+texture_margin_left = 12.0
+texture_margin_top = 6.0
+texture_margin_right = 12.0
+texture_margin_bottom = 6.0
+expand_margin_left = 7.0
+expand_margin_top = 6.0
+expand_margin_right = 7.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6kjx7"]
+texture = ExtResource("4_o618f")
 texture_margin_left = 4.0
-texture_margin_top = 13.0
 texture_margin_right = 4.0
-texture_margin_bottom = 10.0
-region_rect = Rect2(0, 0, 16, 16)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0f5j"]
-bg_color = Color(0, 0.118862, 0.0955543, 1)
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0.118862, 0.0955543, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dk4gc"]
-bg_color = Color(3.36915e-06, 0.669133, 0.796168, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0.118862, 0.0955543, 1)
+texture_margin_bottom = 4.0
 
 [resource]
 default_font = ExtResource("1_4cmi0")
@@ -128,5 +133,5 @@ HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_bsqde")
 HSlider/styles/slider = SubResource("StyleBoxFlat_i358s")
 Label/constants/line_spacing = 0
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_ypxir")
-ProgressBar/styles/background = SubResource("StyleBoxFlat_k0f5j")
-ProgressBar/styles/fill = SubResource("StyleBoxFlat_dk4gc")
+ProgressBar/styles/background = SubResource("StyleBoxTexture_idagc")
+ProgressBar/styles/fill = SubResource("StyleBoxTexture_6kjx7")

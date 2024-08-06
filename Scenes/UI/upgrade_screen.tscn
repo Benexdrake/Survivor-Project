@@ -61,6 +61,7 @@ _data = {
 
 [node name="UpgradeScreen" type="CanvasLayer"]
 process_mode = 3
+layer = 3
 script = ExtResource("1_fd6aq")
 upgrade_card_scene = ExtResource("1_u7xr0")
 
@@ -112,7 +113,6 @@ size_flags_vertical = 4
 theme_override_constants/separation = 16
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
-self_modulate = Color(0.381974, 0.557401, 0.791696, 1)
 layout_mode = 2
 mouse_filter = 1
 

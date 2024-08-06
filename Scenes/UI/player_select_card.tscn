@@ -223,8 +223,8 @@ _data = {
 [node name="PlayerSelectCard" type="PanelContainer" groups=["player_select_card"]]
 self_modulate = Color(0.252028, 0.252028, 0.252028, 1)
 custom_minimum_size = Vector2(120, 0)
-offset_right = 120.0
-offset_bottom = 216.0
+offset_right = 124.0
+offset_bottom = 222.0
 pivot_offset = Vector2(54, 94)
 script = ExtResource("1_ggupj")
 player_resource = ExtResource("2_56ij8")
@@ -256,7 +256,6 @@ text = "Charaktername"
 horizontal_alignment = 1
 
 [node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer"]
-self_modulate = Color(0.165092, 0.669152, 0.732444, 1)
 layout_mode = 2
 mouse_filter = 1
 

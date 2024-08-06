@@ -220,10 +220,10 @@ _data = {
 }
 
 [node name="AbilityUpgradeCard" type="PanelContainer" groups=["upgrade_card"]]
-self_modulate = Color(1, 0.654118, 0.258437, 1)
+self_modulate = Color(0.996078, 0.705882, 0, 1)
 custom_minimum_size = Vector2(200, 340)
 offset_right = 200.0
-offset_bottom = 1251.0
+offset_bottom = 340.0
 pivot_offset = Vector2(100, 170)
 size_flags_vertical = 0
 script = ExtResource("1_8dwaw")
@@ -283,7 +283,7 @@ layout_mode = 2
 mouse_filter = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
-self_modulate = Color(0.988186, 0.858084, 0.575393, 1)
+self_modulate = Color(0.714066, 0.702602, 0.68365, 1)
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 mouse_filter = 1

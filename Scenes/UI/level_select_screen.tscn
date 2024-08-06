@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://cgm5bh576yrm7" path="res://Resources/Level/level2.tres" id="3_ai4h8"]
 
 [node name="LevelSelectScreen" type="CanvasLayer"]
+layer = 3
 script = ExtResource("1_jksdn")
 level_resources = Array[Resource("res://Scripts/Resources/level.gd")]([ExtResource("2_q7uoc"), ExtResource("3_ai4h8")])
 
