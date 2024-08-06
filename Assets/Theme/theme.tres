@@ -1,9 +1,12 @@
-[gd_resource type="Theme" load_steps=20 format=3 uid="uid://smp3kudg03ba"]
+[gd_resource type="Theme" load_steps=23 format=3 uid="uid://smp3kudg03ba"]
 
 [ext_resource type="FontFile" uid="uid://ff27gedg4uqa" path="res://Assets/Theme/AtariGames.ttf" id="1_4cmi0"]
 [ext_resource type="Texture2D" uid="uid://dfhxviw1bqxgl" path="res://Assets/Theme/ui.png" id="1_76wdy"]
+[ext_resource type="Texture2D" uid="uid://bfru3dsnawdmj" path="res://Assets/Theme/UI/Button.png" id="2_1j368"]
 [ext_resource type="Texture2D" uid="uid://dp7cj7wxdv6dr" path="res://Assets/Theme/UI/Panel.png" id="2_dj7cm"]
+[ext_resource type="Texture2D" uid="uid://d0n34o3eh87jt" path="res://Assets/Theme/UI/Button3.png" id="2_vkc5n"]
 [ext_resource type="Texture2D" uid="uid://b1pbdeh5w0uat" path="res://Assets/Theme/UI/Round_Panel.png" id="3_tdxos"]
+[ext_resource type="Texture2D" uid="uid://cpentgxpl4upu" path="res://Assets/Theme/UI/Button2.png" id="3_y6uhu"]
 [ext_resource type="Texture2D" uid="uid://71n1g6jyhyf8" path="res://Assets/Theme/UI/Value.png" id="4_o618f"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2em77"]
@@ -16,41 +19,41 @@ region_rect = Rect2(18, 2, 12, 12)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vmcq4"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r108l"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d0413"]
 content_margin_left = 3.0
 content_margin_top = 3.0
 content_margin_right = 3.0
 content_margin_bottom = 3.0
-texture = ExtResource("1_76wdy")
-texture_margin_left = 3.0
-texture_margin_top = 3.0
-texture_margin_right = 3.0
-texture_margin_bottom = 3.0
-region_rect = Rect2(20, 20, 8, 8)
+texture = ExtResource("2_vkc5n")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(0, 0, 12, 14)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0rd8d"]
 content_margin_left = 3.0
 content_margin_top = 3.0
 content_margin_right = 3.0
 content_margin_bottom = 3.0
-texture = ExtResource("1_76wdy")
-texture_margin_left = 3.0
-texture_margin_top = 3.0
-texture_margin_right = 3.0
-texture_margin_bottom = 3.0
-region_rect = Rect2(4, 20, 8, 8)
+texture = ExtResource("2_1j368")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(0, 0, 12, 14)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gah31"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2rl5x"]
 content_margin_left = 3.0
 content_margin_top = 3.0
 content_margin_right = 3.0
 content_margin_bottom = 3.0
-texture = ExtResource("1_76wdy")
-texture_margin_left = 3.0
-texture_margin_top = 3.0
-texture_margin_right = 3.0
-texture_margin_bottom = 3.0
-region_rect = Rect2(4, 20, 8, 8)
+texture = ExtResource("3_y6uhu")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(0, 0, 12, 14)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jij7m"]
 size = Vector2(0, 0)
@@ -98,20 +101,18 @@ region_rect = Rect2(0, 0, 20, 20)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_idagc"]
 texture = ExtResource("3_tdxos")
-texture_margin_left = 12.0
-texture_margin_top = 6.0
-texture_margin_right = 12.0
-texture_margin_bottom = 6.0
-expand_margin_left = 7.0
-expand_margin_top = 6.0
-expand_margin_right = 7.0
-expand_margin_bottom = 6.0
+texture_margin_left = 11.0
+texture_margin_top = 10.0
+texture_margin_right = 11.0
+texture_margin_bottom = 10.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6kjx7"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ihiba"]
 texture = ExtResource("4_o618f")
-texture_margin_left = 4.0
-texture_margin_right = 4.0
-texture_margin_bottom = 4.0
+texture_margin_left = 11.0
+texture_margin_top = 12.0
+texture_margin_right = 11.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(4, 5, 24, 22)
 
 [resource]
 default_font = ExtResource("1_4cmi0")
@@ -122,9 +123,9 @@ Button/colors/font_color = Color(1, 1, 1, 1)
 Button/colors/font_outline_color = Color(0.0142752, 0.0142752, 0.0142752, 1)
 Button/constants/outline_size = 4
 Button/styles/focus = SubResource("StyleBoxEmpty_vmcq4")
-Button/styles/hover = SubResource("StyleBoxTexture_r108l")
+Button/styles/hover = SubResource("StyleBoxTexture_d0413")
 Button/styles/normal = SubResource("StyleBoxTexture_0rd8d")
-Button/styles/pressed = SubResource("StyleBoxTexture_gah31")
+Button/styles/pressed = SubResource("StyleBoxTexture_2rl5x")
 HSlider/icons/grabber = SubResource("PlaceholderTexture2D_jij7m")
 HSlider/icons/grabber_disabled = SubResource("PlaceholderTexture2D_3ujtq")
 HSlider/icons/grabber_highlight = SubResource("PlaceholderTexture2D_r6wx7")
@@ -134,4 +135,4 @@ HSlider/styles/slider = SubResource("StyleBoxFlat_i358s")
 Label/constants/line_spacing = 0
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_ypxir")
 ProgressBar/styles/background = SubResource("StyleBoxTexture_idagc")
-ProgressBar/styles/fill = SubResource("StyleBoxTexture_6kjx7")
+ProgressBar/styles/fill = SubResource("StyleBoxTexture_ihiba")

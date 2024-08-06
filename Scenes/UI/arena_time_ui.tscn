@@ -7,17 +7,38 @@
 layer = 2
 script = ExtResource("1_twxny")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-custom_minimum_size = Vector2(100, 65)
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(80, 0)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -48.5
-offset_top = -90.0
-offset_right = 51.5
-offset_bottom = -25.0
+offset_top = -62.0
+offset_right = 31.5
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("2_s4rny")
+stretch_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(80, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.5
+offset_top = -71.0
+offset_right = 31.5
+offset_bottom = -36.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -29,7 +50,6 @@ texture = ExtResource("2_s4rny")
 stretch_mode = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
-custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -41,6 +61,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_colors/font_outline_color = Color(0.0383972, 0.0383972, 0.0383972, 1)
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 24
 text = "00:00"
 horizontal_alignment = 2

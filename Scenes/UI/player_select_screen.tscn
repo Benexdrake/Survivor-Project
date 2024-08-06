@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cj62qmxdo7juy"]
+[gd_scene load_steps=6 format=3 uid="uid://cj62qmxdo7juy"]
 
 [ext_resource type="Script" path="res://Scripts/UI/player_select_screen.gd" id="1_00gve"]
 [ext_resource type="Resource" uid="uid://bpljforopp5a8" path="res://Resources/Players/all_players.tres" id="2_c644b"]
 [ext_resource type="PackedScene" uid="uid://dn2ilajba0yy7" path="res://Scenes/UI/player_select_card.tscn" id="2_jlh51"]
+[ext_resource type="Texture2D" uid="uid://c55qcsmpkjh3" path="res://Assets/_8ae7189c-5d5d-4923-88c1-0dbfebddb04c.jpeg" id="4_1btx3"]
+[ext_resource type="PackedScene" uid="uid://dujgwpibibjgl" path="res://Scenes/UI/vignette.tscn" id="5_hv11v"]
 
 [node name="PlayerSelectScreen" type="CanvasLayer"]
 script = ExtResource("1_00gve")
@@ -16,9 +18,19 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("4_1btx3")
+expand_mode = 4
+stretch_mode = 1
+
 [node name="GridContainer" type="GridContainer" parent="MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
 columns = 5
+
+[node name="Vignette" parent="." instance=ExtResource("5_hv11v")]
