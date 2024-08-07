@@ -1,0 +1,29 @@
+[gd_resource type="Resource" load_steps=22 format=3 uid="uid://cy0rls3suhsva"]
+
+[ext_resource type="Resource" uid="uid://6kt1jubldnw0" path="res://Resources/Upgrades/Claw/claw_ability_card.tres" id="1_bkg7s"]
+[ext_resource type="Resource" uid="uid://ba52adg337cfr" path="res://Resources/Upgrades/Bible/bible_ability_card.tres" id="2_2776n"]
+[ext_resource type="Resource" uid="uid://c4w8qqnp7pw1c" path="res://Resources/Upgrades/DavidStarAura/david_star_aura_ability_card.tres" id="3_t7l88"]
+[ext_resource type="Resource" uid="uid://ctvjb0fsad0si" path="res://Resources/Upgrades/Slash/slash_ability_card.tres" id="4_2meee"]
+[ext_resource type="Resource" uid="uid://bu4jso5tt11p7" path="res://Resources/Upgrades/Thunder/thunder_ability_card.tres" id="5_ooy47"]
+[ext_resource type="Resource" uid="uid://cfbdgt6egwjbi" path="res://Resources/Upgrades/Health/health_regeneration_upgrade.tres" id="6_305la"]
+[ext_resource type="Resource" uid="uid://b5ngdm3cyq7ox" path="res://Resources/Upgrades/Health/max_health_upgrade.tres" id="7_7pjm7"]
+[ext_resource type="Resource" uid="uid://ddlci0yua74yc" path="res://Resources/EnemySpawnPhase/phase1.tres" id="8_1pkgp"]
+[ext_resource type="Resource" uid="uid://c7wbj2gl4wt45" path="res://Resources/EnemySpawnPhase/phase2.tres" id="9_xihbr"]
+[ext_resource type="Resource" uid="uid://dowmusxkhpyrn" path="res://Resources/EnemySpawnPhase/phase3.tres" id="10_sdjx4"]
+[ext_resource type="Resource" uid="uid://b8treeyj6ax8w" path="res://Resources/EnemySpawnPhase/phase4.tres" id="11_ofvmy"]
+[ext_resource type="Resource" uid="uid://dvepads7erq22" path="res://Resources/EnemySpawnPhase/phase5.tres" id="12_6udf8"]
+[ext_resource type="Resource" uid="uid://84w00oa5k4b7" path="res://Resources/EnemySpawnPhase/phase6.tres" id="13_tc0jh"]
+[ext_resource type="Resource" uid="uid://b4mtisem0f6oj" path="res://Resources/EnemySpawnPhase/phase7.tres" id="14_vnxg8"]
+[ext_resource type="Resource" uid="uid://bn7y80xnsht8p" path="res://Resources/EnemySpawnPhase/phase8.tres" id="15_s0vij"]
+[ext_resource type="Resource" uid="uid://cr660w6ch8j8d" path="res://Resources/EnemySpawnPhase/phase9.tres" id="16_p2r06"]
+[ext_resource type="Resource" uid="uid://bm1seocfdncg7" path="res://Resources/Players/player1.tres" id="17_twlvp"]
+[ext_resource type="Resource" uid="uid://di531ubruio82" path="res://Resources/Players/player2.tres" id="18_u52p5"]
+[ext_resource type="Resource" uid="uid://cvbvk0u0mnef2" path="res://Resources/Players/player3.tres" id="19_ryet4"]
+[ext_resource type="Resource" uid="uid://c8vy8h0ggkdrq" path="res://Resources/Players/player4.tres" id="20_tftav"]
+[ext_resource type="Script" path="res://Scripts/Resources/global_resource.gd" id="21_tl884"]
+
+[resource]
+script = ExtResource("21_tl884")
+abilities = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([ExtResource("1_bkg7s"), ExtResource("2_2776n"), ExtResource("3_t7l88"), ExtResource("4_2meee"), ExtResource("5_ooy47"), ExtResource("6_305la"), ExtResource("7_7pjm7")])
+players = Array[Resource("res://Scripts/Player/player_resource.gd")]([ExtResource("17_twlvp"), ExtResource("18_u52p5"), ExtResource("19_ryet4"), ExtResource("20_tftav")])
+enemy_phases = Array[Resource("res://Scripts/EnemySpawnPhase/enemy_spawn_phase.gd")]([ExtResource("8_1pkgp"), ExtResource("9_xihbr"), ExtResource("10_sdjx4"), ExtResource("11_ofvmy"), ExtResource("12_6udf8"), ExtResource("13_tc0jh"), ExtResource("14_vnxg8"), ExtResource("15_s0vij"), ExtResource("16_p2r06"), null])

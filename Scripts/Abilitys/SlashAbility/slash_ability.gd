@@ -3,6 +3,7 @@ extends Node2D
 @onready var hitbox_component : HitboxComponent = $HitboxComponent
 
 func _ready():
+	hitbox_component.area_entered.connect(on_area_entered)
 	$AudioStreamPlayer.play()
 
 func _process(delta):
@@ -11,3 +12,7 @@ func _process(delta):
 		return
 		
 	global_position = player.global_position
+
+	
+func on_area_entered(other):
+	$Hit.play()

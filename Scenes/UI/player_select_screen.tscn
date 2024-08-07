@@ -7,9 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://dujgwpibibjgl" path="res://Scenes/UI/vignette.tscn" id="5_hv11v"]
 
 [node name="PlayerSelectScreen" type="CanvasLayer"]
+layer = 4
 script = ExtResource("1_00gve")
 player_cards = ExtResource("2_c644b")
 player_card = ExtResource("2_jlh51")
+
+[node name="Vignette" parent="." instance=ExtResource("5_hv11v")]
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -32,5 +35,3 @@ size_flags_vertical = 4
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 5
-
-[node name="Vignette" parent="." instance=ExtResource("5_hv11v")]

@@ -11,6 +11,9 @@ layer = 3
 script = ExtResource("1_jksdn")
 level_resources = Array[Resource("res://Scripts/Resources/level.gd")]([ExtResource("2_q7uoc"), ExtResource("3_ai4h8")])
 
+[node name="Vignette" parent="." instance=ExtResource("5_38blg")]
+layer = 5
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,5 +34,3 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 columns = 3
-
-[node name="Vignette" parent="." instance=ExtResource("5_38blg")]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpmsftwff3rro"]
+
+[ext_resource type="PackedScene" uid="uid://dujgwpibibjgl" path="res://Scenes/UI/vignette.tscn" id="1_fjh0x"]
+[ext_resource type="PackedScene" uid="uid://ojcv63rkefwv" path="res://Scenes/UI/arena_time_ui.tscn" id="2_68n7j"]
+[ext_resource type="PackedScene" uid="uid://ucpeyg8oo82s" path="res://Scenes/UI/experience_bar.tscn" id="3_t5mdq"]
+[ext_resource type="PackedScene" uid="uid://bpklfqbk02xnw" path="res://Scenes/UI/cloud_shadows.tscn" id="4_ntu2k"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Vignette" parent="." instance=ExtResource("1_fjh0x")]
+
+[node name="ArenaTimeUI" parent="." node_paths=PackedStringArray("arena_timer_manager") instance=ExtResource("2_68n7j")]
+arena_timer_manager = NodePath("")
+
+[node name="ExperienceBar" parent="." node_paths=PackedStringArray("experience_manager") instance=ExtResource("3_t5mdq")]
+experience_manager = NodePath("")
+
+[node name="CloudShadows" parent="." instance=ExtResource("4_ntu2k")]

@@ -57,6 +57,7 @@ func on_timer_timeout():
 	timer.start()
 
 func on_arena_difficulty_increased(arena_difficult:int):
+	print(arena_difficult)
 	enemy_table = WeightedTable.new()
 	for spawn_phase in GlobalVariables.level_resource.spawn_phasen:
 		enemy_table.add_item(spawn_phase,spawn_phase.weight)

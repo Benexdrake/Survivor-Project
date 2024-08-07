@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dfvvqfr1e2y4p"]
+[gd_scene load_steps=14 format=3 uid="uid://dfvvqfr1e2y4p"]
 
 [ext_resource type="Texture2D" uid="uid://ja6thm6vxken" path="res://Assets/Skills/Slash1/File1.png" id="1_dvo2y"]
 [ext_resource type="Script" path="res://Scripts/Abilitys/SlashAbility/slash_ability.gd" id="1_qv7td"]
 [ext_resource type="AudioStream" uid="uid://cuutb3mtj2o36" path="res://Assets/SFX/10_Battle_SFX/22_Slash_04.wav" id="2_0pkjv"]
 [ext_resource type="Texture2D" uid="uid://dq6x3k1dgnv" path="res://Assets/Skills/Slash1/File2.png" id="2_nba2o"]
 [ext_resource type="Texture2D" uid="uid://dmu7qy6p8lu51" path="res://Assets/Skills/Slash1/File3.png" id="3_k8lu1"]
+[ext_resource type="AudioStream" uid="uid://d0f2wssfay1rs" path="res://Assets/SFX/10_Battle_SFX/15_Impact_flesh_02.wav" id="3_lectm"]
 [ext_resource type="PackedScene" uid="uid://fgf6t05ngde" path="res://Scenes/Components/hitbox_component.tscn" id="3_s4awi"]
 [ext_resource type="Texture2D" uid="uid://dqnt2aixmmno1" path="res://Assets/Skills/Slash1/File4.png" id="4_vcysy"]
 [ext_resource type="Texture2D" uid="uid://cg2gcb0j6dgj1" path="res://Assets/Skills/Slash1/File5.png" id="5_ik7vh"]
@@ -66,6 +67,9 @@ script = ExtResource("1_qv7td")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_0pkjv")
+
+[node name="Hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lectm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(92.4062, -0.249996)

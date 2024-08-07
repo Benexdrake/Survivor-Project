@@ -1,32 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://ojcv63rkefwv"]
+[gd_scene load_steps=2 format=3 uid="uid://ojcv63rkefwv"]
 
 [ext_resource type="Script" path="res://Scripts/UI/arena_time_ui.gd" id="1_twxny"]
-[ext_resource type="Texture2D" uid="uid://bq5ah0lmwsoyi" path="res://Assets/Theme/UI/Pipe.png" id="2_s4rny"]
 
 [node name="ArenaTimeUI" type="CanvasLayer"]
-layer = 2
+layer = 3
 script = ExtResource("1_twxny")
-
-[node name="MarginContainer2" type="MarginContainer" parent="."]
-custom_minimum_size = Vector2(80, 0)
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -48.5
-offset_top = -62.0
-offset_right = 31.5
-offset_bottom = -27.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer2"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-texture = ExtResource("2_s4rny")
-stretch_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(80, 0)
@@ -35,26 +13,14 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -48.5
-offset_top = -71.0
-offset_right = 31.5
-offset_bottom = -36.0
+offset_left = -40.0
+offset_top = -46.0
+offset_right = 40.0
+offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-texture = ExtResource("2_s4rny")
-stretch_mode = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer"]
+[node name="Label" type="Label" parent="MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
@@ -63,4 +29,5 @@ theme_override_colors/font_outline_color = Color(0.0383972, 0.0383972, 0.0383972
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 24
 text = "00:00"
-horizontal_alignment = 2
+horizontal_alignment = 1
+vertical_alignment = 2

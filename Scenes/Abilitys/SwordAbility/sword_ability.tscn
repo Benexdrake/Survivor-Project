@@ -83,6 +83,7 @@ libraries = {
 }
 
 [node name="HitboxComponent" parent="." instance=ExtResource("6_3so78")]
+collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 shape = SubResource("CircleShape2D_rcejr")

@@ -1,8 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://ucpeyg8oo82s"]
 
-[ext_resource type="Script" path="res://Scenes/UI/experience_bar.gd" id="1_top4s"]
+[ext_resource type="Script" path="res://Scripts/UI/experience_bar.gd" id="1_top4s"]
 
 [node name="ExperienceBar" type="CanvasLayer"]
+layer = 3
 script = ExtResource("1_top4s")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

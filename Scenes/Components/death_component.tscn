@@ -1,21 +1,37 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2ao038ji85tt"]
+[gd_scene load_steps=10 format=3 uid="uid://c2ao038ji85tt"]
 
 [ext_resource type="Script" path="res://Scripts/Components/death_component.gd" id="1_k7g5c"]
 [ext_resource type="AudioStream" uid="uid://dv1vs1wras50r" path="res://Assets/SFX/10_Battle_SFX/69_Enemy_death_01.wav" id="2_vphsk"]
+[ext_resource type="Shader" path="res://Shaders/dissolve.gdshader" id="3_wb70i"]
+
+[sub_resource type="Animation" id="Animation_n8eqx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/dissolve_pct")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_bovoq"]
 resource_name = "default"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("GPUParticles2D:emitting")
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/dissolve_pct")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1.56917, 3.13834),
+"update": 0,
+"values": [0.0, 1.0]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -34,26 +50,23 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7kban"]
 _data = {
+"RESET": SubResource("Animation_n8eqx"),
 "default": SubResource("Animation_bovoq")
 }
 
-[sub_resource type="Curve" id="Curve_58k64"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.6, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_82ay0"]
+noise_type = 3
+seed = 3
+frequency = 0.024
 
-[sub_resource type="CurveTexture" id="CurveTexture_yqpnu"]
-curve = SubResource("Curve_58k64")
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_uudim"]
+noise = SubResource("FastNoiseLite_82ay0")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5ee4q"]
-particle_flag_disable_z = true
-direction = Vector3(0, -1, 0)
-spread = 30.0
-initial_velocity_min = 175.0
-initial_velocity_max = 250.0
-angular_velocity_min = -1440.0
-angular_velocity_max = 1440.0
-gravity = Vector3(0, 800, 0)
-scale_curve = SubResource("CurveTexture_yqpnu")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wdp6r"]
+shader = ExtResource("3_wb70i")
+shader_parameter/dissolve_pct = 0.0
+shader_parameter/lerp_percent = 0.6
+shader_parameter/noise_text = SubResource("NoiseTexture2D_uudim")
 
 [node name="DeathComponent" type="Node2D"]
 script = ExtResource("1_k7g5c")
@@ -63,15 +76,11 @@ libraries = {
 "": SubResource("AnimationLibrary_7kban")
 }
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-emitting = false
-amount = 1
-process_material = SubResource("ParticleProcessMaterial_5ee4q")
-lifetime = 0.5
-one_shot = true
-fixed_fps = 0
-interpolate = false
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vphsk")
+volume_db = -6.0
 bus = &"SFX"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_wdp6r")

@@ -53,6 +53,8 @@ func start():
 	%Abilities.add_child(ability_instance)
 	
 	var upgrade_manager = get_tree().get_first_node_in_group("upgrade_manager") as UpgradeManager
+	if upgrade_manager == null:
+		return
 	player_resource.ability.level = 1
 	upgrade_manager.adding_upgrades(player_resource.ability.id)
 	
@@ -114,7 +116,7 @@ func move():
 func check_deal_damage():
 	if number_colliding_bodies == 0 || !damage_interval_timer.is_stopped():
 		return
-	health_component.damage(1)
+	health_component.damage(0)
 	damage_interval_timer.start()
 	
 
