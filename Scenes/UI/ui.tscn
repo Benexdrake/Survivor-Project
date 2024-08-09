@@ -9,10 +9,8 @@
 
 [node name="Vignette" parent="." instance=ExtResource("1_fjh0x")]
 
-[node name="ArenaTimeUI" parent="." node_paths=PackedStringArray("arena_timer_manager") instance=ExtResource("2_68n7j")]
-arena_timer_manager = NodePath("")
+[node name="ArenaTimeUI" parent="." instance=ExtResource("2_68n7j")]
 
-[node name="ExperienceBar" parent="." node_paths=PackedStringArray("experience_manager") instance=ExtResource("3_t5mdq")]
-experience_manager = NodePath("")
+[node name="ExperienceBar" parent="." instance=ExtResource("3_t5mdq")]
 
 [node name="CloudShadows" parent="." instance=ExtResource("4_ntu2k")]

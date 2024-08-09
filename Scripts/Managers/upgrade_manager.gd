@@ -43,6 +43,8 @@ func apply_upgrade(upgrade: AbilityUpgrade):
 func pick_upgrades():
 	var chosen_upgrades:Array[AbilityUpgrade] = []
 	
+	var exclude:Array[AbilityUpgrade] = []
+	
 	for ability in current_upgrades:
 		upgrade_pool.remove_item(ability)
 	
@@ -51,9 +53,8 @@ func pick_upgrades():
 			break
 		
 		var chosen_upgrade = upgrade_pool.pick_item(chosen_upgrades)
-		
 		if chosen_upgrade == null:
-			break
+			continue
 		
 		if not chosen_upgrade is AbilityUpgradeCard:
 			if chosen_upgrade.level < chosen_upgrade.max_level:

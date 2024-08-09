@@ -33,18 +33,23 @@ func pick_item(exclude: Array = []):
 			adjusted_abilities.append(ability)
 			adjusted_weight_sum += ability.weight
 	
-	var item
-	
-	while(item == null):
-		item = find_item(adjusted_weight_sum,adjusted_abilities)
+	var item = find_item(adjusted_weight_sum,adjusted_abilities)
 	
 	return item
 			
 func find_item(adjusted_weight_sum, adjusted_abilities):
 	var chosen_weight = randi_range(1, adjusted_weight_sum)
-	var iteration_sum = 0
+	var iteration_sum = adjusted_weight_sum
+	
+	var item
+	
 	for ability in adjusted_abilities:
-		iteration_sum += ability.weight
 		if chosen_weight <= iteration_sum:
 			if ability.level < ability.max_level:
-				return ability
+				item = ability
+				break
+	
+	#if item == null:
+		#item = adjusted_abilities[randi_range(0, adjusted_abilities.size() - 1)]
+	
+	return item

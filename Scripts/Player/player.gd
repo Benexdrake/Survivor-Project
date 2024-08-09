@@ -7,6 +7,7 @@ var player_name:String
 var hp:float
 var base_dmg:float
 var max_health:float
+var current_health:float
 var max_speed: int
 var acceleration_smoothing:int
 var movement_vector:Vector2
@@ -42,6 +43,7 @@ func start():
 		player_resource = GlobalVariables.player_resource
 	else:
 		GlobalVariables.player_resource = player_resource
+	GlobalVariables.upgrades.append((GlobalVariables.player_resource as PlayerResource).ability)
 	player_name = player_resource.player_name
 	hp = player_resource.hp
 	base_dmg = player_resource.dmg
@@ -116,7 +118,7 @@ func move():
 func check_deal_damage():
 	if number_colliding_bodies == 0 || !damage_interval_timer.is_stopped():
 		return
-	health_component.damage(0)
+	health_component.damage(1)
 	damage_interval_timer.start()
 	
 
@@ -125,7 +127,6 @@ func update_health_display():
 
 
 func on_body_entered(body:Node2D):
-	print(body.name)
 	number_colliding_bodies += 1
 	check_deal_damage()
 
@@ -151,7 +152,12 @@ func on_ability_upgrade_added(ability_upgrade:AbilityUpgrade):
 		abilities.add_child(scene.instantiate())
 	
 	if ability_upgrade.id == "max_health_upgrade":
-		health_component.max_health *= 1.20
+		
+		hp += max_health * 0.20
+		health_component.max_health = hp
+		
+		health_component.current_health = health_component.max_health
+		print(hp)
 		update_health_display()
 		
 	if ability_upgrade.id == "health_regeneration_upgrade":
