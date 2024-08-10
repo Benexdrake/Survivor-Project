@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cpmsftwff3rro"]
+[gd_scene load_steps=22 format=3 uid="uid://cpmsftwff3rro"]
 
 [ext_resource type="Script" path="res://Scripts/UI/ui.gd" id="1_nqofl"]
 [ext_resource type="Script" path="res://Scripts/UI/vignette.gd" id="1_qpnsm"]
@@ -12,8 +12,11 @@
 [ext_resource type="Script" path="res://Scripts/UI/ability_ui.gd" id="14_buke0"]
 [ext_resource type="Script" path="res://Scripts/UI/health_ui.gd" id="14_lickt"]
 [ext_resource type="Texture2D" uid="uid://bmy0gj8pdluh1" path="res://Assets/Theme/UI/heart_full.png" id="14_qyiek"]
+[ext_resource type="Script" path="res://Scripts/UI/arena_level_ui.gd" id="15_666qb"]
 [ext_resource type="Texture2D" uid="uid://bo1pfgee5sbf4" path="res://Assets/Theme/UI/heart_half.png" id="15_uqdn4"]
 [ext_resource type="Texture2D" uid="uid://cebccgrlosjro" path="res://Assets/Theme/UI/heart_empty.png" id="16_136ej"]
+[ext_resource type="Script" path="res://Scripts/UI/money_ui.gd" id="16_dka7d"]
+[ext_resource type="Texture2D" uid="uid://c3ved6d2tq4m3" path="res://Assets/MoneyBag2.png" id="17_icmog"]
 
 [sub_resource type="Animation" id="Animation_dnb5y"]
 resource_name = "hit"
@@ -72,7 +75,8 @@ shader = ExtResource("6_705sa")
 shader_parameter/tiling = Vector2(0.3, 0.3)
 shader_parameter/offset = Vector2(0.05, 0.05)
 
-[node name="UI" type="CanvasLayer"]
+[node name="UI" type="CanvasLayer" groups=["ui"]]
+process_mode = 3
 layer = 3
 script = ExtResource("1_nqofl")
 
@@ -216,10 +220,44 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 219.0
+offset_left = -106.0
 offset_top = -50.0
-offset_right = 431.0
+offset_right = 106.0
 offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 0
 columns = 10
+
+[node name="ArenaWaveUI" type="CanvasLayer" parent="." groups=["arena_wave_ui"]]
+layer = 3
+script = ExtResource("15_666qb")
+
+[node name="Label" type="Label" parent="ArenaWaveUI"]
+offset_left = 17.0
+offset_top = 493.0
+offset_right = 84.0
+offset_bottom = 514.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 24
+text = "Wave 1"
+
+[node name="MoneyUI" type="CanvasLayer" parent="." groups=["money_ui"]]
+layer = 3
+script = ExtResource("16_dka7d")
+
+[node name="Label" type="Label" parent="MoneyUI"]
+offset_left = 868.0
+offset_top = 493.0
+offset_right = 908.0
+offset_bottom = 514.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="MoneyUI"]
+position = Vector2(925, 493)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("17_icmog")

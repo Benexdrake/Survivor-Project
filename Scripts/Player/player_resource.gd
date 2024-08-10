@@ -13,7 +13,7 @@ class_name PlayerResource
 @export var speed: int
 @export var acceleration:int
 
-@export var stories:Array[String]
+@export_multiline var stories:Array[String]
 
 @export var hp_show:int
 @export var dmg_show:float

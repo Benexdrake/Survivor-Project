@@ -30,14 +30,14 @@ animations = [{
 [resource]
 script = ExtResource("1_k3epa")
 id = "1"
-player_name = "Ray"
+player_name = "Albert Einstein"
 ability = ExtResource("1_xww56")
 sprite_frames = SubResource("SpriteFrames_22ksg")
 hp = 10
 dmg = 100.0
 speed = 200
 acceleration = 25
-stories = Array[String](["2222222222", "3333333333"])
+stories = Array[String](["Ein Genie mit vielen Staatsbürgerschaften: Im Laufe seines Lebens besaß Einstein unter anderem die Schweizer, deutsche, österreichische und US-amerikanische Staatsbürgerschaft.", "Die spezielle und allgemeine Relativitätstheorie: Einsteins wohl bekannteste Theorien revolutionierten unser Verständnis von Raum, Zeit, Gravitation und dem Universum.", "E=mc²: Die berühmteste Gleichung der Welt: Diese Formel beschreibt die Äquivalenz von Masse und Energie und ist die Grundlage für die Kernenergie.", "Nobelpreis für Physik: Einstein erhielt 1921 den Nobelpreis für Physik, jedoch nicht für die Relativitätstheorie, sondern für seine Erklärung des photoelektrischen Effekts. ", "Ein Leben lang Neugier: Einstein war ein lebenslanger Lerner und stellte stets neugierige Fragen über die Welt.", "Mehr als nur ein Wissenschaftler: Neben seiner wissenschaftlichen Arbeit engagierte sich Einstein auch politisch und setzte sich für Frieden und soziale Gerechtigkeit ein.", "Ein leidenschaftlicher Musiker: Einstein spielte leidenschaftlich Geige und sah in der Musik eine Quelle der Inspiration.", "Ein schwieriger Schüler: In seiner Jugend galt Einstein eher als schwieriger Schüler und wurde sogar von einem Lehrer als \"faul\" bezeichnet.", "Ein großer Denker: Einstein war bekannt für seine Fähigkeit, komplexe Probleme auf einfache Weise zu erklären.", "Ein Mensch mit Fehlern: Auch Einstein war kein perfekter Mensch und machte Fehler. Seine Beharrlichkeit und seine Bereitschaft, seine eigenen Theorien in Frage zu stellen, machten ihn jedoch zu einem außergewöhnlichen Wissenschaftler."])
 hp_show = 2
 dmg_show = 3.0
 speed_show = 3

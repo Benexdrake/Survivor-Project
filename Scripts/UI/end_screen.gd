@@ -21,12 +21,12 @@ func _ready():
 	
 func set_victory():
 	title_label.text = "Gewonnen"
-	description_label.text = "Du hast per Schwarzarbeit X DM erarbeitet!"
+	description_label.text = "Du hast per Schwarzarbeit " + str(GlobalVariables.money) + "DM erarbeitet!"
 	$VictoryStreamPlayer.play()
 	
 func set_defeat():
 	title_label.text = "Verloren"
-	description_label.text = "Du hast verloren, du hast X DM erarbeitet, jedoch nimmt der Staat dir 45% von weg, dir bleiben X DM!"
+	description_label.text = "Du hast verloren, du hast " + str(GlobalVariables.money) + " DM erarbeitet"
 	$DefeatStreamPlayer.play()
 
 func on_back_button_pressed():

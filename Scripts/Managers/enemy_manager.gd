@@ -72,3 +72,6 @@ func on_arena_difficulty_increased(arena_difficult:int):
 	
 	timer.wait_time = enemy_phase.spawn_time
 	timer.start()
+	
+	var arena_wave_ui = get_tree().get_first_node_in_group("arena_wave_ui")
+	arena_wave_ui.arena_wave_label(arena_difficult)

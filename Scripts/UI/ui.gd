@@ -6,3 +6,13 @@ extends CanvasLayer
 @onready var cloud_shadows = $CloudShadows
 
 @export var experience_manager:Node
+
+func set_visibility(visible:bool):
+	$ArenaTimeUI.visible = visible
+	$ExperienceBar.visible = visible
+	$CloudShadows.visible = visible
+	$KillCounter.visible = visible
+	$HealthUI.visible = visible
+	$AbilityUI.visible = visible
+	$ArenaWaveUI.visible = visible
+	$MoneyUI.visible = visible

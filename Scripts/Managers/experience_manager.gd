@@ -25,6 +25,7 @@ func increment_experience(number:int):
 		level_up.emit(current_level)
 	$AudioStreamPlayer2D.play()
 	GlobalVariables.money += number
+	get_tree().get_first_node_in_group("money_ui").set_money_label()
 
 func on_experience_vial_collected(number:int):
 	increment_experience(number)
