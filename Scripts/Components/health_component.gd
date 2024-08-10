@@ -26,5 +26,10 @@ func get_health_percent():
 
 func check_death():
 	if current_health <= 0:
-		died.emit(owner.global_position)
+		if owner is Player:
+			died.emit()
+		else:
+			died.emit(owner.global_position)
+		# Gruppe kill_counter_ui ziehen
+		# wenn Owner ist nicht spieler, Signal kill_counter auslösen, kill_counter.emit()
 		owner.queue_free()

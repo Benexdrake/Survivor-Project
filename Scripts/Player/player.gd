@@ -35,7 +35,7 @@ func _ready():
 	damage_interval_timer.timeout.connect(on_damage_interval_timer_timeout)
 	health_component.health_changed.connect(on_health_changed)
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
-	update_health_display()
+	update_health_display(0)
 	
 
 func start():
@@ -46,6 +46,7 @@ func start():
 	GlobalVariables.upgrades.append((GlobalVariables.player_resource as PlayerResource).ability)
 	player_name = player_resource.player_name
 	hp = player_resource.hp
+	current_health = hp
 	base_dmg = player_resource.dmg
 	max_speed = player_resource.speed
 	acceleration_smoothing = player_resource.acceleration
@@ -65,6 +66,9 @@ func start():
 	
 	(MobileControlLayer.touch_screen_button as TouchScreenButton).released.connect(on_touchscreen_released)
 	MobileControlLayer.hide_button()
+	
+	var ability_ui = get_tree().get_first_node_in_group("ability_ui") as AbilityUI
+	ability_ui.check_ability_cards(player_resource.ability.icon)
 	
 var is_touch = false
 	
@@ -122,8 +126,11 @@ func check_deal_damage():
 	damage_interval_timer.start()
 	
 
-func update_health_display():
-	health_bar.value = health_component.get_health_percent()
+func update_health_display(health):
+	var health_ui = get_tree().get_first_node_in_group("health_ui")
+	var value = health_component.get_health_percent()
+	health_bar.value = value
+	health_ui.health_changed(health)
 
 
 func on_body_entered(body:Node2D):
@@ -142,7 +149,7 @@ func on_damage_interval_timer_timeout():
 func on_health_changed():
 	$HitStreamPlayer.play()
 	GameEvents.emit_player_damaged()
-	update_health_display()
+	update_health_display(-1)
 
 
 func on_ability_upgrade_added(ability_upgrade:AbilityUpgrade):
@@ -152,13 +159,15 @@ func on_ability_upgrade_added(ability_upgrade:AbilityUpgrade):
 		abilities.add_child(scene.instantiate())
 	
 	if ability_upgrade.id == "max_health_upgrade":
-		
-		hp += max_health * 0.20
+		max_health += 1
+		hp += max_health
 		health_component.max_health = hp
 		
+		var health_ui = get_tree().get_first_node_in_group("health_ui")
+		health_ui.health_plus()
+		
 		health_component.current_health = health_component.max_health
-		print(hp)
-		update_health_display()
+		update_health_display(health_component.max_health)
 		
 	if ability_upgrade.id == "health_regeneration_upgrade":
 		health_regeneration_timer = Timer.new()
@@ -169,8 +178,9 @@ func on_ability_upgrade_added(ability_upgrade:AbilityUpgrade):
 		health_regeneration_level += 1
 		
 func on_health_regeneration_timer_timeout():
+	var health_reg = ((max_health / 100) * health_regeneration_level)
 	health_component.current_health += ((max_health / 100) * health_regeneration_level)
-	update_health_display()
+	update_health_display(health_reg)
 
 func on_touchscreen_released():
 	is_touch = false

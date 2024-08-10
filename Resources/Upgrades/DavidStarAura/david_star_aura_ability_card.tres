@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="AbilityUpgradeCard" load_steps=4 format=3 uid="uid://c4w8qqnp7pw1c"]
+[gd_resource type="Resource" script_class="AbilityUpgradeCard" load_steps=5 format=3 uid="uid://c4w8qqnp7pw1c"]
 
 [ext_resource type="PackedScene" uid="uid://ccx1hdqtafsk5" path="res://Scenes/Abilitys/JudismAuraAbility/david_star_aura_ability_controller.tscn" id="1_xrj8j"]
+[ext_resource type="Texture2D" uid="uid://123dus4ekoo" path="res://Assets/Skills/DavidStar/DavidStar.png" id="2_al554"]
 [ext_resource type="Texture2D" uid="uid://dgngk651do3s0" path="res://Assets/DavidStar.jpg" id="2_h3llj"]
 [ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade_card.gd" id="3_u4xlb"]
 
@@ -14,4 +15,5 @@ max_level = 1
 ability_name = "Claw"
 description = "David Star Aura hits every enemy in Range"
 preview = ExtResource("2_h3llj")
+icon = ExtResource("2_al554")
 weight = 8

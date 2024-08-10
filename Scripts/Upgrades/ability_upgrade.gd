@@ -7,4 +7,5 @@ class_name AbilityUpgrade
 @export var ability_name: String
 @export_multiline var description: String
 @export var preview:Texture
+@export var icon: Texture
 @export var weight:int

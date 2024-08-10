@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="AbilityUpgradeCard" load_steps=5 format=3 uid="uid://bu4jso5tt11p7"]
+[gd_resource type="Resource" script_class="AbilityUpgradeCard" load_steps=6 format=3 uid="uid://bu4jso5tt11p7"]
 
 [ext_resource type="PackedScene" uid="uid://d050pbaodubjg" path="res://Scenes/Abilitys/ThunderAbility/thunder_ability_controller.tscn" id="1_d4uk2"]
 [ext_resource type="Texture2D" uid="uid://cn0ni3wn8votq" path="res://Assets/Donner.jpeg" id="2_4mii2"]
+[ext_resource type="Texture2D" uid="uid://kwrucb65xl4q" path="res://Assets/thunder_icon.png" id="2_vhmcg"]
 [ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade_card.gd" id="3_y7fr6"]
 [ext_resource type="Resource" uid="uid://dxr6p4tgf7u0o" path="res://Resources/Upgrades/Thunder/thunder_upgrade.tres" id="4_ljent"]
 
@@ -15,4 +16,5 @@ max_level = 1
 ability_name = "Thunder"
 description = "Hits randomly enemies with a Thunder strike"
 preview = ExtResource("2_4mii2")
+icon = ExtResource("2_vhmcg")
 weight = 12

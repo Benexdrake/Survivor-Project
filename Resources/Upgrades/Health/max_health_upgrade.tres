@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://b5ngdm3cyq7ox"]
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=4 format=3 uid="uid://b5ngdm3cyq7ox"]
 
+[ext_resource type="Texture2D" uid="uid://bmy0gj8pdluh1" path="res://Assets/Theme/UI/heart_full.png" id="1_fq36o"]
 [ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade.gd" id="1_o7mut"]
 [ext_resource type="Texture2D" uid="uid://cum1j0nbl5v2l" path="res://Assets/Health.jpeg" id="2_wh83q"]
 
@@ -11,4 +12,5 @@ max_level = 5
 ability_name = "Max Health"
 description = "20% more Health"
 preview = ExtResource("2_wh83q")
+icon = ExtResource("1_fq36o")
 weight = 10

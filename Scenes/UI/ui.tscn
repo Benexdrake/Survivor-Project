@@ -1,16 +1,225 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpmsftwff3rro"]
+[gd_scene load_steps=19 format=3 uid="uid://cpmsftwff3rro"]
 
-[ext_resource type="PackedScene" uid="uid://dujgwpibibjgl" path="res://Scenes/UI/vignette.tscn" id="1_fjh0x"]
-[ext_resource type="PackedScene" uid="uid://ojcv63rkefwv" path="res://Scenes/UI/arena_time_ui.tscn" id="2_68n7j"]
-[ext_resource type="PackedScene" uid="uid://ucpeyg8oo82s" path="res://Scenes/UI/experience_bar.tscn" id="3_t5mdq"]
-[ext_resource type="PackedScene" uid="uid://bpklfqbk02xnw" path="res://Scenes/UI/cloud_shadows.tscn" id="4_ntu2k"]
+[ext_resource type="Script" path="res://Scripts/UI/ui.gd" id="1_nqofl"]
+[ext_resource type="Script" path="res://Scripts/UI/vignette.gd" id="1_qpnsm"]
+[ext_resource type="Shader" path="res://Assets/vignette.gdshader" id="2_plylb"]
+[ext_resource type="Script" path="res://Scripts/UI/arena_time_ui.gd" id="3_yt87x"]
+[ext_resource type="Script" path="res://Scripts/UI/experience_bar.gd" id="5_byfqh"]
+[ext_resource type="Shader" path="res://Shaders/cloud_shadow.gdshader" id="6_705sa"]
+[ext_resource type="Texture2D" uid="uid://b0hoe2vcvjeyr" path="res://Assets/cloud shadow.png" id="7_o7vum"]
+[ext_resource type="Script" path="res://Scripts/UI/KillCounter.gd" id="8_a5wea"]
+[ext_resource type="Texture2D" uid="uid://csbgiwhx2qeoo" path="res://Assets/skull.png" id="9_2dois"]
+[ext_resource type="Script" path="res://Scripts/UI/ability_ui.gd" id="14_buke0"]
+[ext_resource type="Script" path="res://Scripts/UI/health_ui.gd" id="14_lickt"]
+[ext_resource type="Texture2D" uid="uid://bmy0gj8pdluh1" path="res://Assets/Theme/UI/heart_full.png" id="14_qyiek"]
+[ext_resource type="Texture2D" uid="uid://bo1pfgee5sbf4" path="res://Assets/Theme/UI/heart_half.png" id="15_uqdn4"]
+[ext_resource type="Texture2D" uid="uid://cebccgrlosjro" path="res://Assets/Theme/UI/heart_empty.png" id="16_136ej"]
+
+[sub_resource type="Animation" id="Animation_dnb5y"]
+resource_name = "hit"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/vignette_intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.4),
+"transitions": PackedFloat32Array(1, 2.73208, 1),
+"update": 0,
+"values": [0.4, 2.5, 0.4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:material:shader_parameter/vignette_rgb")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.4),
+"transitions": PackedFloat32Array(1, 2.63902, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0.557216, 0, 0.168696, 1), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:material:shader_parameter/vignette_opacity")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.5, 0.3, 0.5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3pcep"]
+_data = {
+"hit": SubResource("Animation_dnb5y")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_25pd6"]
+shader = ExtResource("2_plylb")
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8dh2f"]
+shader = ExtResource("6_705sa")
+shader_parameter/tiling = Vector2(0.3, 0.3)
+shader_parameter/offset = Vector2(0.05, 0.05)
 
 [node name="UI" type="CanvasLayer"]
+layer = 3
+script = ExtResource("1_nqofl")
 
-[node name="Vignette" parent="." instance=ExtResource("1_fjh0x")]
+[node name="Vignette" type="CanvasLayer" parent="."]
+layer = 2
+script = ExtResource("1_qpnsm")
 
-[node name="ArenaTimeUI" parent="." instance=ExtResource("2_68n7j")]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Vignette"]
+libraries = {
+"": SubResource("AnimationLibrary_3pcep")
+}
 
-[node name="ExperienceBar" parent="." instance=ExtResource("3_t5mdq")]
+[node name="ColorRect" type="ColorRect" parent="Vignette"]
+material = SubResource("ShaderMaterial_25pd6")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
-[node name="CloudShadows" parent="." instance=ExtResource("4_ntu2k")]
+[node name="ArenaTimeUI" type="CanvasLayer" parent="."]
+layer = 3
+script = ExtResource("3_yt87x")
+
+[node name="MarginContainer" type="MarginContainer" parent="ArenaTimeUI"]
+custom_minimum_size = Vector2(80, 0)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.0
+offset_top = 1.0
+offset_right = 40.0
+offset_bottom = 22.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="ArenaTimeUI/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0.0383972, 0.0383972, 0.0383972, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 24
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ExperienceBar" type="CanvasLayer" parent="."]
+layer = 3
+script = ExtResource("5_byfqh")
+
+[node name="MarginContainer" type="MarginContainer" parent="ExperienceBar"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -472.0
+offset_top = -57.0
+offset_right = 468.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(470, 26)
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_filter = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="ExperienceBar/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(940, 0)
+layout_mode = 2
+size_flags_vertical = 8
+size_flags_stretch_ratio = 0.0
+mouse_filter = 2
+max_value = 1.0
+value = 0.5
+show_percentage = false
+
+[node name="CloudShadows" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CloudShadows"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_8dh2f")
+texture = ExtResource("7_o7vum")
+region_enabled = true
+region_rect = Rect2(0, 0, 10000, 10000)
+
+[node name="KillCounter" type="CanvasLayer" parent="." groups=["kill_counter_ui"]]
+layer = 3
+script = ExtResource("8_a5wea")
+
+[node name="MarginContainer" type="MarginContainer" parent="KillCounter"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -108.0
+offset_right = -38.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="KillCounterLabel" type="Label" parent="KillCounter/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 32
+text = "0
+"
+horizontal_alignment = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="KillCounter/MarginContainer"]
+position = Vector2(84, 22)
+scale = Vector2(2, 2)
+texture = ExtResource("9_2dois")
+
+[node name="HealthUI" type="CanvasLayer" parent="." groups=["health_ui"]]
+layer = 3
+script = ExtResource("14_lickt")
+heart_full = ExtResource("14_qyiek")
+heart_half = ExtResource("15_uqdn4")
+heart_empty = ExtResource("16_136ej")
+
+[node name="GridContainer" type="GridContainer" parent="HealthUI"]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 45.0
+columns = 10
+
+[node name="AbilityUI" type="CanvasLayer" parent="." groups=["ability_ui"]]
+layer = 3
+script = ExtResource("14_buke0")
+
+[node name="GridContainer" type="GridContainer" parent="AbilityUI"]
+layout_direction = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 219.0
+offset_top = -50.0
+offset_right = 431.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 10

@@ -28,6 +28,8 @@ func adding_upgrades(upgrade_id:String):
 func apply_upgrade(upgrade: AbilityUpgrade):
 	if upgrade.level == 0:
 		GameEvents.emit_ability_upgrade_added(upgrade)
+		var ability_ui = get_tree().get_first_node_in_group("ability_ui") as AbilityUI
+		ability_ui.check_ability_cards(upgrade.icon)
 	else:
 		if upgrade is AbilityUpgradeCard:
 			GameEvents.emit_ability_upgrade_added(upgrade.upgrades[upgrade.level - 1])

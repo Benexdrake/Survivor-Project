@@ -1,13 +1,21 @@
-[gd_resource type="Theme" load_steps=23 format=3 uid="uid://smp3kudg03ba"]
+[gd_resource type="Theme" load_steps=26 format=3 uid="uid://smp3kudg03ba"]
 
 [ext_resource type="FontFile" uid="uid://ff27gedg4uqa" path="res://Assets/Theme/AtariGames.ttf" id="1_4cmi0"]
 [ext_resource type="Texture2D" uid="uid://dfhxviw1bqxgl" path="res://Assets/Theme/ui.png" id="1_76wdy"]
+[ext_resource type="Texture2D" uid="uid://bkey7gs25i8u5" path="res://Assets/Theme/UI/Ability_Panel.png" id="1_fsun5"]
 [ext_resource type="Texture2D" uid="uid://bfru3dsnawdmj" path="res://Assets/Theme/UI/Button.png" id="2_1j368"]
 [ext_resource type="Texture2D" uid="uid://dp7cj7wxdv6dr" path="res://Assets/Theme/UI/Panel.png" id="2_dj7cm"]
 [ext_resource type="Texture2D" uid="uid://d0n34o3eh87jt" path="res://Assets/Theme/UI/Button3.png" id="2_vkc5n"]
 [ext_resource type="Texture2D" uid="uid://b1pbdeh5w0uat" path="res://Assets/Theme/UI/Round_Panel.png" id="3_tdxos"]
 [ext_resource type="Texture2D" uid="uid://cpentgxpl4upu" path="res://Assets/Theme/UI/Button2.png" id="3_y6uhu"]
 [ext_resource type="Texture2D" uid="uid://71n1g6jyhyf8" path="res://Assets/Theme/UI/Value.png" id="4_o618f"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_crlxi"]
+texture = ExtResource("1_fsun5")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2em77"]
 texture = ExtResource("1_76wdy")
@@ -114,9 +122,14 @@ texture_margin_right = 11.0
 texture_margin_bottom = 12.0
 region_rect = Rect2(4, 5, 24, 22)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gi1e"]
+texture = ExtResource("3_tdxos")
+
 [resource]
 default_font = ExtResource("1_4cmi0")
 default_font_size = 16
+AbilityPanelContainer/base_type = &"PanelContainer"
+AbilityPanelContainer/styles/panel = SubResource("StyleBoxTexture_crlxi")
 AlternativePanelContainer/base_type = &"PanelContainer"
 AlternativePanelContainer/styles/panel = SubResource("StyleBoxTexture_2em77")
 Button/colors/font_color = Color(1, 1, 1, 1)
@@ -136,3 +149,5 @@ Label/constants/line_spacing = 0
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_ypxir")
 ProgressBar/styles/background = SubResource("StyleBoxTexture_idagc")
 ProgressBar/styles/fill = SubResource("StyleBoxTexture_ihiba")
+RoundPanelContainer/base_type = &"PanelContainer"
+RoundPanelContainer/styles/panel = SubResource("StyleBoxTexture_8gi1e")

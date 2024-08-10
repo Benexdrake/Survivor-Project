@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dob18qnvrawd1"]
+
+[ext_resource type="Script" path="res://Scripts/UI/ability_panel_container_card.gd" id="1_m1ql3"]
+
+[node name="AbilityPanelContainerCard" type="PanelContainer"]
+custom_minimum_size = Vector2(20, 20)
+theme_type_variation = &"AbilityPanelContainer"
+script = ExtResource("1_m1ql3")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+expand_mode = 4

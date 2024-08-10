@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ojcv63rkefwv"]
+[gd_scene load_steps=3 format=3 uid="uid://ojcv63rkefwv"]
 
 [ext_resource type="Script" path="res://Scripts/UI/arena_time_ui.gd" id="1_twxny"]
+[ext_resource type="Texture2D" uid="uid://dkwkjo7327ka6" path="res://Assets/Theme/UI/Sprite-0004.png" id="2_jnux1"]
 
 [node name="ArenaTimeUI" type="CanvasLayer"]
 layer = 3
@@ -31,3 +32,15 @@ theme_override_font_sizes/font_size = 24
 text = "00:00"
 horizontal_alignment = 1
 vertical_alignment = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(200, 0)
+offset_top = -14.0
+offset_right = 350.0
+offset_bottom = 86.0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+texture = ExtResource("2_jnux1")
+expand_mode = 2
