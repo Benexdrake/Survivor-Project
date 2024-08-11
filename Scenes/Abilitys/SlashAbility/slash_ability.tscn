@@ -67,9 +67,11 @@ script = ExtResource("1_qv7td")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_0pkjv")
+bus = &"SFX"
 
 [node name="Hit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_lectm")
+bus = &"SFX"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(92.4062, -0.249996)

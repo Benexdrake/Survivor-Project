@@ -74,15 +74,18 @@ layout_mode = 2
 
 [node name="PlayButton" parent="MarginContainer2/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("1_unx5l")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Play"
 
 [node name="OptionsButton" parent="MarginContainer2/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("1_unx5l")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Options"
 
 [node name="QuitButton" parent="MarginContainer2/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource("1_unx5l")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Quit"

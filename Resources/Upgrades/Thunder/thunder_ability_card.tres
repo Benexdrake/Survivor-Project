@@ -17,4 +17,4 @@ ability_name = "Thunder"
 description = "Hits randomly enemies with a Thunder strike"
 preview = ExtResource("2_4mii2")
 icon = ExtResource("2_vhmcg")
-weight = 12
+weight = 10

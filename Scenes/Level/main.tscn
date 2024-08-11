@@ -35,10 +35,10 @@ experience_manager = NodePath("../ExperienceManager")
 
 [node name="Entities" type="Node2D" parent="." groups=["entities_layer"]]
 y_sort_enabled = true
-position = Vector2(1, 0)
+position = Vector2(-1000, -1000)
 
 [node name="Player" parent="Entities" instance=ExtResource("13_2dq46")]
 unique_name_in_owner = true
-position = Vector2(14, 16)
+position = Vector2(1000, 1000)
 
 [node name="Foreground" type="Node2D" parent="." groups=["foreground_layer"]]

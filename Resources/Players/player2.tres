@@ -34,13 +34,14 @@ animations = [{
 [resource]
 script = ExtResource("2_wiwui")
 id = "2"
-player_name = "Asuka"
+player_name = "Arminius"
 ability = ExtResource("1_bvhdd")
 sprite_frames = SubResource("SpriteFrames_wc2d2")
 hp = 15
 dmg = 80.0
 speed = 300
 acceleration = 25
+description = "Arminius (in einigen Quellen auch Armenius; * um 17 v. Chr.; † um 21 n. Chr.) war ein Fürst der Cherusker, der den Römern im Jahre 9 n. Chr. in der Varusschlacht mit der Vernichtung von drei Legionen eine ihrer verheerendsten Niederlagen beibrachte. Die antiken Quellen bieten nur wenige biografische Angaben zu Arminius. Das nachantike Bild des Cheruskerfürsten ist vor allem durch die von Tacitus geprägte Formel „Befreier Germaniens“ bestimmt. "
 stories = Array[String](["adasdasdasdasdasdasda111111111"])
 hp_show = 5
 dmg_show = 2.0

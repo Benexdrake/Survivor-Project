@@ -1,9 +1,13 @@
 extends CanvasLayer
+class_name PlayerSelectScreen
 
 @export var player_cards: Resource
 @export var player_card:PackedScene
 
 @onready var grid_container = %GridContainer
+@onready var scroll_container = %ScrollContainer
+@onready var timer = $Timer
+@onready var description_label = %DescriptionLabel
 
 func _ready():
 	var delay = .2
@@ -14,3 +18,14 @@ func _ready():
 		pc.start()
 		pc.play_in(delay)
 		delay += .2
+		
+	timer.timeout.connect(on_timer_timeout)
+	description_label.text
+		
+func change_description_laben(text:String):
+	description_label.text = text
+	scroll_container.scroll_vertical = 0
+
+func on_timer_timeout():
+	scroll_container.scroll_vertical +=1
+	

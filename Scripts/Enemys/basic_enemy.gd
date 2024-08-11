@@ -9,6 +9,7 @@ class_name BasicEnemy
 @onready var death_component = $DeathComponent
 @onready var hit_flash_component = $HitFlashComponent
 @onready var knockback_component = $KnockbackComponent
+@onready var hurtbox_component = $HurtboxComponent
 
 var knockback_power: int = 50
 

@@ -22,6 +22,7 @@ timer = NodePath("Timer")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_qj51c")
+bus = &"SFX"
 
 [node name="Timer" type="Timer" parent="."]
 unique_name_in_owner = true

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AbilityUpgradeCard" load_steps=5 format=3 uid="uid://cr3a5ywo6jame"]
+
+[ext_resource type="PackedScene" uid="uid://342i8cegdo4h" path="res://Scenes/Abilitys/Axe/axe_ability_controller.tscn" id="1_mukpn"]
+[ext_resource type="Texture2D" uid="uid://bkg75lr7gudf2" path="res://Assets/Skills/Axe/Axe.png" id="2_khqb0"]
+[ext_resource type="Texture2D" uid="uid://b54asnqg6lp32" path="res://Assets/Axe.jpeg" id="3_eptiu"]
+[ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade_card.gd" id="4_2mo14"]
+
+[resource]
+script = ExtResource("4_2mo14")
+ability_controller_scene = ExtResource("1_mukpn")
+upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([])
+id = "axe"
+max_level = 0
+ability_name = "Axe"
+description = "Throws a Axe"
+preview = ExtResource("3_eptiu")
+icon = ExtResource("2_khqb0")
+weight = 10

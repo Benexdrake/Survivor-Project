@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dlr0jj3c54smu"]
+[gd_scene load_steps=12 format=3 uid="uid://dlr0jj3c54smu"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/upgrade_manager.gd" id="1_mdbol"]
 [ext_resource type="PackedScene" uid="uid://bfgy8kni4qofl" path="res://Scenes/UI/upgrade_screen.tscn" id="3_6diqs"]
@@ -9,9 +9,11 @@
 [ext_resource type="Resource" uid="uid://6kt1jubldnw0" path="res://Resources/Upgrades/Claw/claw_ability_card.tres" id="8_c33tq"]
 [ext_resource type="Resource" uid="uid://c4w8qqnp7pw1c" path="res://Resources/Upgrades/DavidStarAura/david_star_aura_ability_card.tres" id="9_buh31"]
 [ext_resource type="Resource" uid="uid://ctvjb0fsad0si" path="res://Resources/Upgrades/Slash/slash_ability_card.tres" id="9_lk4x5"]
+[ext_resource type="Resource" uid="uid://seolils31qck" path="res://Resources/Upgrades/FireballShot/fireball_shot_ability_card.tres" id="10_gjtwr"]
+[ext_resource type="Resource" uid="uid://cr3a5ywo6jame" path="res://Resources/Upgrades/Axe/axe_ability_card.tres" id="11_pakxd"]
 
 [node name="UpgradeManager" type="Node" groups=["upgrade_manager"]]
 script = ExtResource("1_mdbol")
 filler = ExtResource("5_fhwkd")
 upgrade_screen_scene = ExtResource("3_6diqs")
-abilities = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([ExtResource("4_d628j"), ExtResource("5_ugvol"), ExtResource("7_lxcq0"), ExtResource("8_c33tq"), ExtResource("9_buh31"), ExtResource("9_lk4x5")])
+abilities = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([ExtResource("4_d628j"), ExtResource("5_ugvol"), ExtResource("7_lxcq0"), ExtResource("8_c33tq"), ExtResource("9_buh31"), ExtResource("9_lk4x5"), ExtResource("10_gjtwr"), ExtResource("11_pakxd")])

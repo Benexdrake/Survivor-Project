@@ -1,19 +1,20 @@
-[gd_resource type="Resource" script_class="AbilityUpgradeCard" load_steps=5 format=3 uid="uid://ctvjb0fsad0si"]
+[gd_resource type="Resource" script_class="AbilityUpgradeCard" load_steps=7 format=3 uid="uid://ctvjb0fsad0si"]
 
 [ext_resource type="PackedScene" uid="uid://c0hq8atuexrb4" path="res://Scenes/Abilitys/SlashAbility/slash_ability_controller.tscn" id="1_6ldik"]
 [ext_resource type="Texture2D" uid="uid://b0ewqc5gmamev" path="res://Assets/sword_02c.png" id="2_hrv0x"]
 [ext_resource type="Texture2D" uid="uid://chudexbpks1de" path="res://Assets/Slash.jpeg" id="2_y3p35"]
 [ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade_card.gd" id="3_rk2q0"]
+[ext_resource type="Resource" uid="uid://dj2ld0lbcfesq" path="res://Resources/Upgrades/Slash/slash_speed_upgrade.tres" id="5_puxti"]
+[ext_resource type="Resource" uid="uid://k65tp5tnttc2" path="res://Resources/Upgrades/Slash/slash_double_upgrade.tres" id="6_ahmoq"]
 
 [resource]
 script = ExtResource("3_rk2q0")
 ability_controller_scene = ExtResource("1_6ldik")
-upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([])
+upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([ExtResource("5_puxti"), ExtResource("5_puxti"), ExtResource("5_puxti"), ExtResource("6_ahmoq")])
 id = "slash"
-level = 0
 max_level = 1
 ability_name = "Slash"
 description = "Slashs enemies in Range"
 preview = ExtResource("2_y3p35")
 icon = ExtResource("2_hrv0x")
-weight = 12
+weight = 10

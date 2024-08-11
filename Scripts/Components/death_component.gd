@@ -15,6 +15,10 @@ func on_died(pos):
 	if owner == null || not owner is Node2D:
 		return
 		
+	var move_sign = sign(owner.velocity.x)
+	if move_sign < 0:
+		sprite.flip_h = true
+		
 	
 	var kill_counter = get_tree().get_first_node_in_group("kill_counter_ui")
 	kill_counter.kill_counter.emit()	

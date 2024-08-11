@@ -8,4 +8,4 @@
 
 [resource]
 script = ExtResource("5_ss85d")
-player_resources = Array[Resource("res://Scripts/Player/player_resource.gd")]([ExtResource("1_qcfg0"), ExtResource("2_g8m3m"), ExtResource("3_1xjcf"), ExtResource("4_1285a")])
+player_resources = Array[Resource("res://Scripts/Player/player_resource.gd")]([ExtResource("1_qcfg0"), ExtResource("2_g8m3m"), ExtResource("3_1xjcf"), ExtResource("4_1285a"), ExtResource("1_qcfg0"), ExtResource("2_g8m3m"), ExtResource("3_1xjcf"), ExtResource("4_1285a")])

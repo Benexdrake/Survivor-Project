@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://dj2ld0lbcfesq"]
+
+[ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade.gd" id="1_64egn"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_64egn")
+id = "slash_speed_upgrade"
+level = 0
+max_level = 0
+ability_name = ""
+description = "Decrease cooldown of Slash"
+weight = 10

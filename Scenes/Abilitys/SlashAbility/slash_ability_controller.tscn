@@ -10,3 +10,7 @@ slash_ability_scene = ExtResource("2_odjh1")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
+
+[node name="SecondSlashTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true

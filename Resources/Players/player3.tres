@@ -4,29 +4,29 @@
 [ext_resource type="Script" path="res://Scripts/Player/player_resource.gd" id="3_54a6j"]
 [ext_resource type="Texture2D" uid="uid://n4th41mqjl6v" path="res://Assets/Player/3/190768.png" id="3_ol0ph"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xlvtk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_w25ou"]
 atlas = ExtResource("3_ol0ph")
-region = Rect2(0, 0, 51, 54)
+region = Rect2(0, 0, 51, 46)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5v1uu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxmvb"]
 atlas = ExtResource("3_ol0ph")
-region = Rect2(51, 0, 51, 54)
+region = Rect2(51, 0, 51, 46)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uy2sl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmyle"]
 atlas = ExtResource("3_ol0ph")
-region = Rect2(102, 0, 51, 54)
+region = Rect2(102, 0, 51, 46)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_22ksg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xlvtk")
+"texture": SubResource("AtlasTexture_w25ou")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5v1uu")
+"texture": SubResource("AtlasTexture_yxmvb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uy2sl")
+"texture": SubResource("AtlasTexture_rmyle")
 }],
 "loop": true,
 "name": &"default",
@@ -36,13 +36,16 @@ animations = [{
 [resource]
 script = ExtResource("3_54a6j")
 id = "3"
-player_name = "Death"
+player_name = "Heinrich Heine"
 ability = ExtResource("1_qf72h")
 sprite_frames = SubResource("SpriteFrames_22ksg")
 hp = 30
 dmg = 60.0
 speed = 200
 acceleration = 25
+description = "Christian Johann Heinrich Heine (* 13. Dezember 1797 als Harry Heine in Düsseldorf, Herzogtum Berg; † 17. Februar 1856 in Paris) war einer der bedeutendsten deutschen Dichter, Schriftsteller und Journalisten des 19. Jahrhunderts.
+
+Er gilt als einer der letzten Vertreter und zugleich als Überwinder der Romantik, machte die Alltagssprache lyrikfähig, erhob das Feuilleton und den Reisebericht zur Kunstform und verlieh der deutschen Literatur eine zuvor nicht gekannte, elegante Leichtigkeit. Die Werke kaum eines anderen Dichters deutscher Sprache wurden bis heute so häufig übersetzt und vertont. Als kritischer, politisch engagierter Journalist, Essayist, Satiriker und Polemiker war Heine ebenso bewundert wie gefürchtet. Im Deutschen Bund mit Publikationsverboten belegt, verbrachte er seine zweite Lebenshälfte im Pariser Exil. Antisemiten und Nationalisten feindeten Heine wegen seiner jüdischen Herkunft und seiner politischen Haltung über den Tod hinaus an. Die Außenseiterrolle prägte sein Leben, sein Werk und dessen Rezeptionsgeschichte. "
 stories = Array[String](["Death"])
 hp_show = 4
 dmg_show = 3.0

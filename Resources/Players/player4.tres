@@ -78,6 +78,7 @@ hp = 5
 dmg = 60.0
 speed = 200
 acceleration = 25
+description = "Geiler Typ"
 stories = Array[String](["Death"])
 hp_show = 2
 dmg_show = 3.0

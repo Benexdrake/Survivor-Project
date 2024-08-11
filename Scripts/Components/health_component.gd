@@ -8,14 +8,21 @@ var max_health: float
 var current_health:float
 
 func _ready():
-	current_health = max_health
+	#current_health = max_health
+	pass
+	
 
 func config(set_max_health:float):
 	max_health = set_max_health
 	current_health = set_max_health
+	if owner is Boss:
+		owner.health_bar.value = get_health_percent()
 
 func damage(damage_amount:float):
 	current_health = max(current_health - damage_amount, 0)
+	
+	if owner is Boss:
+		owner.health_bar.value = get_health_percent()
 	health_changed.emit()
 	Callable(check_death).call_deferred()
 
@@ -29,6 +36,7 @@ func check_death():
 		if owner is Player:
 			died.emit()
 		else:
+			owner.hurtbox_component.monitoring = false
 			died.emit(owner.global_position)
 		# Gruppe kill_counter_ui ziehen
 		# wenn Owner ist nicht spieler, Signal kill_counter auslösen, kill_counter.emit()

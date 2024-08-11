@@ -9,6 +9,7 @@ class_name BasicEnemy2
 @onready var hit_flash_component = $HitFlashComponent
 @onready var animated_sprite_2d = $Visuals/AnimatedSprite2D
 @onready var knockback_component = $KnockbackComponent
+@onready var hurtbox_component = $HurtboxComponent
 
 var knockback_power: int = 5
 

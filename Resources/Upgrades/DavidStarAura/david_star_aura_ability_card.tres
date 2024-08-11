@@ -16,4 +16,4 @@ ability_name = "Claw"
 description = "David Star Aura hits every enemy in Range"
 preview = ExtResource("2_h3llj")
 icon = ExtResource("2_al554")
-weight = 8
+weight = 10

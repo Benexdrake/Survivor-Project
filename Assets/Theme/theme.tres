@@ -1,6 +1,5 @@
 [gd_resource type="Theme" load_steps=26 format=3 uid="uid://smp3kudg03ba"]
 
-[ext_resource type="FontFile" uid="uid://ff27gedg4uqa" path="res://Assets/Theme/AtariGames.ttf" id="1_4cmi0"]
 [ext_resource type="Texture2D" uid="uid://dfhxviw1bqxgl" path="res://Assets/Theme/ui.png" id="1_76wdy"]
 [ext_resource type="Texture2D" uid="uid://bkey7gs25i8u5" path="res://Assets/Theme/UI/Ability_Panel.png" id="1_fsun5"]
 [ext_resource type="Texture2D" uid="uid://bfru3dsnawdmj" path="res://Assets/Theme/UI/Button.png" id="2_1j368"]
@@ -125,9 +124,12 @@ region_rect = Rect2(4, 5, 24, 22)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gi1e"]
 texture = ExtResource("3_tdxos")
 
+[sub_resource type="SystemFont" id="SystemFont_bxkq8"]
+font_names = PackedStringArray("Fantasy")
+
 [resource]
-default_font = ExtResource("1_4cmi0")
-default_font_size = 16
+default_font = SubResource("SystemFont_bxkq8")
+default_font_size = 24
 AbilityPanelContainer/base_type = &"PanelContainer"
 AbilityPanelContainer/styles/panel = SubResource("StyleBoxTexture_crlxi")
 AlternativePanelContainer/base_type = &"PanelContainer"

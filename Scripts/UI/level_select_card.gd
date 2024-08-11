@@ -32,9 +32,9 @@ func create_difficulty_text():
 	
 	for i in 5:
 		if i < level_resource.difficulty:
-			text += "★"
+			text += "X"
 		else:
-			text += "☆"
+			text += "O"
 	return text
 
 

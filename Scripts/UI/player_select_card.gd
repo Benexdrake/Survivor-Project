@@ -73,4 +73,7 @@ func on_gui_input(event: InputEvent):
 func on_mouse_entered():
 	if disabled:
 		return
+	
+	var player_select_screen = get_tree().get_first_node_in_group("player_select_screen") as PlayerSelectScreen
+	player_select_screen.change_description_laben(player_resource.description)
 	$HoverAnimationPlayer.play("hover")

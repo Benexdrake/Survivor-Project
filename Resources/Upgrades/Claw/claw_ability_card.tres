@@ -10,7 +10,6 @@ script = ExtResource("3_jyfo6")
 ability_controller_scene = ExtResource("1_hygo7")
 upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([])
 id = "claw"
-level = 0
 max_level = 1
 ability_name = "Claw"
 description = "Claw Attack"

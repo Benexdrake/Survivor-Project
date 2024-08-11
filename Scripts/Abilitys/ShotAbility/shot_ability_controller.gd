@@ -1,6 +1,6 @@
 extends Node2D
 
-var shot_ability_scene = preload("res://Scenes/Abilitys/ShotAbility/shot_ability.tscn")
+var shot_ability_scene = preload("res://Scenes/Abilitys/Fireball_ShotAbility/fireball_shot_ability.tscn")
 
 @onready var timer = $Timer
 @onready var spawn_timer = $SpawnTimer
@@ -58,6 +58,7 @@ func shoot():
 	bullet._velocity = velocity
 	bullet.hitbox_component.damage = damage + player.base_dmg
 	bullet.position = %Marker2D.global_position
+	bullet.rotation_degrees = rotation_degrees
 	
 func on_timer_timeout():
 	spawn_timer.start()
