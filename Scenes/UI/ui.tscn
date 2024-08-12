@@ -121,7 +121,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_colors/font_outline_color = Color(0.0383972, 0.0383972, 0.0383972, 1)
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 32
 text = "00:00"
 horizontal_alignment = 1
 vertical_alignment = 2
@@ -175,8 +175,8 @@ script = ExtResource("8_a5wea")
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -108.0
-offset_right = -38.0
+offset_left = -114.0
+offset_right = -44.0
 offset_bottom = 40.0
 grow_horizontal = 0
 
@@ -191,7 +191,7 @@ text = "0
 horizontal_alignment = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="KillCounter/MarginContainer"]
-position = Vector2(84, 22)
+position = Vector2(90, 18)
 scale = Vector2(2, 2)
 texture = ExtResource("9_2dois")
 
@@ -247,13 +247,13 @@ layer = 3
 script = ExtResource("16_dka7d")
 
 [node name="Label" type="Label" parent="MoneyUI"]
-offset_left = 868.0
-offset_top = 493.0
-offset_right = 908.0
-offset_bottom = 514.0
+offset_left = 863.0
+offset_top = 480.0
+offset_right = 903.0
+offset_bottom = 513.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 32
 text = "0"
 horizontal_alignment = 2
 

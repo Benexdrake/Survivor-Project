@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Battle 2 (loop).mp3-5019cadd6582693e2f7a206e7
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0.0
 bpm=0.0
 beat_count=0

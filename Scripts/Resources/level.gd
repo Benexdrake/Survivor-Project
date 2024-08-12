@@ -5,7 +5,7 @@ class_name LevelResource
 @export var spawn_phasen: Array[EnemySpawnPhase]
 @export var preview:Texture
 @export var map_time:int
-@export var music:AudioStream
+@export var music:Array[AudioStream]
 @export var map:PackedScene
 
 # Global Variable
