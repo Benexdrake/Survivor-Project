@@ -1,7 +1,7 @@
 extends Node
 
 @export var ability_scene: PackedScene
-
+@export var aura_sprite:Texture
 @export var damage:float
 @export_range(.1,1) var damage_percent:float
 
@@ -21,5 +21,7 @@ func on_timer_timeout():
 		
 	var ability_instance = ability_scene.instantiate() as Node2D
 	foreground.add_child(ability_instance)
+	ability_instance.sprite_2d.texture = aura_sprite
+	ability_instance.scale = Vector2(3,3)
 	ability_instance.hitbox_component.damage = damage + player.base_dmg * damage_percent
 	ability_instance.global_position = player.global_position

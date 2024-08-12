@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="AbilityUpgradeCard" load_steps=6 format=3 uid="uid://cmsu8kqm1kbk6"]
+
+[ext_resource type="PackedScene" uid="uid://depbil6x5yymj" path="res://Scenes/Abilitys/BookAbility/book_ability_controller.tscn" id="1_bhjyp"]
+[ext_resource type="Texture2D" uid="uid://b3ayft1uylhdv" path="res://Assets/gg_book.png" id="2_0yx18"]
+[ext_resource type="Texture2D" uid="uid://cmsaqxo0i2t5s" path="res://Assets/Grundgesetz.jpeg" id="3_20oi0"]
+[ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade_card.gd" id="4_3cgc2"]
+[ext_resource type="Resource" uid="uid://cx7662q43r0k6" path="res://Resources/Upgrades/Book/GrundGesetz/book_gg_upgrade.tres" id="5_or27y"]
+
+[resource]
+script = ExtResource("4_3cgc2")
+ability_controller_scene = ExtResource("1_bhjyp")
+upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([ExtResource("5_or27y"), ExtResource("5_or27y"), ExtResource("5_or27y")])
+id = "book"
+max_level = 0
+ability_name = "Grund Gesetz"
+description = "Spins 2 Grundgesetz books around the Character"
+preview = ExtResource("3_20oi0")
+icon = ExtResource("2_0yx18")
+weight = 10

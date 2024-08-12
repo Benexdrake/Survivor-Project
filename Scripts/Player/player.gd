@@ -59,7 +59,7 @@ func start():
 	if upgrade_manager == null:
 		return
 	player_resource.ability.level = 1
-	upgrade_manager.adding_upgrades(player_resource.ability.id)
+	upgrade_manager.adding_upgrades()
 	
 	$%AnimatedSprite2D.play("default")
 	$%AnimatedSprite2D.pause()
@@ -155,8 +155,13 @@ func on_health_changed():
 func on_ability_upgrade_added(ability_upgrade:AbilityUpgrade):
 	if ability_upgrade is AbilityUpgradeCard:
 		var ability = ability_upgrade as AbilityUpgradeCard
-		var scene = ability.ability_controller_scene
-		abilities.add_child(scene.instantiate())
+		var instantiate = ability.ability_controller_scene.instantiate()
+		abilities.add_child(instantiate)
+		
+		# Variants
+		if ability.id == "book":
+			instantiate.book_sprite = ability.icon
+			
 	
 	if ability_upgrade.id == "max_health_upgrade":
 		max_health += 1

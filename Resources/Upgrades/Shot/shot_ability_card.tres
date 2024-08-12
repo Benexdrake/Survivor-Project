@@ -9,7 +9,6 @@ script = ExtResource("3_wk6e0")
 ability_controller_scene = ExtResource("1_kj21q")
 upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([])
 id = "shot"
-level = 0
 max_level = 1
 ability_name = "Shot"
 description = "Shots 3 Bullets

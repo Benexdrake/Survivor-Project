@@ -37,7 +37,7 @@ script = ExtResource("1_0gv1r")
 hit_flash_material = SubResource("ShaderMaterial_fkpjj")
 
 [node name="KnockbackComponent" parent="." instance=ExtResource("9_1ad20")]
-knockback_power = 20.0
+knockback_power = 10.0
 
 [node name="DeathComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_i7qbf")]
 health_component = NodePath("../HealthComponent")

@@ -10,3 +10,6 @@ axe_ability_scene = ExtResource("2_fq11j")
 [node name="CooldownTimer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 0.3

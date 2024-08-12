@@ -3,6 +3,8 @@ extends Node2D
 @onready var hitbox_component = $HitboxComponent
 @onready var collision_shape_2d = %CollisionShape2D
 
+@onready var sprite_2d = $Sprite2D
+
 func _ready():
 	$Timer.timeout.connect(on_timer_timeout)
 	hitbox_component.area_entered.connect(test)
@@ -18,6 +20,8 @@ func _process(delta):
 
 func on_timer_timeout():
 	collision_shape_2d.disabled = !collision_shape_2d.disabled
+	#hitbox_component.monitorable = !hitbox_component.monitorable
+	#print(hitbox_component.monitorable)
 
 func test(other):
 	$AudioStreamPlayer.play()

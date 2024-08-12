@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c1m7beb2vo6hq" path="res://Scenes/Managers/enemy_manager.tscn" id="6_3y6hh"]
 [ext_resource type="PackedScene" uid="uid://dlr0jj3c54smu" path="res://Scenes/Managers/upgrade_manager.tscn" id="7_ja5w6"]
 [ext_resource type="PackedScene" uid="uid://cg08j6y8tvvuo" path="res://Scenes/Managers/experience_manager.tscn" id="8_fvygu"]
-[ext_resource type="Resource" uid="uid://ba52adg337cfr" path="res://Resources/Upgrades/Bible/bible_ability_card.tres" id="9_cb0ca"]
+[ext_resource type="Resource" uid="uid://ba52adg337cfr" path="res://Resources/Upgrades/Book/Bible/book_bible_ability_card.tres" id="9_cb0ca"]
 [ext_resource type="PackedScene" uid="uid://b7siy8nhaor26" path="res://Scenes/GameCamera/game_camera.tscn" id="9_jhfty"]
 [ext_resource type="PackedScene" uid="uid://u8x0f7nqkupw" path="res://Scenes/Player/player.tscn" id="10_mutcc"]
 

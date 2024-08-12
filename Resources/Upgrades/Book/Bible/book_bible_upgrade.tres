@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=2 format=3 uid="uid://du2c5e6i8fln"]
+
+[ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade.gd" id="1_wpdh6"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_wpdh6")
+id = "book_upgrade"
+max_level = 0
+ability_name = ""
+description = "Spins +1 Books around you and increase Damage by 25%"
+weight = 10

@@ -5,6 +5,7 @@ class_name UpgradeManager
 @export var experience_manager: Node
 @export var upgrade_screen_scene: PackedScene
 @export var abilities:Array[AbilityUpgrade]
+@export var all_upgrades:Resource
 
 var current_upgrades: Array[AbilityUpgrade]
 var upgrade_pool: UpgradeWeightedTable = UpgradeWeightedTable.new()
@@ -12,16 +13,14 @@ var upgrade_pool: UpgradeWeightedTable = UpgradeWeightedTable.new()
 func _ready():
 	experience_manager.level_up.connect(on_level_up)
 	
-
-func adding_upgrades(upgrade_id:String):
-	for ability in abilities:
-		
+	
+func adding_upgrades():
+	for ability in all_upgrades.all_upgrades:
 		if ability is AbilityUpgradeCard:
 			if ability.upgrades.size() == 0:
 				ability.max_level = 1
 			else:
 				ability.max_level = ability.upgrades.size() + 1
-				
 		upgrade_pool.add_item(ability)
 
 	
@@ -36,7 +35,6 @@ func apply_upgrade(upgrade: AbilityUpgrade):
 		else:
 			GameEvents.emit_ability_upgrade_added(upgrade)
 	upgrade.level += 1
-	
 	if current_upgrades.has(upgrade):
 		return
 	current_upgrades.append(upgrade)
@@ -44,9 +42,7 @@ func apply_upgrade(upgrade: AbilityUpgrade):
 
 func pick_upgrades():
 	var chosen_upgrades:Array[AbilityUpgrade] = []
-	
 	var exclude:Array[AbilityUpgrade] = []
-	
 	for ability in current_upgrades:
 		upgrade_pool.remove_item(ability)
 	

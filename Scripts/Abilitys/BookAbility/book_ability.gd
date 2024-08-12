@@ -2,6 +2,9 @@ extends Node2D
 
 @onready var hitbox_component : HitboxComponent = $HitboxComponent
 @export var timer:Timer
+@onready var shadow_sprite_2d = $ShadowSprite2D
+@onready var sprite_2d = $Sprite2D
+
 
 func _ready():
 	timer.timeout.connect(on_timer_timeout)
@@ -21,12 +24,13 @@ func _process(delta):
 	d += delta
 	position = Vector2(sin(d * speed) * radius, cos(d * speed) * radius ) + player.global_position
 	
+	
 func on_timer_timeout():
 	stop()
 	
 
 func stop():
-	var abilitys = get_tree().get_nodes_in_group("bible_ability")
+	var abilitys = get_tree().get_nodes_in_group("book_ability")
 	for a in abilitys:
 		a.queue_free()
 

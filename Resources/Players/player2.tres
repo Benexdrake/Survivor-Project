@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PlayerResource" load_steps=9 format=3 uid="uid://di531ubruio82"]
 
-[ext_resource type="Resource" uid="uid://ba52adg337cfr" path="res://Resources/Upgrades/Bible/bible_ability_card.tres" id="1_bvhdd"]
+[ext_resource type="Resource" uid="uid://ba52adg337cfr" path="res://Resources/Upgrades/Book/Bible/book_bible_ability_card.tres" id="1_bvhdd"]
 [ext_resource type="Script" path="res://Scripts/Player/player_resource.gd" id="2_wiwui"]
 [ext_resource type="Texture2D" uid="uid://lqe7nij2y8vp" path="res://Assets/Player/2/player2anim1.png" id="4_mujeo"]
 [ext_resource type="Texture2D" uid="uid://b3jg8mx1brq1f" path="res://Assets/Player/2/player2anim2.png" id="5_0c3rr"]

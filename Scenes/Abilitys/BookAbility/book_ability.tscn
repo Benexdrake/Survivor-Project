@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://by14ltndbaa2s"]
 
-[ext_resource type="Script" path="res://Scripts/Abilitys/BibleAbility/bible_ability.gd" id="1_1xo16"]
+[ext_resource type="Script" path="res://Scripts/Abilitys/BookAbility/book_ability.gd" id="1_1xo16"]
 [ext_resource type="AudioStream" uid="uid://itvumm54m7h5" path="res://Assets/SFX/10_Battle_SFX/35_Miss_Evade_02.wav" id="2_qj51c"]
 [ext_resource type="Texture2D" uid="uid://dexm2keoyx6ap" path="res://Assets/book_06a.png" id="2_tm8l0"]
 [ext_resource type="PackedScene" uid="uid://fgf6t05ngde" path="res://Scenes/Components/hitbox_component.tscn" id="6_yoixg"]
@@ -16,7 +16,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsnmf"]
 size = Vector2(16, 20)
 
-[node name="BibleAbility" type="Node2D" node_paths=PackedStringArray("timer") groups=["bible_ability"]]
+[node name="BookAbility" type="Node2D" node_paths=PackedStringArray("timer") groups=["book_ability"]]
 script = ExtResource("1_1xo16")
 timer = NodePath("Timer")
 
@@ -29,12 +29,12 @@ unique_name_in_owner = true
 wait_time = 10.0
 autostart = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_tm8l0")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="ShadowSprite2D" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 0.494118)
 position = Vector2(0, 11)
+texture = ExtResource("2_tm8l0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_tm8l0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -41,4 +41,8 @@ func move():
 			visuals.scale = Vector2(-move_sign,1)
 
 func on_hit():
-	knockback_component.knockback()
+	#velocity = -velocity
+	#move_and_slide()
+	pass
+	#move_and_collide(-velocity * .1)
+	#knockback_component.knockback(velocity)
