@@ -246,9 +246,10 @@ _data = {
 
 [node name="PlayerSelectCard" type="PanelContainer" groups=["player_select_card"]]
 self_modulate = Color(0.252028, 0.252028, 0.252028, 1)
+custom_minimum_size = Vector2(200, 0)
 layout_direction = 1
-offset_right = 134.0
-offset_bottom = 194.0
+offset_right = 200.0
+offset_bottom = 320.0
 pivot_offset = Vector2(67, 97)
 script = ExtResource("1_ggupj")
 player_resource = ExtResource("2_56ij8")

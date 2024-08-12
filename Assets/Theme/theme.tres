@@ -98,6 +98,8 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0, 0.118862, 0.0955543, 1)
 
+[sub_resource type="SystemFont" id="SystemFont_bxkq8"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ypxir"]
 texture = ExtResource("2_dj7cm")
 texture_margin_left = 9.0
@@ -124,9 +126,6 @@ region_rect = Rect2(4, 5, 24, 22)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8gi1e"]
 texture = ExtResource("3_tdxos")
 
-[sub_resource type="SystemFont" id="SystemFont_bxkq8"]
-font_names = PackedStringArray("Fantasy")
-
 [resource]
 default_font = SubResource("SystemFont_bxkq8")
 default_font_size = 24
@@ -148,6 +147,7 @@ HSlider/styles/grabber_area = SubResource("StyleBoxFlat_ad51b")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_bsqde")
 HSlider/styles/slider = SubResource("StyleBoxFlat_i358s")
 Label/constants/line_spacing = 0
+Label/fonts/font = SubResource("SystemFont_bxkq8")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_ypxir")
 ProgressBar/styles/background = SubResource("StyleBoxTexture_idagc")
 ProgressBar/styles/fill = SubResource("StyleBoxTexture_ihiba")

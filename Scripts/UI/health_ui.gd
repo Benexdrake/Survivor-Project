@@ -37,6 +37,7 @@ func health_changed(health):
 		heart.texture = heart_full
 		grid_container.add_child(heart)
 		
+		
 	if current_health < max_health:
 		for i in max_health - current_health:
 			var heart = TextureRect.new()

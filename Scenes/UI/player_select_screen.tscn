@@ -63,6 +63,7 @@ layout_mode = 2
 size_flags_vertical = 8
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer2"]
+self_modulate = Color(0.25098, 0.25098, 0.25098, 1)
 layout_mode = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer2/PanelContainer"]

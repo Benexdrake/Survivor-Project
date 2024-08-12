@@ -38,6 +38,7 @@ window/stretch/mode="viewport"
 [gui]
 
 theme/custom="res://Assets/Theme/theme.tres"
+theme/custom_font="res://Assets/Theme/Fonts/georgia.ttf"
 
 [input]
 
