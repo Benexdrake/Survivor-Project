@@ -1,10 +1,11 @@
 extends Node2D
+class_name KamehamehaController
 
-var shot_ability_scene = preload("res://Scenes/Abilitys/Fireball_ShotAbility/fireball_shot_ability.tscn")
+var shot_ability_scene = preload("res://Scenes/Abilitys/KamehamehaAbility/kamehameha_ability.tscn")
 
 @onready var timer = $Timer
-@onready var spawn_timer = $SpawnTimer
 @onready var marker_2d = %Marker2D
+
 
 var max_shots = 3
 var current_shots = 0
@@ -14,8 +15,6 @@ var velocity = Vector2(1,0)
 
 func _ready():
 	timer.timeout.connect(on_timer_timeout)
-	spawn_timer.timeout.connect(on_spawn_timer_timeout)
-	
 	
 func _process(delta):
 	var player = get_tree().get_first_node_in_group("player") as Player
@@ -62,13 +61,4 @@ func shoot():
 	bullet.rotation_degrees = rotation_degrees
 	
 func on_timer_timeout():
-	spawn_timer.start()
-	
-	
-func on_spawn_timer_timeout():
 	shoot()
-	current_shots +=1
-	if current_shots == max_shots:
-		spawn_timer.stop()
-		current_shots = 0
-	

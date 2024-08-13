@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://m4c105rclpk5"]
+[gd_scene load_steps=16 format=3 uid="uid://m4c105rclpk5"]
 
 [ext_resource type="Script" path="res://Scripts/Enemys/friendly_enemy.gd" id="1_f8ssk"]
 [ext_resource type="Texture2D" uid="uid://baoktensuscg6" path="res://Assets/Enemys/Friendly/Dwarf Sprite Sheet.png" id="2_bf6yd"]
 [ext_resource type="PackedScene" uid="uid://fgf6t05ngde" path="res://Scenes/Components/hitbox_component.tscn" id="3_ap0gx"]
+[ext_resource type="Texture2D" uid="uid://4ip0nfcqw3u2" path="res://Assets/hello.png" id="4_xkldu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jlo3f"]
 atlas = ExtResource("2_bf6yd")
@@ -123,3 +124,7 @@ autostart = true
 [node name="AttackSpanTimer" type="Timer" parent="."]
 wait_time = 0.2
 one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(13, -31)
+texture = ExtResource("4_xkldu")

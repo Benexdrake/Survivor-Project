@@ -1,17 +1,18 @@
-[gd_resource type="Resource" script_class="AbilityUpgradeCard" load_steps=4 format=3 uid="uid://di3yuthqnubgo"]
+[gd_resource type="Resource" script_class="AbilityUpgradeCard" load_steps=5 format=3 uid="uid://di3yuthqnubgo"]
 
-[ext_resource type="PackedScene" uid="uid://day5flx0dej5p" path="res://Scenes/Abilitys/ShotAbility/shot_ability_controller.tscn" id="1_66tbv"]
-[ext_resource type="Texture2D" uid="uid://7qtqntmu3v2f" path="res://Assets/Bibel.jpeg" id="2_l8d7p"]
+[ext_resource type="PackedScene" uid="uid://diuiobdk2r7ma" path="res://Scenes/Abilitys/KamehamehaAbility/kamehameha_ability_controller.tscn" id="1_v3twt"]
+[ext_resource type="Texture2D" uid="uid://6xagxsfxnylx" path="res://Assets/Skills/Fireball/blue_fireball.png" id="2_y4uec"]
+[ext_resource type="Texture2D" uid="uid://djkaxq6cesfhn" path="res://Assets/Kamehameha.jpeg" id="3_6fj0r"]
 [ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade_card.gd" id="3_6xqma"]
 
 [resource]
 script = ExtResource("3_6xqma")
-ability_controller_scene = ExtResource("1_66tbv")
+ability_controller_scene = ExtResource("1_v3twt")
 upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([])
 id = "kamehameha"
-level = 0
 max_level = 1
 ability_name = "Kamehameha"
 description = "Dragonball is awsome <3"
-preview = ExtResource("2_l8d7p")
+preview = ExtResource("3_6fj0r")
+icon = ExtResource("2_y4uec")
 weight = 10

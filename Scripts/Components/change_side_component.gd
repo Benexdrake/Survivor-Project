@@ -6,10 +6,11 @@ func _ready():
 	pass
 	
 	
-func check_speech(abilityname):
-	if abilityname == "PersuasiveSpeech":
+func check_speech(ability):
+	if ability.name == "PersuasiveSpeech":
 		var rand = randf_range(0,1)
-		if rand >= .98:
+		
+		if rand <= ability.convince_chance:
 			var friend_instantiate = friend_scene.instantiate() as Node2D
 			var layer = get_tree().get_first_node_in_group("entities_layer")
 			
