@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d1qrq7lw10py"]
+[gd_scene load_steps=14 format=3 uid="uid://d1qrq7lw10py"]
 
 [ext_resource type="Script" path="res://Scripts/Enemys/basic_enemy.gd" id="1_h5pji"]
 [ext_resource type="PackedScene" uid="uid://jnkl30satsbb" path="res://Scenes/Components/health_component.tscn" id="3_j46cb"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bjfpqxunjkyw2" path="res://Scenes/Components/velocity_component.tscn" id="5_pdiqi"]
 [ext_resource type="PackedScene" uid="uid://cfn1tpssanmni" path="res://Scenes/Components/hit_flash_component.tscn" id="6_kneh4"]
 [ext_resource type="Shader" path="res://Resources/Shader/hit_flash_component.gdshader" id="7_684fu"]
+[ext_resource type="PackedScene" uid="uid://bu35f64emjxaf" path="res://Scenes/Components/change_side_component.tscn" id="8_p1mg0"]
 [ext_resource type="PackedScene" uid="uid://dyrwjscb6nc4p" path="res://Scenes/Components/knockback_component.tscn" id="8_r1tex"]
 [ext_resource type="PackedScene" uid="uid://c2ao038ji85tt" path="res://Scenes/Components/death_component.tscn" id="9_7r3ja"]
 [ext_resource type="PackedScene" uid="uid://d3gbnxq2mchbv" path="res://Scenes/Components/hurtbox_component.tscn" id="10_3i1qf"]
@@ -38,6 +39,8 @@ hit_flash_material = SubResource("ShaderMaterial_fkpjj")
 
 [node name="KnockbackComponent" parent="." instance=ExtResource("8_r1tex")]
 knockback_power = 30.0
+
+[node name="ChangeSideComponent" parent="." instance=ExtResource("8_p1mg0")]
 
 [node name="DeathComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("9_7r3ja")]
 health_component = NodePath("../HealthComponent")

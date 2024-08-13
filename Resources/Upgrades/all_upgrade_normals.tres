@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=10 format=3 uid="uid://gqru02hmyg0c"]
+[gd_resource type="Resource" load_steps=11 format=3 uid="uid://gqru02hmyg0c"]
 
 [ext_resource type="Resource" uid="uid://c4w8qqnp7pw1c" path="res://Resources/Upgrades/Aura/aura_ability_card.tres" id="1_umbe5"]
 [ext_resource type="Resource" uid="uid://cr3a5ywo6jame" path="res://Resources/Upgrades/Axe/axe_ability_card.tres" id="2_ldtxc"]
@@ -8,8 +8,9 @@
 [ext_resource type="Resource" uid="uid://b5ngdm3cyq7ox" path="res://Resources/Upgrades/Health/max_health_upgrade.tres" id="6_acis8"]
 [ext_resource type="Resource" uid="uid://ctvjb0fsad0si" path="res://Resources/Upgrades/Slash/slash_ability_card.tres" id="7_6t4mb"]
 [ext_resource type="Resource" uid="uid://bu4jso5tt11p7" path="res://Resources/Upgrades/Thunder/thunder_ability_card.tres" id="8_gomsx"]
+[ext_resource type="Resource" uid="uid://dr8uh7x1dsqpv" path="res://Resources/Upgrades/Speech/speech_ability_card.tres" id="9_ewrt7"]
 [ext_resource type="Script" path="res://Scripts/Upgrades/all_upgrades.gd" id="9_k8h13"]
 
 [resource]
 script = ExtResource("9_k8h13")
-all_upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([ExtResource("1_umbe5"), ExtResource("2_ldtxc"), ExtResource("3_opb2q"), ExtResource("4_3nd1o"), ExtResource("5_v5inv"), ExtResource("6_acis8"), ExtResource("7_6t4mb"), ExtResource("8_gomsx")])
+all_upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([ExtResource("1_umbe5"), ExtResource("2_ldtxc"), ExtResource("3_opb2q"), ExtResource("4_3nd1o"), ExtResource("5_v5inv"), ExtResource("6_acis8"), ExtResource("7_6t4mb"), ExtResource("8_gomsx"), ExtResource("9_ewrt7")])

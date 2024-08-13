@@ -15,7 +15,7 @@ func _ready():
 
 func start():
 	character_name_label.text = player_resource.player_name
-	preview.texture = player_resource.sprite_frames.get_frame_texture("default", 0)
+	preview.texture = player_resource.preview
 	stats_label.text = get_stats()
 	
 

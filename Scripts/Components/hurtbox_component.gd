@@ -17,6 +17,10 @@ func on_area_entered(other_area: Area2D):
 		
 	if health_component == null:
 		return
+		
+	var check = owner.change_side_component.check_speech(other_area.owner.name)
+	if check:
+		return
 	
 	var hitbox_component = other_area as HitboxComponent
 	

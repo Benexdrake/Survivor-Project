@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://ewv1alrxlkpv"]
+
+[ext_resource type="Texture2D" uid="uid://crtjt0q4j8wiq" path="res://Assets/control1.png" id="1_ps1ji"]
+[ext_resource type="Script" path="res://Scripts/Abilitys/Speech/persuasive_speech.gd" id="1_ywjoj"]
+[ext_resource type="PackedScene" uid="uid://fgf6t05ngde" path="res://Scenes/Components/hitbox_component.tscn" id="2_g5hdn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vgtx7"]
+radius = 193.259
+
+[node name="PersuasiveSpeech" type="Node2D"]
+script = ExtResource("1_ywjoj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_ps1ji")
+
+[node name="HitboxComponent" parent="." instance=ExtResource("2_g5hdn")]
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+unique_name_in_owner = true
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_vgtx7")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true

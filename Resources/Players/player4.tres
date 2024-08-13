@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="PlayerResource" load_steps=13 format=3 uid="uid://c8vy8h0ggkdrq"]
+[gd_resource type="Resource" script_class="PlayerResource" load_steps=14 format=3 uid="uid://c8vy8h0ggkdrq"]
 
 [ext_resource type="Resource" uid="uid://bu4jso5tt11p7" path="res://Resources/Upgrades/Thunder/thunder_ability_card.tres" id="1_y3fo8"]
+[ext_resource type="Texture2D" uid="uid://dnfyxv0fu6dds" path="res://Assets/Godbrithil_Profile.jpeg" id="2_cf37c"]
 [ext_resource type="Script" path="res://Scripts/Player/player_resource.gd" id="2_giwax"]
 [ext_resource type="Texture2D" uid="uid://bf5udmb27y2ba" path="res://Assets/Player/4/player-Sheet.png" id="3_yx6dg"]
 
@@ -74,12 +75,13 @@ id = "4"
 player_name = "Godbrithil"
 ability = ExtResource("1_y3fo8")
 sprite_frames = SubResource("SpriteFrames_22ksg")
+preview = ExtResource("2_cf37c")
 hp = 5
 dmg = 60.0
 speed = 200
 acceleration = 25
-description = "Geiler Typ"
-stories = Array[String](["Death"])
 hp_show = 2
 dmg_show = 3.0
 speed_show = 3
+description = "Geiler Typ"
+stories = Array[String](["Discord User Godbrithil"])

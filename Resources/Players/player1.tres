@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="PlayerResource" load_steps=8 format=3 uid="uid://bm1seocfdncg7"]
+[gd_resource type="Resource" script_class="PlayerResource" load_steps=9 format=3 uid="uid://bm1seocfdncg7"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player_resource.gd" id="1_k3epa"]
 [ext_resource type="Resource" uid="uid://ctvjb0fsad0si" path="res://Resources/Upgrades/Slash/slash_ability_card.tres" id="1_ygpfh"]
 [ext_resource type="Texture2D" uid="uid://dkh14c88us4wt" path="res://Assets/Player/1/player1.png" id="2_efkdp"]
+[ext_resource type="Texture2D" uid="uid://b8iedvuwhglkm" path="res://Assets/Profile/Default_Albert_Einstein_rendered_in_vibrant_digital_art_depict_0.jpg" id="2_t6eik"]
 [ext_resource type="Texture2D" uid="uid://d3bng2c07j0gl" path="res://Assets/Player/1/player2.png" id="4_2mhm6"]
 [ext_resource type="Texture2D" uid="uid://c1e27g8j3lt1" path="res://Assets/Player/1/player3.png" id="5_u6vq2"]
 [ext_resource type="Texture2D" uid="uid://bskx4jkr4gn6w" path="res://Assets/Player/1/player4.png" id="6_nwfh0"]
@@ -33,10 +34,14 @@ id = "1"
 player_name = "Albert Einstein"
 ability = ExtResource("1_ygpfh")
 sprite_frames = SubResource("SpriteFrames_22ksg")
+preview = ExtResource("2_t6eik")
 hp = 10
 dmg = 100.0
 speed = 200
 acceleration = 25
+hp_show = 2
+dmg_show = 3.0
+speed_show = 3
 description = "Albert Einstein (* 14. März 1879 in Ulm; † 18. April 1955 in Princeton, New Jersey) war ein schweizerisch-US-amerikanischer theoretischer Physiker deutscher Herkunft. Der Wissenschaftler jüdischer Abstammung hatte bis 1896 die württembergische Staatsbürgerschaft, ab 1901 die Schweizer Staatsbürgerschaft und ab 1940 zusätzlich die US-amerikanische. Preußischer Staatsangehöriger war er von 1914 bis 1934.
 
 Einstein gilt als einer der bedeutendsten Physiker der Wissenschaftsgeschichte und weltweit als einer der bekanntesten Wissenschaftler der Neuzeit. Seine Forschungen zur Struktur von Materie, Raum und Zeit sowie zum Wesen der Gravitation veränderten maßgeblich das zuvor geltende newtonsche Weltbild. 1999 wurde Albert Einstein in einer durch die Fachzeitschrift Physics World durchgeführten Umfrage unter führenden Physikern vor Isaac Newton, James Clerk Maxwell, Niels Bohr und Werner Heisenberg zum bedeutendsten Physiker aller Zeiten gewählt.
@@ -45,6 +50,3 @@ Einsteins Hauptwerk, die Relativitätstheorie, machte ihn weltberühmt. Im Jahr 
 
 Einstein gilt als Inbegriff des Forschers und Genies. Er nutzte seine außerordentliche Bekanntheit auch außerhalb der naturwissenschaftlichen Fachwelt bei seinem Einsatz für Völkerverständigung, Frieden und Sozialismus"
 stories = Array[String](["Ein Genie mit vielen Staatsbürgerschaften: Im Laufe seines Lebens besaß Einstein unter anderem die Schweizer, deutsche, österreichische und US-amerikanische Staatsbürgerschaft.", "Die spezielle und allgemeine Relativitätstheorie: Einsteins wohl bekannteste Theorien revolutionierten unser Verständnis von Raum, Zeit, Gravitation und dem Universum.", "E=mc²: Die berühmteste Gleichung der Welt: Diese Formel beschreibt die Äquivalenz von Masse und Energie und ist die Grundlage für die Kernenergie.", "Nobelpreis für Physik: Einstein erhielt 1921 den Nobelpreis für Physik, jedoch nicht für die Relativitätstheorie, sondern für seine Erklärung des photoelektrischen Effekts. ", "Ein Leben lang Neugier: Einstein war ein lebenslanger Lerner und stellte stets neugierige Fragen über die Welt.", "Mehr als nur ein Wissenschaftler: Neben seiner wissenschaftlichen Arbeit engagierte sich Einstein auch politisch und setzte sich für Frieden und soziale Gerechtigkeit ein.", "Ein leidenschaftlicher Musiker: Einstein spielte leidenschaftlich Geige und sah in der Musik eine Quelle der Inspiration.", "Ein schwieriger Schüler: In seiner Jugend galt Einstein eher als schwieriger Schüler und wurde sogar von einem Lehrer als \"faul\" bezeichnet.", "Ein großer Denker: Einstein war bekannt für seine Fähigkeit, komplexe Probleme auf einfache Weise zu erklären.", "Ein Mensch mit Fehlern: Auch Einstein war kein perfekter Mensch und machte Fehler. Seine Beharrlichkeit und seine Bereitschaft, seine eigenen Theorien in Frage zu stellen, machten ihn jedoch zu einem außergewöhnlichen Wissenschaftler."])
-hp_show = 2
-dmg_show = 3.0
-speed_show = 3

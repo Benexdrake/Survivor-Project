@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var touch_screen_button = $TouchScreenButton
+@onready var touch_screen_button:TouchScreenButton = $TouchScreenButton
 
 func show_button():
 	$AnimationPlayer.play("default")

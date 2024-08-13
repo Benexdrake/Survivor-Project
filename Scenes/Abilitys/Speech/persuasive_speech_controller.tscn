@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://65u5votrn2wr"]
+
+[ext_resource type="Script" path="res://Scripts/Abilitys/Speech/persuasive_speech_controller.gd" id="1_1dkwl"]
+
+[node name="PersuasiveSpeechController" type="Node"]
+script = ExtResource("1_1dkwl")

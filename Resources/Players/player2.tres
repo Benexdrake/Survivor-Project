@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="PlayerResource" load_steps=9 format=3 uid="uid://di531ubruio82"]
+[gd_resource type="Resource" script_class="PlayerResource" load_steps=10 format=3 uid="uid://di531ubruio82"]
 
 [ext_resource type="Resource" uid="uid://ba52adg337cfr" path="res://Resources/Upgrades/Book/Bible/book_bible_ability_card.tres" id="1_bvhdd"]
+[ext_resource type="Texture2D" uid="uid://dji0qio410e4t" path="res://Assets/Arminius_Profile.jpeg" id="2_64p4h"]
 [ext_resource type="Script" path="res://Scripts/Player/player_resource.gd" id="2_wiwui"]
 [ext_resource type="Texture2D" uid="uid://lqe7nij2y8vp" path="res://Assets/Player/2/player2anim1.png" id="4_mujeo"]
 [ext_resource type="Texture2D" uid="uid://b3jg8mx1brq1f" path="res://Assets/Player/2/player2anim2.png" id="5_0c3rr"]
@@ -37,12 +38,13 @@ id = "2"
 player_name = "Arminius"
 ability = ExtResource("1_bvhdd")
 sprite_frames = SubResource("SpriteFrames_wc2d2")
+preview = ExtResource("2_64p4h")
 hp = 15
 dmg = 80.0
 speed = 300
 acceleration = 25
-description = "Arminius (in einigen Quellen auch Armenius; * um 17 v. Chr.; † um 21 n. Chr.) war ein Fürst der Cherusker, der den Römern im Jahre 9 n. Chr. in der Varusschlacht mit der Vernichtung von drei Legionen eine ihrer verheerendsten Niederlagen beibrachte. Die antiken Quellen bieten nur wenige biografische Angaben zu Arminius. Das nachantike Bild des Cheruskerfürsten ist vor allem durch die von Tacitus geprägte Formel „Befreier Germaniens“ bestimmt. "
-stories = Array[String](["adasdasdasdasdasdasda111111111"])
 hp_show = 5
 dmg_show = 2.0
 speed_show = 4
+description = "Arminius (in einigen Quellen auch Armenius; * um 17 v. Chr.; † um 21 n. Chr.) war ein Fürst der Cherusker, der den Römern im Jahre 9 n. Chr. in der Varusschlacht mit der Vernichtung von drei Legionen eine ihrer verheerendsten Niederlagen beibrachte. Die antiken Quellen bieten nur wenige biografische Angaben zu Arminius. Das nachantike Bild des Cheruskerfürsten ist vor allem durch die von Tacitus geprägte Formel „Befreier Germaniens“ bestimmt. "
+stories = Array[String](["adasdasdasdasdasdasda111111111"])

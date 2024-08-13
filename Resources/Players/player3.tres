@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="PlayerResource" load_steps=8 format=3 uid="uid://cvbvk0u0mnef2"]
+[gd_resource type="Resource" script_class="PlayerResource" load_steps=9 format=3 uid="uid://cvbvk0u0mnef2"]
 
 [ext_resource type="Resource" uid="uid://c4w8qqnp7pw1c" path="res://Resources/Upgrades/Aura/aura_ability_card.tres" id="1_qf72h"]
+[ext_resource type="Texture2D" uid="uid://clm6p6oq2gq8k" path="res://Assets/Profile/Default_Heinrich_Heine_rendered_in_vibrant_digital_art_depicts_1.jpg" id="2_nejji"]
 [ext_resource type="Script" path="res://Scripts/Player/player_resource.gd" id="3_54a6j"]
 [ext_resource type="Texture2D" uid="uid://n4th41mqjl6v" path="res://Assets/Player/3/190768.png" id="3_ol0ph"]
 
@@ -39,14 +40,15 @@ id = "3"
 player_name = "Heinrich Heine"
 ability = ExtResource("1_qf72h")
 sprite_frames = SubResource("SpriteFrames_22ksg")
+preview = ExtResource("2_nejji")
 hp = 30
 dmg = 60.0
 speed = 200
 acceleration = 25
+hp_show = 4
+dmg_show = 3.0
+speed_show = 3
 description = "Christian Johann Heinrich Heine (* 13. Dezember 1797 als Harry Heine in Düsseldorf, Herzogtum Berg; † 17. Februar 1856 in Paris) war einer der bedeutendsten deutschen Dichter, Schriftsteller und Journalisten des 19. Jahrhunderts.
 
 Er gilt als einer der letzten Vertreter und zugleich als Überwinder der Romantik, machte die Alltagssprache lyrikfähig, erhob das Feuilleton und den Reisebericht zur Kunstform und verlieh der deutschen Literatur eine zuvor nicht gekannte, elegante Leichtigkeit. Die Werke kaum eines anderen Dichters deutscher Sprache wurden bis heute so häufig übersetzt und vertont. Als kritischer, politisch engagierter Journalist, Essayist, Satiriker und Polemiker war Heine ebenso bewundert wie gefürchtet. Im Deutschen Bund mit Publikationsverboten belegt, verbrachte er seine zweite Lebenshälfte im Pariser Exil. Antisemiten und Nationalisten feindeten Heine wegen seiner jüdischen Herkunft und seiner politischen Haltung über den Tod hinaus an. Die Außenseiterrolle prägte sein Leben, sein Werk und dessen Rezeptionsgeschichte. "
 stories = Array[String](["Death"])
-hp_show = 4
-dmg_show = 3.0
-speed_show = 3

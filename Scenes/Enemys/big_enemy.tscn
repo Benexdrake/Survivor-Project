@@ -1,18 +1,19 @@
-[gd_scene load_steps=13 format=3 uid="uid://m4c105rclpk5"]
+[gd_scene load_steps=14 format=3 uid="uid://co81juf0810iu"]
 
-[ext_resource type="Script" path="res://Scripts/Enemys/basic_enemy.gd" id="1_402nv"]
-[ext_resource type="PackedScene" uid="uid://jnkl30satsbb" path="res://Scenes/Components/health_component.tscn" id="2_p2i3h"]
-[ext_resource type="PackedScene" uid="uid://5t48vqnhunai" path="res://Scenes/Components/vial_drop_component.tscn" id="3_t36rj"]
-[ext_resource type="PackedScene" uid="uid://c2ao038ji85tt" path="res://Scenes/Components/death_component.tscn" id="4_e16vh"]
-[ext_resource type="PackedScene" uid="uid://bjfpqxunjkyw2" path="res://Scenes/Components/velocity_component.tscn" id="4_vkytm"]
-[ext_resource type="PackedScene" uid="uid://d3gbnxq2mchbv" path="res://Scenes/Components/hurtbox_component.tscn" id="5_urpjr"]
-[ext_resource type="PackedScene" uid="uid://cfn1tpssanmni" path="res://Scenes/Components/hit_flash_component.tscn" id="8_ore88"]
-[ext_resource type="Shader" path="res://Resources/Shader/hit_flash_component.gdshader" id="9_p5din"]
-[ext_resource type="PackedScene" uid="uid://dyrwjscb6nc4p" path="res://Scenes/Components/knockback_component.tscn" id="14_d15rq"]
+[ext_resource type="Script" path="res://Scripts/Enemys/basic_enemy.gd" id="1_c0bd3"]
+[ext_resource type="PackedScene" uid="uid://jnkl30satsbb" path="res://Scenes/Components/health_component.tscn" id="2_g2aku"]
+[ext_resource type="PackedScene" uid="uid://5t48vqnhunai" path="res://Scenes/Components/vial_drop_component.tscn" id="3_ld8q8"]
+[ext_resource type="PackedScene" uid="uid://bjfpqxunjkyw2" path="res://Scenes/Components/velocity_component.tscn" id="4_cn4cr"]
+[ext_resource type="PackedScene" uid="uid://cfn1tpssanmni" path="res://Scenes/Components/hit_flash_component.tscn" id="5_gwqr1"]
+[ext_resource type="Shader" path="res://Resources/Shader/hit_flash_component.gdshader" id="6_nu7u7"]
+[ext_resource type="PackedScene" uid="uid://dyrwjscb6nc4p" path="res://Scenes/Components/knockback_component.tscn" id="7_04m3q"]
+[ext_resource type="PackedScene" uid="uid://c2ao038ji85tt" path="res://Scenes/Components/death_component.tscn" id="8_dcw46"]
+[ext_resource type="PackedScene" uid="uid://bu35f64emjxaf" path="res://Scenes/Components/change_side_component.tscn" id="8_kau7y"]
+[ext_resource type="PackedScene" uid="uid://d3gbnxq2mchbv" path="res://Scenes/Components/hurtbox_component.tscn" id="9_mgir2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_txwdu"]
 resource_local_to_scene = true
-shader = ExtResource("9_p5din")
+shader = ExtResource("6_nu7u7")
 shader_parameter/lerp_percent = 0.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0xqg7"]
@@ -27,23 +28,25 @@ height = 26.0
 collision_layer = 8
 collision_mask = 9
 motion_mode = 1
-script = ExtResource("1_402nv")
+script = ExtResource("1_c0bd3")
 
-[node name="HealthComponent" parent="." instance=ExtResource("2_p2i3h")]
+[node name="HealthComponent" parent="." instance=ExtResource("2_g2aku")]
 
-[node name="VialDropComponent" parent="." instance=ExtResource("3_t36rj")]
+[node name="VialDropComponent" parent="." instance=ExtResource("3_ld8q8")]
 
-[node name="VelocityComponent" parent="." instance=ExtResource("4_vkytm")]
+[node name="VelocityComponent" parent="." instance=ExtResource("4_cn4cr")]
 
-[node name="HitFlashComponent" parent="." instance=ExtResource("8_ore88")]
+[node name="HitFlashComponent" parent="." instance=ExtResource("5_gwqr1")]
 hit_flash_material = SubResource("ShaderMaterial_txwdu")
 
-[node name="KnockbackComponent" parent="." instance=ExtResource("14_d15rq")]
+[node name="KnockbackComponent" parent="." instance=ExtResource("7_04m3q")]
 
-[node name="DeathComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("4_e16vh")]
+[node name="ChangeSideComponent" parent="." instance=ExtResource("8_kau7y")]
+
+[node name="DeathComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("8_dcw46")]
 health_component = NodePath("../HealthComponent")
 
-[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("5_urpjr")]
+[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("9_mgir2")]
 collision_layer = 64
 health_component = NodePath("../HealthComponent")
 

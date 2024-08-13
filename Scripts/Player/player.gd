@@ -78,7 +78,7 @@ func _process(delta):
 		movement_vector = get_movement_vector()
 	move()
 
-func _input(event):
+func _input(event):	
 	if event is InputEventScreenTouch or event is InputEventScreenDrag:
 		if MobileControlLayer.touch_screen_button.is_pressed():
 			if !is_touch:

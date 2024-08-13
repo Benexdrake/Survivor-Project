@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="AbilityUpgradeCard" load_steps=5 format=3 uid="uid://dr8uh7x1dsqpv"]
+
+[ext_resource type="PackedScene" uid="uid://65u5votrn2wr" path="res://Scenes/Abilitys/Speech/persuasive_speech_controller.tscn" id="1_as5fa"]
+[ext_resource type="Texture2D" uid="uid://cp0attah53rgm" path="res://Assets/Enemys/Friendly/dwarf.png" id="2_iek1y"]
+[ext_resource type="Texture2D" uid="uid://byl7iosctpbk6" path="res://Assets/Speech.jpeg" id="3_wxe44"]
+[ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade_card.gd" id="4_dv2qb"]
+
+[resource]
+script = ExtResource("4_dv2qb")
+ability_controller_scene = ExtResource("1_as5fa")
+upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([])
+id = "speech"
+max_level = 1
+ability_name = "Speech"
+description = "Speech from Manazwerg that makes the Enemy to his loyal Dwarf"
+preview = ExtResource("3_wxe44")
+icon = ExtResource("2_iek1y")
+weight = 10

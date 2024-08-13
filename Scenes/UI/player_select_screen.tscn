@@ -40,16 +40,20 @@ alignment = 1
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_constants/margin_top = 10
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer"]
+[node name="PlayerScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
 process_mode = 3
 custom_minimum_size = Vector2(900, 400)
 layout_mode = 2
 size_flags_horizontal = 4
 follow_focus = true
+scroll_vertical_custom_step = 0.0
 horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/MarginContainer/ScrollContainer"]
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/MarginContainer/PlayerScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 6
