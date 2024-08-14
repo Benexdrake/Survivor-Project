@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="LevelResource" load_steps=18 format=3 uid="uid://bjcce5htv5ig"]
+[gd_resource type="Resource" script_class="LevelResource" load_steps=20 format=3 uid="uid://bjcce5htv5ig"]
 
 [ext_resource type="PackedScene" uid="uid://c41mstfl8ohy7" path="res://Resources/Map/map.tscn" id="1_7kpcj"]
-[ext_resource type="AudioStream" uid="uid://betkmgducqvgq" path="res://Assets/Music/Music Loops/Battle 1 (loop).mp3" id="2_rtt13"]
-[ext_resource type="AudioStream" uid="uid://coavg8lvmndiy" path="res://Assets/Music/Music Loops/Battle 2 (loop).mp3" id="3_usoci"]
-[ext_resource type="AudioStream" uid="uid://c8p66tv1tkvak" path="res://Assets/Music/Music Loops/Battle 3 (loop).mp3" id="4_uj7ya"]
-[ext_resource type="AudioStream" uid="uid://d1d5pkakjpbbo" path="res://Assets/Music/Music Loops/Battle 4 (loop).mp3" id="5_yvj8j"]
+[ext_resource type="AudioStream" uid="uid://ci7hsia7fb7g6" path="res://Assets/Music/Viking/1. Echoes of Valhalla.mp3" id="2_ksvry"]
+[ext_resource type="AudioStream" uid="uid://b3rc30obggtog" path="res://Assets/Music/Viking/2. Northern Lights .mp3" id="3_nljcj"]
+[ext_resource type="AudioStream" uid="uid://cwvlwywe45gru" path="res://Assets/Music/Viking/3. Saga of the Sea Wolves.mp3" id="4_bhnl5"]
+[ext_resource type="AudioStream" uid="uid://uqd0up8j0lrb" path="res://Assets/Music/Viking/4. Frostbound Horizons.mp3" id="5_ofoi3"]
+[ext_resource type="AudioStream" uid="uid://707g6f8ue5ab" path="res://Assets/Music/Viking/5. Odin's Whisper.mp3" id="6_2mcu5"]
 [ext_resource type="Texture2D" uid="uid://5kj2mh05udo4" path="res://Assets/Level1.jpeg" id="6_le8et"]
 [ext_resource type="Script" path="res://Scripts/Resources/level.gd" id="7_gjvcl"]
+[ext_resource type="AudioStream" uid="uid://dyv5o0rylxd64" path="res://Assets/Music/Viking/6. Throne of the Fjords.mp3" id="7_xtx0p"]
 [ext_resource type="Resource" uid="uid://ddlci0yua74yc" path="res://Resources/EnemySpawnPhase/phase1.tres" id="8_wo02d"]
 [ext_resource type="Resource" uid="uid://c7wbj2gl4wt45" path="res://Resources/EnemySpawnPhase/phase2.tres" id="9_p2gdc"]
 [ext_resource type="Resource" uid="uid://dowmusxkhpyrn" path="res://Resources/EnemySpawnPhase/phase3.tres" id="10_ey3ab"]
@@ -24,7 +26,7 @@ level_name = "Level 4"
 spawn_phasen = Array[Resource("res://Scripts/EnemySpawnPhase/enemy_spawn_phase.gd")]([ExtResource("8_wo02d"), ExtResource("9_p2gdc"), ExtResource("10_ey3ab"), ExtResource("11_os40e"), ExtResource("12_m2xmw"), ExtResource("13_k8s3l"), ExtResource("14_gfyoh"), ExtResource("15_054jw"), ExtResource("16_bmc3a"), ExtResource("17_tpms4")])
 preview = ExtResource("6_le8et")
 map_time = 400
-music = Array[AudioStream]([ExtResource("2_rtt13"), ExtResource("3_usoci"), ExtResource("4_uj7ya"), ExtResource("5_yvj8j")])
+music = Array[AudioStream]([ExtResource("2_ksvry"), ExtResource("3_nljcj"), ExtResource("4_bhnl5"), ExtResource("5_ofoi3"), ExtResource("6_2mcu5"), ExtResource("7_xtx0p")])
 map = ExtResource("1_7kpcj")
 drop_chance = 0.3
 difficulty = 4

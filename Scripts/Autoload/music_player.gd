@@ -5,7 +5,6 @@ extends AudioStreamPlayer
 func _ready():
 	finished.connect(on_finished)
 	$Timer.timeout.connect(on_timer_timeout)
-	random_bgm()
 	
 	
 func on_finished():

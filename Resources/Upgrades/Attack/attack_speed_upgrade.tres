@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://cpxtuhpikmfx8"]
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=4 format=3 uid="uid://cpxtuhpikmfx8"]
 
 [ext_resource type="Texture2D" uid="uid://r1q7ya2kpg8" path="res://Assets/HPRegen.jpeg" id="1_88iwm"]
+[ext_resource type="Texture2D" uid="uid://b0ewqc5gmamev" path="res://Assets/sword_02c.png" id="1_immbp"]
 [ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade.gd" id="2_i1yw4"]
 
 [resource]
@@ -10,4 +11,5 @@ max_level = 2
 ability_name = "Attack Speed"
 description = "Attack Speed + 5%"
 preview = ExtResource("1_88iwm")
+icon = ExtResource("1_immbp")
 weight = 5

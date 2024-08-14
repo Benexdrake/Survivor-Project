@@ -1,13 +1,15 @@
-[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://d1y7prmv4l8ls"]
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=4 format=3 uid="uid://d1y7prmv4l8ls"]
 
+[ext_resource type="Texture2D" uid="uid://bxkyo3ha01g6g" path="res://Assets/Icon3.png" id="1_5yhmb"]
 [ext_resource type="Texture2D" uid="uid://r1q7ya2kpg8" path="res://Assets/HPRegen.jpeg" id="1_pk4la"]
 [ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade.gd" id="2_aq8ij"]
 
 [resource]
 script = ExtResource("2_aq8ij")
-id = "attack_up_upgrade"
+id = "move_speed_upgrade"
 max_level = 5
-ability_name = "Attack Up"
-description = "Base Attack + 10%"
+ability_name = "Move Speed"
+description = "Move Speed + 10%"
 preview = ExtResource("1_pk4la")
+icon = ExtResource("1_5yhmb")
 weight = 5

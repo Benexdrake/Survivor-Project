@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ci7hsia7fb7g6"
+path="res://.godot/imported/1. Echoes of Valhalla.mp3-676d6923c897e250e7eb550711b1c723.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Viking/1. Echoes of Valhalla.mp3"
+dest_files=["res://.godot/imported/1. Echoes of Valhalla.mp3-676d6923c897e250e7eb550711b1c723.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

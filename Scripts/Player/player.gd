@@ -37,7 +37,7 @@ func _ready():
 	health_component.health_changed.connect(on_health_changed)
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
 	GameEvents.drop_collected.connect(on_drop_collected)
-	update_health_display(0)
+	update_health_display(max_health)
 	
 
 func start():
@@ -135,7 +135,7 @@ func update_health_display(health):
 	var health_ui = get_tree().get_first_node_in_group("health_ui")
 	var value = health_component.get_health_percent()
 	health_bar.value = value
-	health_ui.health_changed(health)
+	health_ui.health_changed()
 
 
 func ultra_hardmode():
@@ -203,23 +203,23 @@ func on_ability_upgrade_added(ability_upgrade:AbilityUpgrade):
 	
 	if ability_upgrade.id == "attack_speed_upgrade":
 		attack_speed *= 2
-		
-		
+
+
 func on_health_regeneration_timer_timeout():
 	var health_reg = ((max_health / 100) * health_regeneration_level)
 	health_component.current_health += ((max_health / 100) * health_regeneration_level)
 	update_health_display(health_reg)
+
 
 func on_touchscreen_released():
 	is_touch = false
 	movement_vector = Vector2.ZERO
 	MobileControlLayer.hide_button()
 	
+	
 func on_drop_collected(number,type):
 	if type == "health":
 		if health_component.current_health < health_component.max_health:
-			print(current_health)
-			print(health_component.current_health)
 			health_component.current_health +=1
 			update_health_display(health_component.current_health)
 	if type == "money":

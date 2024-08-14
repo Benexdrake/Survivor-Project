@@ -22,12 +22,10 @@ func on_died(pos):
 func drop(drop_scene):
 	var drop_instance = drop_scene.instantiate() as DropScene
 	drop_percent = drop_instance.drop_chance
-	print(GlobalVariables.level_resource.drop_chance)
 	
 	if GlobalVariables.level_resource.drop_chance > 0:
 		drop_percent *= GlobalVariables.level_resource.drop_chance
 		
-		print(drop_percent)
 	
 	var rand = randf_range(0,1)
 	

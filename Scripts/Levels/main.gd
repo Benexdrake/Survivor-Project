@@ -24,8 +24,8 @@ func start():
 	MobileControlLayer.visible = true
 	arena_time_manager.start(level_resource.map_time)
 	enemy_manager.enemy_spawn_phases =level_resource.spawn_phasen
-	MusicPlayer.stream = level_resource.music[0]
-	MusicPlayer.play()
+	MusicPlayer.bgms = level_resource.music
+	MusicPlayer.random_bgm()
 	level.add_child(level_resource.create_map())
 	enemy_manager.on_arena_difficulty_increased(1)
 	
