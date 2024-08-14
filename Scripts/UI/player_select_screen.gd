@@ -1,7 +1,7 @@
 extends CanvasLayer
 class_name PlayerSelectScreen
 
-var player_card = preload("res://Scenes/UI/test_player_select_card.tscn")
+var player_card = preload("res://Scenes/UI/player_select_card_new.tscn")
 
 
 @export var player_cards: Resource

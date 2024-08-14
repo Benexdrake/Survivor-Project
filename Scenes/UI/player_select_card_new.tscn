@@ -1,7 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://b0fk3cxesm7at"]
+[gd_scene load_steps=17 format=3 uid="uid://cexvfoy8cg0u0"]
 
-[ext_resource type="Script" path="res://Scripts/UI/player_select_card.gd" id="1_ggupj"]
-[ext_resource type="Resource" uid="uid://bm1seocfdncg7" path="res://Resources/Players/player1.tres" id="2_56ij8"]
+[ext_resource type="Script" path="res://Scripts/UI/player_select_card_new.gd" id="1_elt23"]
 [ext_resource type="AudioStream" uid="uid://53pjrj14iw6x" path="res://Assets/SFX/10_UI_Menu_SFX/051_use_item_01.wav" id="3_ryeqt"]
 [ext_resource type="AudioStream" uid="uid://cv7ea5q0i0lwu" path="res://Assets/SFX/8_Buffs_Heals_SFX/02_Heal_02.wav" id="4_od3fk"]
 [ext_resource type="Texture2D" uid="uid://bepdcxvnuw50o" path="res://Assets/AlbertEinstein_Profile.jpeg" id="5_27mnl"]
@@ -248,16 +247,13 @@ _data = {
 "hover": SubResource("Animation_0d4oc")
 }
 
-[node name="PlayerSelectCard" type="PanelContainer" groups=["player_select_card"]]
-self_modulate = Color(0.252028, 0.252028, 0.252028, 1)
-custom_minimum_size = Vector2(120, 0)
-layout_direction = 1
+[node name="PlayerSelectCard" type="PanelContainer"]
+self_modulate = Color(0.0885599, 0.0885599, 0.0885599, 1)
 offset_right = 126.0
 offset_bottom = 171.0
-pivot_offset = Vector2(67, 97)
+pivot_offset = Vector2(63, 85)
 theme_type_variation = &"AbilityPanelContainer"
-script = ExtResource("1_ggupj")
-player_resource = ExtResource("2_56ij8")
+script = ExtResource("1_elt23")
 
 [node name="HoverStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_ryeqt")

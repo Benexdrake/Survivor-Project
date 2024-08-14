@@ -13,7 +13,6 @@ func _ready():
 	cooldown_timer.timeout.connect(on_timer_timeout)
 	spawn_timer.timeout.connect(on_spawn_timer_timeout)
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
-	#ability()
 	
 	
 func ability():

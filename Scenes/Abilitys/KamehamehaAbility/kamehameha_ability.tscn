@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://cixw88h4tjhf8"]
 
-[ext_resource type="Script" path="res://Scripts/Abilitys/kamehameha/kamehameha_ability.gd" id="1_eg46u"]
+[ext_resource type="Script" path="res://Scripts/Abilitys/kamehameha/kamehameha_ability.gd" id="1_ejm2y"]
 [ext_resource type="AudioStream" uid="uid://itvumm54m7h5" path="res://Assets/SFX/10_Battle_SFX/35_Miss_Evade_02.wav" id="2_j40tf"]
 [ext_resource type="Texture2D" uid="uid://c4gbwsjr4wx6v" path="res://Assets/Skills/Kamehameha/Kamehameha_loop1.png" id="3_mq8vs"]
 [ext_resource type="Texture2D" uid="uid://ctvdpkbh0g27k" path="res://Assets/Skills/Kamehameha/Kamehameha1.png" id="3_skkti"]
@@ -187,10 +187,10 @@ tracks/2/path = NodePath("HitboxComponent/CollisionShape2D:shape")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.6),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [SubResource("CircleShape2D_yopgy")]
+"values": [SubResource("CircleShape2D_yopgy"), SubResource("CircleShape2D_yopgy")]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -250,11 +250,11 @@ _data = {
 "shot": SubResource("Animation_7de74")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dn5vu"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_7uwts"]
 radius = 7.0
 
 [node name="KamehamehaAbility" type="CharacterBody2D"]
-script = ExtResource("1_eg46u")
+script = ExtResource("1_ejm2y")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_j40tf")
@@ -265,8 +265,8 @@ libraries = {
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(436, -4)
-texture = ExtResource("14_ru3ra")
+position = Vector2(436, -9)
+texture = ExtResource("3_skkti")
 
 [node name="HitboxComponent" parent="." instance=ExtResource("17_dmb5j")]
 collision_mask = 65
@@ -279,7 +279,7 @@ shape = SubResource("RectangleShape2D_50ya1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
 visibility_layer = 0
-shape = SubResource("CircleShape2D_dn5vu")
+shape = SubResource("CircleShape2D_7uwts")
 disabled = true
 
 [node name="MaxShootTimer" type="Timer" parent="."]

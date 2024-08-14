@@ -1,7 +1,7 @@
-extends Container
+extends PanelContainer
 class_name PlayerCard
 
-@export var player_resource:PlayerResource
+var player_resource:PlayerResource
 
 @onready var character_name_label:Label = %CharacterNameLabel
 @onready var preview = %Preview
