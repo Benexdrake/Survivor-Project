@@ -6,15 +6,16 @@ var shot_ability_scene = preload("res://Scenes/Abilitys/KamehamehaAbility/kameha
 @onready var timer = $Timer
 @onready var marker_2d = %Marker2D
 
+@export var damage = 5
 
 var max_shots = 3
 var current_shots = 0
 
-@export var damage = 5
 var velocity = Vector2(1,0)
 
 func _ready():
 	timer.timeout.connect(on_timer_timeout)
+	
 	
 func _process(delta):
 	var player = get_tree().get_first_node_in_group("player") as Player
@@ -24,10 +25,8 @@ func _process(delta):
 		
 	global_position = player.global_position
 	check_input()
-	
 
-	
-	
+
 func check_input():
 	if Input.is_action_pressed("move_up"):
 		rotation_degrees = -90
@@ -41,6 +40,7 @@ func check_input():
 	elif Input.is_action_pressed("move_right"):
 		rotation = 0
 		velocity = Vector2(1,0)
+
 
 func shoot():
 	var player = get_tree().get_first_node_in_group("player") as Player
@@ -59,6 +59,7 @@ func shoot():
 	bullet.hitbox_component.damage = damage + player.base_dmg
 	bullet.position = marker_2d.global_position
 	bullet.rotation_degrees = rotation_degrees
+	
 	
 func on_timer_timeout():
 	shoot()

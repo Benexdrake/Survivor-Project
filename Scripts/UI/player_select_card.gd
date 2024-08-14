@@ -17,13 +17,14 @@ func _ready():
 	mouse_entered.connect(on_mouse_entered)
 	mouse_exited.connect(on_mouse_exited)
 
+
 func start():
 	character_name_label.text = player_resource.player_name
 	preview.texture = player_resource.preview
 	%AbilityIcon.texture = player_resource.ability.icon
 	stats()
 	
-
+	
 func stats():
 	attack_label.text = str(player_resource.dmg_show)
 	health_label.text = str(player_resource.hp_show)
@@ -41,6 +42,7 @@ func play_discard():
 	pass
 	$AnimationPlayer.play("discard")
 	await $AnimationPlayer.animation_finished
+	
 	
 func select_card():
 	disabled = true
@@ -75,6 +77,7 @@ func on_mouse_entered():
 	#player_select_screen.information_margin_container.visible = true
 	player_select_screen.animation_player.play("show")
 	$HoverAnimationPlayer.play("hover")
+	
 	
 func on_mouse_exited():
 	var player_select_screen = get_tree().get_first_node_in_group("player_select_screen") as PlayerSelectScreen

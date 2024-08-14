@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dn2ilajba0yy7"]
+[gd_scene load_steps=18 format=3 uid="uid://b0fk3cxesm7at"]
 
 [ext_resource type="Script" path="res://Scripts/UI/player_select_card.gd" id="1_ggupj"]
 [ext_resource type="Resource" uid="uid://bm1seocfdncg7" path="res://Resources/Players/player1.tres" id="2_56ij8"]

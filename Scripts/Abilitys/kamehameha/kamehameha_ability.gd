@@ -17,10 +17,7 @@ func _process(delta):
 		global_position = k_controller.marker_2d.global_position
 		rotation_degrees = k_controller.rotation_degrees
 		move_and_slide()
-	#move_and_collide(_velocity.normalized() * delta * speed)
-
-
-	
+		
 
 func on_max_shoot_timer_timeout():
 	queue_free()
