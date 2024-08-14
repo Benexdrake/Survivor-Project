@@ -220,12 +220,13 @@ _data = {
 }
 
 [node name="AbilityUpgradeCard" type="PanelContainer" groups=["upgrade_card"]]
-self_modulate = Color(0.996078, 0.705882, 0, 1)
+self_modulate = Color(0.112459, 0.116766, 0.108146, 1)
 custom_minimum_size = Vector2(200, 340)
 offset_right = 200.0
-offset_bottom = 340.0
+offset_bottom = 362.0
 pivot_offset = Vector2(100, 170)
 size_flags_vertical = 0
+theme_type_variation = &"AbilityPanelContainer"
 script = ExtResource("1_8dwaw")
 
 [node name="HoverStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -248,8 +249,6 @@ libraries = {
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_right = 8
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -267,6 +266,7 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 12
 text = "Level 1"
 horizontal_alignment = 2
 
@@ -275,12 +275,6 @@ unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("2_shxa8")
 expand_mode = 4
-
-[node name="PanelContainer2" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
-visible = false
-self_modulate = Color(1, 0.803667, 0.62, 1)
-layout_mode = 2
-mouse_filter = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
 self_modulate = Color(0.714066, 0.702602, 0.68365, 1)
