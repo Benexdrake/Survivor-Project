@@ -1,15 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjp240mlov23q"]
+[gd_scene load_steps=4 format=3 uid="uid://bjp240mlov23q"]
 
 [ext_resource type="Script" path="res://Scripts/UI/level_select_screen.gd" id="1_jksdn"]
-[ext_resource type="Resource" uid="uid://vslpqt6sx2yf" path="res://Resources/Level/level1.tres" id="2_q7uoc"]
-[ext_resource type="Resource" uid="uid://cgm5bh576yrm7" path="res://Resources/Level/level2.tres" id="3_ai4h8"]
 [ext_resource type="Texture2D" uid="uid://dxfirj583y5q4" path="res://Assets/_2bf8c255-1003-406f-8a3b-9a43c3f92667.jpeg" id="4_y05wt"]
 [ext_resource type="PackedScene" uid="uid://dujgwpibibjgl" path="res://Scenes/UI/vignette.tscn" id="5_38blg"]
 
 [node name="LevelSelectScreen" type="CanvasLayer"]
 layer = 3
 script = ExtResource("1_jksdn")
-level_resources = Array[Resource("res://Scripts/Resources/level.gd")]([ExtResource("2_q7uoc"), ExtResource("3_ai4h8")])
 
 [node name="Vignette" parent="." instance=ExtResource("5_38blg")]
 layer = 5

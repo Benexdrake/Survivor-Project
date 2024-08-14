@@ -57,7 +57,6 @@ func _input(event):
 		timer.start()
 		canShuffle = false
 		await empty_cards()
-		# hole neue karten
 		var upgrade_manager = get_tree().get_first_node_in_group("upgrade_manager") as UpgradeManager
 		var upgrades = upgrade_manager.pick_upgrades()
 		show_cards(upgrades)
