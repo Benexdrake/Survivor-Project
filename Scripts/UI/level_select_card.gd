@@ -29,10 +29,12 @@ func start():
 	preview.texture = level_resource.preview
 
 func create_difficulty_text():
-	var text = ""
-	for i in 5:
-		if i < level_resource.difficulty:
-			skulls[i].visible = true
+	if level_resource.difficulty == 6:
+		skulls[5].visible = true
+	else:
+		for i in 5:
+			if i < level_resource.difficulty:
+				skulls[i].visible = true
 
 
 func play_in(delay:float = 0):
@@ -50,7 +52,7 @@ func select_card():
 	disabled = true
 	$AnimationPlayer.play("selected")
 	
-	for other_card in get_tree().get_nodes_in_group("player_select_card"):
+	for other_card in get_tree().get_nodes_in_group("level_select_card"):
 		if other_card == self:
 			continue
 		other_card.play_discard()

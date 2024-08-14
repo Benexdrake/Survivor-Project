@@ -1,9 +1,13 @@
-[gd_resource type="Resource" script_class="AllLevelsResource" load_steps=4 format=3 uid="uid://0wpko6ss80b7"]
+[gd_resource type="Resource" script_class="AllLevelsResource" load_steps=8 format=3 uid="uid://0wpko6ss80b7"]
 
 [ext_resource type="Resource" uid="uid://vslpqt6sx2yf" path="res://Resources/Level/level1.tres" id="1_nt0hs"]
 [ext_resource type="Script" path="res://Scripts/Resources/all_levels.gd" id="1_rswej"]
-[ext_resource type="Resource" uid="uid://cgm5bh576yrm7" path="res://Resources/Level/level2.tres" id="2_qu2fy"]
+[ext_resource type="Resource" uid="uid://t4jua8kpxw3s" path="res://Resources/Level/level2.tres" id="2_odejk"]
+[ext_resource type="Resource" uid="uid://cgm5bh576yrm7" path="res://Resources/Level/level5.tres" id="2_qu2fy"]
+[ext_resource type="Resource" uid="uid://88ioaw8j11rw" path="res://Resources/Level/level3.tres" id="3_1gcf5"]
+[ext_resource type="Resource" uid="uid://bjcce5htv5ig" path="res://Resources/Level/level4.tres" id="4_tkvni"]
+[ext_resource type="Resource" uid="uid://rqcee3e2mgly" path="res://Resources/Level/level6.tres" id="6_3c6n3"]
 
 [resource]
 script = ExtResource("1_rswej")
-all_levels = Array[Resource("res://Scripts/Resources/level.gd")]([ExtResource("1_nt0hs"), ExtResource("2_qu2fy")])
+all_levels = Array[Resource("res://Scripts/Resources/level.gd")]([ExtResource("1_nt0hs"), ExtResource("2_odejk"), ExtResource("3_1gcf5"), ExtResource("4_tkvni"), ExtResource("2_qu2fy"), ExtResource("6_3c6n3")])

@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=18 format=3 uid="uid://cgm5bh576yrm7"]
+
+[ext_resource type="PackedScene" uid="uid://c5ctew6kgh31i" path="res://Resources/Map/map2.tscn" id="1_6cafa"]
+[ext_resource type="AudioStream" uid="uid://betkmgducqvgq" path="res://Assets/Music/Music Loops/Battle 1 (loop).mp3" id="2_1kypy"]
+[ext_resource type="AudioStream" uid="uid://coavg8lvmndiy" path="res://Assets/Music/Music Loops/Battle 2 (loop).mp3" id="3_fbitx"]
+[ext_resource type="AudioStream" uid="uid://c8p66tv1tkvak" path="res://Assets/Music/Music Loops/Battle 3 (loop).mp3" id="4_h3wh3"]
+[ext_resource type="AudioStream" uid="uid://d1d5pkakjpbbo" path="res://Assets/Music/Music Loops/Battle 4 (loop).mp3" id="5_fxl3r"]
+[ext_resource type="Texture2D" uid="uid://ccga7ueigxwif" path="res://Assets/Level2.jpeg" id="6_h2fpa"]
+[ext_resource type="Script" path="res://Scripts/Resources/level.gd" id="7_io24x"]
+[ext_resource type="Resource" uid="uid://ddlci0yua74yc" path="res://Resources/EnemySpawnPhase/phase1.tres" id="8_5fmkr"]
+[ext_resource type="Resource" uid="uid://c7wbj2gl4wt45" path="res://Resources/EnemySpawnPhase/phase2.tres" id="9_krosc"]
+[ext_resource type="Resource" uid="uid://dowmusxkhpyrn" path="res://Resources/EnemySpawnPhase/phase3.tres" id="10_ijh40"]
+[ext_resource type="Resource" uid="uid://b8treeyj6ax8w" path="res://Resources/EnemySpawnPhase/phase4.tres" id="11_epdps"]
+[ext_resource type="Resource" uid="uid://dvepads7erq22" path="res://Resources/EnemySpawnPhase/phase5.tres" id="12_vmkyv"]
+[ext_resource type="Resource" uid="uid://84w00oa5k4b7" path="res://Resources/EnemySpawnPhase/phase6.tres" id="13_2c52u"]
+[ext_resource type="Resource" uid="uid://b4mtisem0f6oj" path="res://Resources/EnemySpawnPhase/phase7.tres" id="14_jbxil"]
+[ext_resource type="Resource" uid="uid://bn7y80xnsht8p" path="res://Resources/EnemySpawnPhase/phase8.tres" id="15_2f4pt"]
+[ext_resource type="Resource" uid="uid://cr660w6ch8j8d" path="res://Resources/EnemySpawnPhase/phase9.tres" id="16_bin30"]
+[ext_resource type="Resource" uid="uid://c0yit4xaio2fc" path="res://Resources/EnemySpawnPhase/phase10.tres" id="17_dh771"]
+
+[resource]
+script = ExtResource("7_io24x")
+level_name = "Level 5"
+spawn_phasen = Array[Resource("res://Scripts/EnemySpawnPhase/enemy_spawn_phase.gd")]([ExtResource("8_5fmkr"), ExtResource("9_krosc"), ExtResource("10_ijh40"), ExtResource("11_epdps"), ExtResource("12_vmkyv"), ExtResource("13_2c52u"), ExtResource("14_jbxil"), ExtResource("15_2f4pt"), ExtResource("16_bin30"), ExtResource("17_dh771")])
+preview = ExtResource("6_h2fpa")
+map_time = 300
+music = Array[AudioStream]([ExtResource("2_1kypy"), ExtResource("3_fbitx"), ExtResource("4_h3wh3"), ExtResource("5_fxl3r")])
+map = ExtResource("1_6cafa")
+drop_chance = 0.5
+difficulty = 5

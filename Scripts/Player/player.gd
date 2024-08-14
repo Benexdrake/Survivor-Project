@@ -138,6 +138,14 @@ func update_health_display(health):
 	health_ui.health_changed(health)
 
 
+func ultra_hardmode():
+	current_health = 1
+	max_health = 1
+	health_component.max_health = 1
+	health_component.current_health = 1
+	update_health_display(0)
+	
+
 func on_body_entered(body:Node2D):
 	number_colliding_bodies += 1
 	check_deal_damage()
@@ -217,5 +225,3 @@ func on_drop_collected(number,type):
 	if type == "money":
 		GlobalVariables.money += number
 		get_tree().get_first_node_in_group("money_ui").set_money_label()
-	
-	print(type)

@@ -15,4 +15,5 @@ class_name LevelResource
 
 func create_map():
 	var map_instance = map.instantiate()
+	GlobalVariables.level_resource.drop_chance = drop_chance
 	return map_instance

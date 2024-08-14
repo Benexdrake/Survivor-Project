@@ -46,6 +46,7 @@ func on_timer_timeout():
 	if player == null:
 		return
 		
+		
 	var size = current_enemies.size() - 1
 		
 	var enemy_resource = current_enemies[randi_range(0, size)]
@@ -70,7 +71,12 @@ func on_arena_difficulty_increased(arena_difficult:int):
 	for enemy_resource in enemy_phase.enemy_resources:
 		current_enemies.append(enemy_resource)
 	
-	timer.wait_time = enemy_phase.spawn_time
+	
+	if owner.level_resource.difficulty == 6:
+		timer.wait_time = .1
+		
+	else:
+		timer.wait_time = enemy_phase.spawn_time - (float(owner.level_resource.difficulty) / 10)
 	timer.start()
 	
 	var arena_wave_ui = get_tree().get_first_node_in_group("arena_wave_ui")

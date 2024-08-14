@@ -387,7 +387,8 @@ wait_time = 0.5
 autostart = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.658824)
+modulate = Color(1, 1, 1, 0.360784)
+self_modulate = Color(1, 1, 1, 0.482353)
 scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_jkkfm")
 autoplay = "default"

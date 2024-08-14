@@ -10,7 +10,7 @@ radius = 16.0
 [node name="Drop" type="Node2D"]
 script = ExtResource("1_xa0gh")
 drop_type = "health"
-drop_chance = 0.1
+drop_chance = 0.02
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0

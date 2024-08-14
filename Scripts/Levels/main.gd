@@ -15,6 +15,8 @@ func _ready():
 	MusicPlayer.finished.connect(on_music_finished)
 	%Player.health_component.died.connect(on_player_died)
 	start()
+	if level_resource.difficulty == 6:
+		%Player.ultra_hardmode()
 	
 	
 func start():
