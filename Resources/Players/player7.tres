@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PlayerResource" load_steps=10 format=3 uid="uid://8epcbbyj1ste"]
 
-[ext_resource type="Resource" uid="uid://ba52adg337cfr" path="res://Resources/Upgrades/Book/Bible/book_bible_ability_card.tres" id="1_4i1gi"]
+[ext_resource type="Resource" uid="uid://cmsu8kqm1kbk6" path="res://Resources/Upgrades/Book/GrundGesetz/book_gg_ability_card.tres" id="1_7b22j"]
 [ext_resource type="Texture2D" uid="uid://dji0qio410e4t" path="res://Assets/Arminius_Profile.jpeg" id="2_5pkvt"]
 [ext_resource type="Script" path="res://Scripts/Player/player_resource.gd" id="3_ria2e"]
 [ext_resource type="Texture2D" uid="uid://lqe7nij2y8vp" path="res://Assets/Player/2/player2anim1.png" id="4_qbdhy"]
@@ -36,7 +36,7 @@ animations = [{
 script = ExtResource("3_ria2e")
 id = "2"
 player_name = "Arminius"
-ability = ExtResource("1_4i1gi")
+ability = ExtResource("1_7b22j")
 sprite_frames = SubResource("SpriteFrames_wc2d2")
 preview = ExtResource("2_5pkvt")
 hp = 15

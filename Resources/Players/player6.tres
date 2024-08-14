@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PlayerResource" load_steps=9 format=3 uid="uid://rqic0bdryrr8"]
 
-[ext_resource type="Resource" uid="uid://ctvjb0fsad0si" path="res://Resources/Upgrades/Slash/slash_ability_card.tres" id="1_x0hll"]
+[ext_resource type="Resource" uid="uid://cr3a5ywo6jame" path="res://Resources/Upgrades/Axe/axe_ability_card.tres" id="1_dwrw1"]
 [ext_resource type="Texture2D" uid="uid://b8iedvuwhglkm" path="res://Assets/Profile/Default_Albert_Einstein_rendered_in_vibrant_digital_art_depict_0.jpg" id="2_t035v"]
 [ext_resource type="Script" path="res://Scripts/Player/player_resource.gd" id="3_nu4x2"]
 [ext_resource type="Texture2D" uid="uid://dkh14c88us4wt" path="res://Assets/Player/1/player1.png" id="4_uo2yf"]
@@ -32,7 +32,7 @@ animations = [{
 script = ExtResource("3_nu4x2")
 id = "1"
 player_name = "Albert Einstein"
-ability = ExtResource("1_x0hll")
+ability = ExtResource("1_dwrw1")
 sprite_frames = SubResource("SpriteFrames_22ksg")
 preview = ExtResource("2_t035v")
 hp = 10

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PlayerResource" load_steps=14 format=3 uid="uid://cgorudp2lbym"]
 
-[ext_resource type="Resource" uid="uid://bu4jso5tt11p7" path="res://Resources/Upgrades/Thunder/thunder_ability_card.tres" id="1_i6c78"]
+[ext_resource type="Resource" uid="uid://di3yuthqnubgo" path="res://Resources/Upgrades/Kamehameha/kamehameha_ability_card.tres" id="1_yvc1s"]
 [ext_resource type="Texture2D" uid="uid://dnfyxv0fu6dds" path="res://Assets/Godbrithil_Profile.jpeg" id="2_xpir4"]
 [ext_resource type="Script" path="res://Scripts/Player/player_resource.gd" id="3_4xt5a"]
 [ext_resource type="Texture2D" uid="uid://bf5udmb27y2ba" path="res://Assets/Player/4/player-Sheet.png" id="4_nfiwl"]
@@ -73,7 +73,7 @@ animations = [{
 script = ExtResource("3_4xt5a")
 id = "4"
 player_name = "Godbrithil"
-ability = ExtResource("1_i6c78")
+ability = ExtResource("1_yvc1s")
 sprite_frames = SubResource("SpriteFrames_22ksg")
 preview = ExtResource("2_xpir4")
 hp = 5
