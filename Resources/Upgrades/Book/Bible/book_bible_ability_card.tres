@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://dexm2keoyx6ap" path="res://Assets/book_06a.png" id="2_5gwko"]
 [ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade_card.gd" id="2_epstt"]
 [ext_resource type="Texture2D" uid="uid://7qtqntmu3v2f" path="res://Assets/Bibel.jpeg" id="3_tpnb5"]
-[ext_resource type="Resource" uid="uid://du2c5e6i8fln" path="res://Resources/Upgrades/Book/Bible/book_bible_upgrade.tres" id="4_jt3q3"]
+[ext_resource type="Resource" uid="uid://du2c5e6i8fln" path="res://Resources/Upgrades/Book/book_upgrade.tres" id="5_yie2j"]
 
 [resource]
 script = ExtResource("2_epstt")
 ability_controller_scene = ExtResource("1_4bxts")
-upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([ExtResource("4_jt3q3"), ExtResource("4_jt3q3"), ExtResource("4_jt3q3")])
+upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([ExtResource("5_yie2j"), ExtResource("5_yie2j"), ExtResource("5_yie2j")])
 id = "book"
 max_level = 0
 ability_name = "Bible"

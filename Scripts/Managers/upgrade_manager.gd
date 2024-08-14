@@ -4,18 +4,35 @@ class_name UpgradeManager
 @export var filler: AbilityUpgrade
 @export var experience_manager: Node
 @export var upgrade_screen_scene: PackedScene
-@export var abilities:Array[AbilityUpgrade]
 @export var all_upgrades:Resource
+@export var max_abilitys:int = 10
 
 var current_upgrades: Array[AbilityUpgrade]
 var upgrade_pool: UpgradeWeightedTable = UpgradeWeightedTable.new()
+
 
 func _ready():
 	experience_manager.level_up.connect(on_level_up)
 	
 	
 func adding_upgrades():
-	for ability in all_upgrades.all_upgrades:
+	var player = get_tree().get_first_node_in_group("player") as Player
+	all_upgrades.all_upgrades.shuffle()
+	var upgrades = []
+	
+	if player.player_resource.ability.upgrades.size() > 0:
+		upgrades.append(player.player_resource.ability)
+	
+	if all_upgrades.all_upgrades.size() < 10 - upgrades.size():
+		max_abilitys = all_upgrades.all_upgrades.size()
+	
+	for i in max_abilitys:
+		if all_upgrades.all_upgrades[i].id == player.player_resource.ability.id:
+			max_abilitys +=1
+			continue
+		upgrades.append(all_upgrades.all_upgrades[i])
+	
+	for ability in upgrades:
 		if ability is AbilityUpgradeCard:
 			if ability.upgrades.size() == 0:
 				ability.max_level = 1

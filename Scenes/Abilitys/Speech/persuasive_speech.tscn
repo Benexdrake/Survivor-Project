@@ -23,5 +23,5 @@ position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_vgtx7")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.5
 autostart = true

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://brawdk0g4anac"]
+
+[ext_resource type="Texture2D" uid="uid://r1q7ya2kpg8" path="res://Assets/HPRegen.jpeg" id="1_pgn83"]
+[ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade.gd" id="2_uk2ki"]
+
+[resource]
+script = ExtResource("2_uk2ki")
+id = "attack_up_upgrade"
+max_level = 5
+ability_name = "Attack Up"
+description = "Base Attack + 10%"
+preview = ExtResource("1_pgn83")
+weight = 5

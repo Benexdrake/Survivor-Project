@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4gbwsjr4wx6v"
-path="res://.godot/imported/Kamehameha_loop1.png-1fabac49036ecbb44142697b621bad54.ctex"
+uid="uid://c72smellpc686"
+path="res://.godot/imported/Icon1.png-cfca66f88684231daeefff456c4c7221.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Skills/Kamehameha/Kamehameha_loop1.png"
-dest_files=["res://.godot/imported/Kamehameha_loop1.png-1fabac49036ecbb44142697b621bad54.ctex"]
+source_file="res://Assets/Icon1.png"
+dest_files=["res://.godot/imported/Icon1.png-cfca66f88684231daeefff456c4c7221.ctex"]
 
 [params]
 

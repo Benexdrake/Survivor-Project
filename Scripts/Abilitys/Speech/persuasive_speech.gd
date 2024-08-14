@@ -5,7 +5,7 @@ extends Node2D
 @onready var collision_shape_2d = %CollisionShape2D
 @onready var sprite_2d = $Sprite2D
 
-var convince_chance:float = .02
+var convince_chance:float = .015
 
 func _ready():
 	timer.timeout.connect(on_timer_timeout)

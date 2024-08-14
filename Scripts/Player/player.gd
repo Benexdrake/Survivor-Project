@@ -6,6 +6,7 @@ class_name Player
 var player_name:String
 var hp:float
 var base_dmg:float
+var attack_speed:float = 1
 var max_health:float
 var current_health:float
 var max_speed: int
@@ -54,6 +55,9 @@ func start():
 	
 	var ability_instance = player_resource.ability.ability_controller_scene.instantiate()
 	%Abilities.add_child(ability_instance)
+	
+	if player_resource.ability.id == "book":
+		(ability_instance as BookAbilityController).book_sprite = player_resource.ability.icon
 	
 	var upgrade_manager = get_tree().get_first_node_in_group("upgrade_manager") as UpgradeManager
 	if upgrade_manager == null:
@@ -181,6 +185,16 @@ func on_ability_upgrade_added(ability_upgrade:AbilityUpgrade):
 		add_child(health_regeneration_timer)
 		health_regeneration_timer.start()
 		health_regeneration_level += 1
+		
+	if ability_upgrade.id == "move_speed_upgrade":
+		max_speed *= 1.1
+		
+	if ability_upgrade.id == "attack_up_upgrade":
+		base_dmg *= 1.1
+	
+	if ability_upgrade.id == "attack_speed_upgrade":
+		attack_speed *= 2
+		
 		
 func on_health_regeneration_timer_timeout():
 	var health_reg = ((max_health / 100) * health_regeneration_level)

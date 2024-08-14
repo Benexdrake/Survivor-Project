@@ -59,7 +59,7 @@ _data = {
 "out": SubResource("Animation_bt0jj")
 }
 
-[node name="UpgradeScreen" type="CanvasLayer"]
+[node name="UpgradeScreen" type="CanvasLayer" groups=["upgrade_screen"]]
 process_mode = 3
 layer = 3
 script = ExtResource("1_fd6aq")

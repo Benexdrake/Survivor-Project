@@ -4,6 +4,7 @@ signal upgrade_selected(upgrade:AbilityUpgrade)
 
 @export var upgrade_card_scene: PackedScene
 @onready var card_container:HBoxContainer = %CardContainer
+
 var ui:CanvasLayer
 
 func _ready():

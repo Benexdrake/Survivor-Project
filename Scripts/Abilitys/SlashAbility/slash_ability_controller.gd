@@ -17,6 +17,7 @@ func _ready():
 
 
 func create():
+	print(timer.wait_time)
 	var player = get_tree().get_first_node_in_group("player") as Player
 	if player == null:
 		return
@@ -52,3 +53,6 @@ func on_ability_upgrade_added(upgrade: AbilityUpgrade):
 		timer.wait_time = timer.wait_time * .9
 	if upgrade.id == "slash_double_upgrade":
 		hasDoubleSlashUpgrade = true
+	if upgrade.id == "attack_speed_upgrade":
+		timer.wait_time /= 1.2
+		timer.start()

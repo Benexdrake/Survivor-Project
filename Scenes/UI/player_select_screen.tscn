@@ -1,16 +1,51 @@
-[gd_scene load_steps=6 format=3 uid="uid://cj62qmxdo7juy"]
+[gd_scene load_steps=8 format=3 uid="uid://cj62qmxdo7juy"]
 
 [ext_resource type="Script" path="res://Scripts/UI/player_select_screen.gd" id="1_00gve"]
 [ext_resource type="Resource" uid="uid://bpljforopp5a8" path="res://Resources/Players/all_players.tres" id="2_c644b"]
-[ext_resource type="PackedScene" uid="uid://dn2ilajba0yy7" path="res://Scenes/UI/player_select_card.tscn" id="2_jlh51"]
 [ext_resource type="Texture2D" uid="uid://c55qcsmpkjh3" path="res://Assets/_8ae7189c-5d5d-4923-88c1-0dbfebddb04c.jpeg" id="4_1btx3"]
 [ext_resource type="PackedScene" uid="uid://dujgwpibibjgl" path="res://Scenes/UI/vignette.tscn" id="5_hv11v"]
+
+[sub_resource type="Animation" id="Animation_1feiu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%InformationMarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6ov6n"]
+resource_name = "show"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%InformationMarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a737n"]
+_data = {
+"RESET": SubResource("Animation_1feiu"),
+"show": SubResource("Animation_6ov6n")
+}
 
 [node name="PlayerSelectScreen" type="CanvasLayer" groups=["player_select_screen"]]
 layer = 4
 script = ExtResource("1_00gve")
 player_cards = ExtResource("2_c644b")
-player_card = ExtResource("2_jlh51")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 show_behind_parent = true
@@ -25,66 +60,73 @@ stretch_mode = 1
 [node name="Vignette" parent="." instance=ExtResource("5_hv11v")]
 layer = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="PlayerCards" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="PlayerScrollContainer" type="ScrollContainer" parent="PlayerCards"]
+unique_name_in_owner = true
 process_mode = 3
+custom_minimum_size = Vector2(900, 400)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset = Vector2(480, 270)
-mouse_filter = 2
-theme_override_constants/separation = 20
-alignment = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_constants/margin_top = 10
-
-[node name="PlayerScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer"]
-unique_name_in_owner = true
-process_mode = 3
-custom_minimum_size = Vector2(900, 400)
-layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 0
 follow_focus = true
 scroll_vertical_custom_step = 0.0
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/MarginContainer/PlayerScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PlayerCards/PlayerScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 10
+
+[node name="GridContainer" type="GridContainer" parent="PlayerCards/PlayerScrollContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
-columns = 4
+columns = 6
 
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
+[node name="PlayerInfobox" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerInfobox"]
+libraries = {
+"": SubResource("AnimationLibrary_a737n")
+}
+
+[node name="InformationMarginContainer" type="MarginContainer" parent="PlayerInfobox"]
+unique_name_in_owner = true
+offset_top = 430.0
+offset_right = 960.0
+offset_bottom = 544.0
 size_flags_vertical = 8
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/MarginContainer2"]
+[node name="PanelContainer" type="PanelContainer" parent="PlayerInfobox/InformationMarginContainer"]
 self_modulate = Color(0.25098, 0.25098, 0.25098, 1)
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer2/PanelContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="PlayerInfobox/InformationMarginContainer/PanelContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 follow_focus = true
 horizontal_scroll_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/PanelContainer/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerInfobox/InformationMarginContainer/PanelContainer/ScrollContainer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PlayerInfobox/InformationMarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 20
 
-[node name="DescriptionLabel" type="Label" parent="VBoxContainer/MarginContainer2/PanelContainer/ScrollContainer/VBoxContainer/MarginContainer"]
+[node name="DescriptionLabel" type="Label" parent="PlayerInfobox/InformationMarginContainer/PanelContainer/ScrollContainer/VBoxContainer/MarginContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(900, 0)
 layout_mode = 2

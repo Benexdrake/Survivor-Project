@@ -1,37 +1,33 @@
-extends PanelContainer
+extends Container
 class_name PlayerCard
 
 @export var player_resource:PlayerResource
 
 @onready var character_name_label:Label = %CharacterNameLabel
 @onready var preview = %Preview
-@onready var stats_label:Label = %StatsLabel
+@onready var attack_label = %AttackLabel
+@onready var health_label = %HealthLabel
+@onready var speed_label = %SpeedLabel
+
 
 var disabled = false
 
 func _ready():
 	gui_input.connect(on_gui_input)
 	mouse_entered.connect(on_mouse_entered)
+	mouse_exited.connect(on_mouse_exited)
 
 func start():
 	character_name_label.text = player_resource.player_name
 	preview.texture = player_resource.preview
-	stats_label.text = get_stats()
+	%AbilityIcon.texture = player_resource.ability.icon
+	stats()
 	
 
-func get_stats():
-	var stats = ""
-	stats += "ATK: " + get_points(int(player_resource.dmg_show)) + "\n"
-	stats += "HP: " + get_points(int(player_resource.hp_show)) + "\n"
-	stats += "SPD: " + get_points(int(player_resource.speed_show))
-	return stats
-
-
-func get_points(variable:int):
-	var points = ""
-	for i in variable:
-		points += "[]"
-	return points
+func stats():
+	attack_label.text = str(player_resource.dmg_show)
+	health_label.text = str(player_resource.hp_show)
+	speed_label.text = str(player_resource.speed_show)
 
 	
 
@@ -76,4 +72,12 @@ func on_mouse_entered():
 	
 	var player_select_screen = get_tree().get_first_node_in_group("player_select_screen") as PlayerSelectScreen
 	player_select_screen.change_description_laben(player_resource.description)
+	#player_select_screen.information_margin_container.visible = true
+	player_select_screen.animation_player.play("show")
 	$HoverAnimationPlayer.play("hover")
+	
+func on_mouse_exited():
+	var player_select_screen = get_tree().get_first_node_in_group("player_select_screen") as PlayerSelectScreen
+	#player_select_screen.information_margin_container.visible = false
+	player_select_screen.animation_player.play_backwards("show")
+	

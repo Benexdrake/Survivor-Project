@@ -16,7 +16,7 @@ var enemy_global_position = Vector2.ZERO
 
 var enemy: BasicEnemy
 
-const MAX_RANGE = 150
+const MAX_RANGE = 300
 
 func _ready():
 	life_timer.timeout.connect(on_life_time_timeout)
