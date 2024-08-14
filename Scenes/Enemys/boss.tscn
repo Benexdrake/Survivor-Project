@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Enemys/boss.gd" id="1_044v0"]
 [ext_resource type="PackedScene" uid="uid://jnkl30satsbb" path="res://Scenes/Components/health_component.tscn" id="2_pife1"]
-[ext_resource type="PackedScene" uid="uid://5t48vqnhunai" path="res://Scenes/Components/vial_drop_component.tscn" id="3_npwqx"]
+[ext_resource type="PackedScene" uid="uid://5t48vqnhunai" path="res://Scenes/Components/drop_component.tscn" id="3_npwqx"]
 [ext_resource type="PackedScene" uid="uid://bjfpqxunjkyw2" path="res://Scenes/Components/velocity_component.tscn" id="4_nnln3"]
 [ext_resource type="PackedScene" uid="uid://cfn1tpssanmni" path="res://Scenes/Components/hit_flash_component.tscn" id="5_dcgc2"]
 [ext_resource type="Shader" path="res://Resources/Shader/hit_flash_component.gdshader" id="6_dm2y1"]
@@ -146,7 +146,7 @@ script = ExtResource("1_044v0")
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_pife1")]
 
-[node name="VialDropComponent" parent="." instance=ExtResource("3_npwqx")]
+[node name="DropComponent" parent="." instance=ExtResource("3_npwqx")]
 
 [node name="VelocityComponent" parent="." instance=ExtResource("4_nnln3")]
 

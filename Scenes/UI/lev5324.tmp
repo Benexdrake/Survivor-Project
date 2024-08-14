@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjp240mlov23q"]
+
+[ext_resource type="Script" path="res://Scripts/UI/level_select_screen.gd" id="1_jksdn"]
+[ext_resource type="Texture2D" uid="uid://dxfirj583y5q4" path="res://Assets/_2bf8c255-1003-406f-8a3b-9a43c3f92667.jpeg" id="4_y05wt"]
+[ext_resource type="PackedScene" uid="uid://dujgwpibibjgl" path="res://Scenes/UI/vignette.tscn" id="5_38blg"]
+
+[node name="LevelSelectScreen" type="CanvasLayer"]
+layer = 3
+script = ExtResource("1_jksdn")
+
+[node name="Vignette" parent="." instance=ExtResource("5_38blg")]
+layer = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("4_y05wt")
+expand_mode = 4
+stretch_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 3

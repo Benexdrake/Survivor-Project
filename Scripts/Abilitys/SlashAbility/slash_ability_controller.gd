@@ -17,7 +17,6 @@ func _ready():
 
 
 func create():
-	print(timer.wait_time)
 	var player = get_tree().get_first_node_in_group("player") as Player
 	if player == null:
 		return

@@ -1,11 +1,11 @@
 extends Node
 
-signal experience_vial_collected(number:float)
+signal drop_collected(number:float, type:String)
 signal ability_upgrade_added(upgrade:AbilityUpgrade)
 signal player_damaged
 
-func emit_experience_vial_collected(number:float):
-	experience_vial_collected.emit(number)
+func emit_drop_collected(number:float, type:String):
+	drop_collected.emit(number, type)
 
 func emit_ability_upgrade_added(upgrade:AbilityUpgrade):
 	ability_upgrade_added.emit(upgrade)

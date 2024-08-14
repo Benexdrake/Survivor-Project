@@ -9,8 +9,9 @@ var level_resource: LevelResource
 @onready var difficulty_label = %DifficultyLabel
 @onready var time_label = %TimeLabel
 @onready var drop_label = %DropLabel
-
 @onready var preview = $MarginContainer/HBoxContainer/TextureRect
+
+@export var skulls:Array[TextureRect]
 
 var disabled = false
 
@@ -21,21 +22,17 @@ func _ready():
 
 func start():
 	level_name_label.text = level_resource.level_name
-	difficulty_label.text = str(create_difficulty_text())
+	create_difficulty_text()
 			
-	time_label.text = "Time: " + str(level_resource.map_time / 60) + "min"
-	drop_label.text = "Drop Chance: +" + str(int(level_resource.drop_chance * 100)) + "%"
+	time_label.text = str(level_resource.map_time / 60) + "min"
+	drop_label.text = str(int(level_resource.drop_chance * 100)) + "%"
 	preview.texture = level_resource.preview
 
 func create_difficulty_text():
-	var text = "Difficulty: "
-	
+	var text = ""
 	for i in 5:
 		if i < level_resource.difficulty:
-			text += "X"
-		else:
-			text += "O"
-	return text
+			skulls[i].visible = true
 
 
 func play_in(delay:float = 0):

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmwcck3o4xopi"
-path="res://.godot/imported/MoneyBag.png-4035df821a61dbebe238f881af430ab4.ctex"
+uid="uid://c7ucy2hwdk85p"
+path="res://.godot/imported/MiniMage.png-21c5a7bd0140700ae8cac99ab3f9ae1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/MoneyBag.png"
-dest_files=["res://.godot/imported/MoneyBag.png-4035df821a61dbebe238f881af430ab4.ctex"]
+source_file="res://Assets/Skills/FriendlyEnemy/MiniMage.png"
+dest_files=["res://.godot/imported/MiniMage.png-21c5a7bd0140700ae8cac99ab3f9ae1d.ctex"]
 
 [params]
 

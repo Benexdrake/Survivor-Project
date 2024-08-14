@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgvc0hm5ghtrq"]
+
+[ext_resource type="Script" path="res://Scripts/GameObjects/experience_vial.gd" id="1_0iars"]
+[ext_resource type="Texture2D" uid="uid://d2hxyax7jq28k" path="res://Assets/exp_drop.png" id="2_gsiov"]
+[ext_resource type="AudioStream" uid="uid://bhgkqa74x7kwn" path="res://Assets/SFX/10_UI_Menu_SFX/092_Pause_04.wav" id="3_0yb2f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dqfeu"]
+radius = 16.0
+
+[node name="Drop" type="Node2D"]
+script = ExtResource("1_0iars")
+drop_type = "experience"
+drop_chance = 0.5
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_dqfeu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-9.53674e-07, -9.53674e-07)
+texture = ExtResource("2_gsiov")
+
+[node name="DropSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0yb2f")
+bus = &"SFX"

@@ -36,6 +36,7 @@ func _ready():
 	damage_interval_timer.timeout.connect(on_damage_interval_timer_timeout)
 	health_component.health_changed.connect(on_health_changed)
 	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
+	GameEvents.drop_collected.connect(on_drop_collected)
 	update_health_display(0)
 	
 
@@ -205,3 +206,16 @@ func on_touchscreen_released():
 	is_touch = false
 	movement_vector = Vector2.ZERO
 	MobileControlLayer.hide_button()
+	
+func on_drop_collected(number,type):
+	if type == "health":
+		if health_component.current_health < health_component.max_health:
+			print(current_health)
+			print(health_component.current_health)
+			health_component.current_health +=1
+			update_health_display(health_component.current_health)
+	if type == "money":
+		GlobalVariables.money += number
+		get_tree().get_first_node_in_group("money_ui").set_money_label()
+	
+	print(type)

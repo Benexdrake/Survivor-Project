@@ -7,12 +7,15 @@ class_name FriendlyEnemy
 @onready var attack_rate_timer = $AttackRateTimer
 @onready var collision_shape_2d = $HitboxComponent/CollisionShape2D
 @onready var attack_span_timer = $AttackSpanTimer
+@onready var animated_sprite_2d = $Visuals/AnimatedSprite2D
 
 @export var max_speed: int = 100
 @export var acceleration: float = 20
 @export var damage_percent: float = .5
 
 var enemy_global_position = Vector2.ZERO
+
+var animation:int = 0
 
 var enemy: BasicEnemy
 
@@ -25,6 +28,14 @@ func _ready():
 	var player = get_tree().get_first_node_in_group("player") as Player
 	if player != null:
 		hitbox_component.damage = player.base_dmg * damage_percent
+		
+	var variants = animated_sprite_2d.sprite_frames.get_animation_names()
+	
+	animation = randi_range(0,variants.size()-1)
+	animated_sprite_2d.play(str(animation))
+	var size = (animated_sprite_2d.sprite_frames as SpriteFrames).get_frame_texture(str(animation),0).get_size()
+	animated_sprite_2d.offset.y = -(size.y/2)
+	
 	
 
 func _process(delta):
@@ -41,7 +52,7 @@ func move():
 	
 	var move_sign = sign(velocity.x)
 	if move_sign != 0:
-		$Visuals/AnimatedSprite2D.play("default")
+		$Visuals/AnimatedSprite2D.play(str(animation))
 		visuals.scale = Vector2(-move_sign,1)
 	else:
 		$Visuals/AnimatedSprite2D.stop()

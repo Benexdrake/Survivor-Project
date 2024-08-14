@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@export var level_resources:AllLevelsResource
+var level_resources:AllLevelsResource = preload("res://Resources/Level/all_levels.tres")
 @onready var grid_container = $MarginContainer/GridContainer
 
 var level_select_card = preload("res://Scenes/UI/level_select_card.tscn")

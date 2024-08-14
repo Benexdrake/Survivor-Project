@@ -17,7 +17,5 @@ func check_speech(ability):
 			await layer.call_deferred("add_child", friend_instantiate)
 			friend_instantiate.set_deferred("global_position",owner.global_position)
 			#friend_instantiate.global_position = owner.global_position
-			owner.queue_free()
-		return true
-	else:
+			return true
 		return false

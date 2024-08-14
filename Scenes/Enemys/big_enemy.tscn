@@ -1,10 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://co81juf0810iu"]
+[gd_scene load_steps=17 format=3 uid="uid://co81juf0810iu"]
 
 [ext_resource type="Script" path="res://Scripts/Enemys/basic_enemy.gd" id="1_c0bd3"]
 [ext_resource type="PackedScene" uid="uid://jnkl30satsbb" path="res://Scenes/Components/health_component.tscn" id="2_g2aku"]
-[ext_resource type="PackedScene" uid="uid://5t48vqnhunai" path="res://Scenes/Components/vial_drop_component.tscn" id="3_ld8q8"]
+[ext_resource type="PackedScene" uid="uid://5t48vqnhunai" path="res://Scenes/Components/drop_component.tscn" id="3_ld8q8"]
 [ext_resource type="PackedScene" uid="uid://bjfpqxunjkyw2" path="res://Scenes/Components/velocity_component.tscn" id="4_cn4cr"]
+[ext_resource type="PackedScene" uid="uid://dinprtovwvba1" path="res://Scenes/GameObjects/money_drop.tscn" id="4_os8fv"]
+[ext_resource type="PackedScene" uid="uid://cgvc0hm5ghtrq" path="res://Scenes/GameObjects/exp_drop.tscn" id="5_34mpo"]
 [ext_resource type="PackedScene" uid="uid://cfn1tpssanmni" path="res://Scenes/Components/hit_flash_component.tscn" id="5_gwqr1"]
+[ext_resource type="PackedScene" uid="uid://ceyujhl64lc6h" path="res://Scenes/GameObjects/health_drop.tscn" id="6_2w44s"]
 [ext_resource type="Shader" path="res://Resources/Shader/hit_flash_component.gdshader" id="6_nu7u7"]
 [ext_resource type="PackedScene" uid="uid://dyrwjscb6nc4p" path="res://Scenes/Components/knockback_component.tscn" id="7_04m3q"]
 [ext_resource type="PackedScene" uid="uid://c2ao038ji85tt" path="res://Scenes/Components/death_component.tscn" id="8_dcw46"]
@@ -32,7 +35,8 @@ script = ExtResource("1_c0bd3")
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_g2aku")]
 
-[node name="VialDropComponent" parent="." instance=ExtResource("3_ld8q8")]
+[node name="DropComponent" parent="." instance=ExtResource("3_ld8q8")]
+drop_scenes = Array[PackedScene]([ExtResource("4_os8fv"), ExtResource("5_34mpo"), ExtResource("6_2w44s")])
 
 [node name="VelocityComponent" parent="." instance=ExtResource("4_cn4cr")]
 

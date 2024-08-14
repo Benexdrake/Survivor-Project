@@ -5,7 +5,7 @@ class_name Boss
 @onready var animated_sprite_2d = $Visuals/AnimatedSprite2D
 @onready var health_component:HealthComponent = $HealthComponent
 @onready var velocity_component:VelocityComponent = $VelocityComponent
-@onready var vialdrop_component = $VialDropComponent
+@onready var drop_component = $DropComponent
 @onready var death_component = $DeathComponent
 @onready var hit_flash_component = $HitFlashComponent
 @onready var knockback_component = $KnockbackComponent
@@ -27,7 +27,7 @@ func config(sprite_frames:SpriteFrames, max_health, max_speed, acceleration, dro
 	animated_sprite_2d.sprite_frames = sprite_frames
 	health_component.config(max_health)
 	velocity_component.config(max_speed, acceleration)
-	vialdrop_component.config(drop_percent)
+	drop_component.config(drop_percent)
 	death_component.config(texture)
 	hit_flash_component.config(health_component,texture)
 	$Visuals/AnimatedSprite2D.play("default")

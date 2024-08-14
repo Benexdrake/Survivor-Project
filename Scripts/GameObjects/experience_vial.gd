@@ -1,7 +1,12 @@
 extends Node2D
+class_name DropScene
 
 @onready var collision_shape_2d = $Area2D/CollisionShape2D
 @onready var sprite_2d = $Sprite2D
+@onready var drop_sound = $DropSound
+
+@export var drop_type:String
+@export var drop_chance: float
 
 
 func _ready():
@@ -17,11 +22,15 @@ func tween_collect(percent:float, start_position:Vector2):
 
 
 func collect():
-	GameEvents.emit_experience_vial_collected(1)
+	GameEvents.emit_drop_collected(1,drop_type)
+	drop_sound.play()
+	await drop_sound.finished
 	queue_free()
+	
 	
 func disable_collision():
 	collision_shape_2d.disabled = true
+
 
 func on_area_entered(other_area:Area2D):
 	Callable(disable_collision).call_deferred()
@@ -31,4 +40,4 @@ func on_area_entered(other_area:Area2D):
 	tween.tween_method(tween_collect.bind(global_position), 0.0, 1.0, .5).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BACK)
 	tween.tween_property(sprite_2d, "scale",Vector2.ZERO,.05).set_delay(.45)
 	tween.chain()
-	tween.tween_callback(collect)
+	await tween.tween_callback(collect)
