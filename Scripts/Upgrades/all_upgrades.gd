@@ -1,3 +1,4 @@
 extends Resource
 
-@export var all_upgrades:Array[AbilityUpgrade]
+@export var attack_upgrades:Array[AbilityUpgrade]
+@export var passiv_upgrades:Array[AbilityUpgrade]

@@ -1,12 +1,16 @@
 extends Node2D
 
-var shot_ability_scene = preload("res://Scenes/Abilitys/Fireball_ShotAbility/fireball_shot_ability.tscn")
+const holy_scene = preload("res://Scenes/Abilitys/HolyShotAbility/holy_shot_ability.tscn")
+const fireball_scene = preload("res://Scenes/Abilitys/Fireball_ShotAbility/fireball_shot_ability.tscn")
+const shot_scene = preload("res://Scenes/Abilitys/ShotAbility/shot_ability.tscn")
 
 @onready var timer = $Timer
 @onready var spawn_timer = $SpawnTimer
 @onready var marker_2d = %Marker2D
 
-var max_shots = 3
+@export var type:String
+
+@export var max_shots = 3
 var current_shots = 0
 
 @export var damage = 5
@@ -54,7 +58,14 @@ func shoot():
 	if foreground == null:
 		return
 	
-	var bullet = shot_ability_scene.instantiate()
+	var bullet
+	if type == "holy":
+		bullet = holy_scene.instantiate()
+	elif type == "fireball":
+		bullet = fireball_scene.instantiate()
+	else:
+		bullet = shot_scene.instantiate()
+
 	foreground.add_child(bullet)
 	bullet._velocity = velocity
 	bullet.hitbox_component.damage = damage + player.base_dmg

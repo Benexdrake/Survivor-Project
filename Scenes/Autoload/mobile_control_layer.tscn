@@ -10,7 +10,7 @@ radius = 128.0
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath("TouchScreenButton:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -25,7 +25,7 @@ tracks/0/keys = {
 resource_name = "default"
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath("TouchScreenButton:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -48,7 +48,6 @@ visible = false
 script = ExtResource("1_ctoyd")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
-position = Vector2(679, 263)
 texture_normal = ExtResource("1_c7mh6")
 texture_pressed = ExtResource("1_c7mh6")
 shape = SubResource("CircleShape2D_l45ye")

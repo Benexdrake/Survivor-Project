@@ -1,8 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://b488dsirr21m8"]
+[gd_scene load_steps=31 format=3 uid="uid://b488dsirr21m8"]
 
 [ext_resource type="Script" path="res://Scripts/Abilitys/ShotAbility/shot_ability.gd" id="1_r22rj"]
 [ext_resource type="AudioStream" uid="uid://itvumm54m7h5" path="res://Assets/SFX/10_Battle_SFX/35_Miss_Evade_02.wav" id="2_hlyo0"]
+[ext_resource type="Texture2D" uid="uid://jebqrhwpb5ig" path="res://Assets/Skills/fire_fx_v1.0/fire_fx_v1.0/png/orange/start/burning_start_1.png" id="2_vsxir"]
 [ext_resource type="Texture2D" uid="uid://dnx8fx4mdw5oy" path="res://Assets/Skills/Fireball/fireball1.png" id="3_6osnd"]
+[ext_resource type="Texture2D" uid="uid://f3gu7714qp38" path="res://Assets/Skills/fire_fx_v1.0/fire_fx_v1.0/png/orange/end/burning_end_1.png" id="3_wisa3"]
 [ext_resource type="PackedScene" uid="uid://fgf6t05ngde" path="res://Scenes/Components/hitbox_component.tscn" id="4_hnml6"]
 [ext_resource type="Texture2D" uid="uid://b8mf7jer6w4wg" path="res://Assets/Skills/Fireball/fireball2.png" id="4_kyai2"]
 [ext_resource type="Texture2D" uid="uid://cbjcp4dcuxfbn" path="res://Assets/Skills/Fireball/fireball3.png" id="5_hb0p5"]
@@ -14,35 +16,69 @@
 [ext_resource type="Texture2D" uid="uid://cedces4dgspeb" path="res://Assets/Skills/Fireball/fireball9.png" id="11_t6gwv"]
 [ext_resource type="Texture2D" uid="uid://cdtd6msdwpagj" path="res://Assets/Skills/Fireball/fireball10.png" id="12_w4q5t"]
 
-[sub_resource type="Animation" id="Animation_fxavw"]
-resource_name = "start"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("3_6osnd"), ExtResource("4_kyai2"), ExtResource("5_hb0p5"), ExtResource("6_wuggh")]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.3),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": ["shot", -1, 1.0, false],
-"method": &"play"
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1uq5"]
+atlas = ExtResource("2_vsxir")
+region = Rect2(0, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5n287"]
+atlas = ExtResource("2_vsxir")
+region = Rect2(24, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs28p"]
+atlas = ExtResource("2_vsxir")
+region = Rect2(48, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwysr"]
+atlas = ExtResource("2_vsxir")
+region = Rect2(72, 0, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nt8ce"]
+atlas = ExtResource("3_wisa3")
+region = Rect2(0, 0, 30, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aubtw"]
+atlas = ExtResource("3_wisa3")
+region = Rect2(30, 0, 30, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3d0f"]
+atlas = ExtResource("3_wisa3")
+region = Rect2(60, 0, 30, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmccf"]
+atlas = ExtResource("3_wisa3")
+region = Rect2(90, 0, 30, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fanje"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1uq5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5n287")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qs28p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwysr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nt8ce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aubtw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3d0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmccf")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
 }]
-}
 
 [sub_resource type="Animation" id="Animation_ljxgt"]
 length = 0.001
@@ -76,6 +112,36 @@ tracks/0/keys = {
 "values": [ExtResource("7_wdcoj"), ExtResource("8_pvkhw"), ExtResource("9_epssu"), ExtResource("10_ak488"), ExtResource("11_t6gwv"), ExtResource("12_w4q5t")]
 }
 
+[sub_resource type="Animation" id="Animation_fxavw"]
+resource_name = "start"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_6osnd"), ExtResource("4_kyai2"), ExtResource("5_hb0p5"), ExtResource("6_wuggh")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["shot", -1, 1.0, false],
+"method": &"play"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m1fsk"]
 _data = {
 "RESET": SubResource("Animation_ljxgt"),
@@ -91,6 +157,7 @@ radius = 7.0
 
 [node name="FireballShotAbility" type="CharacterBody2D" groups=["bible_ability"]]
 script = ExtResource("1_r22rj")
+sprite_frames = SubResource("SpriteFrames_fanje")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_hlyo0")
@@ -116,3 +183,8 @@ light_mask = 0
 visibility_layer = 0
 shape = SubResource("CircleShape2D_dn5vu")
 disabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true

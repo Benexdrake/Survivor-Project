@@ -1,7 +1,6 @@
-[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=4 format=3 uid="uid://brawdk0g4anac"]
+[gd_resource type="Resource" script_class="AbilityUpgrade" load_steps=3 format=3 uid="uid://brawdk0g4anac"]
 
-[ext_resource type="Texture2D" uid="uid://b0ewqc5gmamev" path="res://Assets/sword_02c.png" id="1_5rboc"]
-[ext_resource type="Texture2D" uid="uid://r1q7ya2kpg8" path="res://Assets/HPRegen.jpeg" id="1_pgn83"]
+[ext_resource type="Texture2D" uid="uid://dmuoninfdkqeg" path="res://Assets/Attack Up.jpeg" id="1_slqtb"]
 [ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade.gd" id="2_uk2ki"]
 
 [resource]
@@ -10,6 +9,6 @@ id = "attack_up_upgrade"
 max_level = 5
 ability_name = "Attack Up"
 description = "Base Attack + 10%"
-preview = ExtResource("1_pgn83")
-icon = ExtResource("1_5rboc")
+preview = ExtResource("1_slqtb")
 weight = 5
+is_passiv_ability = true

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=15 format=3 uid="uid://d3j5cshfwiem1"]
+[gd_resource type="Resource" load_steps=16 format=3 uid="uid://d3j5cshfwiem1"]
 
 [ext_resource type="Resource" uid="uid://c4w8qqnp7pw1c" path="res://Resources/Upgrades/Aura/aura_ability_card.tres" id="1_um1lu"]
 [ext_resource type="Resource" uid="uid://cr3a5ywo6jame" path="res://Resources/Upgrades/Axe/axe_ability_card.tres" id="2_y0810"]
@@ -14,7 +14,9 @@
 [ext_resource type="Resource" uid="uid://cpxtuhpikmfx8" path="res://Resources/Upgrades/Attack/attack_speed_upgrade.tres" id="12_qaq5s"]
 [ext_resource type="Resource" uid="uid://brawdk0g4anac" path="res://Resources/Upgrades/Attack/attack_up_upgrade.tres" id="13_ntj48"]
 [ext_resource type="Script" path="res://Scripts/Upgrades/all_upgrades.gd" id="14_eaxxw"]
+[ext_resource type="Resource" uid="uid://bsc5li6dns567" path="res://Resources/Upgrades/HolyShot/holy_shot_ability_card.tres" id="14_w2xko"]
 
 [resource]
 script = ExtResource("14_eaxxw")
-all_upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([ExtResource("1_um1lu"), ExtResource("2_y0810"), ExtResource("3_mqpyv"), ExtResource("4_qgcwy"), ExtResource("5_36uxv"), ExtResource("6_vxokj"), ExtResource("7_h58i7"), ExtResource("8_k2gmm"), ExtResource("9_y7mpi"), ExtResource("10_5bhb5"), ExtResource("11_qu23a"), ExtResource("12_qaq5s"), ExtResource("13_ntj48")])
+attack_upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([ExtResource("1_um1lu"), ExtResource("2_y0810"), ExtResource("3_mqpyv"), ExtResource("4_qgcwy"), ExtResource("5_36uxv"), ExtResource("14_w2xko"), ExtResource("10_5bhb5"), ExtResource("7_h58i7"), ExtResource("9_y7mpi"), ExtResource("8_k2gmm")])
+passiv_upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([ExtResource("11_qu23a"), ExtResource("6_vxokj"), ExtResource("12_qaq5s"), ExtResource("13_ntj48")])

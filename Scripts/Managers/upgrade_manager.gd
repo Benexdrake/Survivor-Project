@@ -17,20 +17,28 @@ func _ready():
 	
 func adding_upgrades():
 	var player = get_tree().get_first_node_in_group("player") as Player
-	all_upgrades.all_upgrades.shuffle()
+	all_upgrades.attack_upgrades.shuffle()
+	all_upgrades.passiv_upgrades.shuffle()
+	
+	
 	var upgrades = []
 	
 	if player.player_resource.ability.upgrades.size() > 0:
 		upgrades.append(player.player_resource.ability)
 	
-	if all_upgrades.all_upgrades.size() < 10 - upgrades.size():
+	if all_upgrades.attack_upgrades.size() < 10 - upgrades.size():
 		max_abilitys = all_upgrades.all_upgrades.size()
 	
 	for i in max_abilitys:
-		if all_upgrades.all_upgrades[i].id == player.player_resource.ability.id:
+		if all_upgrades.attack_upgrades[i].id == player.player_resource.ability.id:
 			max_abilitys +=1
 			continue
-		upgrades.append(all_upgrades.all_upgrades[i])
+		upgrades.append(all_upgrades.attack_upgrades[i])
+	
+	for upgrade in all_upgrades.passiv_upgrades:
+		upgrades.append(upgrade)
+	
+	upgrades.shuffle()
 	
 	for ability in upgrades:
 		if ability is AbilityUpgradeCard:
@@ -44,8 +52,9 @@ func adding_upgrades():
 func apply_upgrade(upgrade: AbilityUpgrade):
 	if upgrade.level == 0:
 		GameEvents.emit_ability_upgrade_added(upgrade)
-		var ability_ui = get_tree().get_first_node_in_group("ability_ui") as AbilityUI
-		ability_ui.check_ability_cards(upgrade.icon)
+		if !upgrade.is_passiv_ability:
+			var ability_ui = get_tree().get_first_node_in_group("ability_ui") as AbilityUI
+			ability_ui.check_ability_cards(upgrade.icon)
 	else:
 		if upgrade is AbilityUpgradeCard:
 			GameEvents.emit_ability_upgrade_added(upgrade.upgrades[upgrade.level - 1])

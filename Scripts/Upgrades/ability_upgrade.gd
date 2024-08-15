@@ -9,3 +9,4 @@ var level:int
 @export var preview:Texture
 @export var icon: Texture
 @export var weight:int
+@export var is_passiv_ability:bool

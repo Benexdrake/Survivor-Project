@@ -17,3 +17,4 @@ description = "Shots 3 Fireballs
 preview = ExtResource("2_g5o7g")
 icon = ExtResource("2_6a5j3")
 weight = 10
+is_passiv_ability = false

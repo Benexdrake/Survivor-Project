@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwpynld7g31f6"]
+
+[ext_resource type="Script" path="res://Scripts/Abilitys/ShotAbility/bullet_hit.gd" id="1_1q10w"]
+
+[node name="BulletHit" type="Node2D"]
+script = ExtResource("1_1q10w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

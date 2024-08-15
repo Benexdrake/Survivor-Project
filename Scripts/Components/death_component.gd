@@ -30,6 +30,6 @@ func on_died(pos):
 	get_parent().remove_child(self)
 	entities.add_child(self)
 	global_position = pos
-	$AudioStreamPlayer.play()
+	#$AudioStreamPlayer.play()
 	$AnimationPlayer.play("default")
 	await $AnimationPlayer.animation_finished

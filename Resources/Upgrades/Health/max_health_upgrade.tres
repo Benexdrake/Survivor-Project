@@ -7,10 +7,10 @@
 [resource]
 script = ExtResource("1_o7mut")
 id = "max_health_upgrade"
-level = 0
 max_level = 5
 ability_name = "Max Health"
 description = "20% more Health"
 preview = ExtResource("2_wh83q")
 icon = ExtResource("1_fq36o")
 weight = 10
+is_passiv_ability = true

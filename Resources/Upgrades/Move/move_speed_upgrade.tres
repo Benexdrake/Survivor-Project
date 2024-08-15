@@ -13,3 +13,4 @@ description = "Move Speed + 10%"
 preview = ExtResource("1_pk4la")
 icon = ExtResource("1_5yhmb")
 weight = 5
+is_passiv_ability = true
