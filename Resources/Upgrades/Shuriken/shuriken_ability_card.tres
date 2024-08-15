@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="AbilityUpgradeCard" load_steps=5 format=3 uid="uid://w3hgtv2y4h0m"]
+
+[ext_resource type="PackedScene" uid="uid://cao5h580p6rjb" path="res://Scenes/Abilitys/ShurikenAbility/shuriken_ability_controller.tscn" id="1_b4xai"]
+[ext_resource type="Texture2D" uid="uid://bde3gyym5fwxu" path="res://Assets/Skills/Shuriken/Shuriken pronta.png" id="2_wjy74"]
+[ext_resource type="Texture2D" uid="uid://bs56a7tcaderp" path="res://Assets/Shuriken2.jpeg" id="3_1ya1q"]
+[ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade_card.gd" id="4_svb4f"]
+
+[resource]
+script = ExtResource("4_svb4f")
+ability_controller_scene = ExtResource("1_b4xai")
+upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([])
+id = "shuriken"
+max_level = 1
+ability_name = "Shuriken"
+description = "Claw Attack"
+preview = ExtResource("3_1ya1q")
+icon = ExtResource("2_wjy74")
+weight = 12
+is_passiv_ability = false

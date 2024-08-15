@@ -1,7 +1,8 @@
 extends Node2D
 
-const holy_scene = preload("res://Scenes/Abilitys/HolyShotAbility/holy_shot_ability.tscn")
-const fireball_scene = preload("res://Scenes/Abilitys/Fireball_ShotAbility/fireball_shot_ability.tscn")
+const holy_scene = preload("res://Scenes/Abilitys/ShotAbility/HolyShotAbility/holy_shot_ability.tscn")
+const fireball_scene = preload("res://Scenes/Abilitys/ShotAbility/Fireball_ShotAbility/fireball_shot_ability.tscn")
+const shuriken_scene = preload("res://Scenes/Abilitys/ShotAbility/ShurikenShotAbility/shuriken_shot_ability.tscn")
 const shot_scene = preload("res://Scenes/Abilitys/ShotAbility/shot_ability.tscn")
 
 @onready var timer = $Timer
@@ -29,8 +30,6 @@ func _process(delta):
 		
 	global_position = player.global_position
 	check_input()
-	
-
 	
 	
 func check_input():
@@ -63,6 +62,8 @@ func shoot():
 		bullet = holy_scene.instantiate()
 	elif type == "fireball":
 		bullet = fireball_scene.instantiate()
+	elif type == "shuriken":
+		bullet = shuriken_scene.instantiate()
 	else:
 		bullet = shot_scene.instantiate()
 

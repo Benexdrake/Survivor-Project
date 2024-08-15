@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="AbilityUpgradeCard" load_steps=5 format=3 uid="uid://bsc5li6dns567"]
+
+[ext_resource type="PackedScene" uid="uid://cefhe5kygpfri" path="res://Scenes/Abilitys/ShotAbility/ShurikenShotAbility/shuriken_shot_ability_controller.tscn" id="1_1fkfa"]
+[ext_resource type="Texture2D" uid="uid://bde3gyym5fwxu" path="res://Assets/Skills/Shuriken/Shuriken pronta.png" id="2_bss3n"]
+[ext_resource type="Texture2D" uid="uid://brkwc0dga3x7v" path="res://Assets/Shurikan1.jpeg" id="3_fr4oy"]
+[ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade_card.gd" id="4_ndrgw"]
+
+[resource]
+script = ExtResource("4_ndrgw")
+ability_controller_scene = ExtResource("1_1fkfa")
+upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([])
+id = "shurikenshot"
+max_level = 1
+ability_name = "Shuriken Shot"
+description = "Shots a Shurikan"
+preview = ExtResource("3_fr4oy")
+icon = ExtResource("2_bss3n")
+weight = 10
+is_passiv_ability = false

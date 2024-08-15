@@ -1,22 +1,23 @@
-[gd_resource type="Resource" load_steps=16 format=3 uid="uid://d3j5cshfwiem1"]
+[gd_resource type="Resource" load_steps=17 format=3 uid="uid://d3j5cshfwiem1"]
 
 [ext_resource type="Resource" uid="uid://c4w8qqnp7pw1c" path="res://Resources/Upgrades/Aura/aura_ability_card.tres" id="1_um1lu"]
 [ext_resource type="Resource" uid="uid://cr3a5ywo6jame" path="res://Resources/Upgrades/Axe/axe_ability_card.tres" id="2_y0810"]
 [ext_resource type="Resource" uid="uid://ba52adg337cfr" path="res://Resources/Upgrades/Book/Bible/book_bible_ability_card.tres" id="3_mqpyv"]
 [ext_resource type="Resource" uid="uid://6kt1jubldnw0" path="res://Resources/Upgrades/Claw/claw_ability_card.tres" id="4_qgcwy"]
-[ext_resource type="Resource" uid="uid://seolils31qck" path="res://Resources/Upgrades/FireballShot/fireball_shot_ability_card.tres" id="5_36uxv"]
+[ext_resource type="Resource" uid="uid://seolils31qck" path="res://Resources/Upgrades/Shot/FireballShot/fireball_shot_ability_card.tres" id="5_k7hml"]
+[ext_resource type="Resource" uid="uid://bsc5li6dns567" path="res://Resources/Upgrades/Shot/ShurikenShot/shuriken_shot_ability_card.tres" id="6_dfqem"]
 [ext_resource type="Resource" uid="uid://b5ngdm3cyq7ox" path="res://Resources/Upgrades/Health/max_health_upgrade.tres" id="6_vxokj"]
 [ext_resource type="Resource" uid="uid://ctvjb0fsad0si" path="res://Resources/Upgrades/Slash/slash_ability_card.tres" id="7_h58i7"]
 [ext_resource type="Resource" uid="uid://bu4jso5tt11p7" path="res://Resources/Upgrades/Thunder/thunder_ability_card.tres" id="8_k2gmm"]
 [ext_resource type="Resource" uid="uid://dr8uh7x1dsqpv" path="res://Resources/Upgrades/Speech/speech_ability_card.tres" id="9_y7mpi"]
 [ext_resource type="Resource" uid="uid://di3yuthqnubgo" path="res://Resources/Upgrades/Kamehameha/kamehameha_ability_card.tres" id="10_5bhb5"]
+[ext_resource type="Resource" uid="uid://w3hgtv2y4h0m" path="res://Resources/Upgrades/Shuriken/shuriken_ability_card.tres" id="11_aou4i"]
 [ext_resource type="Resource" uid="uid://d1y7prmv4l8ls" path="res://Resources/Upgrades/Move/move_speed_upgrade.tres" id="11_qu23a"]
 [ext_resource type="Resource" uid="uid://cpxtuhpikmfx8" path="res://Resources/Upgrades/Attack/attack_speed_upgrade.tres" id="12_qaq5s"]
 [ext_resource type="Resource" uid="uid://brawdk0g4anac" path="res://Resources/Upgrades/Attack/attack_up_upgrade.tres" id="13_ntj48"]
 [ext_resource type="Script" path="res://Scripts/Upgrades/all_upgrades.gd" id="14_eaxxw"]
-[ext_resource type="Resource" uid="uid://bsc5li6dns567" path="res://Resources/Upgrades/HolyShot/holy_shot_ability_card.tres" id="14_w2xko"]
 
 [resource]
 script = ExtResource("14_eaxxw")
-attack_upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([ExtResource("1_um1lu"), ExtResource("2_y0810"), ExtResource("3_mqpyv"), ExtResource("4_qgcwy"), ExtResource("5_36uxv"), ExtResource("14_w2xko"), ExtResource("10_5bhb5"), ExtResource("7_h58i7"), ExtResource("9_y7mpi"), ExtResource("8_k2gmm")])
+attack_upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([ExtResource("1_um1lu"), ExtResource("2_y0810"), ExtResource("3_mqpyv"), ExtResource("4_qgcwy"), ExtResource("5_k7hml"), ExtResource("6_dfqem"), ExtResource("10_5bhb5"), ExtResource("7_h58i7"), ExtResource("9_y7mpi"), ExtResource("8_k2gmm"), ExtResource("6_dfqem"), ExtResource("11_aou4i")])
 passiv_upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([ExtResource("11_qu23a"), ExtResource("6_vxokj"), ExtResource("12_qaq5s"), ExtResource("13_ntj48")])

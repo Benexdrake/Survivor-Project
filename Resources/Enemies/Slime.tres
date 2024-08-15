@@ -48,5 +48,6 @@ id = "Slime"
 max_health = 30.0
 max_speed = 50
 acceleration = 30.0
+knockback_power = 20.0
 drop_percent = 0.5
 weight = 18

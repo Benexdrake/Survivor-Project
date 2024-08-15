@@ -76,5 +76,6 @@ id = "Flying Skull"
 max_health = 70.0
 max_speed = 80
 acceleration = 5.0
+knockback_power = 20.0
 drop_percent = 0.5
 weight = 10

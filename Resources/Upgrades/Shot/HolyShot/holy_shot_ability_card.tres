@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="AbilityUpgradeCard" load_steps=5 format=3 uid="uid://clv1qugwc1w1f"]
+
+[ext_resource type="PackedScene" uid="uid://cqxnokxywcxrd" path="res://Scenes/Abilitys/ShotAbility/HolyShotAbility/holy_shot_ability_controller.tscn" id="1_0wipq"]
+[ext_resource type="Texture2D" uid="uid://gxy5sgntw1hu" path="res://Assets/Skills/Holy VFX 01-02/Holy VFX 01/Separated Frames/Holy VFX 01 Impact2.png" id="2_wx5xh"]
+[ext_resource type="Texture2D" uid="uid://dr5535jct4pki" path="res://Assets/Holy Shot.jpeg" id="3_pmwn7"]
+[ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade_card.gd" id="4_qjfpw"]
+
+[resource]
+script = ExtResource("4_qjfpw")
+ability_controller_scene = ExtResource("1_0wipq")
+upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([])
+id = "holyshot"
+max_level = 1
+ability_name = "Holy Shot"
+description = "Shots a Holy Bullet that hits multi Enemys
+"
+preview = ExtResource("3_pmwn7")
+icon = ExtResource("2_wx5xh")
+weight = 10
+is_passiv_ability = false

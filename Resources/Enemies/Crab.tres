@@ -62,5 +62,6 @@ id = "Crab"
 max_health = 50.0
 max_speed = 80
 acceleration = 20.0
+knockback_power = 20.0
 drop_percent = 0.5
 weight = 12

@@ -12,17 +12,18 @@ class_name BasicEnemy
 @onready var hurtbox_component = $HurtboxComponent
 @onready var change_side_component = $ChangeSideComponent
 
-var knockback_power: int = 50
+var knockback:float
 
 func _ready():
 	$HurtboxComponent.hit.connect(on_hit)
 
 func _process(delta):
-	move()
+	if !knockback_component.isKnockback:
+		move()
 	
-func config(sprite_frames:SpriteFrames, max_health, max_speed, acceleration, drop_percent):
+func config(sprite_frames:SpriteFrames, max_health, max_speed, acceleration, drop_percent, knockback_power):
 	var texture = sprite_frames.get_frame_texture("default",0)
-	
+	knockback = knockback_power
 	animated_sprite_2d.sprite_frames = sprite_frames
 	health_component.config(max_health)
 	velocity_component.config(max_speed, acceleration)
@@ -30,6 +31,7 @@ func config(sprite_frames:SpriteFrames, max_health, max_speed, acceleration, dro
 	death_component.config(texture)
 	hit_flash_component.config(health_component,texture)
 	$Visuals/AnimatedSprite2D.play("default")
+	
 
 	
 func move():
@@ -42,6 +44,7 @@ func move():
 			visuals.scale = Vector2(-move_sign,1)
 
 func on_hit():
+	knockback_component.knockback(knockback)
 	#velocity = -velocity
 	#move_and_slide()
 	pass

@@ -315,7 +315,7 @@ expand_mode = 2
 
 [node name="Skull6" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/DifficultyHBoxContainer"]
 visible = false
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 texture = ExtResource("6_b3k5a")
 expand_mode = 2

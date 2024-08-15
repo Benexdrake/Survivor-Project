@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="AbilityUpgradeCard" load_steps=5 format=3 uid="uid://seolils31qck"]
 
-[ext_resource type="PackedScene" uid="uid://dctfrxyxeaciw" path="res://Scenes/Abilitys/Fireball_ShotAbility/fireball_shot_ability_controller.tscn" id="1_yor54"]
+[ext_resource type="PackedScene" uid="uid://dctfrxyxeaciw" path="res://Scenes/Abilitys/ShotAbility/Fireball_ShotAbility/fireball_shot_ability_controller.tscn" id="1_yor54"]
 [ext_resource type="Texture2D" uid="uid://fekajkhtbo40" path="res://Assets/Skills/Fireball/fireball.png" id="2_6a5j3"]
 [ext_resource type="Texture2D" uid="uid://bqry1mhp1uoom" path="res://Assets/Fireball.jpeg" id="2_g5o7g"]
 [ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade_card.gd" id="3_nydl5"]

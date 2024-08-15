@@ -1,0 +1,209 @@
+[gd_scene load_steps=37 format=3 uid="uid://cou80314ngvx2"]
+
+[ext_resource type="Script" path="res://Scripts/Abilitys/ShotAbility/shot_ability.gd" id="1_0thih"]
+[ext_resource type="Texture2D" uid="uid://c6124jy3wx1n3" path="res://Assets/Skills/Holy VFX 01-02/Holy VFX 01/Holy VFX 01 Impact.png" id="2_wj6mi"]
+[ext_resource type="AudioStream" uid="uid://brpmka24uuom8" path="res://Assets/SFX/8_Atk_Magic_SFX/45_Charge_05.wav" id="3_3ptm1"]
+[ext_resource type="Texture2D" uid="uid://bvdi78w0pc6e6" path="res://Assets/Skills/Holy VFX 01-02/Holy VFX 01/Separated Frames/Holy VFX 01 Initial1.png" id="4_svm5w"]
+[ext_resource type="Texture2D" uid="uid://dpn18ufxb1cim" path="res://Assets/Skills/Holy VFX 01-02/Holy VFX 01/Separated Frames/Holy VFX 01 Repeatable1.png" id="5_cfa8f"]
+[ext_resource type="Texture2D" uid="uid://brdrt31cmbxe5" path="res://Assets/Skills/Holy VFX 01-02/Holy VFX 01/Separated Frames/Holy VFX 01 Repeatable2.png" id="6_gqo44"]
+[ext_resource type="Texture2D" uid="uid://pxkbjwsirtb2" path="res://Assets/Skills/Holy VFX 01-02/Holy VFX 01/Separated Frames/Holy VFX 01 Repeatable3.png" id="7_b57el"]
+[ext_resource type="Texture2D" uid="uid://c7islsunbaclb" path="res://Assets/Skills/Holy VFX 01-02/Holy VFX 01/Separated Frames/Holy VFX 01 Repeatable4.png" id="8_7nipb"]
+[ext_resource type="Texture2D" uid="uid://bjkbq1sm0cxnk" path="res://Assets/Skills/Holy VFX 01-02/Holy VFX 01/Separated Frames/Holy VFX 01 Repeatable5.png" id="9_bnr0a"]
+[ext_resource type="Texture2D" uid="uid://4mlqhpu1vkae" path="res://Assets/Skills/Holy VFX 01-02/Holy VFX 01/Separated Frames/Holy VFX 01 Repeatable6.png" id="10_02cek"]
+[ext_resource type="Texture2D" uid="uid://bd3nqsbrp4koa" path="res://Assets/Skills/Holy VFX 01-02/Holy VFX 01/Separated Frames/Holy VFX 01 Repeatable7.png" id="11_2l0ir"]
+[ext_resource type="Texture2D" uid="uid://ch11k4ylscvlw" path="res://Assets/Skills/Holy VFX 01-02/Holy VFX 01/Separated Frames/Holy VFX 01 Repeatable8.png" id="12_jdrro"]
+[ext_resource type="Texture2D" uid="uid://dbh1m021puex6" path="res://Assets/Skills/Holy VFX 01-02/Holy VFX 01/Separated Frames/Holy VFX 01 Impact1.png" id="13_e0rd2"]
+[ext_resource type="Texture2D" uid="uid://gxy5sgntw1hu" path="res://Assets/Skills/Holy VFX 01-02/Holy VFX 01/Separated Frames/Holy VFX 01 Impact2.png" id="14_h8g6j"]
+[ext_resource type="Texture2D" uid="uid://bfudgwq83p3hd" path="res://Assets/Skills/Holy VFX 01-02/Holy VFX 01/Separated Frames/Holy VFX 01 Impact3.png" id="15_063rf"]
+[ext_resource type="Texture2D" uid="uid://dtbb0iy0txejq" path="res://Assets/Skills/Holy VFX 01-02/Holy VFX 01/Separated Frames/Holy VFX 01 Impact4.png" id="16_0d13e"]
+[ext_resource type="Texture2D" uid="uid://b1oh8pkiboi07" path="res://Assets/Skills/Holy VFX 01-02/Holy VFX 01/Separated Frames/Holy VFX 01 Impact5.png" id="17_5p0i4"]
+[ext_resource type="Texture2D" uid="uid://nj3u6kl44efh" path="res://Assets/Skills/Holy VFX 01-02/Holy VFX 01/Separated Frames/Holy VFX 01 Impact6.png" id="18_qsn4w"]
+[ext_resource type="Texture2D" uid="uid://63d6ylv2booh" path="res://Assets/Skills/Holy VFX 01-02/Holy VFX 01/Separated Frames/Holy VFX 01 Impact7.png" id="19_slft5"]
+[ext_resource type="Texture2D" uid="uid://mkup8kns1t2g" path="res://Assets/Skills/Holy VFX 01-02/Holy VFX 01/Separated Frames/Holy VFX 01 Initial2.png" id="20_dp4dg"]
+[ext_resource type="PackedScene" uid="uid://fgf6t05ngde" path="res://Scenes/Components/hitbox_component.tscn" id="21_yf0na"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3q55e"]
+atlas = ExtResource("2_wj6mi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cnd3"]
+atlas = ExtResource("2_wj6mi")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftqot"]
+atlas = ExtResource("2_wj6mi")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ler8x"]
+atlas = ExtResource("2_wj6mi")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0tue"]
+atlas = ExtResource("2_wj6mi")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b303n"]
+atlas = ExtResource("2_wj6mi")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbaqe"]
+atlas = ExtResource("2_wj6mi")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fv263"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3q55e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5cnd3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftqot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ler8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0tue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b303n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbaqe")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_lcxh1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_svm5w")]
+}
+
+[sub_resource type="Animation" id="Animation_8rarl"]
+resource_name = "flying"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_cfa8f"), ExtResource("6_gqo44"), ExtResource("7_b57el"), ExtResource("8_7nipb"), ExtResource("9_bnr0a"), ExtResource("10_02cek"), ExtResource("11_2l0ir"), ExtResource("12_jdrro")]
+}
+
+[sub_resource type="Animation" id="Animation_6g7au"]
+resource_name = "hit"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("13_e0rd2"), ExtResource("14_h8g6j"), ExtResource("15_063rf"), ExtResource("16_0d13e"), ExtResource("17_5p0i4"), ExtResource("18_qsn4w"), ExtResource("19_slft5")]
+}
+
+[sub_resource type="Animation" id="Animation_bsqx8"]
+resource_name = "start"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("4_svm5w"), ExtResource("20_dp4dg")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": ["flying", -1, 1.0, false],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fmmws"]
+_data = {
+"RESET": SubResource("Animation_lcxh1"),
+"flying": SubResource("Animation_8rarl"),
+"hit": SubResource("Animation_6g7au"),
+"start": SubResource("Animation_bsqx8")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i55hr"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dn5vu"]
+radius = 7.0
+
+[node name="ShotAbility" type="CharacterBody2D" groups=["bible_ability"]]
+script = ExtResource("1_0thih")
+sprite_frames = SubResource("SpriteFrames_fv263")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3ptm1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fmmws")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-7, 0)
+texture = ExtResource("4_svm5w")
+
+[node name="HitboxComponent" parent="." instance=ExtResource("21_yf0na")]
+collision_mask = 65
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_i55hr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 0
+visibility_layer = 0
+shape = SubResource("CircleShape2D_dn5vu")
+disabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(9, 0)
+scale = Vector2(0.1, 0.1)

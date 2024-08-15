@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://cqxnokxywcxrd"]
 
-[ext_resource type="Script" path="res://Scripts/Abilitys/ShotAbility/shot_ability_controller.gd" id="1_c6ov8"]
-[ext_resource type="Texture2D" uid="uid://ckgwrh8vicxk6" path="res://Assets/gem_01c.png" id="2_3gyml"]
+[ext_resource type="Script" path="res://Scripts/Abilitys/ShotAbility/shot_ability_controller.gd" id="1_vnopa"]
+[ext_resource type="Texture2D" uid="uid://ckgwrh8vicxk6" path="res://Assets/gem_01c.png" id="2_y7c0o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c15py"]
 
 [node name="HolyShotAbilityController" type="Node2D"]
-script = ExtResource("1_c6ov8")
+script = ExtResource("1_vnopa")
 type = "holy"
 max_shots = 1
 
@@ -26,4 +26,4 @@ position = Vector2(19, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Marker2D"]
 visible = false
-texture = ExtResource("2_3gyml")
+texture = ExtResource("2_y7c0o")

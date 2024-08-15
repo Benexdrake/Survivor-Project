@@ -29,7 +29,7 @@ experience_manager = NodePath("../ExperienceManager")
 
 [node name="Level" type="Node" parent="."]
 
-[node name="GameCamera" parent="." instance=ExtResource("1_vshca")]
+[node name="GameCamera" parent="." groups=["game_camera"] instance=ExtResource("1_vshca")]
 
 [node name="Background" type="Node2D" parent="." groups=["background_layer"]]
 

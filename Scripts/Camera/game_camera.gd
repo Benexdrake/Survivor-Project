@@ -1,4 +1,5 @@
 extends Camera2D
+class_name GameCamera
 
 var target_position = Vector2.ZERO
 
@@ -15,3 +16,4 @@ func aquire_target():
 	if player == null:
 		return
 	target_position = player.global_position
+	

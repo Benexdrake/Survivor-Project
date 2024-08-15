@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PlayerResource" load_steps=9 format=3 uid="uid://dv2tdw4pool2f"]
 
-[ext_resource type="Resource" uid="uid://seolils31qck" path="res://Resources/Upgrades/FireballShot/fireball_shot_ability_card.tres" id="1_3dthw"]
+[ext_resource type="Resource" uid="uid://seolils31qck" path="res://Resources/Upgrades/Shot/FireballShot/fireball_shot_ability_card.tres" id="1_3dthw"]
 [ext_resource type="Texture2D" uid="uid://clm6p6oq2gq8k" path="res://Assets/Profile/Default_Heinrich_Heine_rendered_in_vibrant_digital_art_depicts_1.jpg" id="2_75ghc"]
 [ext_resource type="Script" path="res://Scripts/Player/player_resource.gd" id="3_ga02g"]
 [ext_resource type="Texture2D" uid="uid://n4th41mqjl6v" path="res://Assets/Player/3/190768.png" id="4_afeoq"]

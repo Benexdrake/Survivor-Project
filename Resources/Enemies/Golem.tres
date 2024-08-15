@@ -48,5 +48,6 @@ id = "Golem"
 max_health = 200.0
 max_speed = 50
 acceleration = 5.0
+knockback_power = 10.0
 drop_percent = 0.669
 weight = 10

@@ -48,6 +48,7 @@ visible = false
 script = ExtResource("1_ctoyd")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+visible = false
 texture_normal = ExtResource("1_c7mh6")
 texture_pressed = ExtResource("1_c7mh6")
 shape = SubResource("CircleShape2D_l45ye")

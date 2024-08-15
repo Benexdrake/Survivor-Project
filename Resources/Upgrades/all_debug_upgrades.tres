@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://cr3a5ywo6jame" path="res://Resources/Upgrades/Axe/axe_ability_card.tres" id="2_y0810"]
 [ext_resource type="Resource" uid="uid://ba52adg337cfr" path="res://Resources/Upgrades/Book/Bible/book_bible_ability_card.tres" id="3_mqpyv"]
 [ext_resource type="Resource" uid="uid://6kt1jubldnw0" path="res://Resources/Upgrades/Claw/claw_ability_card.tres" id="4_qgcwy"]
-[ext_resource type="Resource" uid="uid://seolils31qck" path="res://Resources/Upgrades/FireballShot/fireball_shot_ability_card.tres" id="5_36uxv"]
+[ext_resource type="Resource" uid="uid://seolils31qck" path="res://Resources/Upgrades/Shot/FireballShot/fireball_shot_ability_card.tres" id="5_36uxv"]
 [ext_resource type="Resource" uid="uid://b5ngdm3cyq7ox" path="res://Resources/Upgrades/Health/max_health_upgrade.tres" id="6_vxokj"]
 [ext_resource type="Resource" uid="uid://ctvjb0fsad0si" path="res://Resources/Upgrades/Slash/slash_ability_card.tres" id="7_h58i7"]
 [ext_resource type="Resource" uid="uid://bu4jso5tt11p7" path="res://Resources/Upgrades/Thunder/thunder_ability_card.tres" id="8_k2gmm"]

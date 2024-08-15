@@ -21,7 +21,7 @@ func _ready():
 	
 func start():
 	level_resource = GlobalVariables.level_resource
-	MobileControlLayer.visible = true
+	#MobileControlLayer.visible = true
 	arena_time_manager.start(level_resource.map_time)
 	enemy_manager.enemy_spawn_phases =level_resource.spawn_phasen
 	MusicPlayer.bgms = level_resource.music

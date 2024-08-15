@@ -55,5 +55,6 @@ id = "Pebble"
 max_health = 50.0
 max_speed = 100
 acceleration = 30.0
+knockback_power = 20.0
 drop_percent = 0.5
 weight = 18

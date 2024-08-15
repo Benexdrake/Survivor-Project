@@ -42,7 +42,6 @@ drop_scenes = Array[PackedScene]([ExtResource("4_lawo2"), ExtResource("5_a5ywq")
 hit_flash_material = SubResource("ShaderMaterial_fkpjj")
 
 [node name="KnockbackComponent" parent="." instance=ExtResource("9_1ad20")]
-knockback_power = 10.0
 
 [node name="ChangeSideComponent" parent="." instance=ExtResource("8_wcf6m")]
 

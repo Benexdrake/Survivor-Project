@@ -1,6 +1,6 @@
 extends Node
 
-@export var ability_scene: PackedScene
+var ability_scene = preload("res://Scenes/Abilitys/ShurikenAbility/shuriken_ability.tscn")
 
 @export var damage = 5
 

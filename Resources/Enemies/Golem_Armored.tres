@@ -48,5 +48,6 @@ id = "Golem Armored"
 max_health = 300.0
 max_speed = 50
 acceleration = 5.0
+knockback_power = 5.0
 drop_percent = 0.785
 weight = 10
