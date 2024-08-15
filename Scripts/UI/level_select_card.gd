@@ -6,7 +6,6 @@ class_name LevelSelectCard
 var level_resource: LevelResource
 
 @onready var level_name_label = %LevelNameLabel
-@onready var difficulty_label = %DifficultyLabel
 @onready var time_label = %TimeLabel
 @onready var drop_label = %DropLabel
 @onready var preview = $MarginContainer/HBoxContainer/TextureRect

@@ -4,11 +4,11 @@ class_name ExperienceManager
 signal experience_updated(current_experience:float, target_experience:float, current_level:int)
 signal level_up(new_level:int)
 
-const TARGET_EXPERIENCE_GROWTH = 5
+const TARGET_EXPERIENCE_GROWTH = 10
 
 var current_experience = 0
 var current_level = 1
-var target_experience = 5
+var target_experience = 10
 
 func _ready():
 	GameEvents.drop_collected.connect(on_experience_collected)

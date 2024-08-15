@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="PlayerResource" load_steps=10 format=3 uid="uid://rkka1mhr2h1y"]
+
+[ext_resource type="Resource" uid="uid://clv1qugwc1w1f" path="res://Resources/Upgrades/Shot/HolyShot/holy_shot_ability_card.tres" id="1_ihu6a"]
+[ext_resource type="Texture2D" uid="uid://dji0qio410e4t" path="res://Assets/Arminius_Profile.jpeg" id="2_cb65t"]
+[ext_resource type="Script" path="res://Scripts/Player/player_resource.gd" id="3_1thbm"]
+[ext_resource type="Texture2D" uid="uid://lqe7nij2y8vp" path="res://Assets/Player/2/player2anim1.png" id="4_s0bwu"]
+[ext_resource type="Texture2D" uid="uid://b3jg8mx1brq1f" path="res://Assets/Player/2/player2anim2.png" id="5_aoox5"]
+[ext_resource type="Texture2D" uid="uid://cs26iqj5txd8q" path="res://Assets/Player/2/player2anim3.png" id="6_hlckq"]
+[ext_resource type="Texture2D" uid="uid://dtun03csyn27i" path="res://Assets/Player/2/player2anim5.png" id="7_keb1r"]
+[ext_resource type="Texture2D" uid="uid://dlmnys685wj71" path="res://Assets/Player/2/player2anim6.png" id="8_ityvi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wc2d2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_s0bwu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aoox5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hlckq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_keb1r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ityvi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("3_1thbm")
+id = "2"
+player_name = "Arminius"
+ability = ExtResource("1_ihu6a")
+sprite_frames = SubResource("SpriteFrames_wc2d2")
+preview = ExtResource("2_cb65t")
+hp = 15
+dmg = 80.0
+speed = 300
+acceleration = 25
+hp_show = 5
+dmg_show = 2.0
+speed_show = 4
+description = "Arminius (in einigen Quellen auch Armenius; * um 17 v. Chr.; † um 21 n. Chr.) war ein Fürst der Cherusker, der den Römern im Jahre 9 n. Chr. in der Varusschlacht mit der Vernichtung von drei Legionen eine ihrer verheerendsten Niederlagen beibrachte. Die antiken Quellen bieten nur wenige biografische Angaben zu Arminius. Das nachantike Bild des Cheruskerfürsten ist vor allem durch die von Tacitus geprägte Formel „Befreier Germaniens“ bestimmt. "
+stories = Array[String](["adasdasdasdasdasdasda111111111"])

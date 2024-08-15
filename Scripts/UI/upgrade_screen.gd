@@ -30,6 +30,11 @@ func show_cards(upgrades: Array[AbilityUpgrade]):
 		delay += .2
 	var stories = GlobalVariables.player_resource.stories
 	%StoryLabel.text = stories[randi_range(0,stories.size()-1)]
+	
+	var player = get_tree().get_first_node_in_group("player") as Player
+	if player.current_health <= 0:
+		get_tree().paused = false
+		queue_free()
 
 
 func on_upgrade_selected(upgrade: AbilityUpgrade):

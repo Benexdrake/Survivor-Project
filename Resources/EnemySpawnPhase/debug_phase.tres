@@ -11,6 +11,7 @@
 
 [resource]
 script = ExtResource("1_fpyxq")
-arena_difficulty = 10
+difficulty = 10
 enemy_resources = Array[Resource("res://Scripts/Enemys/enemy_resource.gd")]([ExtResource("2_gunns"), ExtResource("3_lcoco"), ExtResource("4_uiakx"), ExtResource("5_8xuia"), ExtResource("6_l2ne5"), ExtResource("7_mn0cn"), ExtResource("8_nqiej")])
-spawn_time = 0.1
+spawn_time = 1.0
+weight = 12

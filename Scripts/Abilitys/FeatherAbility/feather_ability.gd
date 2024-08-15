@@ -23,6 +23,3 @@ func tween_method(rotations:float):
 		return
 
 	global_position = player.global_position + (current_direction * current_radius)
-	
-
-

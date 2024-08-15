@@ -11,6 +11,7 @@ var enemy_spawn_phases: Array[EnemySpawnPhase]
 var enemy_table = WeightedTable.new()
 
 var base_spawn_time = 0
+var spawn_difficulty:int = 1
 var arena_difficulty:int = 1
 
 var current_enemies : Array[EnemyResource] = []
@@ -46,16 +47,31 @@ func on_timer_timeout():
 	if player == null:
 		return
 		
+	var entities_layer = get_tree().get_first_node_in_group("entities_layer")
+		
+	if entities_layer == null:
+		return
 		
 	var size = current_enemies.size() - 1
-		
 	var enemy_resource = current_enemies[randi_range(0, size)]
 		
-	var pos = get_spawn_position()
-	var node = get_tree().get_first_node_in_group("entities_layer")
+	create_enemy(entities_layer,enemy_resource)
+	create_horde_enemies(entities_layer,enemy_resource)
 	
-	enemy_resource.create_enemy(pos,node)
 	timer.start()
+	
+func create_enemy(entities_layer,enemy_resource):
+	for i in spawn_difficulty:
+		var pos = get_spawn_position()
+		enemy_resource.create_enemy(pos,entities_layer)
+		
+func create_horde_enemies(entities_layer,enemy_resource):
+	if randf() < .1:
+		var pos = get_spawn_position()
+		for i in 10:
+			var p = pos + Vector2.RIGHT.rotated(randf_range(0, TAU))
+			enemy_resource.create_enemy(p,entities_layer, true)
+		
 
 func on_arena_difficulty_increased(arena_difficult:int):
 	enemy_table = WeightedTable.new()
@@ -65,9 +81,13 @@ func on_arena_difficulty_increased(arena_difficult:int):
 	current_enemies = []
 	
 	var enemy_phase = enemy_table.pick_item()
+	#var enemy_phase = enemy_spawn_phases[0]
+	
+	print(str(arena_difficult) +" - "+ str(enemy_phase.enemy_resources.size()))
 	
 	self.arena_difficulty = arena_difficult
 	
+	spawn_difficulty = enemy_phase.difficulty
 	for enemy_resource in enemy_phase.enemy_resources:
 		current_enemies.append(enemy_resource)
 	

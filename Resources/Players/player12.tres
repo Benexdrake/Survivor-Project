@@ -1,0 +1,87 @@
+[gd_resource type="Resource" script_class="PlayerResource" load_steps=14 format=3 uid="uid://bolv2yyt0l7ot"]
+
+[ext_resource type="Resource" uid="uid://bsc5li6dns567" path="res://Resources/Upgrades/Shot/ShurikenShot/shuriken_shot_ability_card.tres" id="1_1od5p"]
+[ext_resource type="Texture2D" uid="uid://dnfyxv0fu6dds" path="res://Assets/Godbrithil_Profile.jpeg" id="2_wvn17"]
+[ext_resource type="Script" path="res://Scripts/Player/player_resource.gd" id="3_8q7ug"]
+[ext_resource type="Texture2D" uid="uid://bf5udmb27y2ba" path="res://Assets/Player/4/player-Sheet.png" id="4_8gxnb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvg4s"]
+atlas = ExtResource("4_8gxnb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svbck"]
+atlas = ExtResource("4_8gxnb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysk6f"]
+atlas = ExtResource("4_8gxnb")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50fkk"]
+atlas = ExtResource("4_8gxnb")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwe5i"]
+atlas = ExtResource("4_8gxnb")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xxdb"]
+atlas = ExtResource("4_8gxnb")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4crpn"]
+atlas = ExtResource("4_8gxnb")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkbbu"]
+atlas = ExtResource("4_8gxnb")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_22ksg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvg4s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svbck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysk6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50fkk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwe5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xxdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4crpn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkbbu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("3_8q7ug")
+id = "4"
+player_name = "Godbrithil"
+ability = ExtResource("1_1od5p")
+sprite_frames = SubResource("SpriteFrames_22ksg")
+preview = ExtResource("2_wvn17")
+hp = 5
+dmg = 60.0
+speed = 200
+acceleration = 25
+hp_show = 2
+dmg_show = 3.0
+speed_show = 3
+description = "Geiler Typ"
+stories = Array[String](["Discord User Godbrithil"])

@@ -14,6 +14,7 @@ max_level = 0
 ability_name = ""
 description = "Spins +1 Book around you and increase Damage by 25%"
 weight = 10
+is_passiv_ability = false
 
 [resource]
 script = ExtResource("4_3cgc2")
@@ -26,3 +27,4 @@ description = "Spins 2 Grundgesetz books around the Character"
 preview = ExtResource("3_20oi0")
 icon = ExtResource("2_0yx18")
 weight = 10
+is_passiv_ability = false

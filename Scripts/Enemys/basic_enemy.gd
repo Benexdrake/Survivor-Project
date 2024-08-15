@@ -32,7 +32,6 @@ func config(sprite_frames:SpriteFrames, max_health, max_speed, acceleration, dro
 	hit_flash_component.config(health_component,texture)
 	$Visuals/AnimatedSprite2D.play("default")
 	
-
 	
 func move():
 	if knockback_component.timer.is_stopped():

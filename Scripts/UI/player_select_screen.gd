@@ -19,23 +19,19 @@ func _ready():
 	show_cards()
 	
 func show_cards():
-	var delay = .2
+	var delay = 0
 	for card in player_cards.player_resources:
 		var pc = player_card.instantiate() as PlayerCard
 		pc.player_resource = card
 		grid_container.add_child(pc)
 		pc.start()
 		pc.play_in(delay)
-		delay += .2
+		delay += .05
 		
 	timer.timeout.connect(on_timer_timeout)
 	description_label.text
 	player_scroll_container.scroll_vertical = 0
-	
-#func empty_cards():
-	#for card in grid_container.get_children():
-		#card.play_discard()
-		#grid_container.remove_child(card)
+
 
 func change_description_laben(text:String):
 	description_label.text = text
@@ -44,7 +40,3 @@ func change_description_laben(text:String):
 
 func on_timer_timeout():
 	scroll_container.scroll_vertical +=1
-	
-#func _input(event):
-	#if event.is_action_pressed("pause"):
-		#empty_cards()

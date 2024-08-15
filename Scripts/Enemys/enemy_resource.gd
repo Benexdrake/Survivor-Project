@@ -11,10 +11,12 @@ class_name EnemyResource
 @export_range(0,1) var drop_percent:float
 @export var weight:int
 
-func create_enemy(pos, node:Node):
+func create_enemy(pos, node:Node, is_horde:bool = false):
 	var enemy = enemy_scene.instantiate() as Node2D
 	if enemy is FriendlyEnemy:
 		return
 	node.add_child(enemy)
+	if is_horde:
+		max_speed = 120
 	enemy.global_position = pos
 	enemy.config(sprite_frames, max_health, max_speed, acceleration, drop_percent, knockback_power)

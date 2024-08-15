@@ -185,13 +185,12 @@ func on_ability_upgrade_added(ability_upgrade:AbilityUpgrade):
 	if ability_upgrade.id == "max_health_upgrade":
 		max_health += 1
 		hp += max_health
-		health_component.max_health = hp
+		health_component.max_health = max_health
 		
 		var health_ui = get_tree().get_first_node_in_group("health_ui")
-		health_ui.health_plus()
-		
 		health_component.current_health = health_component.max_health
-		update_health_display(health_component.max_health)
+		health_ui.health_changed()
+		#update_health_display(0)
 		
 	if ability_upgrade.id == "health_regeneration_upgrade":
 		health_regeneration_timer = Timer.new()
