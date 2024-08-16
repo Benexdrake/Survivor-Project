@@ -77,6 +77,15 @@ func looking_for_enemy():
 
 
 func move(x):
+<<<<<<< HEAD
+=======
+	#if isWaiting:
+	#if x > 0:
+		#animated_sprite_2d.flip_h = false
+	#elif x < 0:
+		#animated_sprite_2d.flip_h = true
+		
+>>>>>>> 13404dffb52efd4ac44671015842ede0054f4950
 	
 	var move_sign = sign(x)
 	
