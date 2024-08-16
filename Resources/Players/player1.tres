@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PlayerResource" load_steps=9 format=3 uid="uid://bm1seocfdncg7"]
 
+[ext_resource type="Resource" uid="uid://dqj68883a8g2k" path="res://Resources/Upgrades/Gaymaker/gaymaker_ability_card.tres" id="1_0j4ba"]
 [ext_resource type="Script" path="res://Scripts/Player/player_resource.gd" id="1_k3epa"]
-[ext_resource type="Resource" uid="uid://ctvjb0fsad0si" path="res://Resources/Upgrades/Slash/slash_ability_card.tres" id="1_og1v0"]
 [ext_resource type="Texture2D" uid="uid://dkh14c88us4wt" path="res://Assets/Player/1/player1.png" id="2_efkdp"]
 [ext_resource type="Texture2D" uid="uid://b8iedvuwhglkm" path="res://Assets/Profile/Default_Albert_Einstein_rendered_in_vibrant_digital_art_depict_0.jpg" id="2_t6eik"]
 [ext_resource type="Texture2D" uid="uid://d3bng2c07j0gl" path="res://Assets/Player/1/player2.png" id="4_2mhm6"]
@@ -32,7 +32,7 @@ animations = [{
 script = ExtResource("1_k3epa")
 id = "1"
 player_name = "Albert Einstein"
-ability = ExtResource("1_og1v0")
+ability = ExtResource("1_0j4ba")
 sprite_frames = SubResource("SpriteFrames_22ksg")
 preview = ExtResource("2_t6eik")
 hp = 10

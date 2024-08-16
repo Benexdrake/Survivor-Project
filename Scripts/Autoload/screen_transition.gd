@@ -15,6 +15,7 @@ func transition():
 	$ColorRect.visible = false
 
 func transition_to_scene(scene:String):
+	print(scene)
 	$ColorRect.visible = true
 	animation_player.play("default")
 	await animation_player.animation_finished

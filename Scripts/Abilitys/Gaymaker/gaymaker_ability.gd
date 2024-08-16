@@ -7,7 +7,7 @@ var heart = preload("res://Scenes/Abilitys/GaymakerAbilityController/herzchen.ts
 @onready var collision_shape_2d = %CollisionShape2D
 
 var spawn_radius:float = 400
-var convince_chance:float = .01
+var convince_chance:float = .1
 
 func _ready():
 	timer.timeout.connect(on_timer_timeout)

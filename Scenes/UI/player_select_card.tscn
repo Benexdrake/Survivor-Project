@@ -249,17 +249,11 @@ _data = {
 
 [node name="PlayerSelectCard" type="PanelContainer"]
 self_modulate = Color(0.0885599, 0.0885599, 0.0885599, 1)
-<<<<<<< HEAD
 clip_children = 2
 offset_right = 306.0
 offset_bottom = 422.0
 pivot_offset = Vector2(153, 211)
 mouse_filter = 1
-=======
-offset_right = 306.0
-offset_bottom = 422.0
-pivot_offset = Vector2(63, 85)
->>>>>>> 13404dffb52efd4ac44671015842ede0054f4950
 theme_type_variation = &"AbilityPanelContainer"
 script = ExtResource("1_j0lrh")
 
