@@ -69,18 +69,20 @@ func on_gui_input(event: InputEvent):
 		
 
 func on_mouse_entered():
+	z_index = 1
 	if disabled:
 		return
 	
 	var player_select_screen = get_tree().get_first_node_in_group("player_select_screen") as PlayerSelectScreen
 	player_select_screen.change_description_laben(player_resource.description)
-	#player_select_screen.information_margin_container.visible = true
+	player_select_screen.panel_container.visible = true
 	player_select_screen.animation_player.play("show")
 	$HoverAnimationPlayer.play("hover")
 	
 	
 func on_mouse_exited():
+	z_index = 0
 	var player_select_screen = get_tree().get_first_node_in_group("player_select_screen") as PlayerSelectScreen
-	#player_select_screen.information_margin_container.visible = false
+	player_select_screen.panel_container.visible = false
 	player_select_screen.animation_player.play_backwards("show")
 	

@@ -221,9 +221,8 @@ _data = {
 
 [node name="AbilityUpgradeCard" type="PanelContainer" groups=["upgrade_card"]]
 self_modulate = Color(0.112459, 0.116766, 0.108146, 1)
-custom_minimum_size = Vector2(200, 340)
-offset_right = 200.0
-offset_bottom = 362.0
+offset_right = 420.0
+offset_bottom = 599.0
 pivot_offset = Vector2(100, 170)
 size_flags_vertical = 0
 theme_type_variation = &"AbilityPanelContainer"
@@ -249,6 +248,10 @@ libraries = {
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -258,6 +261,7 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 32
 text = "Test Name"
 horizontal_alignment = 1
 
@@ -265,13 +269,14 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 12
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 24
 text = "Level 1"
 horizontal_alignment = 2
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 400)
 layout_mode = 2
 texture = ExtResource("2_shxa8")
 expand_mode = 4
@@ -295,10 +300,7 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 32
 text = "Some Description
-Some Description
-Some Description
-Some Description
 Some Description"
 autowrap_mode = 3

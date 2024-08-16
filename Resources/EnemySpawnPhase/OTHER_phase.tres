@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemySpawnPhase" load_steps=6 format=3 uid="uid://cxhl7j2lqg6lf"]
+
+[ext_resource type="Resource" uid="uid://dw3php3dwji22" path="res://Resources/Enemies/OTHER_Flying_Eye.tres" id="1_jqq3v"]
+[ext_resource type="Resource" uid="uid://dv83elcshm8bs" path="res://Resources/Enemies/OTHER_Goblin.tres" id="2_fk3sd"]
+[ext_resource type="Script" path="res://Scripts/EnemySpawnPhase/enemy_spawn_phase.gd" id="2_nub1d"]
+[ext_resource type="Resource" uid="uid://xsbo52al52oa" path="res://Resources/Enemies/OTHER_Mushroom.tres" id="3_j0d44"]
+[ext_resource type="Resource" uid="uid://dq0irv8j0ydlo" path="res://Resources/Enemies/OTHER_Skeleton.tres" id="4_wkn43"]
+
+[resource]
+script = ExtResource("2_nub1d")
+difficulty = 1
+enemy_resources = Array[Resource("res://Scripts/Enemys/enemy_resource.gd")]([ExtResource("1_jqq3v"), ExtResource("2_fk3sd"), ExtResource("3_j0d44"), ExtResource("4_wkn43")])
+spawn_time = 0.6
+weight = 10

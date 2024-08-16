@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcv7y4cg32je0"]
+
+[ext_resource type="Script" path="res://Scripts/Abilitys/Gaymaker/gaymaker_ability.gd" id="1_fpceg"]
+[ext_resource type="PackedScene" uid="uid://fgf6t05ngde" path="res://Scenes/Components/hitbox_component.tscn" id="3_d0y4n"]
+[ext_resource type="Texture2D" uid="uid://cv8kkse3b3pat" path="res://Assets/control3.png" id="3_et6s8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vgtx7"]
+radius = 400.0
+
+[node name="GaymakerAbility" type="Node2D"]
+script = ExtResource("1_fpceg")
+
+[node name="HitboxComponent" parent="." instance=ExtResource("3_d0y4n")]
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+unique_name_in_owner = true
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_vgtx7")
+
+[node name="HeartTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.713726)
+scale = Vector2(3, 3)
+texture = ExtResource("3_et6s8")

@@ -1,13 +1,13 @@
-[gd_scene load_steps=17 format=3 uid="uid://cexvfoy8cg0u0"]
+[gd_scene load_steps=17 format=3 uid="uid://odyfgvyloksq"]
 
-[ext_resource type="Script" path="res://Scripts/UI/player_select_card_new.gd" id="1_elt23"]
-[ext_resource type="AudioStream" uid="uid://53pjrj14iw6x" path="res://Assets/SFX/10_UI_Menu_SFX/051_use_item_01.wav" id="3_ryeqt"]
-[ext_resource type="AudioStream" uid="uid://cv7ea5q0i0lwu" path="res://Assets/SFX/8_Buffs_Heals_SFX/02_Heal_02.wav" id="4_od3fk"]
-[ext_resource type="Texture2D" uid="uid://bepdcxvnuw50o" path="res://Assets/AlbertEinstein_Profile.jpeg" id="5_27mnl"]
-[ext_resource type="Texture2D" uid="uid://b0ewqc5gmamev" path="res://Assets/sword_02c.png" id="6_0f2qx"]
-[ext_resource type="Texture2D" uid="uid://c72smellpc686" path="res://Assets/Icon1.png" id="7_rbbcp"]
-[ext_resource type="Texture2D" uid="uid://bgguv5r27i8qn" path="res://Assets/Icon2.png" id="8_rs5ox"]
-[ext_resource type="Texture2D" uid="uid://bxkyo3ha01g6g" path="res://Assets/Icon3.png" id="9_qtdap"]
+[ext_resource type="Script" path="res://Scripts/UI/player_select_card_new.gd" id="1_j0lrh"]
+[ext_resource type="AudioStream" uid="uid://53pjrj14iw6x" path="res://Assets/SFX/10_UI_Menu_SFX/051_use_item_01.wav" id="2_pluui"]
+[ext_resource type="AudioStream" uid="uid://cv7ea5q0i0lwu" path="res://Assets/SFX/8_Buffs_Heals_SFX/02_Heal_02.wav" id="3_an0lk"]
+[ext_resource type="Texture2D" uid="uid://bepdcxvnuw50o" path="res://Assets/AlbertEinstein_Profile.jpeg" id="4_lu6kr"]
+[ext_resource type="Texture2D" uid="uid://b0ewqc5gmamev" path="res://Assets/sword_02c.png" id="5_itlu2"]
+[ext_resource type="Texture2D" uid="uid://c72smellpc686" path="res://Assets/Icon1.png" id="6_bfoeq"]
+[ext_resource type="Texture2D" uid="uid://bgguv5r27i8qn" path="res://Assets/Icon2.png" id="7_sxim1"]
+[ext_resource type="Texture2D" uid="uid://bxkyo3ha01g6g" path="res://Assets/Icon3.png" id="8_vc5fu"]
 
 [sub_resource type="Animation" id="Animation_kyday"]
 length = 0.001
@@ -249,18 +249,20 @@ _data = {
 
 [node name="PlayerSelectCard" type="PanelContainer"]
 self_modulate = Color(0.0885599, 0.0885599, 0.0885599, 1)
-offset_right = 126.0
-offset_bottom = 171.0
-pivot_offset = Vector2(63, 85)
+clip_children = 2
+offset_right = 306.0
+offset_bottom = 422.0
+pivot_offset = Vector2(153, 211)
+mouse_filter = 1
 theme_type_variation = &"AbilityPanelContainer"
-script = ExtResource("1_elt23")
+script = ExtResource("1_j0lrh")
 
 [node name="HoverStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_ryeqt")
+stream = ExtResource("2_pluui")
 volume_db = -8.0
 
 [node name="ClickStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_od3fk")
+stream = ExtResource("3_an0lk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -279,7 +281,7 @@ theme_override_constants/separation = 2
 [node name="CharacterNameLabel" type="Label" parent="VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 32
 text = "Charaktername"
 horizontal_alignment = 1
 
@@ -293,13 +295,13 @@ theme_type_variation = &"AlternativePanelContainer"
 
 [node name="Preview" type="TextureRect" parent="VBoxContainer/PanelContainer2"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(120, 120)
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-texture = ExtResource("5_27mnl")
+texture = ExtResource("4_lu6kr")
 expand_mode = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer2"]
-custom_minimum_size = Vector2(20, 20)
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
@@ -311,18 +313,21 @@ theme_type_variation = &"AbilityPanelContainer"
 [node name="AbilityIcon" type="TextureRect" parent="VBoxContainer/PanelContainer2/MarginContainer/PanelContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-texture = ExtResource("6_0f2qx")
+texture = ExtResource("5_itlu2")
 expand_mode = 4
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
 self_modulate = Color(0.75098, 0.638914, 0.549861, 1)
 layout_mode = 2
+size_flags_vertical = 8
 mouse_filter = 1
 theme_type_variation = &"AlternativePanelContainer"
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 4
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_bottom = 8
 
 [node name="VBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
@@ -334,14 +339,14 @@ size_flags_vertical = 4
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
-texture = ExtResource("7_rbbcp")
+texture = ExtResource("6_bfoeq")
 expand_mode = 2
 
 [node name="AttackLabel" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 48
 text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -352,13 +357,13 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
-texture = ExtResource("8_rs5ox")
+texture = ExtResource("7_sxim1")
 expand_mode = 2
 
 [node name="HealthLabel" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 48
 text = "3"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer"]
@@ -367,11 +372,11 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
-texture = ExtResource("9_qtdap")
+texture = ExtResource("8_vc5fu")
 expand_mode = 2
 
 [node name="SpeedLabel" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 48
 text = "3"

@@ -1,6 +1,6 @@
 extends Node
 
-const SPAWN_RADIUS = 500
+var spawn_radius:int = 0
 
 @export var arena_time_manager: Node
 
@@ -17,6 +17,7 @@ var arena_difficulty:int = 1
 var current_enemies : Array[EnemyResource] = []
 
 func _ready():
+	spawn_radius = get_viewport().get_visible_rect().size.x / 2
 	base_spawn_time = timer.wait_time
 	timer.timeout.connect(on_timer_timeout)
 	arena_time_manager.arena_difficulty_increased.connect(on_arena_difficulty_increased)
@@ -31,7 +32,7 @@ func get_spawn_position():
 	var random_direction = Vector2.RIGHT.rotated(randf_range(0,TAU))
 	
 	for i in 4:
-		spawn_position = player.global_position + (random_direction * SPAWN_RADIUS)
+		spawn_position = player.global_position + (random_direction * spawn_radius)
 		var query_parameters = PhysicsRayQueryParameters2D.create(player.global_position, spawn_position, 1 << 0)
 		var result = get_tree().root.world_2d.direct_space_state.intersect_ray(query_parameters)
 	
@@ -66,7 +67,7 @@ func create_enemy(entities_layer,enemy_resource):
 		enemy_resource.create_enemy(pos,entities_layer)
 		
 func create_horde_enemies(entities_layer,enemy_resource):
-	if randf() < .1:
+	if randf() < .02:
 		var pos = get_spawn_position()
 		for i in 10:
 			var p = pos + Vector2.RIGHT.rotated(randf_range(0, TAU))
@@ -86,7 +87,18 @@ func on_arena_difficulty_increased(arena_difficult:int):
 	
 	self.arena_difficulty = arena_difficult
 	
+	
 	spawn_difficulty = enemy_phase.difficulty
+	
+	if arena_difficulty % 5 == 0:
+		spawn_difficulty = 3
+		
+	if arena_difficulty % 10 == 0:
+		spawn_difficulty = 10
+	
+	if arena_difficulty % 20 == 0:
+		spawn_difficulty = 20
+		
 	for enemy_resource in enemy_phase.enemy_resources:
 		current_enemies.append(enemy_resource)
 	

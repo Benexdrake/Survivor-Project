@@ -55,7 +55,6 @@ func shoot():
 	
 	var bullet = shot_ability_scene.instantiate()
 	foreground.add_child(bullet)
-	bullet._velocity = velocity
 	bullet.hitbox_component.damage = damage + player.base_dmg
 	bullet.position = marker_2d.global_position
 	bullet.rotation_degrees = rotation_degrees

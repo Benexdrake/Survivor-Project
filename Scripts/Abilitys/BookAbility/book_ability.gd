@@ -12,7 +12,7 @@ func _ready():
 	
 	
 var d := 0.0
-var radius = 50.0
+var radius = 100.0
 var speed = 5.0
 #
 func _process(delta):

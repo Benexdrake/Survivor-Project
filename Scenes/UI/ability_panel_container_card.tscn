@@ -11,6 +11,6 @@ script = ExtResource("1_m1ql3")
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer"]
-custom_minimum_size = Vector2(16, 16)
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 expand_mode = 4

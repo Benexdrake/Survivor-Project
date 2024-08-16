@@ -120,8 +120,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_colors/font_outline_color = Color(0.0383972, 0.0383972, 0.0383972, 1)
-theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 32
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 64
 text = "00:00"
 horizontal_alignment = 1
 vertical_alignment = 2
@@ -163,6 +163,7 @@ show_percentage = false
 [node name="Sprite2D" type="Sprite2D" parent="CloudShadows"]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_8dh2f")
+scale = Vector2(2, 2)
 texture = ExtResource("7_o7vum")
 region_enabled = true
 region_rect = Rect2(0, 0, 10000, 10000)
@@ -171,34 +172,28 @@ region_rect = Rect2(0, 0, 10000, 10000)
 layer = 3
 script = ExtResource("8_a5wea")
 
-[node name="MarginContainer" type="MarginContainer" parent="KillCounter"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -114.0
-offset_right = -44.0
-offset_bottom = 40.0
-grow_horizontal = 0
-
-[node name="KillCounterLabel" type="Label" parent="KillCounter/MarginContainer"]
+[node name="KillCounterLabel" type="Label" parent="KillCounter"]
 unique_name_in_owner = true
-layout_mode = 2
+offset_left = 1776.0
+offset_right = 1846.0
+offset_bottom = 74.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 32
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 64
 text = "0
 "
 horizontal_alignment = 2
+autowrap_mode = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="KillCounter/MarginContainer"]
-position = Vector2(90, 21)
-scale = Vector2(2, 2)
+[node name="Sprite2D" type="Sprite2D" parent="KillCounter"]
+position = Vector2(1878, 36)
+scale = Vector2(4, 4)
 texture = ExtResource("9_2dois")
 
 [node name="HealthUI" type="CanvasLayer" parent="." groups=["health_ui"]]
 layer = 3
-scale = Vector2(2, 2)
-transform = Transform2D(2, 0, 0, 2, 0, 0)
+scale = Vector2(4, 4)
+transform = Transform2D(4, 0, 0, 4, 0, 0)
 script = ExtResource("14_lickt")
 heart_full = ExtResource("14_qyiek")
 heart_half = ExtResource("15_uqdn4")
@@ -237,13 +232,13 @@ layer = 3
 script = ExtResource("15_666qb")
 
 [node name="Label" type="Label" parent="ArenaWaveUI"]
-offset_left = 17.0
-offset_top = 483.0
-offset_right = 92.0
-offset_bottom = 512.0
+offset_left = 9.0
+offset_top = 1037.0
+offset_right = 109.0
+offset_bottom = 1075.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 32
 text = "Wave 1"
 
 [node name="MoneyUI" type="CanvasLayer" parent="." groups=["money_ui"]]
@@ -251,17 +246,17 @@ layer = 3
 script = ExtResource("16_dka7d")
 
 [node name="Label" type="Label" parent="MoneyUI"]
-offset_left = 864.0
-offset_top = 475.0
-offset_right = 904.0
-offset_bottom = 513.0
+offset_left = 1729.0
+offset_top = 1005.0
+offset_right = 1829.0
+offset_bottom = 1079.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 8
-theme_override_font_sizes/font_size = 32
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 64
 text = "0"
 horizontal_alignment = 2
+autowrap_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="MoneyUI"]
-position = Vector2(925, 493)
-scale = Vector2(0.4, 0.4)
+position = Vector2(1874, 1029)
 texture = ExtResource("17_icmog")

@@ -12,10 +12,11 @@ script = ExtResource("1_jksdn")
 layer = 5
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -172.0
-offset_top = -696.0
-offset_right = 1188.0
-offset_bottom = 666.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("4_y05wt")
 expand_mode = 4
 

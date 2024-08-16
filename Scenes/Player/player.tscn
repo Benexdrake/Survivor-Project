@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://u8x0f7nqkupw"]
+[gd_scene load_steps=12 format=3 uid="uid://u8x0f7nqkupw"]
 
 [ext_resource type="Script" path="res://Scripts/Player/player.gd" id="1_x6251"]
 [ext_resource type="Resource" uid="uid://bm1seocfdncg7" path="res://Resources/Players/player1.tres" id="2_if27p"]
 [ext_resource type="PackedScene" uid="uid://jnkl30satsbb" path="res://Scenes/Components/health_component.tscn" id="2_pkqqw"]
 [ext_resource type="AudioStream" uid="uid://ckcxxti7f30w1" path="res://Assets/SFX/12_Player_Movement_SFX/61_Hit_03.wav" id="2_uncls"]
+[ext_resource type="Texture2D" uid="uid://dkh14c88us4wt" path="res://Assets/Player/1/player1.png" id="5_imhtg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0f5j"]
 bg_color = Color(0, 0.118862, 0.0955543, 1)
@@ -21,14 +22,25 @@ border_width_bottom = 1
 border_color = Color(0, 0.118862, 0.0955543, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_emtx0"]
-radius = 42.0
+radius = 100.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5wxf0"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c7pnm"]
+radius = 11.0
+height = 34.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_koq4k"]
-size = Vector2(32, 3)
+size = Vector2(48, 3)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_clt12"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_imhtg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 0
@@ -79,21 +91,26 @@ collision_mask = 8
 audio_bus_name = &"SFX"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionArea2D"]
-position = Vector2(0, 7)
-shape = SubResource("CircleShape2D_5wxf0")
+position = Vector2(0, 14)
+shape = SubResource("CapsuleShape2D_c7pnm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 16)
+position = Vector2(5, 34)
 shape = SubResource("RectangleShape2D_koq4k")
 
 [node name="Visuals" type="Node2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals"]
 unique_name_in_owner = true
+position = Vector2(1, 0)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_clt12")
 
 [node name="Shadow" type="ColorRect" parent="Visuals"]
-offset_right = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.556863)
+custom_minimum_size = Vector2(60, 5)
+offset_left = -25.0
+offset_top = 32.0
+offset_right = 25.0
+offset_bottom = 37.0
+pivot_offset = Vector2(25, 5)
+color = Color(0, 0, 0, 0.745098)

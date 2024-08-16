@@ -1,0 +1,53 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=9 format=3 uid="uid://dq0irv8j0ydlo"]
+
+[ext_resource type="PackedScene" uid="uid://co81juf0810iu" path="res://Scenes/Enemys/big_enemy.tscn" id="1_xr180"]
+[ext_resource type="Script" path="res://Scripts/Enemys/enemy_resource.gd" id="2_4r36w"]
+[ext_resource type="Texture2D" uid="uid://c7yqt88q8xim4" path="res://Assets/Enemys/Monsters_Creatures_Fantasy/Skeleton/Walk.png" id="3_nj8ha"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btegk"]
+atlas = ExtResource("3_nj8ha")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nb0xu"]
+atlas = ExtResource("3_nj8ha")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kso5n"]
+atlas = ExtResource("3_nj8ha")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73kum"]
+atlas = ExtResource("3_nj8ha")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d3vmx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btegk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nb0xu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kso5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73kum")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("2_4r36w")
+enemy_scene = ExtResource("1_xr180")
+sprite_frames = SubResource("SpriteFrames_d3vmx")
+id = "Bat"
+max_health = 200.0
+max_speed = 160
+acceleration = 5.0
+knockback_power = 20.0
+drop_percent = 0.5
+weight = 12

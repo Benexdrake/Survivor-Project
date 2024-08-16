@@ -59,8 +59,8 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_brf3p"]
-radius = 34.0
-height = 176.0
+radius = 68.0
+height = 386.0
 
 [node name="SlashAbility" type="Node2D" groups=["bible_ability"]]
 script = ExtResource("1_qv7td")
@@ -74,8 +74,8 @@ stream = ExtResource("3_lectm")
 bus = &"SFX"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(92.4062, -0.249996)
-scale = Vector2(0.36625, 0.36625)
+position = Vector2(190.406, -0.25)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("1_dvo2y")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -88,6 +88,6 @@ autoplay = "RESET"
 collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
-position = Vector2(96, 3)
+position = Vector2(194, 3)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_brf3p")

@@ -56,7 +56,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lws7v"]
-size = Vector2(41.6446, 224.954)
+size = Vector2(103.471, 454.814)
 
 [node name="ClawAbility" type="Node2D" groups=["bible_ability"]]
 script = ExtResource("1_21jdl")
@@ -66,7 +66,8 @@ stream = ExtResource("2_777xm")
 bus = &"SFX"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(85, 0)
+position = Vector2(228, -118)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_aaqcn")
 autoplay = "default"
 frame = 2
@@ -77,6 +78,6 @@ flip_h = true
 [node name="HitboxComponent" parent="." instance=ExtResource("8_osyv3")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
-position = Vector2(91, 8)
+position = Vector2(290.469, -54.3905)
 rotation = -0.757824
 shape = SubResource("RectangleShape2D_lws7v")

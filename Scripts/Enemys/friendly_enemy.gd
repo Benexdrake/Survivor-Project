@@ -1,13 +1,13 @@
 extends CharacterBody2D
 class_name FriendlyEnemy
 
-@onready var visuals = $Visuals
 @onready var life_timer = $LifeTimer
 @onready var hitbox_component = $HitboxComponent
 @onready var attack_rate_timer = $AttackRateTimer
 @onready var collision_shape_2d = $HitboxComponent/CollisionShape2D
 @onready var attack_span_timer = $AttackSpanTimer
-@onready var animated_sprite_2d = $Visuals/AnimatedSprite2D
+@onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var shadow_animated_sprite_2d = $ShadowAnimatedSprite2D
 
 @export var max_speed: int = 100
 @export var acceleration: float = 20
@@ -33,8 +33,9 @@ func _ready():
 	
 	animation = randi_range(0,variants.size()-1)
 	animated_sprite_2d.play(str(animation))
+	shadow_animated_sprite_2d.play(str(animation))
 	var size = (animated_sprite_2d.sprite_frames as SpriteFrames).get_frame_texture(str(animation),0).get_size()
-	animated_sprite_2d.offset.y = -(size.y/2)
+	#animated_sprite_2d.offset.y = -(size.y/2)
 	
 	
 
@@ -52,10 +53,13 @@ func move():
 	
 	var move_sign = sign(velocity.x)
 	if move_sign != 0:
-		$Visuals/AnimatedSprite2D.play(str(animation))
-		visuals.scale = Vector2(-move_sign,1)
+		animated_sprite_2d.play(str(animation))
+		shadow_animated_sprite_2d.play(str(animation))
+		animated_sprite_2d.scale = Vector2(-move_sign,1)
+		shadow_animated_sprite_2d.scale = Vector2(-move_sign,1)
 	else:
-		$Visuals/AnimatedSprite2D.stop()
+		animated_sprite_2d.stop()
+		shadow_animated_sprite_2d.stop()
 
 func accelerate_to_next_enemy():
 	if enemy_global_position == null:

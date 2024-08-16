@@ -4,6 +4,7 @@
 
 [node name="Map" type="TileMap"]
 position = Vector2(-5, 2)
+scale = Vector2(2, 2)
 tile_set = ExtResource("1_s7wvv")
 format = 2
 layer_0/name = "ground"

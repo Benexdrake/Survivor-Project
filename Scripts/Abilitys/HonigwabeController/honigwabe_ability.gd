@@ -12,9 +12,9 @@ var isWaiting:bool = true
 var isAttacking:bool = false
 var canAttack:bool = true
 
-const MAX_RANGE = 100
+const MAX_RANGE = 400
 
-var max_speed:int = 200
+var max_speed:int = 400
 var acceleration:int = 100
 
 var enemy:BasicEnemy
@@ -22,8 +22,6 @@ var enemy:BasicEnemy
 var enemy_global_position = Vector2.ZERO
 
 func _ready():
-	collision_check_timer.wait_time = attack_timer.wait_time / 2
-	collision_check_timer.start()
 	attack_timer.timeout.connect(on_timer_timeout)
 	collision_check_timer.timeout.connect(on_collision_check_timer_timeout)
 	hitbox_component.area_entered.connect(on_enemy_area_entered)
@@ -35,28 +33,9 @@ func _ready():
 		return
 	
 func _process(delta):
-	#if !canAttack:
-		#return
-#
-	#
-	#if enemy != null:
-		#accelerate_to_enemy()
-	#else:
-		#if isAttacking:
-			#accelerate_to_marker()
-			#return
-#
-	#looking_for_enemy()
-		#
-	#move(velocity.normalized().x)
-	
-	
-	
 	if isAttacking:
 		accelerate_to_marker()
-		move(velocity.normalized().x)
 		return
-		
 		
 	if !canAttack:
 		return
@@ -64,8 +43,11 @@ func _process(delta):
 		
 	if enemy != null:
 		accelerate_to_enemy()
-		move(velocity.normalized().x)
 	
+	if isWaiting:
+		move(global_position.x)
+	else:
+		move(velocity.normalized().x)
 
 func looking_for_enemy():
 	var player = get_tree().get_first_node_in_group("player") as Player
@@ -95,17 +77,11 @@ func looking_for_enemy():
 
 
 func move(x):
-	if isWaiting:
-		if x > 0:
-			animated_sprite_2d.flip_h = false
-		elif x < 0:
-			animated_sprite_2d.flip_h = true
-		
-	#if isWaiting:
-		#var move_sign = sign(x)
-	#
-		#if move_sign != 0:
-			#animated_sprite_2d.scale = Vector2(move_sign,1)
+	
+	var move_sign = sign(x)
+	
+	if move_sign != 0:
+		animated_sprite_2d.scale = Vector2(move_sign,1)
 		
 		
 func accelerate_to_enemy():
@@ -138,9 +114,11 @@ func on_timer_timeout():
 	
 
 func on_collision_check_timer_timeout():
-	%CollisionShape2D.disabled = !%CollisionShape2D.disabled
+	%CollisionShape2D.set_deferred("disabled",false)
 	
 func on_enemy_area_entered(enemy_area):
 	attack_timer.start()
 	isAttacking = true
 	canAttack = false
+	%CollisionShape2D.set_deferred("disabled",true)
+	collision_check_timer.start()

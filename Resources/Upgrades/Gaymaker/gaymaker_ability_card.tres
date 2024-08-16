@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="AbilityUpgradeCard" load_steps=5 format=3 uid="uid://dqj68883a8g2k"]
+
+[ext_resource type="PackedScene" uid="uid://drl2q4ebaxsrd" path="res://Scenes/Abilitys/GaymakerAbilityController/gaymaker_ability_controller.tscn" id="1_bw1mb"]
+[ext_resource type="Texture2D" uid="uid://cp0attah53rgm" path="res://Assets/Enemys/Friendly/dwarf.png" id="2_17jg2"]
+[ext_resource type="Texture2D" uid="uid://byl7iosctpbk6" path="res://Assets/Speech.jpeg" id="3_hhie2"]
+[ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade_card.gd" id="4_x7xca"]
+
+[resource]
+script = ExtResource("4_x7xca")
+ability_controller_scene = ExtResource("1_bw1mb")
+upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([])
+id = "gaymaker"
+max_level = 1
+ability_name = "Gay"
+description = "I make u gay"
+preview = ExtResource("3_hhie2")
+icon = ExtResource("2_17jg2")
+weight = 10
+is_passiv_ability = false

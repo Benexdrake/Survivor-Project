@@ -18,10 +18,11 @@ func on_area_entered(other_area: Area2D):
 	if health_component == null:
 		return
 		
-	if other_area.owner.name == "PersuasiveSpeech":
+	if other_area.owner.name == "PersuasiveSpeech" || other_area.owner.name == "GaymakerAbility":
 		var check = owner.change_side_component.check_speech(other_area.owner)
 		if check == true:
 			health_component.damage(999999)
+			
 		return
 	
 	

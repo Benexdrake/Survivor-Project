@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ch4udnpqeumjt" path="res://Assets/00.png" id="4_wjol3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vgtx7"]
-radius = 193.259
+radius = 381.781
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cywdw"]
 atlas = ExtResource("4_wjol3")
@@ -371,7 +371,7 @@ script = ExtResource("1_ywjoj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(0.0980392, 0.0980392, 0.0980392, 0.713726)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(3, 3)
 texture = ExtResource("1_ps1ji")
 
 [node name="HitboxComponent" parent="." instance=ExtResource("2_g5hdn")]
@@ -389,7 +389,7 @@ autostart = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.360784)
 self_modulate = Color(1, 1, 1, 0.482353)
-scale = Vector2(7, 7)
+scale = Vector2(14, 14)
 sprite_frames = SubResource("SpriteFrames_jkkfm")
 autoplay = "default"
 frame_progress = 0.61119

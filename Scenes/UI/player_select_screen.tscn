@@ -10,7 +10,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("%InformationMarginContainer:modulate")
+tracks/0/path = NodePath("../PanelContainer/InformationMarginContainer:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -26,7 +26,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("%InformationMarginContainer:modulate")
+tracks/0/path = NodePath("../PanelContainer/InformationMarginContainer:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -50,89 +50,120 @@ player_cards = ExtResource("2_c644b")
 [node name="TextureRect" type="TextureRect" parent="."]
 show_behind_parent = true
 light_mask = 0
-offset_top = -277.0
-offset_right = 960.0
-offset_bottom = 683.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -420.0
+offset_bottom = 420.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("4_1btx3")
 expand_mode = 4
-stretch_mode = 1
 
 [node name="Vignette" parent="." instance=ExtResource("5_hv11v")]
 layer = 3
 
 [node name="PlayerCards" type="CanvasLayer" parent="."]
 layer = 5
-
-[node name="PlayerScrollContainer" type="ScrollContainer" parent="PlayerCards"]
-unique_name_in_owner = true
-process_mode = 3
-custom_minimum_size = Vector2(900, 400)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-follow_focus = true
-scroll_vertical_custom_step = 0.0
-horizontal_scroll_mode = 0
-vertical_scroll_mode = 3
-
-[node name="MarginContainer" type="MarginContainer" parent="PlayerCards/PlayerScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_top = 10
-
-[node name="GridContainer" type="GridContainer" parent="PlayerCards/PlayerScrollContainer/MarginContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = 10
-columns = 6
+visible = false
 
 [node name="PlayerInfobox" type="CanvasLayer" parent="."]
 layer = 5
+visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerInfobox"]
 libraries = {
 "": SubResource("AnimationLibrary_a737n")
 }
 
-[node name="InformationMarginContainer" type="MarginContainer" parent="PlayerInfobox"]
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="PlayerScrollContainer" type="ScrollContainer" parent="."]
 unique_name_in_owner = true
-offset_top = 430.0
-offset_right = 960.0
-offset_bottom = 544.0
+process_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 2.0
+offset_right = -5.0
+offset_bottom = 860.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+follow_focus = true
+scroll_vertical_custom_step = 0.0
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="PlayerScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_top = 10
+
+[node name="GridContainer1" type="GridContainer" parent="PlayerScrollContainer/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 999
+
+[node name="MarginContainer2" type="MarginContainer" parent="PlayerScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_top = 10
+
+[node name="GridContainer2" type="GridContainer" parent="PlayerScrollContainer/VBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 999
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+self_modulate = Color(0.25098, 0.25098, 0.25098, 1)
+offset_top = 866.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_vertical = 10
+
+[node name="InformationMarginContainer" type="MarginContainer" parent="PanelContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
 size_flags_vertical = 8
 
-[node name="PanelContainer" type="PanelContainer" parent="PlayerInfobox/InformationMarginContainer"]
-self_modulate = Color(0.25098, 0.25098, 0.25098, 1)
-layout_mode = 2
-
-[node name="ScrollContainer" type="ScrollContainer" parent="PlayerInfobox/InformationMarginContainer/PanelContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/InformationMarginContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 follow_focus = true
 horizontal_scroll_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PlayerInfobox/InformationMarginContainer/PanelContainer/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/InformationMarginContainer/ScrollContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="PlayerInfobox/InformationMarginContainer/PanelContainer/ScrollContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/InformationMarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 20
 
-[node name="DescriptionLabel" type="Label" parent="PlayerInfobox/InformationMarginContainer/PanelContainer/ScrollContainer/VBoxContainer/MarginContainer"]
+[node name="DescriptionLabel" type="Label" parent="PanelContainer/InformationMarginContainer/ScrollContainer/VBoxContainer/MarginContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(900, 0)
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 48
 text = "Albert Einstein (* 14. März 1879 in Ulm; † 18. April 1955 in Princeton, New Jersey) war ein schweizerisch-US-amerikanischer theoretischer Physiker deutscher Herkunft. Der Wissenschaftler jüdischer Abstammung hatte bis 1896 die württembergische Staatsbürgerschaft, ab 1901 die Schweizer Staatsbürgerschaft und ab 1940 zusätzlich die US-amerikanische. Preußischer Staatsangehöriger war er von 1914 bis 1934.
 
 Einstein gilt als einer der bedeutendsten Physiker der Wissenschaftsgeschichte und weltweit als einer der bekanntesten Wissenschaftler der Neuzeit. Seine Forschungen zur Struktur von Materie, Raum und Zeit sowie zum Wesen der Gravitation veränderten maßgeblich das zuvor geltende newtonsche Weltbild. 1999 wurde Albert Einstein in einer durch die Fachzeitschrift Physics World durchgeführten Umfrage unter führenden Physikern vor Isaac Newton, James Clerk Maxwell, Niels Bohr und Werner Heisenberg zum bedeutendsten Physiker aller Zeiten gewählt.[1]
@@ -142,6 +173,10 @@ Einsteins Hauptwerk, die Relativitätstheorie, machte ihn weltberühmt. Im Jahr 
 Einstein gilt als Inbegriff des Forschers und Genies. Er nutzte seine außerordentliche Bekanntheit auch außerhalb der naturwissenschaftlichen Fachwelt bei seinem Einsatz für Völkerverständigung, Frieden und Sozialismus.[3] "
 autowrap_mode = 2
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.1
-autostart = true
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

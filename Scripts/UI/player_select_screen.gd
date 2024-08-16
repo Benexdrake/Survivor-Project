@@ -1,18 +1,19 @@
 extends CanvasLayer
 class_name PlayerSelectScreen
 
-var player_card = preload("res://Scenes/UI/player_select_card_new.tscn")
+var player_card = preload("res://Scenes/UI/player_select_card.tscn")
 
 
 @export var player_cards: Resource
 @onready var player_scroll_container = %PlayerScrollContainer
 
-@onready var grid_container = %GridContainer
+@onready var grid_container1 = %GridContainer1
+@onready var grid_container2 = %GridContainer2
 @onready var scroll_container = %ScrollContainer
 @onready var timer = $Timer
 @onready var description_label = %DescriptionLabel
-@onready var information_margin_container = %InformationMarginContainer
 @onready var animation_player = $PlayerInfobox/AnimationPlayer
+@onready var panel_container = $PanelContainer
 
 
 func _ready():
@@ -20,10 +21,14 @@ func _ready():
 	
 func show_cards():
 	var delay = 0
-	for card in player_cards.player_resources:
+	var cards = player_cards.player_resources
+	for i in cards.size():
 		var pc = player_card.instantiate() as PlayerCard
-		pc.player_resource = card
-		grid_container.add_child(pc)
+		pc.player_resource = cards[i]
+		if i % 2 == 0:
+			grid_container1.add_child(pc)
+		else:
+			grid_container2.add_child(pc)
 		pc.start()
 		pc.play_in(delay)
 		delay += .05

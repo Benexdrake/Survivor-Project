@@ -226,8 +226,8 @@ _data = {
 [node name="LevelSelectCard" type="PanelContainer" node_paths=PackedStringArray("skulls") groups=["level_select_card"]]
 self_modulate = Color(0.120406, 0.119023, 0.11021, 1)
 custom_minimum_size = Vector2(230, 100)
-offset_right = 230.0
-offset_bottom = 100.0
+offset_right = 403.0
+offset_bottom = 177.0
 pivot_offset = Vector2(100, 50)
 theme_type_variation = &"AbilityPanelContainer"
 script = ExtResource("1_wmxgw")
@@ -252,6 +252,10 @@ libraries = {
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -274,7 +278,7 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 24
 text = "Level Name"
 
 [node name="DifficultyHBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
@@ -282,42 +286,42 @@ layout_mode = 2
 
 [node name="Skull1" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/DifficultyHBoxContainer"]
 visible = false
-custom_minimum_size = Vector2(20, 20)
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = ExtResource("5_el6em")
 expand_mode = 2
 
 [node name="Skull2" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/DifficultyHBoxContainer"]
 visible = false
-custom_minimum_size = Vector2(20, 20)
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = ExtResource("5_el6em")
 expand_mode = 2
 
 [node name="Skull3" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/DifficultyHBoxContainer"]
 visible = false
-custom_minimum_size = Vector2(20, 20)
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = ExtResource("5_el6em")
 expand_mode = 2
 
 [node name="Skull4" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/DifficultyHBoxContainer"]
 visible = false
-custom_minimum_size = Vector2(20, 20)
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = ExtResource("5_el6em")
 expand_mode = 2
 
 [node name="Skull5" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/DifficultyHBoxContainer"]
 visible = false
-custom_minimum_size = Vector2(20, 20)
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = ExtResource("5_el6em")
 expand_mode = 2
 
 [node name="Skull6" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/DifficultyHBoxContainer"]
 visible = false
-custom_minimum_size = Vector2(20, 20)
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = ExtResource("6_b3k5a")
 expand_mode = 2
@@ -336,7 +340,7 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 24
 text = "10min"
 
 [node name="DropHBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
@@ -353,5 +357,5 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 24
 text = "2%"

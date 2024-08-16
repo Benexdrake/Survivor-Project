@@ -20,10 +20,10 @@ shader = ExtResource("7_684fu")
 shader_parameter/lerp_percent = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hl4u0"]
-radius = 9.0
+radius = 15.0333
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u7ld6"]
-radius = 5.0
+radius = 10.0499
 
 [node name="SmallEnemy" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 8
@@ -42,7 +42,6 @@ drop_scenes = Array[PackedScene]([ExtResource("4_208ji"), ExtResource("5_wbqnu")
 hit_flash_material = SubResource("ShaderMaterial_fkpjj")
 
 [node name="KnockbackComponent" parent="." instance=ExtResource("8_r1tex")]
-knockback_power = 30.0
 
 [node name="ChangeSideComponent" parent="." instance=ExtResource("8_p1mg0")]
 
@@ -55,13 +54,14 @@ audio_bus_name = &"SFX"
 health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
-position = Vector2(0, -5)
+position = Vector2(0, -14)
 shape = SubResource("CircleShape2D_hl4u0")
 
 [node name="Visuals" type="Node2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals"]
-position = Vector2(0, -17)
+position = Vector2(0, -32)
+scale = Vector2(2, 2)
 
 [node name="Shadow" type="ColorRect" parent="Visuals"]
 anchors_preset = 8
@@ -69,16 +69,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -10.0
-offset_top = -1.0
-offset_right = 10.0
-offset_bottom = 1.0
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(20, 2)
 color = Color(0, 0, 0, 0.556863)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -5)
+position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_u7ld6")
 
 [node name="Timer" type="Timer" parent="."]

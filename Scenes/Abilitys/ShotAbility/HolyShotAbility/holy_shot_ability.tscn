@@ -165,8 +165,9 @@ _data = {
 "start": SubResource("Animation_bsqx8")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_i55hr"]
-radius = 7.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0mvhg"]
+radius = 5.0
+height = 26.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dn5vu"]
 radius = 7.0
@@ -185,13 +186,16 @@ libraries = {
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-7, 0)
+scale = Vector2(2, 2)
 texture = ExtResource("4_svm5w")
 
 [node name="HitboxComponent" parent="." instance=ExtResource("21_yf0na")]
 collision_mask = 65
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
-shape = SubResource("CircleShape2D_i55hr")
+position = Vector2(5, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_0mvhg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
@@ -205,5 +209,5 @@ one_shot = true
 autostart = true
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
-position = Vector2(9, 0)
+position = Vector2(19, 0)
 scale = Vector2(0.1, 0.1)

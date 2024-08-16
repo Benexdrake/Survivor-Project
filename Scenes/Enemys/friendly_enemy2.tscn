@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://rs2ns0er278u"]
+
+[ext_resource type="Script" path="res://Scripts/Enemys/friendly_enemy2.gd" id="1_iv2d4"]
+[ext_resource type="PackedScene" uid="uid://fgf6t05ngde" path="res://Scenes/Components/hitbox_component.tscn" id="11_7ofak"]
+[ext_resource type="Texture2D" uid="uid://4ip0nfcqw3u2" path="res://Assets/hello.png" id="12_f68rk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t5rpk"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"0",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fpr8e"]
+radius = 8.38153
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_14mej"]
+radius = 5.0
+
+[node name="FriendlyEnemy2" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 8
+motion_mode = 1
+script = ExtResource("1_iv2d4")
+
+[node name="heart_node" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -7.5)
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_t5rpk")
+animation = &"0"
+flip_h = true
+
+[node name="HitboxComponent" parent="." instance=ExtResource("11_7ofak")]
+scale = Vector2(1, 1)
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(0, -6.5)
+shape = SubResource("CircleShape2D_fpr8e")
+
+[node name="AttackRateTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="LifeTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="AttackSpanTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(17.5, -29.5)
+scale = Vector2(1, 1)
+texture = ExtResource("12_f68rk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+scale = Vector2(1, 1)
+shape = SubResource("CircleShape2D_14mej")
+
+[node name="HeartTimer" type="Timer" parent="."]
+autostart = true

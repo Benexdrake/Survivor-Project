@@ -48,5 +48,6 @@ id = "Bat"
 max_health = 500.0
 max_speed = 50
 acceleration = 5.0
+knockback_power = 0.0
 drop_percent = 1.0
 weight = 12

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://biijh6ubeo1eq"
-path="res://.godot/imported/shlomo4.png-0cda55e42b3ac46063c76c108daa7e9f.ctex"
+uid="uid://yqoy3x0hmvjd"
+path="res://.godot/imported/Shield.png-b1db8493cff126616303a7dbb055959d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Skills/Honigwabe/shlomo4.png"
-dest_files=["res://.godot/imported/shlomo4.png-0cda55e42b3ac46063c76c108daa7e9f.ctex"]
+source_file="res://Assets/Enemys/Monsters_Creatures_Fantasy/Skeleton/Shield.png"
+dest_files=["res://.godot/imported/Shield.png-b1db8493cff126616303a7dbb055959d.ctex"]
 
 [params]
 

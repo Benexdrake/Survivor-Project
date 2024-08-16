@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca2t1oonaxx3i"
-path="res://.godot/imported/kasper4.png-16d23155adc0eaafc9be401fcbf4f3e5.ctex"
+uid="uid://cfwylbfu2ny80"
+path="res://.godot/imported/Take Hit.png-549e7a830888c7cc740cc709619538c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Skills/Honigwabe/kasper4.png"
-dest_files=["res://.godot/imported/kasper4.png-16d23155adc0eaafc9be401fcbf4f3e5.ctex"]
+source_file="res://Assets/Enemys/Monsters_Creatures_Fantasy/Skeleton/Take Hit.png"
+dest_files=["res://.godot/imported/Take Hit.png-549e7a830888c7cc740cc709619538c9.ctex"]
 
 [params]
 

@@ -6,3 +6,4 @@
 script = ExtResource("1_1q10w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)

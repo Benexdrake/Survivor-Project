@@ -1,23 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgale6t5nqk13"]
+[gd_scene load_steps=7 format=3 uid="uid://dgale6t5nqk13"]
 
 [ext_resource type="Script" path="res://Scripts/Abilitys/HonigwabeController/honigwabe_ability.gd" id="1_oqh75"]
+[ext_resource type="Texture2D" uid="uid://gmkj1dhuttvs" path="res://Assets/Skills/Honigwabe/kasper1.png" id="2_jr1rt"]
 [ext_resource type="PackedScene" uid="uid://fgf6t05ngde" path="res://Scenes/Components/hitbox_component.tscn" id="3_hpuro"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_rkmow"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jr1rt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xw7q3"]
-radius = 7.0
-height = 26.0
+radius = 11.0
+height = 38.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mgpn6"]
-radius = 100.0
+radius = 200.0
 
 [node name="HonigwabeAbility" type="CharacterBody2D"]
+scale = Vector2(2, 2)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_oqh75")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
-speed_scale = 2.0
+sprite_frames = SubResource("SpriteFrames_rkmow")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(8, 8)
+texture = ExtResource("2_jr1rt")
 
 [node name="HitboxComponent" parent="." instance=ExtResource("3_hpuro")]
 collision_mask = 64
@@ -28,9 +46,9 @@ position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_xw7q3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("CircleShape2D_mgpn6")
 
 [node name="AttackTimer" type="Timer" parent="."]
 
 [node name="CollisionCheckTimer" type="Timer" parent="."]
+wait_time = 0.1
