@@ -38,7 +38,7 @@ func pick_item(exclude: Array = []):
 	return item
 			
 func find_item(adjusted_weight_sum, adjusted_abilities):
-	var chosen_weight = randi_range(1, adjusted_weight_sum)
+	#var chosen_weight = randi_range(1, adjusted_weight_sum)
 	
 	var index = randi_range(0, adjusted_abilities.size() -1)
 	return adjusted_abilities[index]

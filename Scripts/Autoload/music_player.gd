@@ -16,7 +16,7 @@ func on_timer_timeout():
 	
 
 func random_bgm():
-	var index = randi_range(0, bgms.size()-1)
-	
-	stream = bgms[index]
+	if bgms.size() > 0:
+		var index = randi_range(0, bgms.size()-1)
+		stream = bgms[index]
 	play()

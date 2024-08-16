@@ -4,7 +4,6 @@ extends CharacterBody2D
 @onready var animation_player = $AnimationPlayer
 @onready var max_shoot_timer = $MaxShootTimer
 
-var _velocity = Vector2(1,0)
 var speed = 300
 
 func _ready():

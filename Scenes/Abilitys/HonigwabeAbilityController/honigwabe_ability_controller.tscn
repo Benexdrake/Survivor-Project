@@ -1,0 +1,143 @@
+[gd_scene load_steps=18 format=3 uid="uid://f40la1duwbrh"]
+
+[ext_resource type="Script" path="res://Scripts/Abilitys/HonigwabeController/honigwabe_ability_controller.gd" id="1_2hkde"]
+[ext_resource type="Texture2D" uid="uid://dijqp3wu3o8qk" path="res://Assets/gem_01h.png" id="1_38lfm"]
+[ext_resource type="Texture2D" uid="uid://7hg5f58l7n8p" path="res://Assets/gem_01g.png" id="2_pvo0m"]
+[ext_resource type="Texture2D" uid="uid://bw4iaemftt24i" path="res://Assets/Skills/Honigwabe/shlomo1.png" id="2_t04mu"]
+[ext_resource type="Texture2D" uid="uid://bfkb3bee8gwsh" path="res://Assets/Skills/Honigwabe/shlomo2.png" id="3_5gwbh"]
+[ext_resource type="Texture2D" uid="uid://eqre4weg2quy" path="res://Assets/Skills/Honigwabe/shlomo3.png" id="4_78yok"]
+[ext_resource type="Texture2D" uid="uid://biijh6ubeo1eq" path="res://Assets/Skills/Honigwabe/shlomo4.png" id="5_eft3p"]
+[ext_resource type="Texture2D" uid="uid://gmkj1dhuttvs" path="res://Assets/Skills/Honigwabe/kasper1.png" id="6_1x0xv"]
+[ext_resource type="Texture2D" uid="uid://bpmbfcqv82p3j" path="res://Assets/Skills/Honigwabe/kasper2.png" id="7_w8gsd"]
+[ext_resource type="Texture2D" uid="uid://b6ixj423oex7u" path="res://Assets/Skills/Honigwabe/kasper3.png" id="8_1uirj"]
+[ext_resource type="Texture2D" uid="uid://ca2t1oonaxx3i" path="res://Assets/Skills/Honigwabe/kasper4.png" id="9_8rtgw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7y5nt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_t04mu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5gwbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_78yok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_eft3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_78yok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5gwbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_t04mu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0lxch"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_1x0xv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_w8gsd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1uirj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8rtgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1uirj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_w8gsd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_0hr61"]
+resource_name = "spin"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_y3ptw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t026c"]
+_data = {
+"RESET": SubResource("Animation_y3ptw"),
+"spin": SubResource("Animation_0hr61")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yscy8"]
+radius = 200.0
+
+[node name="HonigwabeAbilityController" type="Node2D"]
+script = ExtResource("1_2hkde")
+shlomo_sprite = SubResource("SpriteFrames_7y5nt")
+kasper_sprite = SubResource("SpriteFrames_0lxch")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_t026c")
+}
+autoplay = "spin"
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="ShlomoMarker" type="Marker2D" parent="Node2D"]
+position = Vector2(50, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/ShlomoMarker"]
+visible = false
+texture = ExtResource("1_38lfm")
+
+[node name="KasperMarker" type="Marker2D" parent="Node2D"]
+position = Vector2(-50, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/KasperMarker"]
+visible = false
+texture = ExtResource("2_pvo0m")
+
+[node name="Bees" type="Node" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yscy8")

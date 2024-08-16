@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=14 format=3 uid="uid://bpljforopp5a8"]
+[gd_resource type="Resource" load_steps=15 format=3 uid="uid://bpljforopp5a8"]
 
 [ext_resource type="Resource" uid="uid://bm1seocfdncg7" path="res://Resources/Players/player1.tres" id="1_qcfg0"]
 [ext_resource type="Resource" uid="uid://di531ubruio82" path="res://Resources/Players/player2.tres" id="2_g8m3m"]
@@ -13,7 +13,8 @@
 [ext_resource type="Resource" uid="uid://rkka1mhr2h1y" path="res://Resources/Players/player10.tres" id="10_0ha7v"]
 [ext_resource type="Resource" uid="uid://b0aqtte2ifc6k" path="res://Resources/Players/player11.tres" id="11_w7j2r"]
 [ext_resource type="Resource" uid="uid://bolv2yyt0l7ot" path="res://Resources/Players/player12.tres" id="12_jklap"]
+[ext_resource type="Resource" uid="uid://c8r2sldaxmab4" path="res://Resources/Players/player13.tres" id="13_ept0m"]
 
 [resource]
 script = ExtResource("5_ss85d")
-player_resources = Array[Resource("res://Scripts/Player/player_resource.gd")]([ExtResource("1_qcfg0"), ExtResource("2_g8m3m"), ExtResource("3_1xjcf"), ExtResource("4_1285a"), ExtResource("5_6opbq"), ExtResource("6_vrk3c"), ExtResource("7_ho42d"), ExtResource("8_2nsfd"), ExtResource("9_gyjb6"), ExtResource("10_0ha7v"), ExtResource("11_w7j2r"), ExtResource("12_jklap")])
+player_resources = Array[Resource("res://Scripts/Player/player_resource.gd")]([ExtResource("1_qcfg0"), ExtResource("2_g8m3m"), ExtResource("3_1xjcf"), ExtResource("4_1285a"), ExtResource("5_6opbq"), ExtResource("6_vrk3c"), ExtResource("7_ho42d"), ExtResource("8_2nsfd"), ExtResource("9_gyjb6"), ExtResource("10_0ha7v"), ExtResource("11_w7j2r"), ExtResource("12_jklap"), ExtResource("13_ept0m")])

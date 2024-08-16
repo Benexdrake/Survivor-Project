@@ -83,7 +83,6 @@ func on_arena_difficulty_increased(arena_difficult:int):
 	var enemy_phase = enemy_table.pick_item()
 	#var enemy_phase = enemy_spawn_phases[0]
 	
-	print(str(arena_difficult) +" - "+ str(enemy_phase.enemy_resources.size()))
 	
 	self.arena_difficulty = arena_difficult
 	

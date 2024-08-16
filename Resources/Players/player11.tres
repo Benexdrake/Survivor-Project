@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PlayerResource" load_steps=12 format=3 uid="uid://b0aqtte2ifc6k"]
 
-[ext_resource type="Resource" uid="uid://w3hgtv2y4h0m" path="res://Resources/Upgrades/Shuriken/shuriken_ability_card.tres" id="1_eao5w"]
-[ext_resource type="Texture2D" uid="uid://c53ujbhfi6mse" path="res://Assets/Manazwerg_Profil.jpeg" id="2_sa7yy"]
+[ext_resource type="Resource" uid="uid://dd8t2tegxb4vw" path="res://Resources/Upgrades/Honigwabe/honigwabe_ability_card.tres" id="1_0jhak"]
+[ext_resource type="Texture2D" uid="uid://c8fmwdw6ahlll" path="res://Assets/Honey Profil.jpeg" id="2_25l1m"]
 [ext_resource type="Script" path="res://Scripts/Player/player_resource.gd" id="3_vy5bf"]
 [ext_resource type="Texture2D" uid="uid://bfbeamx7dos4l" path="res://Assets/Player/6/Manazwerg1.png" id="4_4cq5i"]
 [ext_resource type="Texture2D" uid="uid://cluhu6ideq0to" path="res://Assets/Player/6/Manazwerg2.png" id="5_4b7by"]
@@ -43,10 +43,10 @@ animations = [{
 [resource]
 script = ExtResource("3_vy5bf")
 id = "5"
-player_name = "Ninja"
-ability = ExtResource("1_eao5w")
+player_name = "Honey Bee"
+ability = ExtResource("1_0jhak")
 sprite_frames = SubResource("SpriteFrames_22ksg")
-preview = ExtResource("2_sa7yy")
+preview = ExtResource("2_25l1m")
 hp = 20
 dmg = 100.0
 speed = 150

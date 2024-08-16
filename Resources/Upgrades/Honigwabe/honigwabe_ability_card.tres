@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="AbilityUpgradeCard" load_steps=5 format=3 uid="uid://dd8t2tegxb4vw"]
+
+[ext_resource type="PackedScene" uid="uid://f40la1duwbrh" path="res://Scenes/Abilitys/HonigwabeAbilityController/honigwabe_ability_controller.tscn" id="1_ttcdw"]
+[ext_resource type="Texture2D" uid="uid://bpmbfcqv82p3j" path="res://Assets/Skills/Honigwabe/kasper2.png" id="2_81l6n"]
+[ext_resource type="Texture2D" uid="uid://b54asnqg6lp32" path="res://Assets/Axe.jpeg" id="3_koppb"]
+[ext_resource type="Script" path="res://Scripts/Upgrades/ability_upgrade_card.gd" id="4_f10q8"]
+
+[resource]
+script = ExtResource("4_f10q8")
+ability_controller_scene = ExtResource("1_ttcdw")
+upgrades = Array[Resource("res://Scripts/Upgrades/ability_upgrade.gd")]([])
+id = "honigwabe"
+max_level = 0
+ability_name = "Honigwabe"
+description = "Honigwabe"
+preview = ExtResource("3_koppb")
+icon = ExtResource("2_81l6n")
+weight = 10
+is_passiv_ability = false

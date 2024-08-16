@@ -68,7 +68,7 @@ func apply_upgrade(upgrade: AbilityUpgrade):
 
 func pick_upgrades():
 	var chosen_upgrades:Array[AbilityUpgrade] = []
-	var exclude:Array[AbilityUpgrade] = []
+	#var exclude:Array[AbilityUpgrade] = []
 	for ability in current_upgrades:
 		upgrade_pool.remove_item(ability)
 	

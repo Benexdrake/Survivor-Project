@@ -11,7 +11,6 @@ func start(pos, damage):
 	if hitbox_component != null:
 		hitbox_component.damage = damage
 	
-	var player = get_tree().get_first_node_in_group("player") as Player
 	var tween_up = create_tween()
 	
 	tween_up.set_parallel(true)

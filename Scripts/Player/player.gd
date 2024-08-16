@@ -97,7 +97,6 @@ func _input(event):
 			#var m_vector = calculate_move_vector(event.position)
 			#movement_vector = m_vector
 			#move()
-			
 
 
 func calculate_move_vector(event_position):

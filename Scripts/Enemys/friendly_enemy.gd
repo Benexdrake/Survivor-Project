@@ -72,8 +72,8 @@ func accelerate_to_next_enemy():
 func find_enemy():
 	
 	var enemies = get_tree().get_nodes_in_group("enemy")
-	enemies = enemies.filter(func(enemy: Node2D):
-		return enemy.global_position.distance_squared_to(global_position) < pow(MAX_RANGE, 2)
+	enemies = enemies.filter(func(e: Node2D):
+		return e.global_position.distance_squared_to(global_position) < pow(MAX_RANGE, 2)
 	)
 	
 	if enemies.size() == 0:

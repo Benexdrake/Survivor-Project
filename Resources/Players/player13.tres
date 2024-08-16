@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="PlayerResource" load_steps=12 format=3 uid="uid://c8r2sldaxmab4"]
+
+[ext_resource type="Resource" uid="uid://w3hgtv2y4h0m" path="res://Resources/Upgrades/Shuriken/shuriken_ability_card.tres" id="1_bib6j"]
+[ext_resource type="Texture2D" uid="uid://c53ujbhfi6mse" path="res://Assets/Manazwerg_Profil.jpeg" id="2_ww5d5"]
+[ext_resource type="Script" path="res://Scripts/Player/player_resource.gd" id="3_mbuhh"]
+[ext_resource type="Texture2D" uid="uid://bfbeamx7dos4l" path="res://Assets/Player/6/Manazwerg1.png" id="4_v5kao"]
+[ext_resource type="Texture2D" uid="uid://cluhu6ideq0to" path="res://Assets/Player/6/Manazwerg2.png" id="5_g8tqc"]
+[ext_resource type="Texture2D" uid="uid://bo21ylpmw3daw" path="res://Assets/Player/6/Manazwerg3.png" id="6_8h3io"]
+[ext_resource type="Texture2D" uid="uid://b1jbf04xtui6e" path="res://Assets/Player/6/Manazwerg4.png" id="7_aqq5q"]
+[ext_resource type="Texture2D" uid="uid://pmpgjbwf1wh" path="res://Assets/Player/6/Manazwerg5.png" id="8_u1q5o"]
+[ext_resource type="Texture2D" uid="uid://c33vd4erkh4wb" path="res://Assets/Player/6/Manazwerg6.png" id="9_xje8j"]
+[ext_resource type="Texture2D" uid="uid://c4folu8xirj0h" path="res://Assets/Player/6/Manazwerg7.png" id="10_q84xo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_22ksg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_v5kao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g8tqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8h3io")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_aqq5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_u1q5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xje8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_q84xo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("3_mbuhh")
+id = "5"
+player_name = "Ninja"
+ability = ExtResource("1_bib6j")
+sprite_frames = SubResource("SpriteFrames_22ksg")
+preview = ExtResource("2_ww5d5")
+hp = 20
+dmg = 100.0
+speed = 150
+acceleration = 25
+hp_show = 3
+dmg_show = 3.0
+speed_show = 2
+description = "Wer ist Manazwerg? Manazwerg ist eine beliebte Twitch-Streamerin, die vor allem für ihre unterhaltsamen Gaming-Streams bekannt ist.
+Was macht sie besonders? Sie schafft es, ihre Zuschauer mit ihrer positiven Energie und ihrem Humor zu begeistern.
+Welche Spiele streamt sie? Ihr Spielauswahl ist vielfältig und reicht von klassischen Titeln bis hin zu aktuellen Neuerscheinungen.
+Was ist ihre Community? Ihre Community ist eng verbunden und wird oft als sehr freundlich und unterstützend beschrieben."
+stories = Array[String](["Wer ist Manazwerg? Manazwerg ist eine beliebte Twitch-Streamerin, die vor allem für ihre unterhaltsamen Gaming-Streams bekannt ist.", "Was macht sie besonders? Sie schafft es, ihre Zuschauer mit ihrer positiven Energie und ihrem Humor zu begeistern.", "Welche Spiele streamt sie? Ihr Spielauswahl ist vielfältig und reicht von klassischen Titeln bis hin zu aktuellen Neuerscheinungen.", "Was ist ihre Community? Ihre Community ist eng verbunden und wird oft als sehr freundlich und unterstützend beschrieben."])
