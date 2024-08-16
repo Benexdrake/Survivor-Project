@@ -34,3 +34,4 @@ shape = SubResource("CircleShape2D_mgpn6")
 [node name="AttackTimer" type="Timer" parent="."]
 
 [node name="CollisionCheckTimer" type="Timer" parent="."]
+wait_time = 0.1

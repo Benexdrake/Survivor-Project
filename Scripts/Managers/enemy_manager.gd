@@ -66,7 +66,7 @@ func create_enemy(entities_layer,enemy_resource):
 		enemy_resource.create_enemy(pos,entities_layer)
 		
 func create_horde_enemies(entities_layer,enemy_resource):
-	if randf() < .1:
+	if randf() < .02:
 		var pos = get_spawn_position()
 		for i in 10:
 			var p = pos + Vector2.RIGHT.rotated(randf_range(0, TAU))

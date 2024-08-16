@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=3 uid="uid://cixw88h4tjhf8"]
 
-[ext_resource type="Script" path="res://Scripts/Abilitys/kamehameha/kamehameha_ability.gd" id="1_ejm2y"]
-[ext_resource type="AudioStream" uid="uid://itvumm54m7h5" path="res://Assets/SFX/10_Battle_SFX/35_Miss_Evade_02.wav" id="2_j40tf"]
+[ext_resource type="Script" path="res://Scripts/Abilitys/kamehameha/kamehameha_ability.gd" id="1_v0w3f"]
+[ext_resource type="AudioStream" uid="uid://itvumm54m7h5" path="res://Assets/SFX/10_Battle_SFX/35_Miss_Evade_02.wav" id="2_0tk7a"]
 [ext_resource type="Texture2D" uid="uid://c4gbwsjr4wx6v" path="res://Assets/Skills/Kamehameha/Kamehameha_loop1.png" id="3_mq8vs"]
 [ext_resource type="Texture2D" uid="uid://ctvdpkbh0g27k" path="res://Assets/Skills/Kamehameha/Kamehameha1.png" id="3_skkti"]
 [ext_resource type="Texture2D" uid="uid://qnwg7u1fnu2n" path="res://Assets/Skills/Kamehameha/Kamehameha_loop2.png" id="4_0vf44"]
@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://b3qr5csl8csg5" path="res://Assets/Skills/Kamehameha/Kamehameha10.png" id="12_unoqp"]
 [ext_resource type="Texture2D" uid="uid://d1tfcb5dttkst" path="res://Assets/Skills/Kamehameha/Kamehameha11.png" id="13_3yljc"]
 [ext_resource type="Texture2D" uid="uid://tjr7na7galhx" path="res://Assets/Skills/Kamehameha/Kamehameha12.png" id="14_ru3ra"]
-[ext_resource type="PackedScene" uid="uid://fgf6t05ngde" path="res://Scenes/Components/hitbox_component.tscn" id="17_dmb5j"]
+[ext_resource type="PackedScene" uid="uid://fgf6t05ngde" path="res://Scenes/Components/hitbox_component.tscn" id="17_duxb2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50ya1"]
 size = Vector2(50, 913)
@@ -254,10 +254,10 @@ _data = {
 radius = 7.0
 
 [node name="KamehamehaAbility" type="CharacterBody2D"]
-script = ExtResource("1_ejm2y")
+script = ExtResource("1_v0w3f")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_j40tf")
+stream = ExtResource("2_0tk7a")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -268,7 +268,7 @@ libraries = {
 position = Vector2(436, -9)
 texture = ExtResource("3_skkti")
 
-[node name="HitboxComponent" parent="." instance=ExtResource("17_dmb5j")]
+[node name="HitboxComponent" parent="." instance=ExtResource("17_duxb2")]
 collision_mask = 65
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
