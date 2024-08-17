@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MetaUpgrade" load_steps=3 format=3 uid="uid://c5ia6hq3jonyt"]
+
+[ext_resource type="Texture2D" uid="uid://c53ujbhfi6mse" path="res://Assets/Manazwerg_Profil.jpeg" id="1_qgth7"]
+[ext_resource type="Script" path="res://Scripts/MetaUpgrades/meta_upgrade.gd" id="2_di02w"]
+
+[resource]
+script = ExtResource("2_di02w")
+id = "unlock_manazwerg"
+max_quantity = 1
+cost = 1000
+title = "Unlock Manazwerg"
+icon = ExtResource("1_qgth7")
+description = "Unlock the Character Manazwerg"

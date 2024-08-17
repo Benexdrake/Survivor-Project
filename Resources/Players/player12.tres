@@ -72,6 +72,7 @@ animations = [{
 [resource]
 script = ExtResource("3_8q7ug")
 id = "4"
+is_available = false
 player_name = "Godbrithil"
 ability = ExtResource("1_1od5p")
 sprite_frames = SubResource("SpriteFrames_22ksg")

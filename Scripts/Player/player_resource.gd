@@ -2,6 +2,7 @@ extends Resource
 class_name PlayerResource
 
 @export var id:String
+@export var is_available:bool = false
 
 @export var player_name:String
 

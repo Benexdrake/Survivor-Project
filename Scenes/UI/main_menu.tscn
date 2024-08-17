@@ -1,15 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgsyf7fht8soh"]
+[gd_scene load_steps=7 format=3 uid="uid://dgsyf7fht8soh"]
 
 [ext_resource type="Script" path="res://Scripts/UI/main_menu.gd" id="1_roeqt"]
 [ext_resource type="PackedScene" uid="uid://ddj8blxbhm20n" path="res://Scenes/UI/sound_button.tscn" id="1_unx5l"]
 [ext_resource type="AudioStream" uid="uid://cvxk2p8cibn64" path="res://Assets/Music/Trailer Music/Epic Trailer 1.mp3" id="2_v0o6s"]
 [ext_resource type="Texture2D" uid="uid://cnikkhc2n634e" path="res://Assets/_3eea590e-afd0-4f0b-97b2-0afdd0b1a448.jpeg" id="3_4fkyy"]
 [ext_resource type="PackedScene" uid="uid://dujgwpibibjgl" path="res://Scenes/UI/vignette.tscn" id="5_jp5p0"]
+[ext_resource type="PackedScene" uid="uid://c5y8ck71uli4v" path="res://Test2/menu_cursor.tscn" id="6_vsd5p"]
 
-[node name="MainMenu" type="CanvasLayer"]
+[node name="MainMenu" type="CanvasLayer" node_paths=PackedStringArray("buttons")]
 layer = 2
 script = ExtResource("1_roeqt")
 music = ExtResource("2_v0o6s")
+buttons = [NodePath("PlayButton"), NodePath("UpgradeButton"), NodePath("OptionsButton"), NodePath("QuitButton")]
 
 [node name="Vignette" parent="." instance=ExtResource("5_jp5p0")]
 follow_viewport_enabled = true
@@ -113,3 +115,5 @@ size_flags_vertical = 4
 theme_override_constants/outline_size = 12
 theme_override_font_sizes/font_size = 64
 text = "Upgrades"
+
+[node name="MenuCursor" parent="." instance=ExtResource("6_vsd5p")]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5y8ck71uli4v"]
+
+[ext_resource type="Texture2D" uid="uid://cuo6uoq3ukale" path="res://Cursor Move/hand_cursor0000.png" id="1_h264r"]
+[ext_resource type="Script" path="res://Cursor Move/menu_cursor.gd" id="2_gt81d"]
+[ext_resource type="AudioStream" uid="uid://c7occd0rgc7r3" path="res://Assets/SFX/10_UI_Menu_SFX/001_Hover_01.wav" id="3_ffjuj"]
+[ext_resource type="AudioStream" uid="uid://cxeskv57cvmjb" path="res://Assets/SFX/10_UI_Menu_SFX/013_Confirm_03.wav" id="4_tnk87"]
+
+[node name="MenuCursor" type="TextureRect"]
+custom_minimum_size = Vector2(20, 20)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1888.0
+offset_bottom = -1048.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_h264r")
+script = ExtResource("2_gt81d")
+cursor_offset = Vector2(20, -2)
+cursor_move = ExtResource("3_ffjuj")
+cursor_select = ExtResource("4_tnk87")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ffjuj")

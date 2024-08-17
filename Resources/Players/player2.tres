@@ -35,6 +35,7 @@ animations = [{
 [resource]
 script = ExtResource("2_wiwui")
 id = "2"
+is_available = true
 player_name = "Arminius"
 ability = ExtResource("1_bvhdd")
 sprite_frames = SubResource("SpriteFrames_wc2d2")

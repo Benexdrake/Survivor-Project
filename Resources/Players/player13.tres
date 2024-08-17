@@ -43,6 +43,7 @@ animations = [{
 [resource]
 script = ExtResource("3_mbuhh")
 id = "5"
+is_available = false
 player_name = "Ninja"
 ability = ExtResource("1_bib6j")
 sprite_frames = SubResource("SpriteFrames_22ksg")

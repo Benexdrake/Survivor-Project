@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnpwbu10rvxxg"]
+
+[ext_resource type="Script" path="res://Cursor Move/menu_item.gd" id="1_d0ju6"]
+[ext_resource type="PackedScene" uid="uid://c83ffg5054xn6" path="res://Cursor Move/menu_cursor.tscn" id="1_l6xgx"]
+
+[node name="rpg_menu_layout" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 0
+offset_right = 17.0
+offset_bottom = 14.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 48
+
+[node name="attack" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Attack"
+script = ExtResource("1_d0ju6")
+
+[node name="defend" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Defend"
+script = ExtResource("1_d0ju6")
+
+[node name="MenuCursor" parent="." instance=ExtResource("1_l6xgx")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 1
+grow_vertical = 1
+menu_parent_path = NodePath("../PanelContainer/MarginContainer/VBoxContainer")

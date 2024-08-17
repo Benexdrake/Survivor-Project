@@ -22,6 +22,9 @@ func start():
 	character_name_label.text = player_resource.player_name
 	preview.texture = player_resource.preview
 	%AbilityIcon.texture = player_resource.ability.icon
+	if !player_resource.is_available:
+		disabled = true
+		$TextureRect.visible = true
 	stats()
 	
 	

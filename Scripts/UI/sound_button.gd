@@ -6,6 +6,12 @@ extends Button
 @onready var audio_stream_player = $AudioStreamPlayer
 
 
+signal cursor_selected
+
+
+func cursor_select():
+	pressed.emit()
+
 func _ready():
 	pressed.connect(on_pressed)
 	mouse_entered.connect(on_hover)

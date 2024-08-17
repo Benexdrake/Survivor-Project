@@ -30,7 +30,8 @@ animations = [{
 
 [resource]
 script = ExtResource("1_k3epa")
-id = "1"
+id = "albert_einstein"
+is_available = true
 player_name = "Albert Einstein"
 ability = ExtResource("1_72tdp")
 sprite_frames = SubResource("SpriteFrames_22ksg")

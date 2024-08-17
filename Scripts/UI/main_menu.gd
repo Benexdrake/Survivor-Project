@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @export var music:AudioStream
+@export var buttons: Array[Button]
 
 var options_scene = preload("res://Scenes/UI/options_menu.tscn")
 

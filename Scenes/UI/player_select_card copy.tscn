@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://odyfgvyloksq"]
+[gd_scene load_steps=18 format=3 uid="uid://cet5d2f5r1k6p"]
 
 [ext_resource type="Script" path="res://Scripts/UI/player_select_card_new.gd" id="1_8n8ln"]
 [ext_resource type="AudioStream" uid="uid://53pjrj14iw6x" path="res://Assets/SFX/10_UI_Menu_SFX/051_use_item_01.wav" id="2_in2ak"]

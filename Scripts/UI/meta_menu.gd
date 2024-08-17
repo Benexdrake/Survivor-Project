@@ -11,7 +11,7 @@ var meta_upgrade_card_scene = preload("res://Scenes/UI/meta_upgrade_card.tscn")
 var selected_meta_upgrade:MetaUpgrade
 
 func _ready():
-	MetaProgression.save_data["meta_upgrade_currency"] = 100
+	MetaProgression.save_data["meta_upgrade_currency"] = 10000
 	%BackButton.pressed.connect(on_back_button_pressed)
 	purchase_button.disabled = true
 	purchase_button.button_down.connect(on_button_clicked)
