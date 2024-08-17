@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dujgwpibibjgl" path="res://Scenes/UI/vignette.tscn" id="5_jp5p0"]
 
 [node name="MainMenu" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_roeqt")
 music = ExtResource("2_v0o6s")
 
@@ -44,48 +45,71 @@ theme_override_font_sizes/font_size = 256
 text = "History Survivor"
 horizontal_alignment = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="."]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -150.0
-offset_top = -188.0
-offset_right = 50.0
-offset_bottom = -48.0
-grow_horizontal = 2
-grow_vertical = 0
-pivot_offset = Vector2(150, 50)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer2"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 12
-
-[node name="PlayButton" parent="MarginContainer2/VBoxContainer2" instance=ExtResource("1_unx5l")]
+[node name="QuitButton" parent="." instance=ExtResource("1_unx5l")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(800, 0)
-layout_mode = 2
+top_level = true
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -938.0
+offset_top = -518.0
+offset_right = -738.0
+offset_bottom = -418.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/outline_size = 12
 theme_override_font_sizes/font_size = 64
-text = "Play"
+text = "Quit"
 
-[node name="OptionsButton" parent="MarginContainer2/VBoxContainer2" instance=ExtResource("1_unx5l")]
+[node name="OptionsButton" parent="." instance=ExtResource("1_unx5l")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(800, 0)
-layout_mode = 2
+offset_left = 1652.0
+offset_top = 22.0
+offset_right = 1902.0
+offset_bottom = 122.0
 theme_override_constants/outline_size = 12
 theme_override_font_sizes/font_size = 64
 text = "Options"
 
-[node name="QuitButton" parent="MarginContainer2/VBoxContainer2" instance=ExtResource("1_unx5l")]
+[node name="PlayButton" parent="." instance=ExtResource("1_unx5l")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(800, 0)
-layout_mode = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 209.0
+offset_right = 200.0
+offset_bottom = 309.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/outline_size = 12
 theme_override_font_sizes/font_size = 64
-text = "Quit"
+text = "Main"
+
+[node name="UpgradeButton" parent="." instance=ExtResource("1_unx5l")]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 321.0
+offset_right = 200.0
+offset_bottom = 421.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 64
+text = "Upgrades"

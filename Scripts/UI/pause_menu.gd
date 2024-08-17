@@ -40,8 +40,10 @@ func close():
 		get_tree().paused = false
 		queue_free()
 
+
 func on_resume_pressed():
 	close()
+	
 	
 func on_option_pressed():
 	#ScreenTransition.transition()
@@ -53,6 +55,7 @@ func on_option_pressed():
 	
 	
 func on_quit_pressed():
+	MetaProgression.save()
 	get_tree().paused = false
 	await ScreenTransition.transition_to_scene("res://Scenes/UI/main_menu.tscn")
 	

@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://drl2q4ebaxsrd"]
-
-[ext_resource type="Script" path="res://Scripts/Abilitys/Gaymaker/gaymaker_ability_controller.gd" id="1_8ok2r"]
-
-[node name="GaymakerAbilityController" type="Node"]
-script = ExtResource("1_8ok2r")

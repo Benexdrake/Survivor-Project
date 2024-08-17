@@ -1,0 +1,9 @@
+extends Resource
+class_name MetaUpgrade
+
+@export var id:String
+@export var max_quantity:int = 1
+@export var cost:int = 10
+@export var title:String
+@export var icon:Texture
+@export_multiline var description:String

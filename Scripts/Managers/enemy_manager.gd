@@ -17,7 +17,7 @@ var arena_difficulty:int = 1
 var current_enemies : Array[EnemyResource] = []
 
 func _ready():
-	spawn_radius = get_viewport().get_visible_rect().size.x / 2
+	spawn_radius = get_viewport().get_visible_rect().size.x / 2 + 100
 	base_spawn_time = timer.wait_time
 	timer.timeout.connect(on_timer_timeout)
 	arena_time_manager.arena_difficulty_increased.connect(on_arena_difficulty_increased)
@@ -33,7 +33,9 @@ func get_spawn_position():
 	
 	for i in 4:
 		spawn_position = player.global_position + (random_direction * spawn_radius)
-		var query_parameters = PhysicsRayQueryParameters2D.create(player.global_position, spawn_position, 1 << 0)
+		var additional_check_offset = random_direction * 20
+		
+		var query_parameters = PhysicsRayQueryParameters2D.create(player.global_position, spawn_position + additional_check_offset, 1 << 0)
 		var result = get_tree().root.world_2d.direct_space_state.intersect_ray(query_parameters)
 	
 		if result.is_empty():

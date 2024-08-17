@@ -14,7 +14,7 @@ class_name FriendlyEnemy2
 @export var acceleration: float = 20
 @export var damage_percent: float = .5
 
-var heart = preload("res://Scenes/Abilitys/GaymakerAbilityController/herzchen.tscn")
+var heart = preload("res://Scenes/Abilitys/LovingUnicornAbilityController/herzchen.tscn")
 
 var enemy_global_position = Vector2.ZERO
 

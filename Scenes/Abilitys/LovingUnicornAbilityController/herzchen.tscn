@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ddb4ddcxb6x4o"]
 
-[ext_resource type="Texture2D" uid="uid://bmy0gj8pdluh1" path="res://Assets/Theme/UI/heart_full.png" id="1_3hc4p"]
+[ext_resource type="Texture2D" uid="uid://bmy0gj8pdluh1" path="res://Assets/Theme/UI/heart_full.png" id="1_u827b"]
 
 [sub_resource type="Animation" id="Animation_5m2hd"]
 length = 0.001
@@ -83,7 +83,7 @@ scale = Vector2(3, 3)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0)
 scale = Vector2(1e-05, 1e-05)
-texture = ExtResource("1_3hc4p")
+texture = ExtResource("1_u827b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

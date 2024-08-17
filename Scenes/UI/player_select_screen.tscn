@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cj62qmxdo7juy"]
+[gd_scene load_steps=9 format=3 uid="uid://cj62qmxdo7juy"]
 
 [ext_resource type="Script" path="res://Scripts/UI/player_select_screen.gd" id="1_00gve"]
 [ext_resource type="Resource" uid="uid://bpljforopp5a8" path="res://Resources/Players/all_players.tres" id="2_c644b"]
 [ext_resource type="Texture2D" uid="uid://c55qcsmpkjh3" path="res://Assets/_8ae7189c-5d5d-4923-88c1-0dbfebddb04c.jpeg" id="4_1btx3"]
 [ext_resource type="PackedScene" uid="uid://dujgwpibibjgl" path="res://Scenes/UI/vignette.tscn" id="5_hv11v"]
+[ext_resource type="PackedScene" uid="uid://ddj8blxbhm20n" path="res://Scenes/UI/sound_button.tscn" id="5_ocdwc"]
 
 [sub_resource type="Animation" id="Animation_1feiu"]
 length = 0.001
@@ -65,9 +66,7 @@ layer = 3
 
 [node name="PlayerCards" type="CanvasLayer" parent="."]
 layer = 5
-
 visible = false
-
 
 [node name="PlayerInfobox" type="CanvasLayer" parent="."]
 layer = 5
@@ -82,57 +81,47 @@ libraries = {
 wait_time = 0.1
 autostart = true
 
-[node name="PlayerScrollContainer" type="ScrollContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_top = 10
+
+[node name="PlayerScrollContainer" type="ScrollContainer" parent="MarginContainer"]
 unique_name_in_owner = true
 process_mode = 3
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 2.0
-offset_right = -5.0
-offset_bottom = 860.0
-grow_horizontal = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+layout_mode = 2
 follow_focus = true
 scroll_vertical_custom_step = 0.0
-horizontal_scroll_mode = 3
-vertical_scroll_mode = 0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PlayerScrollContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PlayerScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 240
 
-[node name="MarginContainer" type="MarginContainer" parent="PlayerScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/margin_top = 10
-
-[node name="GridContainer1" type="GridContainer" parent="PlayerScrollContainer/VBoxContainer/MarginContainer"]
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/PlayerScrollContainer/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
-columns = 999
-
-[node name="MarginContainer2" type="MarginContainer" parent="PlayerScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/margin_top = 10
-
-[node name="GridContainer2" type="GridContainer" parent="PlayerScrollContainer/VBoxContainer/MarginContainer2"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 0
-theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = 10
-columns = 999
+columns = 5
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 self_modulate = Color(0.25098, 0.25098, 0.25098, 1)
+top_level = true
+z_index = 2
 offset_top = 866.0
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -175,10 +164,24 @@ Einsteins Hauptwerk, die Relativitätstheorie, machte ihn weltberühmt. Im Jahr 
 Einstein gilt als Inbegriff des Forschers und Genies. Er nutzte seine außerordentliche Bekanntheit auch außerhalb der naturwissenschaftlichen Fachwelt bei seinem Einsatz für Völkerverständigung, Frieden und Sozialismus.[3] "
 autowrap_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="BackButton" parent="." instance=ExtResource("5_ocdwc")]
+unique_name_in_owner = true
+top_level = true
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -938.0
+offset_top = -518.0
+offset_right = -838.0
+offset_bottom = -468.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 32
+text = "Back
+"

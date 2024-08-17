@@ -1,7 +1,7 @@
 extends Node
 class_name GaymakerAbilityController
 
-var scene = preload("res://Scenes/Abilitys/GaymakerAbilityController/gaymaker_ability.tscn")
+var scene = preload("res://Scenes/Abilitys/LovingUnicornAbilityController/loving_unicorn_ability.tscn")
 
 func _ready():
 	start()

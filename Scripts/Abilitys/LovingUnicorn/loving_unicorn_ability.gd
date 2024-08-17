@@ -1,7 +1,7 @@
 extends Node2D
-class_name GaymakerAbility
+class_name LovingUnicornAbility
 
-var heart = preload("res://Scenes/Abilitys/GaymakerAbilityController/herzchen.tscn")
+var heart = preload("res://Scenes/Abilitys/LovingUnicornAbilityController/herzchen.tscn")
 @onready var timer = $Timer
 @onready var heart_timer = $HeartTimer
 @onready var collision_shape_2d = %CollisionShape2D
@@ -41,6 +41,6 @@ func on_timer_timeout():
 	collision_shape_2d.disabled = !collision_shape_2d.disabled
 	
 func on_heart_timer_timeout():
-	for i in 10:
+	for i in 5:
 		create_heart()
 	

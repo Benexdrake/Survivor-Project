@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="AllMetaUpgradesResource" load_steps=3 format=3 uid="uid://drkxely5qqm1y"]
+
+[ext_resource type="Resource" uid="uid://dinx0to4tfp73" path="res://Resources/MetaUpgrades/experience_gain.tres" id="1_58mu2"]
+[ext_resource type="Script" path="res://Scripts/MetaUpgrades/all_meta_upgrades.gd" id="1_gkyjp"]
+
+[resource]
+script = ExtResource("1_gkyjp")
+meta_upgrades = Array[Resource("res://Scripts/MetaUpgrades/meta_upgrade.gd")]([ExtResource("1_58mu2")])

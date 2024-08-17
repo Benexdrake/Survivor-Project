@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MetaUpgrade" load_steps=3 format=3 uid="uid://dinx0to4tfp73"]
+
+[ext_resource type="Script" path="res://Scripts/MetaUpgrades/meta_upgrade.gd" id="1_8iert"]
+[ext_resource type="Texture2D" uid="uid://d2hxyax7jq28k" path="res://Assets/exp_drop.png" id="1_jbm62"]
+
+[resource]
+script = ExtResource("1_8iert")
+id = "experience_gain"
+max_quantity = 5
+cost = 10
+title = "Increase Experience"
+icon = ExtResource("1_jbm62")
+description = "Increase experience drop chance by 2%"

@@ -1,13 +1,13 @@
 [gd_scene load_steps=17 format=3 uid="uid://odyfgvyloksq"]
 
-[ext_resource type="Script" path="res://Scripts/UI/player_select_card_new.gd" id="1_j0lrh"]
-[ext_resource type="AudioStream" uid="uid://53pjrj14iw6x" path="res://Assets/SFX/10_UI_Menu_SFX/051_use_item_01.wav" id="2_pluui"]
-[ext_resource type="AudioStream" uid="uid://cv7ea5q0i0lwu" path="res://Assets/SFX/8_Buffs_Heals_SFX/02_Heal_02.wav" id="3_an0lk"]
-[ext_resource type="Texture2D" uid="uid://bepdcxvnuw50o" path="res://Assets/AlbertEinstein_Profile.jpeg" id="4_lu6kr"]
-[ext_resource type="Texture2D" uid="uid://b0ewqc5gmamev" path="res://Assets/sword_02c.png" id="5_itlu2"]
-[ext_resource type="Texture2D" uid="uid://c72smellpc686" path="res://Assets/Icon1.png" id="6_bfoeq"]
-[ext_resource type="Texture2D" uid="uid://bgguv5r27i8qn" path="res://Assets/Icon2.png" id="7_sxim1"]
-[ext_resource type="Texture2D" uid="uid://bxkyo3ha01g6g" path="res://Assets/Icon3.png" id="8_vc5fu"]
+[ext_resource type="Script" path="res://Scripts/UI/player_select_card_new.gd" id="1_8n8ln"]
+[ext_resource type="AudioStream" uid="uid://53pjrj14iw6x" path="res://Assets/SFX/10_UI_Menu_SFX/051_use_item_01.wav" id="2_in2ak"]
+[ext_resource type="AudioStream" uid="uid://cv7ea5q0i0lwu" path="res://Assets/SFX/8_Buffs_Heals_SFX/02_Heal_02.wav" id="3_k8ih7"]
+[ext_resource type="Texture2D" uid="uid://bepdcxvnuw50o" path="res://Assets/AlbertEinstein_Profile.jpeg" id="4_y22uv"]
+[ext_resource type="Texture2D" uid="uid://b0ewqc5gmamev" path="res://Assets/sword_02c.png" id="5_jpt70"]
+[ext_resource type="Texture2D" uid="uid://c72smellpc686" path="res://Assets/Icon1.png" id="6_ij1s3"]
+[ext_resource type="Texture2D" uid="uid://bgguv5r27i8qn" path="res://Assets/Icon2.png" id="7_oasij"]
+[ext_resource type="Texture2D" uid="uid://bxkyo3ha01g6g" path="res://Assets/Icon3.png" id="8_wdkk5"]
 
 [sub_resource type="Animation" id="Animation_kyday"]
 length = 0.001
@@ -255,14 +255,14 @@ offset_bottom = 422.0
 pivot_offset = Vector2(153, 211)
 mouse_filter = 1
 theme_type_variation = &"AbilityPanelContainer"
-script = ExtResource("1_j0lrh")
+script = ExtResource("1_8n8ln")
 
 [node name="HoverStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_pluui")
+stream = ExtResource("2_in2ak")
 volume_db = -8.0
 
 [node name="ClickStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_an0lk")
+stream = ExtResource("3_k8ih7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -297,7 +297,7 @@ theme_type_variation = &"AlternativePanelContainer"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-texture = ExtResource("4_lu6kr")
+texture = ExtResource("4_y22uv")
 expand_mode = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer2"]
@@ -313,7 +313,7 @@ theme_type_variation = &"AbilityPanelContainer"
 [node name="AbilityIcon" type="TextureRect" parent="VBoxContainer/PanelContainer2/MarginContainer/PanelContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-texture = ExtResource("5_itlu2")
+texture = ExtResource("5_jpt70")
 expand_mode = 4
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
@@ -339,7 +339,7 @@ size_flags_vertical = 4
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
-texture = ExtResource("6_bfoeq")
+texture = ExtResource("6_ij1s3")
 expand_mode = 2
 
 [node name="AttackLabel" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
@@ -357,7 +357,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
-texture = ExtResource("7_sxim1")
+texture = ExtResource("7_oasij")
 expand_mode = 2
 
 [node name="HealthLabel" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
@@ -372,7 +372,7 @@ layout_mode = 2
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 2
-texture = ExtResource("8_vc5fu")
+texture = ExtResource("8_wdkk5")
 expand_mode = 2
 
 [node name="SpeedLabel" type="Label" parent="VBoxContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3"]

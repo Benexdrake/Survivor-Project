@@ -12,6 +12,8 @@ config_version=5
 
 config/name="Survivor Project HD"
 run/main_scene="res://Scenes/UI/main_menu.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="HistorySurvivor"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -22,6 +24,7 @@ MusicPlayer="*res://Scenes/Autoload/music_player.tscn"
 ScreenTransition="*res://Scenes/Autoload/screen_transition.tscn"
 MobileControlLayer="*res://Scenes/Autoload/mobile_control_layer.tscn"
 GlobalVariables="*res://Scripts/Autoload/global.gd"
+MetaProgression="*res://Scenes/Autoload/meta_progression.tscn"
 
 [debug]
 

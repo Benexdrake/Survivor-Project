@@ -225,13 +225,13 @@ _data = {
 
 [node name="LevelSelectCard" type="PanelContainer" node_paths=PackedStringArray("skulls") groups=["level_select_card"]]
 self_modulate = Color(0.120406, 0.119023, 0.11021, 1)
-custom_minimum_size = Vector2(230, 100)
-offset_right = 403.0
-offset_bottom = 177.0
-pivot_offset = Vector2(100, 50)
+custom_minimum_size = Vector2(500, 250)
+offset_right = 500.0
+offset_bottom = 250.0
+pivot_offset = Vector2(250, 125)
 theme_type_variation = &"AbilityPanelContainer"
 script = ExtResource("1_wmxgw")
-skulls = [NodePath("MarginContainer/HBoxContainer/VBoxContainer/DifficultyHBoxContainer/Skull1"), NodePath("MarginContainer/HBoxContainer/VBoxContainer/DifficultyHBoxContainer/Skull2"), NodePath("MarginContainer/HBoxContainer/VBoxContainer/DifficultyHBoxContainer/Skull3"), NodePath("MarginContainer/HBoxContainer/VBoxContainer/DifficultyHBoxContainer/Skull4"), NodePath("MarginContainer/HBoxContainer/VBoxContainer/DifficultyHBoxContainer/Skull5"), NodePath("MarginContainer/HBoxContainer/VBoxContainer/DifficultyHBoxContainer/Skull6")]
+skulls = [NodePath("MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/DifficultyHBoxContainer/Skull1"), NodePath("MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/DifficultyHBoxContainer/Skull2"), NodePath("MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/DifficultyHBoxContainer/Skull3"), NodePath("MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/DifficultyHBoxContainer/Skull4"), NodePath("MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/DifficultyHBoxContainer/Skull5"), NodePath("MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/DifficultyHBoxContainer/Skull6")]
 
 [node name="HoverStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_4oukl")
@@ -269,73 +269,36 @@ texture = ExtResource("4_j1nkr")
 expand_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-process_mode = 3
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 48
 
 [node name="LevelNameLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 32
 text = "Level Name"
 
-[node name="DifficultyHBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+process_mode = 3
 layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 2
 
-[node name="Skull1" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/DifficultyHBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(40, 40)
+[node name="TimeHBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("5_el6em")
-expand_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
-[node name="Skull2" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/DifficultyHBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-texture = ExtResource("5_el6em")
-expand_mode = 2
-
-[node name="Skull3" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/DifficultyHBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-texture = ExtResource("5_el6em")
-expand_mode = 2
-
-[node name="Skull4" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/DifficultyHBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-texture = ExtResource("5_el6em")
-expand_mode = 2
-
-[node name="Skull5" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/DifficultyHBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-texture = ExtResource("5_el6em")
-expand_mode = 2
-
-[node name="Skull6" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/DifficultyHBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-texture = ExtResource("6_b3k5a")
-expand_mode = 2
-
-[node name="TimeHBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/TimeHBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/TimeHBoxContainer"]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 texture = ExtResource("6_lga2e")
 expand_mode = 2
 
-[node name="TimeLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/TimeHBoxContainer"]
+[node name="TimeLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/TimeHBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -343,19 +306,61 @@ theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 24
 text = "10min"
 
-[node name="DropHBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="DropHBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/DropHBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/DropHBoxContainer"]
 custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 texture = ExtResource("7_p17aq")
 expand_mode = 2
 
-[node name="DropLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/DropHBoxContainer"]
+[node name="DropLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/DropHBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 24
 text = "2%"
+
+[node name="DifficultyHBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="Skull1" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/DifficultyHBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("5_el6em")
+expand_mode = 2
+
+[node name="Skull2" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/DifficultyHBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("5_el6em")
+expand_mode = 2
+
+[node name="Skull3" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/DifficultyHBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("5_el6em")
+expand_mode = 2
+
+[node name="Skull4" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/DifficultyHBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("5_el6em")
+expand_mode = 2
+
+[node name="Skull5" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/DifficultyHBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("5_el6em")
+expand_mode = 2
+
+[node name="Skull6" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/DifficultyHBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("6_b3k5a")
+expand_mode = 2
