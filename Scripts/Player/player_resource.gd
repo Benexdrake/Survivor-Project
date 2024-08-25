@@ -20,5 +20,3 @@ class_name PlayerResource
 
 @export_multiline var description:String
 @export_multiline var stories:Array[String]
-
-

@@ -1,0 +1,130 @@
+[gd_scene load_steps=9 format=3 uid="uid://ckeu73vkkgi2k"]
+
+[ext_resource type="Script" path="res://Test_Scene/player_select_screen.gd" id="1_01np3"]
+[ext_resource type="Texture2D" uid="uid://5kj2mh05udo4" path="res://Assets/Level1.jpeg" id="1_tlhoc"]
+[ext_resource type="Script" path="res://Test_Scene/test_player_select_card_new.gd" id="4_l2bs4"]
+[ext_resource type="AudioStream" uid="uid://53pjrj14iw6x" path="res://Assets/SFX/10_UI_Menu_SFX/051_use_item_01.wav" id="5_cjyqy"]
+[ext_resource type="AudioStream" uid="uid://cv7ea5q0i0lwu" path="res://Assets/SFX/8_Buffs_Heals_SFX/02_Heal_02.wav" id="6_8rd1g"]
+[ext_resource type="Texture2D" uid="uid://bepdcxvnuw50o" path="res://Assets/AlbertEinstein_Profile.jpeg" id="7_3hw7e"]
+[ext_resource type="PackedScene" uid="uid://c5ktnku8sh145" path="res://Test_Scene/test_player_select_card.tscn" id="9_g814h"]
+[ext_resource type="Texture2D" uid="uid://b0ewqc5gmamev" path="res://Assets/sword_02c.png" id="10_bi1x6"]
+
+[node name="PlayerSelectScreen" type="CanvasLayer"]
+script = ExtResource("1_01np3")
+
+[node name="BackgroundTexture" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tlhoc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -676.0
+offset_top = -46.0
+offset_right = 676.0
+offset_bottom = 496.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/separation = 32
+
+[node name="PlayerSelectCard1" parent="HBoxContainer" instance=ExtResource("9_g814h")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PlayerSelectCard2" parent="HBoxContainer" instance=ExtResource("9_g814h")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PlayerSelectCard3" type="PanelContainer" parent="HBoxContainer"]
+self_modulate = Color(0.0885599, 0.0885599, 0.0885599, 1)
+clip_children = 2
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+theme_type_variation = &"AbilityPanelContainer"
+script = ExtResource("4_l2bs4")
+
+[node name="HoverStreamPlayer" type="AudioStreamPlayer" parent="HBoxContainer/PlayerSelectCard3"]
+stream = ExtResource("5_cjyqy")
+volume_db = -8.0
+
+[node name="ClickStreamPlayer" type="AudioStreamPlayer" parent="HBoxContainer/PlayerSelectCard3"]
+stream = ExtResource("6_8rd1g")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/PlayerSelectCard3"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="CharacterNameLabel" type="Label" parent="HBoxContainer/PlayerSelectCard3/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Charaktername"
+horizontal_alignment = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer/PlayerSelectCard3/VBoxContainer"]
+self_modulate = Color(0.129558, 0.129558, 0.129558, 1)
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 1
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="Preview" type="TextureRect" parent="HBoxContainer/PlayerSelectCard3/VBoxContainer/PanelContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("7_3hw7e")
+expand_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PlayerSelectCard3/VBoxContainer/PanelContainer2"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/PlayerSelectCard3/VBoxContainer/PanelContainer2/MarginContainer"]
+layout_mode = 2
+theme_type_variation = &"AbilityPanelContainer"
+
+[node name="AbilityIcon" type="TextureRect" parent="HBoxContainer/PlayerSelectCard3/VBoxContainer/PanelContainer2/MarginContainer/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("10_bi1x6")
+expand_mode = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/PlayerSelectCard3/VBoxContainer"]
+self_modulate = Color(0.75098, 0.638914, 0.549861, 1)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme_type_variation = &"AlternativePanelContainer"
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PlayerSelectCard3/VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="PlayerSelectCard4" parent="HBoxContainer" instance=ExtResource("9_g814h")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PlayerSelectCard5" parent="HBoxContainer" instance=ExtResource("9_g814h")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4

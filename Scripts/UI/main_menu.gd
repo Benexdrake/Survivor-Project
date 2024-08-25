@@ -17,6 +17,11 @@ func on_play_pressed():
 	await ScreenTransition.transition_to_scene("res://Scenes/UI/player_select_screen.tscn")
 	
 	
+func _input(event: InputEvent):
+	if !event is InputEventMouse:
+		await ScreenTransition.transition_to_scene("res://Scenes/UI/player_select_screen.tscn")
+	
+	
 func on_options_pressed():
 	ScreenTransition.transition()
 	await ScreenTransition.transition_halfway
@@ -37,5 +42,3 @@ func on_upgrade_pressed():
 func on_options_closed(options_instance:Node):
 	self.visible = true
 	options_instance.queue_free()
-
-

@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dujgwpibibjgl"]
+[gd_scene load_steps=5 format=3 uid="uid://dujgwpibibjgl"]
 
 [ext_resource type="Script" path="res://Scripts/UI/vignette.gd" id="1_avi3b"]
-[ext_resource type="Shader" path="res://Assets/vignette.gdshader" id="1_uaf78"]
+[ext_resource type="Material" uid="uid://cjx5jvv3wa71p" path="res://Shaders/vignette.tres" id="2_dack0"]
 
 [sub_resource type="Animation" id="Animation_dnb5y"]
 resource_name = "hit"
@@ -49,12 +49,6 @@ _data = {
 "hit": SubResource("Animation_dnb5y")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_25pd6"]
-shader = ExtResource("1_uaf78")
-shader_parameter/vignette_intensity = 0.4
-shader_parameter/vignette_opacity = 0.5
-shader_parameter/vignette_rgb = Color(0, 0, 0, 1)
-
 [node name="Vignette" type="CanvasLayer"]
 layer = 2
 script = ExtResource("1_avi3b")
@@ -65,7 +59,7 @@ libraries = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_25pd6")
+material = ExtResource("2_dack0")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

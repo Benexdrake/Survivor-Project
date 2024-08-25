@@ -68,4 +68,3 @@ func update_progress():
 func on_gui_input(event: InputEvent):
 	if event.is_action_pressed("left_click"):
 		select_card()
-

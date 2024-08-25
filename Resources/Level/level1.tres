@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="LevelResource" load_steps=20 format=3 uid="uid://vslpqt6sx2yf"]
+[gd_resource type="Resource" script_class="LevelResource" load_steps=21 format=3 uid="uid://vslpqt6sx2yf"]
 
 [ext_resource type="PackedScene" uid="uid://c41mstfl8ohy7" path="res://Resources/Map/map.tscn" id="1_nu46j"]
 [ext_resource type="AudioStream" uid="uid://ci7hsia7fb7g6" path="res://Assets/Music/Viking/1. Echoes of Valhalla.mp3" id="2_yxhn2"]
@@ -14,6 +14,7 @@
 [ext_resource type="Resource" uid="uid://dowmusxkhpyrn" path="res://Resources/EnemySpawnPhase/phase3.tres" id="7_rfkep"]
 [ext_resource type="Resource" uid="uid://b8treeyj6ax8w" path="res://Resources/EnemySpawnPhase/phase4.tres" id="8_dnf33"]
 [ext_resource type="Resource" uid="uid://dvepads7erq22" path="res://Resources/EnemySpawnPhase/phase5.tres" id="9_dv2rd"]
+[ext_resource type="Script" path="res://Scripts/EnemySpawnPhase/enemy_spawn_phase.gd" id="10_1loua"]
 [ext_resource type="Resource" uid="uid://84w00oa5k4b7" path="res://Resources/EnemySpawnPhase/phase6.tres" id="10_rtyhs"]
 [ext_resource type="Resource" uid="uid://b4mtisem0f6oj" path="res://Resources/EnemySpawnPhase/phase7.tres" id="11_yihws"]
 [ext_resource type="Resource" uid="uid://bn7y80xnsht8p" path="res://Resources/EnemySpawnPhase/phase8.tres" id="12_yhime"]
@@ -23,7 +24,7 @@
 [resource]
 script = ExtResource("3_j3q5f")
 level_name = "Level 1"
-spawn_phasen = Array[Resource("res://Scripts/EnemySpawnPhase/enemy_spawn_phase.gd")]([ExtResource("4_v7dvs"), ExtResource("6_6ol6y"), ExtResource("7_rfkep"), ExtResource("8_dnf33"), ExtResource("9_dv2rd"), ExtResource("10_rtyhs"), ExtResource("11_yihws"), ExtResource("12_yhime"), ExtResource("13_4xopx"), ExtResource("14_mwkyp")])
+spawn_phasen = Array[ExtResource("10_1loua")]([ExtResource("4_v7dvs"), ExtResource("6_6ol6y"), ExtResource("7_rfkep"), ExtResource("8_dnf33"), ExtResource("9_dv2rd"), ExtResource("10_rtyhs"), ExtResource("11_yihws"), ExtResource("12_yhime"), ExtResource("13_4xopx"), ExtResource("14_mwkyp")])
 preview = ExtResource("3_pgvl6")
 map_time = 600
 music = Array[AudioStream]([ExtResource("2_yxhn2"), ExtResource("3_hkxjw"), ExtResource("4_222al"), ExtResource("5_wnbnj"), ExtResource("6_kmrk0"), ExtResource("7_7krtj")])

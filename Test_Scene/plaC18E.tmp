@@ -1,0 +1,106 @@
+[gd_scene load_steps=12 format=3 uid="uid://ckeu73vkkgi2k"]
+
+[ext_resource type="Script" path="res://Test_Scene/player_select_screen.gd" id="1_01np3"]
+[ext_resource type="Texture2D" uid="uid://5kj2mh05udo4" path="res://Assets/Level1.jpeg" id="1_tlhoc"]
+[ext_resource type="Texture2D" uid="uid://ckgwrh8vicxk6" path="res://Assets/gem_01c.png" id="2_e57cm"]
+[ext_resource type="Texture2D" uid="uid://1yoj0oyyqkxl" path="res://Assets/fruit_01a.png" id="2_f5kb4"]
+[ext_resource type="Texture2D" uid="uid://7hg5f58l7n8p" path="res://Assets/gem_01g.png" id="3_hxgk5"]
+[ext_resource type="Texture2D" uid="uid://dijqp3wu3o8qk" path="res://Assets/gem_01h.png" id="4_8ux4p"]
+[ext_resource type="Texture2D" uid="uid://d2hxyax7jq28k" path="res://Assets/exp_drop.png" id="6_71xgt"]
+[ext_resource type="Texture2D" uid="uid://c72smellpc686" path="res://Assets/Icon1.png" id="7_5rhuj"]
+[ext_resource type="Texture2D" uid="uid://bgguv5r27i8qn" path="res://Assets/Icon2.png" id="8_hd01p"]
+[ext_resource type="Texture2D" uid="uid://bxkyo3ha01g6g" path="res://Assets/Icon3.png" id="9_lu6dp"]
+[ext_resource type="Texture2D" uid="uid://b0ewqc5gmamev" path="res://Assets/sword_02c.png" id="10_bi1x6"]
+
+[node name="PlayerSelectScreen" type="CanvasLayer"]
+script = ExtResource("1_01np3")
+textures = Array[Texture]([ExtResource("2_e57cm"), ExtResource("3_hxgk5"), ExtResource("4_8ux4p"), ExtResource("2_f5kb4"), ExtResource("6_71xgt"), ExtResource("7_5rhuj"), ExtResource("8_hd01p"), ExtResource("9_lu6dp"), ExtResource("10_bi1x6")])
+
+[node name="BackgroundTexture" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tlhoc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -304.0
+offset_top = -100.0
+offset_right = 304.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/separation = 32
+
+[node name="PanelContainer1" type="PanelContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="TextureRect1" type="TextureRect" parent="HBoxContainer/PanelContainer1"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label1" type="Label" parent="HBoxContainer/PanelContainer1"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/PanelContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="HBoxContainer/PanelContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer/PanelContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="HBoxContainer/PanelContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="PanelContainer4" type="PanelContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="HBoxContainer/PanelContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="HBoxContainer/PanelContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+
+[node name="PanelContainer5" type="PanelContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="TextureRect5" type="TextureRect" parent="HBoxContainer/PanelContainer5"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="HBoxContainer/PanelContainer5"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32

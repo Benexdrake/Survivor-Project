@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/UI/ui.gd" id="1_nqofl"]
 [ext_resource type="Script" path="res://Scripts/UI/vignette.gd" id="1_qpnsm"]
-[ext_resource type="Shader" path="res://Assets/vignette.gdshader" id="2_plylb"]
+[ext_resource type="Shader" path="res://Shaders/vignette.gdshader" id="2_plylb"]
 [ext_resource type="Script" path="res://Scripts/UI/arena_time_ui.gd" id="3_yt87x"]
 [ext_resource type="Script" path="res://Scripts/UI/experience_bar.gd" id="5_byfqh"]
 [ext_resource type="Shader" path="res://Shaders/cloud_shadow.gdshader" id="6_705sa"]
