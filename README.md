@@ -1,1 +1,1 @@
-Demo: https://benexdrake.itch.io/historysurvivor
+Demo: https://benexdrake.itch.io/history-survivor-hd
