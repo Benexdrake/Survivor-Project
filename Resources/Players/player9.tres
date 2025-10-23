@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PlayerResource" load_steps=14 format=3 uid="uid://cgorudp2lbym"]
+[gd_resource type="Resource" script_class="PlayerResource" load_steps=14 format=3 uid="uid://b7qhrdrrles8n"]
 
 [ext_resource type="Resource" uid="uid://di3yuthqnubgo" path="res://Resources/Upgrades/Kamehameha/kamehameha_ability_card.tres" id="1_yvc1s"]
 [ext_resource type="Texture2D" uid="uid://dnfyxv0fu6dds" path="res://Assets/Godbrithil_Profile.jpeg" id="2_xpir4"]

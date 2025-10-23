@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PlayerResource" load_steps=9 format=3 uid="uid://rqic0bdryrr8"]
+[gd_resource type="Resource" script_class="PlayerResource" load_steps=9 format=3 uid="uid://ddvf48v5uck71"]
 
 [ext_resource type="Resource" uid="uid://cr3a5ywo6jame" path="res://Resources/Upgrades/Axe/axe_ability_card.tres" id="1_dwrw1"]
 [ext_resource type="Texture2D" uid="uid://b8iedvuwhglkm" path="res://Assets/Profile/Default_Albert_Einstein_rendered_in_vibrant_digital_art_depict_0.jpg" id="2_t035v"]

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PlayerResource" load_steps=14 format=3 uid="uid://c8vy8h0ggkdrq"]
+[gd_resource type="Resource" script_class="PlayerResource" load_steps=14 format=3 uid="uid://g2nkherqrxba"]
 
 [ext_resource type="Resource" uid="uid://bu4jso5tt11p7" path="res://Resources/Upgrades/Thunder/thunder_ability_card.tres" id="1_y3fo8"]
 [ext_resource type="Texture2D" uid="uid://dnfyxv0fu6dds" path="res://Assets/Godbrithil_Profile.jpeg" id="2_cf37c"]

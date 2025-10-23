@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PlayerResource" load_steps=10 format=3 uid="uid://di531ubruio82"]
+[gd_resource type="Resource" script_class="PlayerResource" load_steps=10 format=3 uid="uid://covcf15yarauh"]
 
 [ext_resource type="Resource" uid="uid://ba52adg337cfr" path="res://Resources/Upgrades/Book/Bible/book_bible_ability_card.tres" id="1_bvhdd"]
 [ext_resource type="Texture2D" uid="uid://dji0qio410e4t" path="res://Assets/Arminius_Profile.jpeg" id="2_64p4h"]

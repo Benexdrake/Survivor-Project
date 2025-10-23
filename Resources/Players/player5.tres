@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PlayerResource" load_steps=12 format=3 uid="uid://ilrebh7kkw73"]
+[gd_resource type="Resource" script_class="PlayerResource" load_steps=12 format=3 uid="uid://3a3unv2xkkqi"]
 
 [ext_resource type="Resource" uid="uid://dr8uh7x1dsqpv" path="res://Resources/Upgrades/Speech/speech_ability_card.tres" id="1_5demb"]
 [ext_resource type="Texture2D" uid="uid://c53ujbhfi6mse" path="res://Assets/Manazwerg_Profil.jpeg" id="2_0ml4b"]

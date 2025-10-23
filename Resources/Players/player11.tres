@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PlayerResource" load_steps=12 format=3 uid="uid://b0aqtte2ifc6k"]
+[gd_resource type="Resource" script_class="PlayerResource" load_steps=12 format=3 uid="uid://bwnggn8vs3coo"]
 
 [ext_resource type="Resource" uid="uid://dd8t2tegxb4vw" path="res://Resources/Upgrades/Honigwabe/honigwabe_ability_card.tres" id="1_0jhak"]
 [ext_resource type="Texture2D" uid="uid://c8fmwdw6ahlll" path="res://Assets/Honey Profil.jpeg" id="2_25l1m"]

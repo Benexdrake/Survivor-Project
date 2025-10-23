@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PlayerResource" load_steps=14 format=3 uid="uid://bolv2yyt0l7ot"]
+[gd_resource type="Resource" script_class="PlayerResource" load_steps=14 format=3 uid="uid://dgr2ca720rg5i"]
 
 [ext_resource type="Resource" uid="uid://bsc5li6dns567" path="res://Resources/Upgrades/Shot/ShurikenShot/shuriken_shot_ability_card.tres" id="1_1od5p"]
 [ext_resource type="Texture2D" uid="uid://dnfyxv0fu6dds" path="res://Assets/Godbrithil_Profile.jpeg" id="2_wvn17"]

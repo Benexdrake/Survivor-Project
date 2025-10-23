@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PlayerResource" load_steps=12 format=3 uid="uid://c8r2sldaxmab4"]
+[gd_resource type="Resource" script_class="PlayerResource" load_steps=12 format=3 uid="uid://dagdbl3g8d12"]
 
 [ext_resource type="Resource" uid="uid://w3hgtv2y4h0m" path="res://Resources/Upgrades/Shuriken/shuriken_ability_card.tres" id="1_bib6j"]
 [ext_resource type="Texture2D" uid="uid://c53ujbhfi6mse" path="res://Assets/Manazwerg_Profil.jpeg" id="2_ww5d5"]

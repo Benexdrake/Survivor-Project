@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PlayerResource" load_steps=10 format=3 uid="uid://rkka1mhr2h1y"]
+[gd_resource type="Resource" script_class="PlayerResource" load_steps=10 format=3 uid="uid://8wo2dtd4ryat"]
 
 [ext_resource type="Resource" uid="uid://clv1qugwc1w1f" path="res://Resources/Upgrades/Shot/HolyShot/holy_shot_ability_card.tres" id="1_ihu6a"]
 [ext_resource type="Texture2D" uid="uid://dji0qio410e4t" path="res://Assets/Arminius_Profile.jpeg" id="2_cb65t"]
